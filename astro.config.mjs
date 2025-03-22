@@ -4,11 +4,13 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://a11ykr.github.io/',
+	base: process.env.NODE_ENV === 'production' ? '/docs/' : '/',
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'A11Y KR Docs',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://a11ykr.github.io',
 			},
 			sidebar: [
 				{
