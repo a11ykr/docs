@@ -1,6 +1,6 @@
 ---
-title: 접근성 표준안 모음
-description: 표준 문서 모음
+title: 표준 관련 문서 모음
+description: 접근성 표준 문서 모음
 ---
 
 W3C 접근성 문서 한국어 번역본 모음
