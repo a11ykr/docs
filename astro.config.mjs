@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://a11ykr.github.io/',
-	base: process.env.NODE_ENV === 'production' ? '/docs/' : '/',
+	base: '/docs/',
 	integrations: [
 		starlight({
 			title: 'A11Y KR Docs',
