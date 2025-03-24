@@ -37,6 +37,6 @@
   "pagefind.many_results": "[SEARCH_TERM]에 대한 [COUNT]개의 결과",
   "pagefind.one_result": "[SEARCH_TERM]에 대한 [COUNT]개의 결과",
   "pagefind.alt_search": "[SEARCH_TERM]에 대한 검색 결과가 없습니다. [DIFFERENT_TERM]에 관한 결과 보기",
-  "pagefind.search_suggestion": "No results for [SEARCH_TERM]. Try one of the following searches:",
-  "pagefind.searching": "Searching for [SEARCH_TERM]..."
+  "pagefind.search_suggestion": "[SEARCH_TERM]에 대한 검색 결과가 없습니다. 다음을 제안합니다:",
+  "pagefind.searching": "[SEARCH_TERM]에 대해 검색 중입니다..."
 }
