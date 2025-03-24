@@ -13,7 +13,13 @@ export default defineConfig({
 				src: '/src/assets/a11ykr.png',
 				replacesTitle: true,
 			},
-			defaultLocale: 'ko',
+			defaultLocale: 'root', // optional
+			locales: {
+				root: {
+					label: '한국어',
+					lang: 'ko',
+				},
+			},
 			social: {
 				github: 'https://a11ykr.github.io',
 			},
