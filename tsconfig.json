@@ -1,5 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist"],
+    "compilerOptions": {
+      "strictNullChecks": true, // `base` 템플릿을 사용하는 경우 추가
+      "allowJs": true // 필수, 모든 Astro 템플릿에 포함
+    }
 }
