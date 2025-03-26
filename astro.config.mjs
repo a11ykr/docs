@@ -31,7 +31,12 @@ export default defineConfig({
 				{ label: '접근성 점검 도구', link: '/acts/' },
 				{
 					label: '용어집',
-					autogenerate: { directory: 'glossary' }
+					collapsed: false,
+					autogenerate: {
+						directory: 'glossary',
+						order: 'asc',
+						pathPrefix: '/glossary'
+					}
 				},
 			],
 		}),

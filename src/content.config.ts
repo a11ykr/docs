@@ -14,7 +14,7 @@ const i18n = defineCollection({
 });
 // 용어집 컬렉션 자동 구성
 const glossary = defineCollection({
-  loader: docsLoader(),
+  type: 'content',
   schema: docsSchema({
     extend: z.object({
       title: z.string(),
