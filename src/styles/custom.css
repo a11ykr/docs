@@ -1,0 +1,10 @@
+/* 링크 내부의 아이콘에 대한 스타일 */
+:root {
+  --custom-link-icon-display: inline-block !important;
+}
+
+.sl-markdown-content a :is(img, picture, video, canvas, svg, iframe):not(:where(.not-content *)) {
+  display: var(--custom-link-icon-display);
+  vertical-align: -0.125em;
+  margin-inline: 0.125em;
+}

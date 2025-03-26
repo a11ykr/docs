@@ -25,8 +25,11 @@ export default defineConfig({
 			social: {
 				github: 'https://a11ykr.github.io',
 			},
+			customCss: [
+				'./src/styles/custom.css'
+			],
 			sidebar: [
-				{ label: '표준 관련 문서 모음', link: '/guides/' },
+				{ label: '표준 및 지침', link: '/guides/' },
 				{ label: '참고 자료', link: '/reference/' },
 				{ label: '접근성 점검 도구', link: '/acts/' },
 				{
