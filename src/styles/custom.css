@@ -8,3 +8,18 @@
   vertical-align: -0.125em;
   margin-inline: 0.125em;
 }
+
+/* Card 컴포넌트 조정 - 서브페이지에만 적용 */
+:not(div.card-grid) .card {
+  padding: 1rem;
+  margin-block: 0.5rem;
+}
+:not(div.card-grid) .card .card-content {
+  padding: 0.5rem;
+}
+:not(div.card-grid) .card .card-header {
+  padding: 0.5rem;
+}
+:not(div.card-grid) .card .title {
+  font-size: 1.2rem;
+}
