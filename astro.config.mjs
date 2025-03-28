@@ -36,7 +36,7 @@ export default defineConfig({
 					label: '용어집',
 					collapsed: false,
 					autogenerate: {
-						directory: 'glossary',
+						directory: '/glossary/',
 						order: 'asc',
 						pathPrefix: '/glossary'
 					}
