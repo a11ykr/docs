@@ -1,0 +1,46 @@
+---
+title: "Relative luminance[상대 휘도]"
+description: "색 공간상에 있는 모든 지점의 상대적 밝기. 가장 어두운 검은색의 경우 0으로, 가장 밝은 흰색의 경우 1로 표준화되어 있음"
+tableOfContents: false
+---
+import { Aside, Badge , Card } from '@astrojs/starlight/components';
+
+
+
+색 공간상에 있는 모든 지점의 상대적 밝기. 가장 어두운 검은색의 경우 0으로, 가장 밝은 흰색의 경우 1로 표준화되어 있음
+
+<Aside title="참고 1">
+sRGB 색 공간의 경우, 색의 상대적인 휘도는 L = 0.2126 \* **R** + 0.7152 \* **G** + 0.0722 \* **B**로 정의되는데, 여기에서 **R**, **G**, **B**는 다음과 같다.
+
+*   RsRGB \<= 0.04045일 경우, **R** = RsRGB/12.92 아니라면 **R** = ((RsRGB+0.055)/1.055) ^ 2.4
+*   GsRGB \<= 0.04045일 경우, **G** = GsRGB/12.92 아니라면 **G** = ((GsRGB+0.055)/1.055) ^ 2.4
+*   BsRGB \<= 0.04045일 경우, **B** = BsRGB/12.92 아니라면 **B** = ((BsRGB+0.055)/1.055) ^ 2.4
+
+RsRGB, GsRGB, BsRGB은 다음과 같이 정의된다.
+
+*   RsRGB = R8bit/255
+*   GsRGB = G8bit/255
+*   BsRGB = B8bit/255
+
+"^"는 지수 연산자이다. (\[[SRGB](#bib-srgb "Multimedia systems and equipment - Colour measurement and management - Part 2-1: Colour management - Default RGB colour space - sRGB")\]에서 가져온 공식)
+</Aside>
+
+<Aside title="참고 2">
+2021년 5월 이전에는 정의의 0.04045 값이 달랐다(0.03928). 이는 이전 버전의 명세서에서 가져와 업데이트되었다. 이는 본 지침의 맥락에서 계산에 실질적인 영향을 미치지 않는다.
+</Aside>
+
+<Aside title="참고 3">
+오늘날 웹 콘텐츠를 보는 데 사용하는 거의 모든 시스템은 sRGB 인코딩을 사용한다고 가정한다. 콘텐츠를 처리하고 표시하기 위하여 다른 색 공간이 사용되지 않는 한, 웹 콘텐츠 저작자는 sRGB 색 공간을 사용하여 평가해야 한다. 다른 색 공간을 사용하는 경우, “[성공기준 4.1.3 이해](https://a11ykr.github.io/wai/wcag22/understanding/contrast-minimum)”를 참고하라.
+</Aside>
+
+<Aside title="참고 4">
+전달 후 디더링이 발생할 경우, 원본 색상 값이 사용된다. 원본에서 디더링되는 색상의 경우, 디더링되는 색상의 평균값(평균 R, 평균 G, 평균 B)을 사용해야 한다.
+</Aside>
+
+<Aside title="참고 5">
+명도대비 및 번쩍임을 검사할 경우, 자동으로 계산해 주는 도구를 사용할 수 있다.
+</Aside>
+
+<Aside title="참고 6">
+[상대 휘도 정의를 MathML을 이용한 별도의 페이지](https://www.w3.org/TR/WCAG22/relative-luminance.html)를 이용해 수식으로 표시할 수 있다.
+</Aside>
