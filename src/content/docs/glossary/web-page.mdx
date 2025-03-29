@@ -1,0 +1,29 @@
+---
+title: "Web page[웹 페이지]"
+description: "HTTP를 사용하여 단일 URI에서 얻어진 내포되지 않은 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스"
+tableOfContents: false
+---
+import { Aside, Badge , Card } from '@astrojs/starlight/components';
+
+
+HTTP를 사용하여 단일 URI에서 얻어진 내포되지 않은 리소스(non-embedded resource)과 렌더링에 사용되거나 [사용자 에이전트](../user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에서 렌더링되도록 의도된 모든 다른 리소스
+
+<Aside title="참고 1">
+모든 “다른 리소스(<span lang="en">other resources</span>)”는 주요 리소스와 함께 랜더링되지만, 반드시 서로 동시에 렌더링되지는 않는다.
+</Aside>
+<Aside title="참고 2">
+이러한 지침을 준수하려면, 리소스는 웹 페이지로 간주되기 위해 준수 범위 내에 “포함되지 않은(<span lang="en">non-embedded</span>)” 상태여야 한다.
+</Aside>
+
+<Card title="예제 1" icon="open-book">
+삽입된(<span lang="en">embedded</span>) 모든 이미지 및 미디어를 포함하는 웹 리소스
+</Card>
+<Card title="예제 2" icon="open-book">
+AJAX(<span lang="en">Asynchronous JavaScript and XML</span>)를 사용하여 작성된 웹 메일 프로그램. 이 프로그램은 http://example.com/mail에 전부 있지만, 받은 편지함, 연락처 영역 및 캐린더를 포함한다. 받은 편지함, 연락처 또는 캘린더를 표시하는 링크나 버튼이 제공되지만, 전체 페이지의 URI를 변경하지는 않는다.
+</Card>
+<Card title="예제 3" icon="open-book">
+사용자가 일련의 다른 콘텐츠 모듈에서 표시할 콘텐츠를 선택할 수 있는 사용자 지정 가능한 포털 사이트
+</Card>
+<Card title="예제 4" icon="open-book">
+브라우저에 “http://shopping.example.com/”을 입력하면, 영화에서처럼 상호 작용할 수 있는 쇼핑환경으로 들어갈 수 있다. 즉, 시각적으로 상점에 들어가서 돌아다니다가 주변의 선반에서 제품을 끌어와 앞에 있는 쇼핑 카트에 넣을 수 있다. 제품을 클릭하면, 해당 제품 옆에 명세서서가 함께 제시된다. 이것은 한 페이지로 된 웹 사이트일 수도 있고, 웹 사이트 내의 한 페이지일 수도 있다.
+</Card>
