@@ -30,11 +30,19 @@ export default defineConfig({
 			],
 			sidebar: [
 				{ label: '표준 및 지침', link: '/guides/' },
-				{ label: '참고 자료', link: '/reference/' },
+				{
+					label: '참고 자료',
+					collapsed: false,
+					autogenerate: {
+						directory: '/reference/',
+						order: 'asc',
+						pathPrefix: '/reference'
+					}
+				},
 				{ label: '접근성 점검 도구', link: '/acts/' },
 				{
 					label: '용어집',
-					collapsed: false,
+					collapsed: true,
 					autogenerate: {
 						directory: '/glossary/',
 						order: 'asc',
