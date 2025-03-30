@@ -29,7 +29,14 @@ export default defineConfig({
 				'./src/styles/custom.css'
 			],
 			sidebar: [
-				{ label: '표준 및 지침', link: '/guides/' },
+				{ label: '표준 및 지침',
+					collapsed: false,
+					autogenerate: {
+						directory: '/guides/',
+						order: 'asc',
+						pathPrefix: '/guides'
+					}
+				},
 				{
 					label: '참고 자료',
 					collapsed: false,
