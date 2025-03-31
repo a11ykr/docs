@@ -1,0 +1,61 @@
+---
+title: 성공 기준 1.2.9 오디오 전용 (실시간)
+description: 성공 기준 이해 1.2.9 오디오 전용 (실시간)
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 1.2.9](https://w3.org/TR/WCAG22#audio-only-live):오디오 전용 (실시간) (Level AAA)
+
+<Card title="성공 기준 (SC)"></Card>
+
+[실시간](../../../glossary/live) [오디오 전용](../../../glossary/audio-only) 콘텐츠에는 동등한 정보를 제공하는 [시간 기반 미디어에 대한 대체 수단](../../../glossary/alternative-for-time-based-media)을 제공해야 한다.
+
+## 요약
+
+
+목표
+
+실시간 오디오를 더 많은 사람들이 이해할 수 있다.
+
+할 일
+
+실시간 오디오 전용 콘텐츠에 해당하는 텍스트를 제공하라.
+
+중요성
+
+실시간 오디오를 듣거나 이해할 수 없는 사람들은 이에 상응하는 콘텐츠를 읽을 수 있다.
+
+### 의도
+
+이 성공 기준의 의도는 웹 기반 오디오 회의, 실시간 연설, 라디오 웹캐스트 등의 실시간 오디오로 전달되는 정보를 텍스트 대체 수단을 통해 접근 가능하게 하는 것이다. 실시간 텍스트 자막 서비스를 이용하면 청각 장애인이나 오디오를 들을 수 없는 사람들도 실시간 오디오에 접근할 수 있다. 이런 서비스는 전문 속기사가 실시간으로 발화 내용을 듣고 특수 키보드로 텍스트를 입력하는 방식으로 운영된다. 이를 통해 높은 수준의 정확도로 실시간 이벤트를 포착하고 이해에 필수적인 비음성 오디오에 대한 메모도 삽입할 수 있다. 실시간 오디오가 정해진 스크립트를 따르는 경우 대본을 제공하는 것도 가능하지만, 실시간 자막 서비스가 선호된다. 오디오와 동일한 속도로 진행되며 스크립트에서 벗어난 부분도 대응할 수 있기 때문이다.
+
+훈련받지 않은 운영자를 활용하거나 실제 상황과 크게 다른 대본을 제공하는 것은 이 성공기준을 충족하는 것으로 간주하지 않는다.
+
+이 성공 기준은 오디오 방송에 적용되는 것을 의도했으며, 웹 애플리케이션을 통한 2명 이상의 개인 간 양방향 오디오 통화에 사용자 필요 여부와 무관하게 자막을 요구하려는 의도는 아니다. 자막 제공 책임은 콘텐츠 제공업체(발신자) 또는 "호스트" 발신자에게 있으며 애플리케이션 자체에는 없다.
+
+### 예제
+
+*   홍보 회사에서 웹 기반 자막 서비스를 사용하여 실시간 이벤트를 다룬다. 서비스의 출력은 스트리밍 오디오 제어를 포함하는 웹 페이지의 하위 프레임에 통합된다.
+*   비주류 극단의 라이브 라디오 연극이 웹으로 방송되고 있다. 배우들은 대부분 정해진 대본을 고수하고 프로그램 예산이 적기 때문에 제작자는 (극작가의 허락을 받아) 극본에 대한 링크를 제공한다.
+*   스트리밍 오디오 서버는 HTML과 같은 텍스트와 그래픽도 수용할 수 있는 기술을 사용한다. 속기사는 이벤트에서 실시간 자막을 생성하며, 이러한 캡션은 즉시 혼합되어 미디어 플레이어에서 볼 수 있는 미디어 스트림의 실시간 자막을 생성한다.
+*   CEO는 속보에 대한 응답으로 언론에 전화로 보도 자료를 제공하기로 하고 오디오를 녹음하여 인터넷을 통해 스트리밍하지만 시간 제약으로 인해 웹 자막 서비스를 제때 설정할 수 없다. 보도자료는 CEO가 낭독하는 정해진 성명이므로 회사는 보도자료 전문을 동시에 제공한다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [WebAIM Real time captioning resource](https://webaim.org/techniques/captions/realtime)
+*   [uiAccess list of transcription services](http://www.uiaccess.com/transcripts/transcript_services.html)
+*   [Transcripts on the Web: Getting people to your podcasts and videos](http://www.uiaccess.com/transcripts/transcripts_on_the_web.html)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G151: Providing a link to a text transcript of a prepared statement or script if the script is followed](https://www.w3.org/WAI/WCAG22/Techniques/general/G151)
+*   [G150: Providing text based alternatives for live audio-only content](https://www.w3.org/WAI/WCAG22/Techniques/general/G150)
+*   [G157: Incorporating a live audio captioning service into a Web page](https://www.w3.org/WAI/WCAG22/Techniques/general/G157)
+

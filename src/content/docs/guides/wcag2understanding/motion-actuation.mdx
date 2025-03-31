@@ -1,0 +1,93 @@
+---
+title: 성공 기준 2.5.4 움직임 기반 실행
+description: 성공 기준 이해 2.5.4 움직임 기반 실행
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 2.5.4](https://w3.org/TR/WCAG22#motion-actuation): 움직임 기반 실행 (Level A)
+
+<Card title="성공 기준 (SC)"></Card>
+
+장치나 사용자의 움직임으로 실행할 수 있는 [기능](../../../glossary/functionality)은 [사용자 인터페이스 구성요소](../../../glossary/user-interface-component)로 작동할 수 있어야 하며, 움직임에 대한 반응은 우발적인 작동을 방지할 수 있도록 비활성화될 수 있어야 한다. 다음의 경우는 예외이다.
+
+지원 인터페이스
+
+기능을 실행하기 위해 [접근성 지원](../../../glossary/accessibility-supported) 인터페이스를 통해 움직임을 이용하는 경우
+
+필수적인
+
+움직임이 기능에 [필수적](../../../glossary/essential)이고, 이를 통해 동작을 무효화하는 경우
+
+## 요약
+
+
+목표
+
+콘텐츠는 사용자가 장치를 움직이는 능력에 따라 달라지지 않는다.
+
+할 일
+
+페이지 콘텐츠를 제어하기 위해 장치의 움직임에만 의존하지 않아야 한다.
+
+중요성
+
+어떤 사람들은 장치를 안정적으로 잡거나 움직일 수 없다.
+
+### 의도
+
+이 성공 기준의 목적은 장치를 움직이거나(예: 흔들기 또는 기울이기) 장치를 향한 동작(카메라와 같은 센서가 동작을 감지하고 해석할 수 있도록)에 의해 실행되는 기능도 보다 일반적인 사용자 인터페이스 구성 요소를 이용해 작동시킬 수 있도록 하는 것이다.
+
+참고
+
+이 기준은 장치를 향한 몸짓, 기울이기 또는 흔들기와 같은 동작에 직접 반응하는 센서를 통한 입력과 관계가 있다. (지리적) 위치 센서 또는 비콘에 의해 등록된 공간을 통한 사용자의 움직임이나 사용자의 의도적인 몸짓 이외의 장치에서 관찰되는 이벤트는 다루지 않는다. 또한 키보드, 포인터 또는 보조 기술 작동과 관련된 부수적인 동작도 다루지 않는다.
+
+장치에는 휴대폰이나 태블릿 장치의 가속도계 및 자이로스코프 센서와 같이 입력 역할을 할 수 있는 센서가 있는 경우가 많다. 이러한 센서를 사용하면 사용자는 단순히 방향을 변경하거나 특정 방식으로 장치를 움직여서 무언가를 제어할 수 있다. 다른 상황에서는 웹 콘텐츠가 카메라나 기타 센서를 통해 사용자 동작을 해석하여 기능을 작동할 수 있다. 예를 들어, 장치를 흔들면 "실행 취소" 명령이 실행될 수도 있고, 부드러운 손 흔들기를 사용하여 일련의 페이지에서 앞뒤로 이동할 수도 있다. 일부 장애가 있는 사용자는 장치가 고정된 거치대(예: 휠체어)에 있거나 운동 장애로 인해 장치 센서를 작동할 수 없다(전혀 작동하지 않거나 충분하지 않음). 따라서 움직임을 통해 제공되는 기능은 다른 매커니즘에서도 사용할 수 있어야 한다.
+
+또한 일부 사용자는 떨림이나 기타 운동 장애로 인해 실수로 센서를 활성화할 수도 있다. 사용자는 이러한 우발적인 기능 실행을 방지하기 위해 움직임에 의한 작동을 끌 수 있는 능력이 있어야 한다. 응용 프로그램은 사용자가 시스템 수준에서 동작 감지를 비활성화할 수 있도록 허용하는 운영 체제 설정을 지원함으로써 이 요구 사항을 충족할 수 있다.
+
+기능에 움직임이 필수적인 경우나 움직임이나 동작을 사용하지 않으면 활동이 무효화되는 예외가 있다. 일부 애플리케이션은 장치 센서 데이터를 사용하도록 특별히 제작되었다. 이 요구 사항에서 제외되는 콘텐츠의 예로는 기기 동작을 사용하여 걸음 수를 계산하는 만보계가 있다.
+
+### 이점
+
+*   이 성공 기준은 장치가 장착되어 있거나 사용자가 물리적으로 필요한 움직임을 수행할 수 없기 때문에 특정 동작(예: 기울이기, 흔들기, 몸짓)을 수행할 수 없는 사람들에게 도움이 된다. 이 성공 기준은 사용자가 터치나 보조 기술과 같은 다른 수단을 통해 모든 기능을 계속 운용하도록 보장한다.
+*   다른 사용자는 자신의 장치를 움직일 수 없는 상황에서 이점을 누릴 수 있다.
+
+### 예제
+
+*   사용자는 흔들어 실행 취소 및 기타 모션 활성화 기능을 끄는 애플리케이션 설정을 선택할 수 있다.
+*   필드에 텍스트를 입력한 후 장치를 흔들면 사용자에게 입력을 취소할 수 있는 대화 상자가 표시된다. 텍스트 필드 옆에 있는 취소 버튼도 동일한 기능을 제공한다.
+*   사용자는 장치를 기울여 다음 페이지나 이전 페이지로 이동할 수 있다. 동일한 기능을 수행하는 버튼도 제공된다.
+*   사용자는 장치를 움직이거나 좌우로 이동시켜 대화형 사진의 보기를 변경할 수 있다. 이와 동일한 기능을 수행하는 컨트롤도 사용할 수 있다.
+*   사용자는 콘텐츠를 탐색하기 위해 장치를 향해 동작을 취할 수 있다. 컨트롤로 탐색할 수도 있다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [Detecting device orientation](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation)
+*   [DeviceMotionEvent](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G213: Provide conventional controls and an application setting for motion activated input](https://www.w3.org/WAI/WCAG22/Techniques/general/G213)
+*   GXXX: Supporting system level features which allow the user to disable motion actuation
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F106: Failure due to inability to deactivate motion actuation](https://www.w3.org/WAI/WCAG22/Techniques/failures/F106)
+*   FXXX: Failure of Success Criterion 2.5.4 due to disrupting or disabling system level features which allow the user to disable motion actuation
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [Device motion based changes to the content can also be created from the user interface](/WAI/standards-guidelines/act/rules/7677a9/proposed/)
+*   [Device motion based changes to the content can be disabled](/WAI/standards-guidelines/act/rules/c249d5/proposed/)
+

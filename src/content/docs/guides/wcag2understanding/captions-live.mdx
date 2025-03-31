@@ -1,0 +1,71 @@
+---
+title: 성공 기준 1.2.4 자막 (실시간)
+description: 성공 기준 이해 1.2.4 자막 (실시간)
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 1.2.4](https://w3.org/TR/WCAG22#captions-live):자막 (실시간) (Level AA)
+
+<Card title="성공 기준 (SC)"></Card>
+
+[동기화된 미디어](../../../glossary/synchronized-media)에 포함된 모든 [실시간](../../../glossary/live) [오디오](../../../glossary/audio) 콘텐츠에는 [자막](../../../glossary/captions)을 제공해야 한다.
+
+## 요약
+
+
+목표
+
+실시간 비디오에 자막이 제공된다.
+
+할 일
+
+실시간 영상의 오디오 콘텐츠에 동기화된 텍스트를 제공한다.
+
+중요성
+
+청각 장애가 있거나 난청이 있는 사람들이 실시간 비디오 콘텐츠의 오디오를 이해할 수 있다.
+
+### 의도
+
+이 성공 기준의 목적은 청각 장애가 있거나 난청이 있는 사람들이 *실시간* 프레젠테이션을 볼 수 있도록 하는 것이다. 자막은 오디오 트랙을 통해 사용할 수 있는 콘텐츠의 일부를 제공한다. 자막에는 대화 뿐만 아니라 말하는 사람을 식별하고 음향 효과 및 기타 중요 오디오를 포함한다.
+
+이 성공 기준은 동기화된 미디어 방송에 적용하기 위한 것이며 웹 앱을 통한 두 명 이상의 개인 간의 양방향 멀티미디어 통화에 사용자의 요구에 관계없이 자막을 첨부해야 한다고 요구하기 위한 것이 아니다. 자막 제공에 대한 책임은 애플리케이션이 아닌 콘텐츠 제공자(발신자) 또는 "호스트" 호출자에게 있다.
+
+### 이점
+
+*   청각 장애가 있거나 난청이 있는 사람들이 자막을 통해 동기화된 미디어 콘텐츠의 청각 정보에 접근할 수 있다.
+
+### 예제
+
+웹 캐스트
+
+언론 기관에서 자막이 포함된 실시간 웹 캐스트를 제공한다.
+
+음악 웹 캐스트
+
+오케스트라는 각 실시간 웹 공연에 대한 CART(Communication Access Realtime Translation) 자막을 제공한다. CART 서비스는 가사와 대화를 포착할 뿐 아니라 음성이 없는 음악의 제목, 운동, 작곡가 등과 같은 정보를 식별하여 사용자가 음원의 성격을 이해할 수 있도록 돕는다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [1.2.2: 자막 (사전 녹음된)](captions-prerecorded)를 참고하라.
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G9: Creating captions for live synchronized media](https://www.w3.org/WAI/WCAG22/Techniques/general/G9) **AND** [G93: Providing open (always visible) captions](https://www.w3.org/WAI/WCAG22/Techniques/general/G93)
+*   [G9: Creating captions for live synchronized media](https://www.w3.org/WAI/WCAG22/Techniques/general/G9) **AND** [G87: Providing closed captions](https://www.w3.org/WAI/WCAG22/Techniques/general/G87) using any readily available media format that has a video player that supports closed captioning
+*   [G9: Creating captions for live synchronized media](https://www.w3.org/WAI/WCAG22/Techniques/general/G9) **AND** [G87: Providing closed captions](https://www.w3.org/WAI/WCAG22/Techniques/general/G87) using one of the following techniques:
+    
+    *   [SM11: Providing captions through synchronized text streams in SMIL 1.0](https://www.w3.org/WAI/WCAG22/Techniques/smil/SM11)
+    *   [SM12: Providing captions through synchronized text streams in SMIL 2.0](https://www.w3.org/WAI/WCAG22/Techniques/smil/SM12)
+
+참고
+
+실시간 텍스트 번역 서비스를 사용하여 자막을 생성할 수 있다.
+

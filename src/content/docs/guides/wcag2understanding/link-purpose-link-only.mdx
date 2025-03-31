@@ -1,0 +1,114 @@
+---
+title: 성공 기준 2.4.9 링크 목적 (링크 단독)
+description: 성공 기준 이해 2.4.9 링크 목적 (링크 단독)
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 2.4.9](https://w3.org/TR/WCAG22#link-purpose-link-only):링크 목적 (링크 단독) (Level AAA)
+
+<Card title="성공 기준 (SC)"></Card>
+
+링크 텍스트만으로도 각 링크의 목적을 식별 가능하게 해 주는 [매커니즘](../../../glossary/mechanism)을 제공해야 한다. 단, 링크의 목적이 [전반적으로 사용자에게 애매한 경우](../../../glossary/ambiguous-to-users-in-general)는 제외한다.
+
+## 요약
+
+
+목표
+
+사용자는 각 링크의 기능을 이해한다.
+
+할 일
+
+모든 링크에 대해 설명적인 이름을 제공하라.
+
+중요성
+
+설명 링크 텍스트는 특히 보조 기술을 사용할 때 모든 사용자가 더 쉽게 이해할 수 있다.
+
+### 의도
+
+이 성공 기준의 목적은 사용자가 콘텐츠에 있는 각 링크의 목적을 이해하여 이를 따를지 여부를 결정할 수 있도록 돕는 것이다. 모범 사례는 동일한 대상을 가진 링크는 동일한 설명을 가지지만, 다른 목적과 대상을 가진 링크는 다른 설명을 갖는다는 것이다(동일한 기능을 가진 구성 요소를 식별하는 데 일관성이 필요한 [성공 기준 3.2.4](consistent-identification) 참조). 링크의 목적은 링크 텍스트에서 식별할 수 있기 때문에 사용자 에이전트가 페이지의 모든 링크 목록을 제공하는 경우와 같이 링크가 맥락을 벗어나도 링크를 이해할 수 있다.
+
+링크의 텍스트는 링크의 목적을 설명하기 위한 것이다. 링크가 문서나 웹 애플리케이션으로 연결되는 경우, 문서나 웹 애플리케이션의 이름은 링크의 목적(문서나 웹 애플리케이션으로 이동하는 것)을 설명하기에 충분하다. 문서나 웹 애플리케이션의 이름을 반드시 사용할 필요는 없다. 다른 것들도 링크의 목적을 설명할 수 있다.
+
+[성공기준 2.4.2](page-titled)는 페이지 제목을 다룬다. 여기서도 페이지에 표시되는 문서 또는 웹 애플리케이션의 이름은 페이지의 목적을 설명하기에 충분하다. 링크와 제목이 일치하거나 매우 유사한 것은 좋은 습관이며 '클릭한' 링크와 사용자가 방문하는 웹 페이지 사이의 연속성을 제공한다.
+
+성공 기준에는 웹 페이지의 정보에서 링크의 목적을 확인할 수 없는 링크에 대한 예외가 포함된다. 이러한 상황에서 장애인은 불이익을 받지 않는다. 링크 목적을 이해하는 데 사용할 수 있는 추가 컨텍스트가 없다. 그러나 링크의 목적을 해석하는 데 사용할 수 있는 웹 페이지 문맥의 양은 성공 기준을 충족하기 위해 링크 텍스트에서 사용할 수 있어야 한다.
+
+"매커니즘"이라는 단어는 저작자가 기본적으로 모든 링크를 상황에 관계없이 완전히 이해할 수 있도록 만들거나 이러한 방식으로 만들 수 있는 방법을 제공하는 데 사용된다. 이는 일부 페이지의 경우 링크 자체를 모두 명확하게 만드는 것이 일부 사용자에게는 페이지를 더 쉽게 만들고 다른 사용자에게는 더 어렵게 만들기 때문에 수행된다. 링크를 모호하지 않게 만들거나 링크를 명확하게 만드는 기능을 제공하면 장애가 있는 두 사용자 모두 자신의 필요에 가장 적합한 형식으로 페이지를 사용할 수 있다.
+
+예를 들어 HTML, PDF, DOC, TXT, MP3 또는 AAC 형식의 책을 다운로드할 수 있는 링크와 함께 100개의 책 제목이 나열된 페이지는 일반적으로 책 제목 뒤에 "in HTML"이라는 단어가 있는 링크로 표시될 수 있다. 그런 다음 "다음에서도 사용 가능: "이라는 문장 뒤에 "HTML", "PDF", "DOC", "TXT", "MP3" 및 "AAC" 텍스트가 포함된 일련의 짧은 링크가 표시된다. 레벨 3에서 일부 사용자는 페이지를 이런 방식으로 보도록 선택할 수 있다. 왜냐하면 책의 전체 제목이 각 링크에 포함되어 있으면 페이지를 이해하기 어렵거나 사용하기가 더 느리기 때문이다. 다른 사람들은 각 링크 자체를 이해할 수 있도록 각 링크의 일부로 전체 제목이 포함된 페이지를 보도록 선택할 수 있다. 전자와 후자 그룹에는 서로 다른 탐색 기술을 사용하거나 장애 유형이나 심각도가 다른 시각 또는 인지 장애가 있는 사람들이 포함될 수 있다.
+
+### 이점
+
+*   이 성공 기준은 운동 장애가 있는 사람들이 관심 없는 웹 페이지를 건너뛸 수 있도록 하고, 참조된 콘텐츠를 방문한 다음 현재 콘텐츠로 돌아가는 데 필요한 키 입력을 피함으로써 도움이 된다.
+*   인지 장애가 있는 사람들은 관심이 없는 콘텐츠에 대한 추가 탐색으로 인해 방향 감각을 잃지 않는다.
+*   시각 장애가 있는 사용자는 원본 페이지로 돌아올 때 콘텐츠에서 자신의 위치를 ​​잃지 않는 이점을 누릴 수 있다. 화면 낭독기의 링크 목록은 링크 대상이 설명되어 있으므로 정보를 찾는 데 더 유용하다.
+
+### 예제
+
+아이콘과 텍스트가 모두 포함된 링크
+
+투표기 아이콘과 '아일랜드 정부 전자 투표 위원회'라는 문구가 결합되어 하나의 링크를 형성한다.
+
+책 제목 목록
+
+책 목록은 HTML, PDF, mp3(책을 읽는 사람의 녹음)의 세 가지 형식으로 제공된다. 책 제목 뒤에는 다양한 형식에 대한 링크가 표시된다. 각 링크에 대해 렌더링된 텍스트는 형식 유형일 뿐이지만 각 링크와 연결된 텍스트에는 제목과 형식이 포함된다. 예를 들어 "걸리버 여행기, MP3"이다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [Using Link Titles to Help Users Predict Where They Are Going](https://www.nngroup.com/articles/using-link-titles-to-help-users-predict-where-they-are-going/)
+*   [WebAIM Techniques for Hypertext Links](http://webaim.org/techniques/hypertext/)
+*   [Hidden barriers - out of sight](http://www.rnib.org.uk/blogs/expert-series?Name=Hidden%20barriers)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [ARIA8: Using aria-label for link purpose](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA8)
+*   [G91: Providing link text that describes the purpose of a link](https://www.w3.org/WAI/WCAG22/Techniques/general/G91)
+*   [H30: Providing link text that describes the purpose of a link for anchor elements](https://www.w3.org/WAI/WCAG22/Techniques/html/H30)
+*   [H24: Providing text alternatives for the area elements of image maps](https://www.w3.org/WAI/WCAG22/Techniques/html/H24)
+*   Allowing the user to choose short or long link text using one of the techniques below:
+    
+    *   [G189: Providing a control near the beginning of the Web page that changes the link text](https://www.w3.org/WAI/WCAG22/Techniques/general/G189)
+    *   [SCR30: Using scripts to change the link text](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR30)
+    *   [FLASH7:](https://www.w3.org/WAI/WCAG22/Techniques//FLASH7)
+*   Providing a supplemental description of the purpose of a link using one of the following techniques:
+    
+    *   [C7: Using CSS to hide a portion of the link text](https://www.w3.org/WAI/WCAG22/Techniques/css/C7)
+*   Semantically indicating links using one of the following techniques:
+    
+    *   [PDF11: Providing links and link text using the Link annotation and the /Link structure element in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF11)
+    *   [PDF13: Providing replacement text using the /Alt entry for links in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF13)
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   [H2: Combining adjacent image and text links for the same resource](https://www.w3.org/WAI/WCAG22/Techniques/html/H2)
+*   [FLASH5:](https://www.w3.org/WAI/WCAG22/Techniques//FLASH5)
+*   [H33: Supplementing link text with the title attribute](https://www.w3.org/WAI/WCAG22/Techniques/html/H33)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F84: Failure of Success Criterion 2.4.9 due to using a non-specific link such as "click here" or "more" without a mechanism to change the link text to specific text.](https://www.w3.org/WAI/WCAG22/Techniques/failures/F84)
+*   [F89: Failure of Success Criteria 2.4.4, 2.4.9 and 4.1.2 due to not providing an accessible name for an image which is the only content in a link](https://www.w3.org/WAI/WCAG22/Techniques/failures/F89)
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [Link has non-empty accessible name](/WAI/standards-guidelines/act/rules/c487ae/)
+*   [Link in context is descriptive](/WAI/standards-guidelines/act/rules/5effbb/proposed/)
+*   [Link is descriptive](/WAI/standards-guidelines/act/rules/aizyf1/proposed/)
+*   [Links with identical accessible names and same context serve equivalent purpose](/WAI/standards-guidelines/act/rules/fd3a94/proposed/)
+*   [Links with identical accessible names have equivalent purpose](/WAI/standards-guidelines/act/rules/b20e66/proposed/)
+

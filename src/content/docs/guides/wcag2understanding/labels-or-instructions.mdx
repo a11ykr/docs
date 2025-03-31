@@ -1,0 +1,92 @@
+---
+title: 성공 기준 3.3.2 레이블 또는 지시문
+description: 성공 기준 이해 3.3.2 레이블 또는 지시문
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 3.3.2](https://w3.org/TR/WCAG22#labels-or-instructions):레이블 또는 지시문 (Level A)
+
+<Card title="성공 기준 (SC)"></Card>
+
+사용자 입력이 필요한 콘텐츠에는 [레이블](../../../glossary/label) 또는 지시문을 제공해야 한다.
+
+## 요약
+
+
+목표
+
+사용자는 어떤 정보를 입력해야 하는지 안다.
+
+할 일
+
+입력에 대한 레이블이나 지시문을 제공한다.
+
+중요성
+
+모든 사람, 특히 인지 장애가 있는 사람은 어떻게 대응해야 하는지 알게 될 것이다.
+
+### 의도
+
+이 성공 기준의 목적은 사용자가 어떤 입력 데이터가 예상되는지 알 수 있도록 콘텐츠 저작자가 양식의 컨트롤을 식별하는 지시 사항이나 레이블을 제시하도록 하는 것이다. 라디오 버튼, 체크박스, 콤보박스 또는 사용자에게 옵션을 제공하는 유사한 컨트롤의 경우, 각 옵션에는 사용자가 실제로 무엇을 선택하는지 알 수 있도록 적절한 레이블이 있어야 한다. 지시 사항이나 레이블은 데이터 입력 필드의 데이터 형식을 지정할 수도 있다. 특히 일반적인 형식을 벗어나거나 올바른 입력을 위한 특정 규칙이 있는 경우 더욱 그렇다. 콘텐츠 저작자는 특히 지시 사항이 길고 자세한 경우 개별 컨트롤에 초점이 맞춰진 경우에만 이러한 지시문을 사용자에게 제공하도록 선택할 수도 있다.
+
+이 성공 기준의 목적은 불필요한 정보로 페이지를 복잡하게 만드는 것이 아니라 장애가 있는 사람들에게 도움이 될 중요한 단서와 지침을 제공하는 것이다. 정보나 지시가 너무 많으면 너무 적은 것만큼이나 해로울 수 있다. 목표는 사용자가 과도한 혼란이나 탐색 없이 작업을 완료할 수 있도록 충분한 정보를 제공하는 것이다.
+
+이 성공 기준은 라벨이나 지침이 올바르게 표시되거나 식별되거나 해당 컨트롤과 연관될 것을 요구하지 않는다. 이런 측면은 [1.3.1: 정보와 관계](info-and-relationships)에서 별도로 다룬다. 콘텐츠가 성공 기준 1.3.1(레이블이나 지침이 올바르게 마크업, 식별 또는 연결되지 않은 경우)에 실패하더라도 이 성공 기준(관련 레이블 및 지시문 제공)을 통과할 수 있다.
+
+또한 이 성공 기준은 양식 컨트롤 및 입력에 대한 접근 가능한 이름이나 설명을 제공하는 대체 방법이 사용되었는지 여부를 고려하지 않는다. 이 측면은 [4.1.2: 이름, 역할, 값](name-role-value)에서 별도로 다룬다. 컨트롤과 입력에 적절한 접근 가능한 이름이나 설명(예: `aria-label="..."` 사용)이 있어 성공 기준 4.1.2를 통과할 수 있지만 (레이블이나 지시문이 보조 기술 사용자뿐만 아니라 모든 사용자에게 제공되지 않는다면) 여전히 이 성공 기준에 실패할 수 있다.
+
+이 성공 기준은 데이터 입력과 관련되지 않은 링크나 기타 컨트롤(예: 확장/축소 위젯 또는 유사한 대화형 구성 요소)에는 적용되지 않는다.
+
+이 성공 기준에서는 컨트롤과 입력에 레이블이나 지시문이 있어야 하지만 레이블(사용된 경우)이 충분히 명확하거나 설명적인지 여부는 [2.4.6: 제목과 레이블](headings-and-labels)에서 별도로 다룬다.
+
+### 이점
+
+*   레이블과 지침(예상 데이터 형식의 예 포함)을 제공하면 모든 사용자, 특히 인지 장애, 언어 장애, 학습 장애가 있는 사용자가 정보를 올바르게 입력하는 데 도움이 된다.
+*   레이블 및 지침(필수 필드 식별 포함)을 제공하면 사용자가 불완전하거나 잘못된 양식을 제출하는 것을 방지할 수 있으며, 이를 통해 사용자가 제출 오류를 수정하기 위해 페이지/양식을 다시 한 번 탐색하지 않아도 된다.
+
+### 예제
+
+*   사용자가 미국 주의 두 글자 약어를 입력해야 하는 필드 옆에는 알파벳순의 주 이름과 올바른 약어 목록을 표시하는 링크가 있다.
+*   날짜를 입력하는 필드에는 날짜의 올바른 형식을 나타내는 초기 텍스트가 포함되어 있다.
+*   이름을 입력하기 위해 사용자에게는 두 개의 별도 텍스트 필드가 제공된다. 단일 레이블 "이름"(두 번째 텍스트 필드는 레이블이 지정되지 않은 상태로 유지되는 것처럼 보임)을 갖는 대신 각 필드에는 "이름"과 "성"이라는 명시적인 레이블이 지정된다.
+*   미국 전화번호는 지역번호, 교환국, 전화번호를 세 개의 필드로 구분한다. 지역 번호 필드는 괄호로 묶이고 교환국과 전화번호 필드는 대시로 구분된다. 구두점은 미국 전화번호 형식에 익숙한 사용자에게 시각적 단서를 제공하지만 구두점만으로는 필드에 레이블을 지정하는 데 충분하지 않다. 단일 "전화번호" 레이블로는 세 필드 모두에 레이블을 지정할 수 없다. 이 문제를 해결하기 위해 세 개의 필드는 "전화번호"라는 범례(legend)가 있는 필드셋(fieldset)으로 그룹화된다. 필드에 대한 시각적 레이블(구두점 이외)은 디자인에 제공될 수 없으므로 보이지 않는 레이블로 세 필드 각각에 "title" 속성이 제공된다. 세 필드에 대한 이 속성의 값은 각각 "지역 코드", "교환" 및 "번호"이다.
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G131: Providing descriptive labels](https://www.w3.org/WAI/WCAG22/Techniques/general/G131) **AND** one of the following:
+    
+    *   [ARIA1: Using the aria-describedby property to provide a descriptive label for user interface controls](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA1)
+    *   [ARIA9: Using aria-labelledby to concatenate a label from several text nodes](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA9)
+    *   [ARIA17: Using grouping roles to identify related form controls](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA17)
+    *   [G89: Providing expected data format and example](https://www.w3.org/WAI/WCAG22/Techniques/general/G89)
+    *   [G184: Providing text instructions at the beginning of a form or set of fields that describes the necessary input](https://www.w3.org/WAI/WCAG22/Techniques/general/G184)
+    *   [G162: Positioning labels to maximize predictability of relationships](https://www.w3.org/WAI/WCAG22/Techniques/general/G162)
+    *   [G83: Providing text descriptions to identify required fields that were not completed](https://www.w3.org/WAI/WCAG22/Techniques/general/G83)
+    *   [H90: Indicating required form controls using label or legend](https://www.w3.org/WAI/WCAG22/Techniques/html/H90)
+    *   [PDF5: Indicating required form controls in PDF forms](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF5)
+*   [H44: Using label elements to associate text labels with form controls](https://www.w3.org/WAI/WCAG22/Techniques/html/H44)
+*   [PDF10: Providing labels for interactive form controls in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF10)
+*   [H71: Providing a description for groups of form controls using fieldset and legend elements](https://www.w3.org/WAI/WCAG22/Techniques/html/H71)
+*   [G167: Using an adjacent button to label the purpose of a field](https://www.w3.org/WAI/WCAG22/Techniques/general/G167)
+
+참고
+
+위 목록 끝에 있는 기술은 "최후의 수단"으로 간주되어야 하며 다른 기술을 페이지에 적용할 수 없는 경우에만 사용해야 한다. 더 넓은 사용자 그룹에 대한 접근성을 높이기 때문에 이전 기술이 선호된다.
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   [G13: Describing what will happen before a change to a form control that causes a change of context to occur is made](https://www.w3.org/WAI/WCAG22/Techniques/general/G13)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F82: Failure of Success Criterion 3.3.2 by visually formatting a set of phone number fields but not including a text label](https://www.w3.org/WAI/WCAG22/Techniques/failures/F82)
+
