@@ -31,11 +31,25 @@ export default defineConfig({
 			sidebar: [
 				{ label: '표준 및 지침',
 					collapsed: false,
-					autogenerate: {
-						directory: '/guides/',
-						order: 'asc',
-						pathPrefix: '/guides'
-					}
+					items: [
+						'guides',
+						{
+							label: 'WCAG 2',
+							collapsed: false,
+							items: [
+								'guides/wcag2/wcag22-231005',
+							]
+						},
+						{
+							label: 'WCAG 2 이해',
+							collapsed: true,
+							autogenerate: {
+								directory: '/guides/wcag2understanding/',
+								order: 'asc',
+								pathPrefix: '/guides/wcag2understanding'
+							}
+						},
+					]
 				},
 				{
 					label: '참고 자료',
