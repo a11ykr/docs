@@ -1,38 +1,38 @@
 ---
 title: 성공 기준 1.2.1 오디오 전용 및 비디오 전용(사전 녹음/녹화된)
 description: 성공 기준 이해 1.2.1 오디오 전용 및 비디오 전용(사전 녹음/녹화된)
+tableOfContents:
+    maxHeadingLevel: 4
 ---
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 1.2.1](https://w3.org/TR/WCAG22#audio-only-and-video-only-prerecorded):오디오 전용 및 비디오 전용(사전 녹음/녹화된) (Level A)
 
-<Card title="성공 기준 (SC)"></Card>
+(Level A)
+
+<Card title="성공 기준 (SC)">
 
 [사전 녹음된](../../../glossary/prerecorded) [오디오 전용](../../../glossary/audio-only) 및 사전 녹화된 [비디오 전용](../../../glossary/video-only) 미디어의 경우, 다음을 준수해야 한다. 단, 오디오 또는 비디오가 [텍스트에 대한 미디어 대체 수단](../../../glossary/media-alternative-for-text)이고, 대체 수단임이 분명하게 명시된 경우는 예외이다.
 
-사전 녹음된 오디오 전용
+<dl>
+<dt>사전 녹음된 오디오 전용</dt>
+<dd>사전 녹음된 오디오전용 콘텐츠에는 동등한 정보를 제공하는 [시간 기반 미디어에 대한 대체 수단](../../../glossary/alternative-for-time-based-media)을 제공해야 한다.</dd>
+<dt>사전 녹화된 비디오 전용</dt>
+<dd>사전 녹화된 비디오 전용 콘텐츠에는 동등한 정보를 제공하는 시간 기반 미디어 또는 오디오 트랙에 대한 대체 수단을 제공해야 한다.</dd>
+</dl>
 
-사전 녹음된 오디오전용 콘텐츠에는 동등한 정보를 제공하는 [시간 기반 미디어에 대한 대체 수단](../../../glossary/alternative-for-time-based-media)을 제공해야 한다.
-
-사전 녹화된 비디오 전용
-
-사전 녹화된 비디오 전용 콘텐츠에는 동등한 정보를 제공하는 시간 기반 미디어 또는 오디오 트랙에 대한 대체 수단을 제공해야 한다.
+</Card>
 
 ## 요약
 
-
-목표
-
-오디오 및 비디오 전용 콘텐츠를 더 많은 사람들이 이해할 수 있다.
-
-할 일
-
-하나의 감각으로만 콘텐츠를 인지할 수 있는 경우 대체 수단을 제공한다.
-
-중요성
-
-콘텐츠를 완전히 보거나 들을 수 없는 사람들도 이해할 수 있다.
+<dl>
+<dt>목표</dt>
+<dd>오디오 및 비디오 전용 콘텐츠를 더 많은 사람들이 이해할 수 있다.</dd>
+<dt>할 일</dt>
+<dd>하나의 감각으로만 콘텐츠를 인지할 수 있는 경우 대체 수단을 제공한다.</dd>
+<dt>중요성</dt>
+<dd>콘텐츠를 완전히 보거나 들을 수 없는 사람들도 이해할 수 있다.</dd>
+</dl>
 
 ### 의도
 
@@ -44,7 +44,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 오디오 정보가 없는 비디오에 대한 대체 수단으로 제공되는 오디오에는 대체 콘텐츠가 필요없다. 예를 들어, 무성영화의 대안으로 제공되는 오디오 설명에 자막을 추가할 필요는 없다.
 
-[1.2.9: 오디오 전용 (실시간)](audio-only-live) 또한 참고하라
+[1.2.9: 오디오 전용 (실시간)](../audio-only-live) 또한 참고하라
 
 ### 이점
 
@@ -112,9 +112,9 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ### 점검 규칙
 
-다음은 이 적합 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 정의되고 승인된 점검 방법이다. 테스트 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참조하라.
+다음은 이 적합 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 정의되고 승인된 점검 방법이다. 테스트 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](../understanding-act-rules.html)를 참조하라.
 
-*   [Audio element content has text alternative](/WAI/standards-guidelines/act/rules/e7aa44/proposed/)
-*   [Video element auditory content has captions](/WAI/standards-guidelines/act/rules/f51b46/proposed/)
-*   [Video element visual-only content has accessible alternative](/WAI/standards-guidelines/act/rules/c3232f/proposed/)
+*   [Audio element content has text alternative](https://www.w3.org/WAI/standards-guidelines/act/rules/e7aa44/proposed/)
+*   [Video element auditory content has captions](https://www.w3.org/WAI/standards-guidelines/act/rules/f51b46/proposed/)
+*   [Video element visual-only content has accessible alternative](https://www.w3.org/WAI/standards-guidelines/act/rules/c3232f/proposed/)
 

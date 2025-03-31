@@ -1,11 +1,15 @@
 ---
 title: 성공 기준 1.4.12 텍스트 간격
 description: 성공 기준 이해 1.4.12 텍스트 간격
+tableOfContents:
+    maxHeadingLevel: 4
 ---
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 1.4.12](https://w3.org/TR/WCAG22#text-spacing):텍스트 간격 (Level AA)
+## [성공기준 이해 1.4.12](https://w3.org/TR/WCAG22#text-spacing):텍스트 간격 
+
+(Level AA)
 
 <Card title="성공 기준 (SC)"></Card>
 
@@ -28,18 +32,14 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ## 요약
 
-
-목표
-
-사용자는 읽기 쉽도록 텍스트 간격을 조정할 수 있다.
-
-Author task
-
-콘텐츠가 사용자 정의 텍스트 설정에 맞게 조정되는지 확인하라.
-
-중요성
-
-어떤 사람들에게는 간격이나 글꼴 특성이 다른 텍스트가 필요하다.
+<dl>
+<dt>목표</dt>
+<dd>사용자는 읽기 쉽도록 텍스트 간격을 조정할 수 있다.</dd>
+<dt>저작자의 일</dt>
+<dd>콘텐츠가 사용자 정의 텍스트 설정에 맞게 조정되는지 확인하라.</dd>
+<dt>중요성</dt>
+<dd>어떤 사람들에게는 간격이나 글꼴 특성이 다른 텍스트가 필요하다.</dd>
+</dl>
 
 ### 의도
 
@@ -91,13 +91,13 @@ Author task
 
 그림 1에서는 "귀하의 요구 사항"이라는 단어의 아래쪽 부분이 잘려서 제목을 읽을 수 없게 되었다. "우리는 귀하의 요구 사항을 충족하기 위해 모바일 응용 프로그램 서비스를 제공한다."로 읽어야 한다.
 
-![제목 텍스트가 세로로 잘렸다.](img/spacing_cutoff_fail_vertical.png)
+![제목 텍스트가 세로로 잘렸다.](/assets/img/spacing_cutoff_fail_vertical.png)
 
 그림 1 세로로 텍스트가 잘린 것은 실패 사례이다.
 
 그림 2에서는 텍스트의 마지막 부분이 3개의 나란히 있는 제목에서 잘린다. 첫 번째 제목은 "A cog in the wheel"로 읽어야 한다. 하지만 "A cog in the whe"라고 적혀 있다. 두 번째 "e"의 절반만 표시되고 문자 "l"은 아예 없다. 두 번째 제목은 "A penny for your thoughts"로 읽어야 한다. 하지만 "A penny for your"라고 적혀 있다. 세 번째는 "Back to the drawing board"로 읽어야 한다. 하지만 "Back to the drawi"라고 적혀 있다.
 
-![잘린 텍스트가 있는 3개의 제목이 나란히 표시된다.](img/spacing_cutoff_fail_horizontal.png)
+![잘린 텍스트가 있는 3개의 제목이 나란히 표시된다.](/assets/img/spacing_cutoff_fail_horizontal.png)
 
 그림 2 가로로 텍스트가 잘린 것은 실패 사례이다.
 
@@ -105,7 +105,7 @@ Author task
 
 그림 3에서 "Technologists Seeking Input from Groups and Programs"라는 제목의 마지막 세 단어 "Groups and Programs"은 다음 문장과 겹친다. 해당 문장은 "You are invited to share ideas and areas of interest related to the integration of technology from a group or program perspective."라고 읽어야 한다. 그러나 "You are invited to share ideas"라는 문구는 모호하고 읽을 수 없다.
 
-![제목 텍스트가 단락 텍스트의 일부와 겹친다.](img/spacing_overlap_fail.png)
+![제목 텍스트가 단락 텍스트의 일부와 겹친다.](/assets/img/spacing_overlap_fail.png)
 
 그림 3 텍스트가 겹치는 것은 실패 사례이다.
 
@@ -197,7 +197,7 @@ Author task
 
 다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
 
-*   [Important letter spacing in style attributes is wide enough](/WAI/standards-guidelines/act/rules/24afc2/)
-*   [Important line height in style attributes is wide enough](/WAI/standards-guidelines/act/rules/78fd32/)
-*   [Important word spacing in style attributes is wide enough](/WAI/standards-guidelines/act/rules/9e45ec/)
+*   [Important letter spacing in style attributes is wide enough](https://www.w3.org/WAI/standards-guidelines/act/rules/24afc2/)
+*   [Important line height in style attributes is wide enough](https://www.w3.org/WAI/standards-guidelines/act/rules/78fd32/)
+*   [Important word spacing in style attributes is wide enough](https://www.w3.org/WAI/standards-guidelines/act/rules/9e45ec/)
 

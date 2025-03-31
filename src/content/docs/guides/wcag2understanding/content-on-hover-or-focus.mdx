@@ -1,11 +1,15 @@
 ---
 title: 성공 기준 1.4.13 마우스오버 혹은 키보드 초점을 받은 콘텐츠
 description: 성공 기준 이해 1.4.13 마우스오버 혹은 키보드 초점을 받은 콘텐츠
+tableOfContents:
+    maxHeadingLevel: 4
 ---
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 1.4.13](https://w3.org/TR/WCAG22#content-on-hover-or-focus):마우스오버 혹은 키보드 초점을 받은 콘텐츠 (Level AA)
+## [성공기준 이해 1.4.13](https://w3.org/TR/WCAG22#content-on-hover-or-focus):마우스오버 혹은 키보드 초점을 받은 콘텐츠 
+
+(Level AA)
 
 <Card title="성공 기준 (SC)"></Card>
 
@@ -39,18 +43,14 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ## 요약
 
-
-목표
-
-더 많은 사용자가 비지속적 콘텐츠를 인식하고 무시할 수 있다.
-
-할 일
-
-마우스를 올리거나 초점을 맞추면 콘텐츠가 변경되는 경우 상호 작용을 예측할 수 있는지 확인하라.
-
-중요성
-
-예측할 수 없는 임시 콘텐츠는 일부에게는 사용하기 어려울 수 있으며 다른 일부에게는 방해가 될 수 있다.
+<dl>
+<dt>목표</dt>
+<dd>더 많은 사용자가 비지속적 콘텐츠를 인식하고 무시할 수 있다.</dd>
+<dt>할 일</dt>
+<dd>마우스를 올리거나 초점을 맞추면 콘텐츠가 변경되는 경우 상호 작용을 예측할 수 있는지 확인하라.</dd>
+<dt>중요성</dt>
+<dd>예측할 수 없는 임시 콘텐츠는 일부에게는 사용하기 어려울 수 있으며 다른 일부에게는 방해가 될 수 있다.</dd>
+</dl>
 
 ### 의도
 
@@ -119,17 +119,17 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 #### 예 1: 닫을 수 있는 툴팁
 
-![마우스 포인터가 위에 있고 버튼 아래에 툴팁이 표시된 버튼의 스크린샷](img/button-pointer-tooltip.png) ![마우스 포인터가 위에 있고 툴팁이 없는 버튼의 스크린샷](img/button-pointer.png)
+![마우스 포인터가 위에 있고 버튼 아래에 툴팁이 표시된 버튼의 스크린샷](/assets/img/button-pointer-tooltip.png) ![마우스 포인터가 위에 있고 툴팁이 없는 버튼의 스크린샷](/assets/img/button-pointer.png)
 
 그림 1 버튼 자체를 가리지 않도록 마우스를 올리면 LVTF 버튼 아래에 도구 설명이 표시된다. 그러나 버튼(~comment-zoom-content라고 불리는 다음 빨간색 버튼) 아래의 콘텐츠를 모호하게 만든다. 해제 가능 요구 사항을 충족하기 위해 두 번째 이미지에 표시된 것처럼 사용자가 Esc 키를 눌러 마우스를 움직이지 않고 툴팁을 닫을 수 있다.
 
-![툴팁이 없고 초점 표시기가 있는 버튼의 스크린샷](img/button-focus-indicator.png)
+![툴팁이 없고 초점 표시기가 있는 버튼의 스크린샷](/assets/img/button-focus-indicator.png)
 
 그림 2 버튼의 툴팁이 초점을 받았을 떄 표시되며 Esc 키를 사용하여 제거할 수 있다. 스크린샷에는 초점을 받은 동일한 LVTF 버튼이 표시되지만 툴팁이 닫혀서 더 이상 표시되지 않는다.
 
 #### 예 2: 호버 가능한 툴팁
 
-![큰 마우스 포인터가 호버한 버튼과 큰 포인터로 가려진 버튼 아래에 표시되는 툴팁의 스크린샷](img/button-pointer-on-tooltip.png) ![아래에 툴팁이 있는 버튼과 툴팁 하단에 큰 마우스 포인터가 있는 스크린샷](img/button-pointer-below-tooltip.png)
+![큰 마우스 포인터가 호버한 버튼과 큰 포인터로 가려진 버튼 아래에 표시되는 툴팁의 스크린샷](/assets/img/button-pointer-on-tooltip.png) ![아래에 툴팁이 있는 버튼과 툴팁 하단에 큰 마우스 포인터가 있는 스크린샷](/assets/img/button-pointer-below-tooltip.png)
 
 그림 3 버튼의 툴팁은 마우스를 올리면 버튼 바로 아래에 표시되며 큰 포인터로 인해 쉽게 가려질 수 있다. 툴팁 자체를 가리키면 툴팁 텍스트를 보기 위해 마우스 포인터를 아래쪽 가장자리로 이동할 수 있다.
 

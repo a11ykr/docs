@@ -1,11 +1,15 @@
 ---
 title: 성공 기준 1.4.10 재정렬
 description: 성공 기준 이해 1.4.10 재정렬
+tableOfContents:
+    maxHeadingLevel: 4
 ---
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 1.4.10](https://w3.org/TR/WCAG22#reflow):재정렬 (Level AA)
+## [성공기준 이해 1.4.10](https://w3.org/TR/WCAG22#reflow):재정렬 
+
+(Level AA)
 
 <Card title="성공 기준 (SC)"></Card>
 
@@ -26,18 +30,14 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ## 요약
 
-
-목표
-
-줄 길이를 늘리지 않고도 내용을 확대할 수 있다.
-
-할 일
-
-뷰포트 내에서 텍스트 줄이 재정렬되도록 한다.
-
-중요성
-
-더 큰 텍스트가 필요한 사람들은 긴 줄을 읽기 위해 스크롤해야 한다면 어려움을 겪는다.
+<dl>
+<dt>목표</dt>
+<dd>줄 길이를 늘리지 않고도 내용을 확대할 수 있다.</dd>
+<dt>할 일</dt>
+<dd>뷰포트 내에서 텍스트 줄이 재정렬되도록 한다.</dd>
+<dt>중요성</dt>
+<dd>더 큰 텍스트가 필요한 사람들은 긴 줄을 읽기 위해 스크롤해야 한다면 어려움을 겪는다.</dd>
+</dl>
 
 ### 의도
 
@@ -59,7 +59,7 @@ HTML/CSS, PDF, ePub 등의 기술용 사용자 에이전트에는 창(뷰포트)
 
 320 CSS 픽셀 값은 저작자가 달성할 수 있는 합리적인 최소 크기로 선정되었다. 이 값은 일반적인 모바일 장치의 작은 디스플레이에 대해 보고된 뷰포트 너비와 일치한다. 320 CSS 픽셀 너비는 너비 1280픽셀로 설정되고 400%로 확대된 데스크톱 브라우저 창과 정확히 일치한다. 400%는 면적이 아닌 치수에 적용된다는 점에 유의해야 한다. 이는 기본 너비의 4배, 기본 높이의 4배를 의미한다.
 
-![작은 화면 장치는 가까이 있고, 큰 화면 장치는 멀리 있을 때 망막에 동일한 이미지를 만들기 위해 보는 거리에 따라 필요한 문자 크기를 보여주는 다이어그램](img/css-pixel-by-device.png)
+![작은 화면 장치는 가까이 있고, 큰 화면 장치는 멀리 있을 때 망막에 동일한 이미지를 만들기 위해 보는 거리에 따라 필요한 문자 크기를 보여주는 다이어그램](/assets/img/css-pixel-by-device.png)
 
 그림 1 해상도가 다른 여러 디스플레이에서 동일한 CSS 픽셀 크기의 문자
 
@@ -161,5 +161,5 @@ HTML/CSS, PDF, ePub 등의 기술용 사용자 에이전트에는 창(뷰포트)
 
 다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
 
-*   [Meta viewport allows for zoom](/WAI/standards-guidelines/act/rules/b4f0c3/)
+*   [Meta viewport allows for zoom](https://www.w3.org/WAI/standards-guidelines/act/rules/b4f0c3/)
 
