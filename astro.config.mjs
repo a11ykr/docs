@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mdx from '@astrojs/mdx';
 import astroExpressiveCode from 'astro-expressive-code';
+import starlightLinksValidator from 'starlight-links-validator'
 
 export default defineConfig({
 	site: 'https://a11ykr.github.io/',
@@ -22,6 +23,7 @@ export default defineConfig({
 					lang: 'ko',
 				},
 			},
+			plugins: [starlightLinksValidator()],
 			social: {
 				github: 'https://a11ykr.github.io',
 			},
