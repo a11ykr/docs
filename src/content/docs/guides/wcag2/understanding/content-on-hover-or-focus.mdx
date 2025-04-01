@@ -8,39 +8,38 @@ lastUpdated: 2024-05-02
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 1.4.13](https://w3.org/TR/WCAG22#content-on-hover-or-focus):마우스오버 혹은 키보드 초점을 받은 콘텐츠 
-
 (Level AA)
 
-<Card title="성공 기준(SC)"></Card>
-
+<Card title="성공 기준(SC)">
 마우스 포인터로 가리키거나(hover) 키보드 초점을 받은 다음 이를 제거했을 때 추가 콘텐츠가 보였다가 사라지도록 하는 경우, 다음을 준수해야 한다.
 
-해제 가능
-
-추가 콘텐츠가 [입력 오류](../../../../glossary/input-error)를 전달하거나 다른 콘텐츠를 숨기거나 바꾸지 않는 한, 마우스 포인터로 가리키거나 키보드 포커스를 이동하지 않고 추가 콘텐츠를 해제할 수 있는 [매커니즘](../../../../glossary/mechanism)을 제공해야 한다.
-
-마우스오버
-
-마우스 포인터로 가리켜 추가 콘텐츠를 보여줄 경우, 포인터는 콘텐츠가 사라지지 않게 하면서 그 콘텐츠 위로 이동할 수 있어야 한다.
-
-지속적인
-
-추가 콘텐츠는 마우스오버, 키보드 초점이 해제되거나, 사용자가 해제하거나, 정보가 더 이상 유효하지 않을 때까지 볼 수 있어야 한다.
+<dl>
+    <dt>해제 가능</dt>
+    <dd>
+        추가 콘텐츠가 [입력 오류](../../../../glossary/input-error)를 전달하거나 다른 콘텐츠를 숨기거나 바꾸지 않는 한, 마우스 포인터로 가리키거나 키보드 포커스를 이동하지 않고 추가 콘텐츠를 해제할 수 있는 [매커니즘](../../../../glossary/mechanism)을 제공해야 한다.
+    </dd>
+    <dt>마우스오버</dt>
+    <dd>
+        마우스 포인터로 가리켜 추가 콘텐츠를 보여줄 경우, 포인터는 콘텐츠가 사라지지 않게 하면서 그 콘텐츠 위로 이동할 수 있어야 한다.
+    </dd>
+    <dt>지속적인</dt>
+    <dd>
+        추가 콘텐츠는 마우스오버, 키보드 초점이 해제되거나, 사용자가 해제하거나, 정보가 더 이상 유효하지 않을 때까지 볼 수 있어야 한다.
+    </dd>
+</dl>
 
 예외: 추가 콘텐츠의 표현(presentation)이 사용자 에이전트로 제어되고, 웹 콘텐츠 저작자가 그 표현(presentation)을 수정할 수 없는 경우
 
-참고
-
-사용자 에이전트가 제어하는 추가 콘텐츠의 예로는 HTML [`title` 속성](https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute)\[HTML\]을 사용하여 만든 브라우저 툴팁이 있다.
-
-참고
-
-마우스오버나 키보드 초점에 따라 표시되는 사용자 맞춤형 툴팁, 부메뉴 및 기타 모달 방식이 아닌 팝업은 이 기준을 적용받는 추가 콘텐츠의 예이다.
-
-참고
-
-이 기준은 트리거 구성 요소 자체 외에 표시되는 콘텐츠에도 적용된다. 키보드 초점에 표시되는 숨겨진 구성 요소(예: 페이지의 다른 부분으로 건너뛰는 링크)는 추가 콘텐츠를 제공하지 않으므로 이 기준에서 다루지 않는다.
+    <Card title="참고">
+    사용자 에이전트가 제어하는 추가 콘텐츠의 예로는 HTML [`title` 속성](https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute)\[HTML\]을 사용하여 만든 브라우저 툴팁이 있다.
+    </Card>
+    <Card title="참고">
+    마우스오버나 키보드 초점에 따라 표시되는 사용자 맞춤형 툴팁, 부메뉴 및 기타 모달 방식이 아닌 팝업은 이 기준을 적용받는 추가 콘텐츠의 예이다.
+    </Card>
+    <Card title="참고">
+    이 기준은 트리거 구성 요소 자체 외에 표시되는 콘텐츠에도 적용된다. 키보드 초점에 표시되는 숨겨진 구성 요소(예: 페이지의 다른 부분으로 건너뛰는 링크)는 추가 콘텐츠를 제공하지 않으므로 이 기준에서 다루지 않는다.
+    </Card>
+</Card>
 
 ## 요약
 
@@ -120,19 +119,30 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 #### 예 1: 닫을 수 있는 툴팁
 
-![마우스 포인터가 위에 있고 버튼 아래에 툴팁이 표시된 버튼의 스크린샷](/docs/img/button-pointer-tooltip.png) ![마우스 포인터가 위에 있고 툴팁이 없는 버튼의 스크린샷](/docs/img/button-pointer.png)
+<figure id="figure-mouse-tooltip-below">
+            <img src="/docs/img/button-pointer-tooltip.png" alt="마우스 포인터가 위에 있고 버튼 아래에 툴팁이 표시된 버튼의 스크린샷" style="display:inline-block; margin-right:5px;"/>
+            <img src="/docs/img/button-pointer.png" alt="마우스 포인터가 위에 있고 툴팁이 없는 버튼의 스크린샷"  style="display:inline-block;" />
+            <figcaption>
+                그림 1 버튼 자체를 가리지 않도록 마우스를 올리면 LVTF 버튼 아래에 도구 설명이 표시된다. 그러나 버튼(~comment-zoom-content라고 불리는 다음 빨간색 버튼) 아래의 콘텐츠를 모호하게 만든다. 해제 가능 요구 사항을 충족하기 위해 두 번째 이미지에 표시된 것처럼 사용자가 Esc 키를 눌러 마우스를 움직이지 않고 툴팁을 닫을 수 있다.
+            </figcaption>
+        </figure>
 
-그림 1 버튼 자체를 가리지 않도록 마우스를 올리면 LVTF 버튼 아래에 도구 설명이 표시된다. 그러나 버튼(~comment-zoom-content라고 불리는 다음 빨간색 버튼) 아래의 콘텐츠를 모호하게 만든다. 해제 가능 요구 사항을 충족하기 위해 두 번째 이미지에 표시된 것처럼 사용자가 Esc 키를 눌러 마우스를 움직이지 않고 툴팁을 닫을 수 있다.
-
-![툴팁이 없고 초점 표시기가 있는 버튼의 스크린샷](/docs/img/button-focus-indicator.png)
-
-그림 2 버튼의 툴팁이 초점을 받았을 떄 표시되며 Esc 키를 사용하여 제거할 수 있다. 스크린샷에는 초점을 받은 동일한 LVTF 버튼이 표시되지만 툴팁이 닫혀서 더 이상 표시되지 않는다.
+<figure id="figure-focused-button-no-tooltip">
+    <img src="/docs/img/button-focus-indicator.png" alt="툴팁이 없고 초점 표시기가 있는 버튼의 스크린샷" />
+    <figcaption>
+        그림 2 버튼의 툴팁이 초점을 받았을 떄 표시되며 Esc 키를 사용하여 제거할 수 있다. 스크린샷에는 초점을 받은 동일한 LVTF 버튼이 표시되지만 툴팁이 닫혀서 더 이상 표시되지 않는다.
+    </figcaption>
+</figure>
 
 #### 예 2: 호버 가능한 툴팁
 
-![큰 마우스 포인터가 호버한 버튼과 큰 포인터로 가려진 버튼 아래에 표시되는 툴팁의 스크린샷](/docs/img/button-pointer-on-tooltip.png) ![아래에 툴팁이 있는 버튼과 툴팁 하단에 큰 마우스 포인터가 있는 스크린샷](/docs/img/button-pointer-below-tooltip.png)
-
-그림 3 버튼의 툴팁은 마우스를 올리면 버튼 바로 아래에 표시되며 큰 포인터로 인해 쉽게 가려질 수 있다. 툴팁 자체를 가리키면 툴팁 텍스트를 보기 위해 마우스 포인터를 아래쪽 가장자리로 이동할 수 있다.
+<figure id="figure-large-pointer-tooltip">
+    <img src="/docs/img/button-pointer-on-tooltip.png" alt="큰 마우스 포인터가 호버한 버튼과 큰 포인터로 가려진 버튼 아래에 표시되는 툴팁의 스크린샷" style="display:inline-block; margin-right:5px;" />
+    <img src="/docs/img/button-pointer-below-tooltip.png" alt="아래에 툴팁이 있는 버튼과 툴팁 하단에 큰 마우스 포인터가 있는 스크린샷" style="display:inline-block;" />
+    <figcaption>
+        그림 3 버튼의 툴팁은 마우스를 올리면 버튼 바로 아래에 표시되며 큰 포인터로 인해 쉽게 가려질 수 있다. 툴팁 자체를 가리키면 툴팁 텍스트를 보기 위해 마우스 포인터를 아래쪽 가장자리로 이동할 수 있다.
+    </figcaption>
+</figure>
 
 ### 관련 자료
 
@@ -142,7 +152,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ### 기법
 
-이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](../understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
 
 #### 충분 기법
 
