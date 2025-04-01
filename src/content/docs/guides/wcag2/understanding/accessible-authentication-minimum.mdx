@@ -3,6 +3,7 @@ title: SC 3.3.8 접근 가능한 인증 (최소)
 description: 성공 기준 이해 3.3.8 접근 가능한 인증 (최소)
 tableOfContents:
     maxHeadingLevel: 4
+lastUpdated: 2024-05-02
 ---
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
@@ -13,7 +14,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 <Card title="성공 기준(SC)"></Card>
 
-다음 중 하나 이상을 제공하지 않는 한 인증 [과정](../../../glossary/process)의 어떤 단계에서도 [인지 기능 검사](../../../glossary/cognitive-function-test)(예: 비밀번호 기억 또는 퍼즐 풀기)를 요구할 수 없다.
+다음 중 하나 이상을 제공하지 않는 한 인증 [과정](../../../../glossary/process)의 어떤 단계에서도 [인지 기능 검사](../../../../glossary/cognitive-function-test)(예: 비밀번호 기억 또는 퍼즐 풀기)를 요구할 수 없다.
 
 대체 수단
 
@@ -21,7 +22,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 매커니즘
 
-사용자가 인지 기능 검사를 완수하는 데 도움을 주는 [매커니즘](../../../glossary/mechanism)을 제공하는 경우
+사용자가 인지 기능 검사를 완수하는 데 도움을 주는 [매커니즘](../../../../glossary/mechanism)을 제공하는 경우
 
 객체 인식
 
@@ -29,7 +30,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 개인 콘텐츠
 
-인지 기능 검사가 사용자가 웹 사이트에 제공한 [텍스트가 아닌 콘텐츠](../../../glossary/non-text-content)를 식별하는 것일 경우
+인지 기능 검사가 사용자가 웹 사이트에 제공한 [텍스트가 아닌 콘텐츠](../../../../glossary/non-text-content)를 식별하는 것일 경우
 
 참고
 
@@ -63,7 +64,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 #### 인지 기능 검사
 
-사이트별 비밀번호를 기억하는 것은 [인지 기능 검사](../../../glossary/cognitive-function-test)이다. 이러한 검사는 인지 장애가 있는 많은 사람들에게 문제가 되는 것으로 알려져 있다. 임의의 문자열을 기억하든, 터치 스크린에서 수행하는 패턴 제스처든, 인지 기능 테스트에서는 일부 사람들을 배제한다. 인지 기능 검사를 사용하는 경우에는 다른 인증방법이 하나 이상 있어야 한다.
+사이트별 비밀번호를 기억하는 것은 [인지 기능 검사](../../../../glossary/cognitive-function-test)이다. 이러한 검사는 인지 장애가 있는 많은 사람들에게 문제가 되는 것으로 알려져 있다. 임의의 문자열을 기억하든, 터치 스크린에서 수행하는 패턴 제스처든, 인지 기능 테스트에서는 일부 사람들을 배제한다. 인지 기능 검사를 사용하는 경우에는 다른 인증방법이 하나 이상 있어야 한다.
 
 일부 CAPTCHA 시스템에는 보이는 텍스트에 대한 오디오 대체 수단이 있다. 사용자가 이 오디오를 텍스트로 변환해야 하는 경우 대체 수단의 예외로 인정되지 않는다.
 
@@ -93,7 +94,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 부가 기기(secondary device)에서 확인 코드를 수신하거나 생성해야 하는 시나리오가 있다. 예를 들어 노트북의 웹 브라우저에서 인증하려면 휴대폰에 SMS 문자 메시지로 전송되는 인증 코드가 필요하다. 그러나 대부분의 경우 코드를 기본 장치로 직접 전송한 후 복사하여 붙여넣을 수 있다(예: 부가 기기의 코드를 복사하여 기본 장치에 이메일로 전송). 또는 부가 기기에서 콘텐츠를 복사하면 기본 장치에 붙여넣을 수 있는 장치 간 클립보드 공유를 사용하여 가능하다. 코드가 부가 기기에서 기본 장치로 원활하게 전송될 수 있는지 여부를 평가하는 것은 이 성공 기준의 *범위를 벗어난다.* 이러한 유형의 부가 기기 인증 시스템을 사용하는 웹 콘텐츠를 평가할 때, 사용자의 클립보드에 코드가 제공된다고 가정한다. 따라서 이 기준을 평가하려면 웹 콘텐츠가 관련 인증 입력 필드에 클립보드 내용을 붙여넣을 수 있는지만 확인하면 된다.
 
-코드에 의존하지 않는 2단계 인증 시스템 - 하드웨어 인증 장치(예: YubiKey), 사용자가 실제로 로그인하려는 것을 확인하도록 설계된 보조 애플리케이션(동일한 기본 장치 또는 부가 기기에 있음), 그리고 사용자의 운영 체제에서 제공하는 인증 방식(예: Windows Hello, macOS 및 iOS의 Touch ID/Face ID) 등 - 은 [인지 기능 검사](../../../glossary/cognitive-function-test)가 *아닌* 것에 유의해야 한다.
+코드에 의존하지 않는 2단계 인증 시스템 - 하드웨어 인증 장치(예: YubiKey), 사용자가 실제로 로그인하려는 것을 확인하도록 설계된 보조 애플리케이션(동일한 기본 장치 또는 부가 기기에 있음), 그리고 사용자의 운영 체제에서 제공하는 인증 방식(예: Windows Hello, macOS 및 iOS의 Touch ID/Face ID) 등 - 은 [인지 기능 검사](../../../../glossary/cognitive-function-test)가 *아닌* 것에 유의해야 한다.
 
 #### 객체 인식
 

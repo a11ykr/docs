@@ -3,31 +3,29 @@ title: SC 1.4.8 시각적 표현
 description: 성공 기준 이해 1.4.8 시각적 표현
 tableOfContents:
     maxHeadingLevel: 4
+lastUpdated: 2024-05-02
 ---
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 1.4.8](https://w3.org/TR/WCAG22#visual-presentation):시각적 표현 
-
 (Level AAA)
 
-<Card title="성공 기준(SC)"></Card>
-
-[텍스트 블록](../../../glossary/blocks-of-text)을 시각적으로 표현하고자 하는 경우, 다음과 같은 것을 할 수 있는 [매커니즘](../../../glossary/mechanism)을 제공해야 한다.
+<Card title="성공 기준(SC)">
+[텍스트 블록](../../../../glossary/blocks-of-text)을 시각적으로 표현하고자 하는 경우, 다음과 같은 것을 할 수 있는 [매커니즘](../../../../glossary/mechanism)을 제공해야 한다.
 
 *   사용자가 전경색과 배경색을 선택할 수 있어야 한다.
 *   가로폭은 80자(한국어, 중국어, 일본어는 40자) 또는 글리프(glyph) 이하이어야 한다.
 *   텍스트는 양쪽 정렬을 해서는 안 된다(왼쪽과 오른쪽 여백에 정렬).
 *   줄 간격은 문단 내에서 최소 1.5배 이상되어야 하고, 문단 간격은 행 간격보다 최소 1.5배 이상이어야 한다.
-*   보조 기술 없이도 [전체 화면 창에서](../../../glossary/on-a-full-screen-window) 텍스트 줄을 읽기 위해 수평으로 스크롤할 필요가 없도록 텍스트 크기를 최대 200%까지 조절할 수 있어야 한다.
+*   보조 기술 없이도 [전체 화면 창에서](../../../../glossary/on-a-full-screen-window) 텍스트 줄을 읽기 위해 수평으로 스크롤할 필요가 없도록 텍스트 크기를 최대 200%까지 조절할 수 있어야 한다.
 
-참고
-
-콘텐츠에서 이러한 값을 사용할 필요는 없다. 요구 사항은 사용자가 이러한 표현 방식을 변경할 수 있는 매커니즘을 제공하는 것이다. 이 매커니즘은 브라우저나 다른 사용자 에이전트에 의해 제공될 수 있다. 콘텐츠에서 매커니즘을 제공할 필요는 없다.
-
-참고
-
-일부 언어의 문자 체계는 가독성과 명확성을 향상시키기 위해 다른 표현 방식을 사용한다. 이 성공 기준의 표현 방식이 특정 문자 체계에서 사용되지 않는 경우, 해당 문자 체계의 콘텐츠는 이런 설정을 사용할 필요가 없으며 그것 없이도 준수할 수 있다. 저작자들은 자신의 문자 체계에서 텍스트의 가독성과 명확성을 향상시키기 위한 지침을 따르는 것이 좋다.
+    <Card title="참고">
+    콘텐츠에서 이러한 값을 사용할 필요는 없다. 요구 사항은 사용자가 이러한 표현 방식을 변경할 수 있는 매커니즘을 제공하는 것이다. 이 매커니즘은 브라우저나 다른 사용자 에이전트에 의해 제공될 수 있다. 콘텐츠에서 매커니즘을 제공할 필요는 없다.
+    </Card>
+    <Card title="참고">
+    일부 언어의 문자 체계는 가독성과 명확성을 향상시키기 위해 다른 표현 방식을 사용한다. 이 성공 기준의 표현 방식이 특정 문자 체계에서 사용되지 않는 경우, 해당 문자 체계의 콘텐츠는 이런 설정을 사용할 필요가 없으며 그것 없이도 준수할 수 있다. 저작자들은 자신의 문자 체계에서 텍스트의 가독성과 명확성을 향상시키기 위한 지침을 따르는 것이 좋다.
+    </Card>
+</Card>
 
 ## 요약
 
@@ -74,9 +72,12 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ### 예제
 
-그림 1 다음 이미지는 단락의 단일 간격, 절반 간격 및 이중 간격 텍스트의 예를 보여준다.
-
-![단일 간격 텍스트의 예. (텍스트의 각 줄 사이에 공백이 없음)](/docs/img/single-space.gif) ![절반 간격(space-and-a-half) 텍스트의 예.(텍스트 줄 높이의 절반에 해당하는 공백)](/docs/img/space-and-a-half.gif) ![이중 간격 텍스트의 예. (각 줄 사이의 텍스트 줄 높이와 동일한 공백)](/docs/img/double-space.gif)
+<figure id="figure-text-cut">
+    <figcaption>그림 1 다음 이미지는 단락의 단일 간격, 절반 간격 및 이중 간격 텍스트의 예를 보여준다.</figcaption>
+    <img src="/docs/img/single-space.gif" alt="단일 간격 텍스트의 예. (텍스트의 각 줄 사이에 공백이 없음)" style="display:inline-block" />
+    <img src="/docs/img/space-and-a-half.gif" alt="절반 간격(space-and-a-half) 텍스트의 예.(텍스트 줄 높이의 절반에 해당하는 공백)" style="display:inline-block;margin: 0 4px;" />
+    <img src="/docs/img/double-space.gif" alt="이중 간격 텍스트의 예. (각 줄 사이의 텍스트 줄 높이와 동일한 공백)" style="display:inline-block" />
+</figure>
 
 글리프의 예로 "A", "→"(화살표 기호) 및 "さ"(일본어 문자)가 있다.
 

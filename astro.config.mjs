@@ -10,10 +10,10 @@ export default defineConfig({
 		astroExpressiveCode(),
 		mdx(),
 		starlight({
-			title: 'A11Y KR Docs',
+			title: 'Docs',
 			logo: {
 				src: '/src/assets/a11ykr.png',
-				replacesTitle: true,
+				replacesTitle: false,
 			},
 			defaultLocale: 'root',
 			locales: {
@@ -37,7 +37,7 @@ export default defineConfig({
 							label: 'WCAG 2',
 							collapsed: false,
 							items: [
-								'guides/wcag2/wcag22-231005',
+								'guides/wcag2/231005',
 								{
 									label: 'WCAG 2 이해(작업 중)',
 									collapsed: true,
