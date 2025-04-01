@@ -9,6 +9,10 @@
   margin-inline: 0.125em;
 }
 
+/* Sidebar */
+.sidebar-content {
+}
+
 /* Card 컴포넌트 조정 - 서브페이지에만 적용 */
 :not(div.card-grid) .card {
   padding: 1rem;
