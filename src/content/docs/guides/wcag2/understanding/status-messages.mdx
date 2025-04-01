@@ -1,0 +1,167 @@
+---
+title: SC 4.1.3 상태 메시지
+description: 성공 기준 이해 4.1.3 상태 메시지
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 4.1.3](https://w3.org/TR/WCAG22#status-messages):상태 메시지 
+
+(Level AA)
+
+<Card title="성공 기준(SC)"></Card>
+
+마크업 언어를 사용하여 구현된 콘텐츠의 경우, [상태 메시지](../../../glossary/status-message)는 초점을 받지 않고 [보조 기술](../../../glossary/assistive-technology)을 통해 사용자에게 제시될 수 있도록 [역할](../../../glossary/role)이나 속성을 통해 [프로그래밍 방식으로 판별](../../../glossary/programmatically-determined)될 수 있어야 한다.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>사용자에게 콘텐츠의 중요한 변경 사항을 알린다.</dd>
+<dt>할 일</dt>
+<dd>보조 기술이 초점을 맞추지 못하는 상태 변경에 대해 사용자에게 알릴 수 있도록 한다.</dd>
+<dt>중요성</dt>
+<dd>메시지를 보지 못한 사람들에게는 메시지에 대한 정보를 제공해야 한다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 사용자가 집중하지 않는 콘텐츠의 중요한 변경 사항을 인식하고 작업을 불필요하게 방해하지 않는 방식으로 인식하도록 하는 것이다.
+
+대상 수혜자는 화면 낭독기 기능의 보조 기술을 사용하는 전맹 및 저시력 사용자이다. 추가적인 이점은 인지 장애가 있는 사용자를 위한 보조 기술이 사용자가 선호하는 대로 상태 메시지를 표시(또는 지연 또는 억제)하는 대안을 제공할 수 있다는 것이다.
+
+이 성공 기준의 범위는 상태 메시지와 관련된 콘텐츠의 변경 사항에 따라 다르다. [상태 메시지](../../../glossary/status-message)는 WCAG에서 정의된 용어이다. 상태 메시지의 정의를 충족하는지 여부를 결정하는 두 가지 주요 기준은 다음과 같다.
+
+*   메시지는 작업의 성공 또는 결과, 애플리케이션의 대기 상태, 프로세스 진행 상황 또는 오류 존재에 대한 정보를 사용자에게 제공한다.
+*   메시지는 맥락 변경을 통해 전달되지 않는다.
+
+상태 메시지의 정의를 충족하지 않는 페이지에 정보를 추가할 수 있다. 예를 들어, 검색에서 얻은 결과 목록은 상태 업데이트로 간주되지 않으므로 이 적합 기준이 적용되지 않는다. 그러나 "검색 중...", "18개의 결과가 반환됨" 또는 "반환된 결과 없음"과 같이 검색 완료 또는 상태에 *대해* 표시되는 간단한 문자 메시지는 초점을 맞추지 않는 경우 상태 업데이트이다. 상태 메시지의 예는 아래의 [상태 메시지 예제](#status-examples) 섹션에 나와 있다.
+
+이 성공 기준은 사용자의 맥락을 변경하지 않고 페이지에 새 콘텐츠가 추가되는 시나리오를 구체적으로 다룬다. [맥락의 변화](../../../glossary/changes-of-context)는 본질적으로 사용자의 집중을 방해한다. 이는 이미 보조 기술을 통해 표면화되었으므로 사용자에게 새로운 콘텐츠를 알리려는 목표를 이미 달성했다. 따라서 맥락 변경과 관련된 메시지는 고려할 필요가 없으며 이 성공 기준의 범위에 포함되지 않는다. 맥락을 변경하여 새 콘텐츠를 추가하는 시나리오의 예는 아래의 [상태 메시지가 아닌 변경 사항의 예제](#excepted-examples) 섹션에 나와 있다.
+
+### 이점
+
+*   상태 메시지에 적절한 역할이나 속성이 할당되면 시각 장애인 및 저시력 사용자를 지원하는 방식으로 화면 낭독기가 새 콘텐츠를 음성으로 읽어준다. 대부분의 시력이 있는 사용자는 뷰포트에 주변적으로 추가된 텍스트를 관찰할 수 있다. 이러한 콘텐츠는 사용자의 현재 관점에 영향을 주지 않고 추가 정보를 제공한다. 새로운 중요한 텍스트 콘텐츠를 알리는 보조 기술의 능력을 통해 더 많은 사용자가 동등한 방식으로 정보를 인식함으로써 혜택을 누릴 수 있다.
+*   상태 메시지에 적절한 역할이나 속성을 할당하면 일부 인지 장애가 있는 사용자를 위해 만들어진 보조 기술이 활용될 가능성과 같은 향후 사용 및 개인화 기회가 제공된다. 페이지 저작자가 사용자의 상황을 변경하지 *않는*(즉, 초점을 맞추는) 화면 추가 디자인을 선택하는 경우 해당 정보는 사용자가 확인해야 하는 모달 대화 상자를 사용하여 표시되는 내용보다 덜 중요하다. 따라서 사용자의 선호도에 따라 보조 기술은 사용자가 불필요하게 방해를 받지 않도록 이러한 메시지를 지연, 억제 또는 변환하도록 선택할 수 있다. 또는 반대로 보조 기술은 사용자가 그렇게 하는 것이 최적이라고 생각하는 메시지를 강조할 수 있다.
+
+### 예제
+
+#### 상태 메시지 예제
+
+*   사용자가 검색 버튼을 누르면 페이지 콘텐츠가 업데이트되어 검색 결과가 포함되며 검색 버튼 아래 섹션에 표시된다. 콘텐츠 변경에는 이 새 콘텐츠 상단 근처에 "5개의 결과가 반환되었습니다"라는 메시지도 포함된다. 이 텍스트에는 상태 메시지에 대한 적절한 역할이 부여된다. 화면 낭독기에서 "5개의 결과가 반환되었습니다"라고 알린다.
+*   사용자가 장바구니에 추가 버튼을 누르면 장바구니 아이콘 근처의 콘텐츠 섹션에 "5개 항목"이라는 텍스트가 추가된다. 화면 낭독기가 "5개 항목" 또는 "장바구니, 5개 항목"을 알린다.
+*   사용자가 우편 번호라는 입력에 잘못된 텍스트를 입력하면 입력 위에 "잘못된 항목"이라는 메시지가 나타난다. 화면 낭독기에서 "잘못된 항목" 또는 "우편번호, 잘못된 항목"이라고 알린다.
+*   사용자가 프로세스를 활성화하면 '바쁨'을 상징하는 아이콘이 화면에 나타난다. 화면 낭독기에서 "애플리케이션 사용 중"이라고 알린다.
+*   애플리케이션은 업그레이드 상태를 나타내는 진행 표시줄을 표시한다. 요소에 적절한 역할이 할당된다. 화면 낭독기는 진행 상황을 간헐적으로 알려준다.
+*   사용자가 양식을 제출하면 기존 양식에 "양식이 성공적으로 제출되었습니다."라는 텍스트가 추가된다. 화면 낭독기에서 동일한 메시지를 알린다.
+*   일부 데이터 형식이 잘못되어 사용자가 양식을 채우지 못한 경우 기존 양식에 "페이지에 5개 오류"라는 텍스트가 추가된다. 화면 낭독기에서 동일한 메시지를 알린다.
+*   사용자가 온라인 사진 앱의 앨범에 사진을 넣으면 [스낵바](https://material.io/design/components/snackbars.html#)(역자 주: 화면 하단에 앱 프로세스에 대한 간략한 메시지를 제공하는 UI)에 '웨딩' 앨범에 저장되었습니다'라는 메시지가 표시되고 화면 낭독기에서도 이를 읽는다.
+
+#### 화면에 새 텍스트를 추가하지 않는 상태 메시지의 예제
+
+이 성공 기준은 눈에 보이는 텍스트가 페이지에 추가되거나 페이지에 표시될 때 주로 적용되도록 의도적으로 작성되었다. 그 이유는 새 텍스트가 표시되는 경우 모든 사용자가 볼 수 있도록 의도되었기 때문이다. 성공 기준은 텍스트가 보조 기술을 통해 표시되도록 하는 프로그래밍 방식의 수단을 제공함으로써 텍스트를 볼 수 없거나 볼 수 없는 사용자에게 동일한 정보를 제공한다. 그러나 모든 콘텐츠 변경이 화면에 텍스트 추가를 포함하는 것은 아니다. 다음은 이 성공 기준과 관련된 모든 고려 사항이다.
+
+*   AT 사용자에게만 표시되지 않는 텍스트
+*   상태 텍스트 수정
+*   상태 텍스트 제거
+*   이미지와 같이 텍스트가 아닌 상태 콘텐츠
+
+##### AT 사용자에게만 표시되지 않는 텍스트
+
+보이는 텍스트를 추가하는 것만으로는 보조 기술 사용자에게 충분한 정보를 전달하지 못하는 경우가 있을 수 있다. 예를 들어, 새로운 콘텐츠가 화면의 다른 정보에 근접하면 텍스트만으로는 부족한 시각적 맥락을 제공할 수 있다.
+
+이러한 경우 저작자는 추가 컨텍스트를 위해 보조 기술에 제공될 수 있는 표시되지 않는 텍스트를 포함하여 상태 메시지에 포함할 추가 콘텐츠를 지정할 수 있다. 이러한 기술의 적절한 사용에 관한 중요한 고려 사항은 충분 기법에서 자세히 논의된다.
+
+##### 상태 텍스트 수정
+
+상태 메시지가 페이지에 지속되는 경우 이 텍스트를 수정하는 것은 일반적으로 새 상태 메시지와 동일하다. 예를 들어 텍스트를 "0개 항목"에서 "3개 항목"으로 업데이트하는 장바구니가 있다. 페이지 콘텐츠에 이러한 변경 사항을 작성하는 일반적인 방법은 수정된 전체 텍스트 문자열이 새로운 변경 사항으로 간주되어 보조 기술로 읽혀지는 결과를 낳는다. 그러나 이 문자열의 숫자만 업데이트된 콘텐츠 덩어리로 코딩된 경우 화면 낭독기 사용자의 결과는 "3"만 듣게 될 수 있으며 이는 사용자에게 컨텍스트를 제공하기에 충분한 정보가 아닐 수 있다. 이러한 상황에서는 전체 "3개 항목" 문자열을 상태 텍스트로 표시하는 것이 일반적으로 더 나은 솔루션이다. `aria-atomic`의 사용을 포함한 자세한 내용은 충분 기법을 참조하라. 이 경우 메시지에 "장바구니에 있음"과 같은 오프스크린 텍스트를 추가하는 것도 사례이다.
+
+##### 상태 텍스트 제거
+
+상태 텍스트가 완전히 제거된 상황에서는 해당 텍스트가 없으면 그 자체로 상태에 대한 정보가 전달될 수 있다. 이에 대한 가장 확실한 예는 시스템이 "사용 중"이거나 "대기 중"이라는 메시지가 표시되는 경우이다. 시력이 있는 사용자의 경우 이 텍스트가 사라지면 일반적으로 현재 상태를 사용할 수 있음을 나타낸다. 그러나 시각 장애가 있는 사용자는 대기 상태가 종료되어 사용자의 상황이 변경되지 않는 한 이 변경 사항을 인식하지 못한다. 표시되는 메시지(예: "시스템 사용 가능")를 업데이트하는 것이 불가능할 경우 "시스템 사용 가능"과 같은 비가시적 상태 메시지를 사용하면 동등한 상태 정보가 제공된다. 자세한 내용은 충분 기법을 참조하라.
+
+##### 텍스트가 아닌 상태 콘텐츠
+
+콘텐츠 변경은 텍스트 변경에만 국한되지 않는다. 아이콘이나 사운드가 상태 메시지를 나타내는 경우 이 정보는 1) 텍스트 대안을 관리하는 기존 WCAG 요구 사항(SC 1.1.1 텍스트가 아닌 콘텐츠에 따라)과 2) 적절한 역할을 제공하기 위한 현재 성공 기준의 요구 사항 두 가지의 조합을 통해 화면 낭독기에 표시된다.
+
+#### 상태 메시지가 아닌 변경 사항의 예제
+
+다음 예에서는 추가적인 저작자의 작업이 필요하지 않은 상황을 식별한다. 모든 사례는 "상태 메시지"의 정의를 충족하지 않으므로 이 성공 기준에서 제외된다.
+
+*   저작자가 대화 상자에 오류 메시지를 표시한다.
+    
+    대화 상자에 초점이 맞춰져 있으므로 컨텍스트 변경으로 정의되며 상태 메시지의 정의를 충족하지 않는다. 초점을 맞춘 결과 새로운 맥락 변경이 이미 화면 낭독기에 의해 표시되었으므로 이 성공 기준의 범위에 포함될 필요가 없다.
+    
+*   사용자가 메뉴, 선택, 아코디언 또는 트리와 같은 구성 요소를 확장하거나 탭 목록에서 다른 탭 항목을 선택하는 등 사용자 인터페이스 구성 요소와 상호 작용할 때 콘텐츠가 노출되거나 숨겨진다.
+    
+    콘텐츠에 대한 결과 변경 사항은 상태 메시지의 정의를 충족하지 않는다. 또한 사용자 인터페이스 구성 요소의 정의를 충족하는 모든 구성 요소에는 이미 [4.1.2 이름, 역할, 값](name-role-value)에 지정된 요구 사항이 있으며, 여기에는 보조 기술을 포함하여 사용자 에이전트가 사용할 수 있는 값 및 상태의 변경 사항에 대한 알림을 제공해야 하는 필요성이 포함된다. 결과적으로 "확장됨" 또는 "축소됨"과 같은 상태 변화가 화면 낭독기에 의해 알려지므로 사용자에게 콘텐츠의 '추가' 또는 '제거'에 대한 경고가 표시된다. 따라서 그러한 콘텐츠는 이 성공 기준으로 처리될 필요가 없다.
+    
+*   사용자가 불만족을 나타내는 설문조사 질문을 완료하면 고객 만족도에 대한 일련의 새로운 질문이 페이지에 추가된다.
+    
+    새 입력이 상태 메시지의 정의를 충족하지 않는다. "작업의 성공 또는 결과, 애플리케이션의 대기 상태, 프로세스 진행 상황 또는 오류 존재에 대한 정보를 사용자에게 제공"하지 않으므로 이 성공 기준을 충족할 필요가 없다.
+    
+    참고
+    
+    추가되는 질문에 대한 상태 메시지를 생성하거나 사용자의 응답에 따라 콘텐츠 변경이 발생할 수 있음을 사용자에게 미리 알리는 것이 모범 사례이지만 이 시나리오의 요구 사항은 아니다.
+    
+
+#### 라이브 영역(live region) 또는 경고의 기타 용도
+
+라이브 영역 및 경고는 이 성공 기준에 정의된 대로 상태 메시지를 구성하지 않는 콘텐츠 변경이 발생하는 여러 상황에 유용하게 적용될 수 있다. 그러나 화면 낭독기 사용자가 애플리케이션을 너무 "수다스럽게" 만들 위험이 있다. 적절한 수준의 피드백이 달성되었는지 확인하기 위해 사용자 테스트를 수행해야 한다. 조언 기법은 경고 또는 라이브 영역이 사용자 경험을 향상시킬 수 있는 방법에 대한 예를 제공한다.
+
+참고
+
+이 성공 기준의 목적은 저작자에게 새로운 상태 메시지를 생성하도록 강요하는 것이 아니다. 그 목적은 상태 메시지가 표시될 때 보조 기술이 사용자에게 상태 메시지를 표시할 수 있도록 프로그래밍 방식으로 판별되도록 *하는 것이다*.
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+아래에서 귀하의 콘텐츠와 일치하는 상황을 선택하라. 각 상황에는 해당 상황에 충분하다고 알려져 있고 문서화된 기법 또는 기법의 조합이 포함된다.
+
+##### 상황 A: If a status message advises on the success or results of an action, or the state of an application:
+
+*   [ARIA22: Using role=status to present status messages](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA22) in combination with any of the following:
+    *   [G199: Providing success feedback when data is submitted successfully](https://www.w3.org/WAI/WCAG22/Techniques/general/G199)
+
+##### 상황 B: If a status message conveys a suggestion, or a warning on the existence of an error:
+
+*   [ARIA19: Using ARIA role=alert or Live Regions to Identify Errors](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA19) in combination with any of the following:
+    *   [G83: Providing text descriptions to identify required fields that were not completed](https://www.w3.org/WAI/WCAG22/Techniques/general/G83)
+    *   [G84: Providing a text description when the user provides information that is not in the list of allowed values](https://www.w3.org/WAI/WCAG22/Techniques/general/G84)
+    *   [G85: Providing a text description when user input falls outside the required format or values](https://www.w3.org/WAI/WCAG22/Techniques/general/G85)
+    *   [G177: Providing suggested correction text](https://www.w3.org/WAI/WCAG22/Techniques/general/G177)
+    *   [G194: Providing spell checking and suggestions for text input](https://www.w3.org/WAI/WCAG22/Techniques/general/G194)
+
+참고
+
+이전 일반 기술의 모든 예가 상태 메시지를 사용하여 사용자에게 경고나 오류를 전달하는 것은 아니다. "경고" 역할은 맥락 변화가 발생하지 *않는* 경우에만 필요하다.
+
+##### 상황 C: If a status message conveys information on the progress of a process:
+
+*   [ARIA23: Using role=log to identify sequential information updates](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA23)
+*   Using `role="progressbar"` (future link)
+*   [ARIA22: Using role=status to present status messages](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA22) in combination with [G193: Providing help by an assistant in the Web page](https://www.w3.org/WAI/WCAG22/Techniques/general/G193)
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   Using aria-live regions with chat clients (future link)
+*   Using aria-live regions to support [1.4.13 Content on Hover or Focus](content-on-hover-or-focus) (future link)
+*   Using `role="marquee"` (future link)
+*   Using `role="timer"` (future link)
+*   Where appropriate, moving focus to new content with [ARIA18: Using aria-alertdialog to Identify Errors](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA18)
+*   Supporting personalization with [SCR14: Using scripts to make nonessential alerts optional](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR14)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F103: Failure of Success Criterion 4.1.3 due to providing status messages that cannot be programmatically determined through role or properties](https://www.w3.org/WAI/WCAG22/Techniques/failures/F103)
+*   Using `role="alert"` or `aria-live="assertive"` on content which is not important and time-sensitive (future link)
+

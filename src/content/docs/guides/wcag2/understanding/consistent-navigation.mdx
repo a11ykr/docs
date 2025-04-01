@@ -1,0 +1,86 @@
+---
+title: SC 3.2.3 일관된 탐색
+description: 성공 기준 이해 3.2.3 일관된 탐색
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 3.2.3](https://w3.org/TR/WCAG22#consistent-navigation):일관된 탐색 
+
+(Level AA)
+
+<Card title="성공 기준(SC)"></Card>
+
+[웹 페이지 세트](../../../glossary/set-of-web-pages) 내에 있는 여러 [웹 페이지](../../../glossary/web-page)에 걸쳐 반복되는 탐색 매커니즘은, 사용자가 변경하지 않는 한, 반복될 때마다 [동일한 상대적 순서](../../../glossary/same-relative-order)대로 제시되어야 한다.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>콘텐츠를 더욱 예측 가능하게 탐색할 수 있다.</dd>
+<dt>할 일</dt>
+<dd>여러 페이지에 걸쳐 반복되는 탐색 순서를 일관되게 지정한다.</dd>
+<dt>중요성</dt>
+<dd>예측 가능하게 행동하는 콘텐츠는 장애인에게 특히 중요하다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 웹 페이지 집합 내에서 반복되는 콘텐츠와 상호 작용하고 특정 정보나 기능을 두 번 이상 찾아야 하는 사용자가 일관된 표현과 레이아웃을 사용하도록 장려하는 것이다. 화면 확대기를 사용하여 한 번에 화면의 작은 부분을 표시하는 저시력자는 반복되는 콘텐츠를 빠르게 찾기 위해 시각적 단서와 페이지 경계를 사용하는 경우가 많다. 반복되는 콘텐츠를 동일한 순서로 표시하는 것은 디자인 내에서 공간 기억이나 시각적 단서를 사용하여 반복되는 콘텐츠를 찾는 시각적 사용자에게도 중요하다.
+
+이 섹션에서 "동일한 순서"라는 문구의 사용은 하위 탐색 메뉴를 사용할 수 없거나 보조 탐색 블록 또는 페이지 구조를 사용할 수 없다는 의미가 아니라는 점에 유의해야 한다. 대신 이 성공 기준은 웹 페이지에서 반복되는 콘텐츠와 상호 작용하는 사용자가 찾고 있는 콘텐츠의 위치를 ​​예측하고 다시 만날 때 더 빨리 찾을 수 있도록 지원하기 위한 것이다.
+
+사용자는 적응형 사용자 에이전트를 사용하거나 정보가 자신에게 가장 유용한 방식으로 표시되도록 기본 설정을 설정하여 순서 변경을 시작할 수 있다.
+
+### 이점
+
+*   반복되는 구성 요소가 사이트의 각 페이지에서 동일한 순서로 발생하도록 하면 사용자가 각 페이지에서 항목을 찾을 수 있는 위치를 예측할 수 있어 편해진다. 이는 **인지 장애**가 있는 사용자, **저시력 사용자**, **지적 장애**가 있는 사용자 및 **시각 장애**가 있는 사용자에게 도움이 된다.
+
+### 예제
+
+일관되게 위치한 컨트롤
+
+검색 필드는 사이트의 모든 웹 페이지에 있는 마지막 항목이다. 사용자는 검색 기능을 빠르게 찾을 수 있다.
+
+확장되는 탐색 메뉴
+
+탐색 메뉴에는 사이트의 주요 섹션에 대한 링크가 포함된 7개 항목 목록이 포함되어 있다. 사용자가 이러한 항목 중 하나를 선택하면 하위 탐색 항목 목록이 최상위 탐색 메뉴에 삽입된다.
+
+일관되게 배치된 건너뛰기 탐색 컨트롤
+
+"메뉴 건너뛰기"(또는 "주 콘텐츠로 건너뛰기") 링크는 웹 사이트의 모든 페이지에 첫 번째 링크로 포함된다. 링크를 통해 사용자는 제목 정보와 탐색 콘텐츠를 빠르게 우회하고 페이지의 기본 콘텐츠와 상호 작용을 시작할 수 있다.
+
+메뉴 건너뛰기 링크
+
+메뉴 콘텐츠는 웹 페이지 집합의 각 페이지 끝에 일관되게 위치한다. "메뉴로 바로가기(skip to navigation)" 링크는 키보드 사용자가 필요할 때 쉽게 찾을 수 있도록 각 페이지의 시작 부분에 일관되게 배치된다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   Detweiler, M.C. and Omanson, R.C. (1996), Ameritech Web Page User Interface Standards and Design Guidelines.
+*   [IBM: User experience design - Navigation](https://www.ibm.com/able/toolkit/design/ux/navigation/).
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G61: Presenting repeated components in the same relative order each time they appear](https://www.w3.org/WAI/WCAG22/Techniques/general/G61)
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   [PDF14: Providing running headers and footers in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF14)
+*   [PDF17: Specifying consistent page numbering for PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF17)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F66: Failure of Success Criterion 3.2.3 due to presenting navigation links in a different relative order on different pages](https://www.w3.org/WAI/WCAG22/Techniques/failures/F66)
+

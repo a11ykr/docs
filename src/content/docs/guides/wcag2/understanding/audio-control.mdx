@@ -1,0 +1,76 @@
+---
+title: SC 1.4.2 오디오 제어
+description: 성공 기준 이해 1.4.2 오디오 제어
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 1.4.2](https://w3.org/TR/WCAG22#audio-control):오디오 제어 
+
+(Level A)
+
+<Card title="성공 기준(SC)"></Card>
+
+웹 페이지에 있는 어떤 오디오가 3초 이상 자동으로 재생되는 경우, 해당 오디오를 일시정지 또는 중지할 수 있는 [매커니즘](../../../glossary/mechanism)이나 오디오 음량을 전체 시스템 음량 볼륨과는 별도로 제어할 수 있는 매커니즘을 제공해야 한다.
+
+참고
+
+이 성공기준을 준수하지 않은 콘텐츠는 전체 페이지를 사용하는 사용자의 능력을 방해할 수 있으므로, (다른 성공기준의 충족 여부와 관계없이) 웹 페이지에 있는 모든 콘텐츠는 이 성공기준을 준수해야 한다. [준수 요구사항 5: 불간섭](https://www.w3.org/TR/WCAG22/#cc5).을 참고하라.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>음악이나 소리를 재생하는 페이지가 사람들을 방해하지 않는다.</dd>
+<dt>할 일</dt>
+<dd>오디오 콘텐츠를 자동으로 재생하는 경우 사람들이 소리를 줄이거나 끌 수 있도록 한다.</dd>
+<dt>중요성</dt>
+<dd>소리는 일부 사람들의 주의를 산만하게 하고 화면 낭독기를 방해하기도 한다.</dd>
+</dl>
+
+### 의도
+
+화면 낭독 소프트웨어를 사용하는 개인은 동시에 다른 오디오가 재생되는 경우 음성 출력을 듣기 어려울 수 있다. 화면 낭독기의 음성 출력이 소프트웨어 기반(현재 대부분이 그렇듯이)이고 사운드와 동일한 볼륨 제어를 통해 제어되는 경우 이러한 어려움은 더욱 악화된다. 따라서 사용자가 배경음을 끌 수 있는 것이 중요하다.
+
+볼륨을 제어한다는 것은 볼륨을 0으로 줄이는 것을 포함한다. 시스템 볼륨을 음소거하는 것은 자동 재생 오디오를 "일시 중지나 정지"시키는 것이 아니다. "일시 중지 또는 정지"와 오디오 볼륨 제어는 모두 전체 시스템 볼륨과 독립적이어야 한다.
+
+참고
+
+페이지를 방문했을 때 자동으로 오디오를 재생하면 화면 낭독기 사용자가 중지 매커니즘을 찾는 기능에 영향을 줄 수 있다. 왜냐하면 사용자는 듣기를 통해 탐색하고 자동으로 시작된 소리가 해당 탐색을 방해할 수 있기 때문이다. 따라서 페이지 접속 시 자동으로 소리를 재생하는 행위(특히 3초 이상 지속되는 경우)는 권장하지 않으며, 사용자가 페이지에 도착한 후 사용자의 작업에 의해 소리가 *시작되도록* 하는 것이 좋다. 페이지에 도착했을 때 소리를 *정지시키기 위한* 사용자 작업을 요구하는 방식은 바람직하지 않다.
+
+[1.4.7: 낮은 배경음 또는 배경음 없음](low-or-no-background-audio) 또한 참조하라.
+
+### 이점
+
+*   화면 낭독 기술을 사용하는 개인은 다른 소리를 재생하지 않고도 화면 낭독기를 들을 수 있다. 이는 청각 장애가 있는 사용자와 화면 낭독기가 시스템 볼륨을 사용하는 사용자(소리를 줄이거나 화면 낭독기 소리를 높일 수 없는 사용자)에게 특히 중요하다.
+*   이 성공 기준은 오디오가 재생될 때 시각적 콘텐츠(텍스트 포함)에 집중하는 데 어려움을 겪는 사람들에게도 도움이 된다.
+
+### 예제
+
+*   페이지가 열리면 오디오 파일이 자동으로 재생되기 시작한다. 그러나 페이지 상단의 "무음" 링크를 선택하면 사용자가 오디오를 중지할 수 있다.
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G60: Playing a sound that turns off automatically within three seconds](https://www.w3.org/WAI/WCAG22/Techniques/general/G60)
+*   [G170: Providing a control near the beginning of the Web page that turns off sounds that play automatically](https://www.w3.org/WAI/WCAG22/Techniques/general/G170)
+*   [G171: Playing sounds only on user request](https://www.w3.org/WAI/WCAG22/Techniques/general/G171)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F23: Failure of 1.4.2 due to playing a sound longer than 3 seconds where there is no mechanism to turn it off](https://www.w3.org/WAI/WCAG22/Techniques/failures/F23)
+*   [F93: Failure of Success Criterion 1.4.2 for absence of a way to pause or stop an HTML5 media element that autoplays](https://www.w3.org/WAI/WCAG22/Techniques/failures/F93)
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [Audio or video element avoids automatically playing audio](https://www.w3.org/WAI/standards-guidelines/act/rules/80f0bf/proposed/)
+

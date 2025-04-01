@@ -1,0 +1,135 @@
+---
+title: SC 1.4.1 색상 사용
+description: 성공 기준 이해 1.4.1 색상 사용
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 1.4.1](https://w3.org/TR/WCAG22#use-of-color):색상 사용 
+
+(Level A)
+
+<Card title="성공 기준(SC)">
+색상은 정보 전달, 동작 표시, 반응 유발 또는 시각적 요소 구별을 위한 유일한 시각적 수단으로만 사용되어서는 안 된다.
+
+    <Card title="참고">
+    이 성공기준은 색상 인식을 구체적으로 다루고 있다. 다른 형태의 인식은 색상 및 다른 표현(<span lang="en">presentation</span>) 코딩에 대한 프로그래밍 방식의 접근을 포함하고 있는 [지침 1.3 적응 가능성](https://www.w3.org/TR/WCAG22/#adaptable)에서 다루고 있다.
+    </Card>
+</Card>
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>색상이 정보를 구별하는 유일한 방법은 아니다.</dd>
+<dt>할 일</dt>
+<dd>색상 외에 모양이나 텍스트 등의 정보를 사용하여 의미를 전달한다.</dd>
+<dt>중요성</dt>
+<dd>모든 사람이 색상을 보거나 같은 방식으로 보는 것은 아니다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 시력이 있는 모든 사용자가 색상 차이, 즉 색상을 사용하여 전달되는 정보(각 색상에 할당된 의미)에 접근할 수 있도록 하는 것이다. 이미지(또는 텍스트가 아닌 다른 형식)의 색상 차이를 통해 정보가 전달되는 경우, 색각이 있는 사용자에게는 해당 색상이 보이지 않을 수 있다. 이 경우 색상으로 전달되는 정보를 다른 시각적 수단을 통해 제공하면 색상을 볼 수 없는 사용자도 정보를 인식할 수 있다.
+
+색상은 웹 콘텐츠 디자인의 중요한 자산으로, 미적 매력, 유용성 및 접근성을 향상시킨다. 그러나 일부 사용자는 색상을 인식하는 데 어려움을 겪는다. 약시(partial sight)인 사람들은 제한된 색각을 경험하는 경우가 많으며, 많은 노년층 사용자는 색을 잘 보지 못한다. 또한, 제한된 컬러 또는 단색 디스플레이와 브라우저를 사용하는 사람들은 색상으로 표시되는 정보에 액세스할 수 없다.
+
+색상 차이로 전달되는 정보의 예: "필수 필드는 빨간색입니다.", "오류는 빨간색으로 표시됩니다.", "Mary의 매출은 빨간색, Tom의 매출은 파란색입니다." 작업 표시의 예는 다음과 같다. 링크가 새 창에서 열리거나 데이터베이스 항목이 성공적으로 업데이트되었음을 나타낸다. 응답을 표시하는 예는 필수 필드가 비어 있음을 나타내기 위해 양식 필드에 강조 표시를 사용하는 것이다.
+
+참고
+
+이는 페이지에 색상을 사용하는 것을 방지하는 것이 아니며, 다른 시각적 표시로 보완되는 경우 색상 코딩도 방지해서는 안 된다.
+
+참고
+
+색상이 단순히 색조(hue)만 다른 것이 아니라 밝기(lightness)에도 상당한 차이가 있어서 색상 간 상대적인 명도비(contrast ratio)가 3:1 이상인 경우, 이는 추가적인 시각적 구분으로 인정된다. 예를 들어 밝은 녹색과 어두운 붉은색은 색조**와** 밝기 **둘 다** 차이나므로, 명도비가 3:1 이상이면 충족된다. 마찬가지로 요소의 전경색과 배경색을 반전시켜 구분한 경우에도 충족된다(전경색과 배경색의 명도비가 충분한 경우에 한함).
+
+그러나 콘텐츠가 특정 색상을 정확하게 인식하거나 구별하는 사용자의 능력에 의존하는 경우 해당 색상 간의 명암비에 관계없이 추가적인 시각적 표시가 필요하다. 예를 들어 윤곽선이 유효한 경우 녹색, 잘못된 경우 빨간색인지 알 수 있다.
+
+참고
+
+이 기준은 정보 전달, 동작 표시, 응답 유도 또는 시각적 요소 구별을 위해 색상이 사용되지 않은 상황에는 적용되지 않는다. 예를 들어, 인접한 정적 텍스트와 다르지 않게 표시되도록 스타일이 지정된 하이퍼링크는 실행 가능한 하이퍼링크 텍스트와 인접한 정적 텍스트 사이에 색상 차이가 없으므로 이 성공 기준에 실패하지 않는다. 이러한 스타일 차별화가 부족하면 장애 여부에 관계없이 인터페이스를 보는 모든 사람의 사용성이 저하될 수 있다.
+
+참고
+
+이 기준은 보조 기술을 사용하는 사용자의 요구를 직접적으로 다루지는 않는다. 이는 일부 색상을 구별할 수 없는 시력이 있는 사용자가 여전히 콘텐츠를 이해할 수 있도록 보장하는 것을 목표로 한다. 정보가 보조 기술 사용자에게 전달되는 방법은 [1.1.1 텍스트가 아닌 콘텐츠](non-text-content), [1.3.1 정보와 관계](info-and-relationships), [4.1.2 이름, 역할, 값](name-role-value)을 포함하되 이에 국한되지 않는 다른 기준에서 별도로 다룬다.
+
+반대로, 색상 차이로 전달되는 정보가 보조 기술에 적절하게 전달되더라도 특정 색상을 구별할 수 없는 정안 사용자가 반드시 보조 기술을 사용하는 것은 아닐 수 있으므로 반드시 이 기준을 통과하는 것은 아니다. 이 기준에는 색상에 대한 시각적인 대안이 필요하다.
+
+참고
+
+대부분의 사용자 에이전트는 사용자가 이전에 링크를 활성화했다는("방문") 색상 전용 신호를 사용자에게 제공한다. 그러나 몇 가지 기술적 제약으로 인해 저작자는 방문한 링크의 색상 전용 표시를 매우 제한적으로 제어할 수 있다. 기술적 제약은 다음과 같다.
+
+1.  사용자 에이전트는 [개인 정보 보호 문제](https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector)로 링크의 방문 상태 노출을 제한한다. 사용자 에이전트에 대한 저작자 쿼리는 모든 링크가 방문되지 않았다고 표시낸다.
+2.  링크의 방문 상태에 대한 정보는 정확하지 않을 수 있다. 이는 사용자와 브라우저에 따라 달라지기 때문이다. 특정 사용자가 이전에 활성화한 링크에 대한 정보를 저작자가 정확하게 얻을 수 있다 하더라도, 현재 브라우저에 보존된 기록으로 제한될 것이다. 그리고 사용자가 다른 브라우저를 사용하여 해당 페이지를 방문했는지, 또는 기록이 삭제되었는지(캐시 삭제나 사생활 보호 모드 사용 등) 여부를 알 수 없을 것이다.
+3.  저작자는 `:visited` CSS 의사클래스 스타일을 수정하는 것에*만* 색상을 사용할 수 있다. 이 기술은 색상이 아닌 스타일 변경을 제한한다. 색상 팔레트 제한으로 인해 저작자는 색상만으로 링크와 비링크 텍스트간, 방문한 링크와 방문하지 않은 링크 간에 3:1 대비를 달성하는 동시에 모든 링크와 비링크 텍스트에 대해 4.5:1 대비를 달성하기 어렵다.
+4.  또한 저작자는 링크의 방문 상태를 설정할 수 없다. 앵커 요소에는 "방문" 속성이 포함되지 않는다. 따라서 저작자는 속성 설정을 통해 상태를 변경할 수 없다. 저작자는 방문한 링크와 관련하여 [1.3.1 정보와 관계](info-and-relationships) 또는 [4.1.2 이름, 역할, 값](name-role-value)을 준수할 수 없다.
+
+이런 이유로 링크의 방문 상태를 설정하거나 전달하는 것은 저작자의 책임이 아니다. 색상만으로 방문한 링크와 방문하지 않은 링크가 구별되는 경우 두 링크 색상 간의 대비가 3:1 미만인 경우에도 이 성공 기준을 미준수한 것은 아니다. 저작자는 모든 텍스트 링크가 페이지 배경과 대비 최소값을 충족하는지 계속 확인해야 한다(SC 1.4.3).
+
+### 이점
+
+*   약시인 사용자는 종종 제한된 색각을 경험한다.
+*   일부 노년층 사용자는 색상을 잘 보지 못할 수도 있다.
+*   색상으로 전달되는 정보를 색맹인 사용자가 다른 시각적 방법으로 이용할 수 있는 경우 이점이 있다.
+*   제한된 색상의 흑백 디스플레이를 사용하는 사람들은 색상에 의존하는 정보에 접근하지 못할 수도 있다.
+*   색상을 구별하는 데 문제가 있는 사용자는 텍스트 신호를 보거나 들을 수 있다.
+
+### 예제
+
+색상과 텍스트를 사용하여 필수 필드를 나타내는 양식
+
+양식에는 필수 필드와 선택 필드가 모두 포함되어 있다. 양식 상단의 지시 사항에는 필수 필드가 빨간색 텍스트와 아이콘으로 표시되어 있음을 설명한다. 선택적 필드 레이블과 필수 필드에 대한 빨간색 레이블 간의 차이를 인식할 수 없는 사용자는 여전히 빨간색 레이블 옆에 있는 아이콘을 볼 수 있다.
+
+시험
+
+학생들은 화합물의 SVG 이미지를 보고 사용된 색상, 각 원소 옆의 숫자 **두 가지**를 기반으로 존재하는 화학 원소를 식별한다. 범례에는 각 요소 유형의 색상과 번호가 표시된다. 모든 색상 차이를 인식할 수 없는 사용자도 숫자에 의존하여 이미지를 이해할 수 있다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [Vischeck](https://www.vischeck.com/)
+*   [AWARE Color Laboratory](http://colorlab.wickline.org/colorblind/colorlab/)
+*   [Wikipedia: Color Blindness](https://en.wikipedia.org/wiki/Color_blindness)
+*   [Microsoft: Verify that a page is usable by people with color blindness](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/test-color-blindness)
+*   [Causes of Color: How do people inherit colorblindness? How often?: Genetics](http://www.webexhibits.org/causesofcolor/2C.html)
+*   [How to make figures and presentations that are friendly to Colorblind people](https://jfly.uni-koeln.de/color/)
+*   [The Color Tutor application](https://colortutorial.design/tutor.html)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+아래에서 귀하의 콘텐츠와 일치하는 상황을 선택하라. 각 상황에는 해당 상황에 충분하다고 알려져 있고 문서화된 기법 또는 기법의 조합이 포함된다.
+
+##### 상황 A: If the color of particular words, backgrounds, or other content is used to indicate information:
+
+*   [G14: Ensuring that information conveyed by color differences is also available in text](https://www.w3.org/WAI/WCAG22/Techniques/general/G14)
+*   [G205: Including a text cue for colored form control labels](https://www.w3.org/WAI/WCAG22/Techniques/general/G205)
+*   [G182: Ensuring that additional visual cues are available when text color differences are used to convey information](https://www.w3.org/WAI/WCAG22/Techniques/general/G182)
+*   [G183: Using a contrast ratio of 3:1 with surrounding text and providing additional visual cues on hover for links or controls where color alone is used to identify them](https://www.w3.org/WAI/WCAG22/Techniques/general/G183)
+
+##### 상황 B: If color is used within an image to convey information:
+
+*   [G111: Using color and pattern](https://www.w3.org/WAI/WCAG22/Techniques/general/G111)
+*   [G14: Ensuring that information conveyed by color differences is also available in text](https://www.w3.org/WAI/WCAG22/Techniques/general/G14)
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   [C15: Using CSS to change the presentation of a user interface component when it receives focus](https://www.w3.org/WAI/WCAG22/Techniques/css/C15)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F13: Failure of Success Criterion 1.1.1 and 1.4.1 due to having a text alternative that does not include information that is conveyed by color differences in the image](https://www.w3.org/WAI/WCAG22/Techniques/failures/F13)
+*   [F73: Failure of Success Criterion 1.4.1 due to creating links that are not visually evident without color vision](https://www.w3.org/WAI/WCAG22/Techniques/failures/F73)
+*   [F81: Failure of Success Criterion 1.4.1 due to identifying required or error fields using color differences only](https://www.w3.org/WAI/WCAG22/Techniques/failures/F81)
+

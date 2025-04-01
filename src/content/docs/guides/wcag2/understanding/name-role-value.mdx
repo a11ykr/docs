@@ -1,0 +1,135 @@
+---
+title: SC 4.1.2 이름, 역할, 값
+description: 성공 기준 이해 4.1.2 이름, 역할, 값
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 4.1.2](https://w3.org/TR/WCAG22#name-role-value):이름, 역할, 값 
+
+(Level A)
+
+<Card title="성공 기준(SC)"></Card>
+
+모든 [사용자 인터페이스 구성요소](../../../glossary/user-interface-component)(서식 요소, 링크, 스크립트에 의해 생성된 요소를 포함하되, 이에 국한되지 않음)의 경우, [이름](../../../glossary/name)과 [역할](../../../glossary/role)은 [프로그래밍 방식으로 판별](../../../glossary/programmatically-determined)되어야 한다. 사용자에 의해서 설정될 수 있는 상태(states), 속성(properties) 및 값(values)은 [프로그래밍 방식으로 설정](../../../glossary/programmatically-set)될 수 있어야 한다. 이러한 항목의 변경사항은, [보조 기술](../../../glossary/assistive-technology)을 포함하여, [사용자 에이전트](../../../glossary/user-agent)에 제공되어야 한다.
+
+참고
+
+이 성공기준은 주로 사용자 인터페이스 구성요소를 개발하거나 스크립팅하는 웹 개발자를 위한 것이다. 예를 들어, 표준 HTML 컨트롤은 명세서에 따라 사용되었을 때, 이미 이 성공기준을 준수한 것이다.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>보조 기술을 사용하는 사람들은 모든 구성 요소를 이해한다.</dd>
+<dt>할 일</dt>
+<dd>구성요소에 올바른 이름, 역할, 상태 및 값을 지정해야 한다.</dd>
+<dt>중요성</dt>
+<dd>보조 기술은 코드가 올바르게 작성된 경우에만 제대로 작동한다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 보조 기술(AT: Assistive Technologies)이 콘텐츠의 사용자 인터페이스 컨트롤 상태에 대한 적절한 정보를 수집하고, 활성화(또는 설정)하고, 최신 상태를 유지할 수 있도록 하는 것이다.
+
+접근 가능한 기술의 표준 컨트롤을 사용하는 경우 이 프로세스는 간단하다. 사용자 인터페이스 요소가 명세에 따라 사용되는 경우 이 조항의 조건이 충족된다. (아래 성공 기준 4.1.2의 예 참조)
+
+그러나 사용자 정의 컨트롤이 생성되거나 인터페이스 요소가 평소와 다른 역할 및/또는 기능을 갖도록 프로그래밍(코드 또는 스크립트에서)된 경우 컨트롤이 보조 기술에 중요하고 적절한 정보를 제공하고 보조 기술을 통해 스스로 제어하는 것을 허용하도록 추가적인 조치를 취해야 한다.
+
+보조 기술에 전달하는 데 적합한 역할과 상태는 컨트롤이 나타내는 내용에 따라 달라진다. 이러한 정보에 대한 세부 사항은 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 또는 관련 플랫폼 표준과 같은 다른 사양에 의해 정의된다. 고려해야 할 다른 점은 지정된 대로 정보를 전달하기 위한 보조 기술을 통한 충분한 [접근성 지원](https://www.w3.org/TR/WCAG22/#dfn-accessibility-supported)이 있는지 여부이다.
+
+사용자 인터페이스 컨트롤의 특히 중요한 상태는 초점을 받는지 여부이다. 컨트롤의 초점 상태는 프로그래밍 방식으로 판별될 수 있으며 초점 변경에 대한 알림은 사용자 에이전트 및 보조 기술로 전송된다. 사용자 인터페이스 제어 상태의 다른 예로는 체크박스나 라디오 버튼이 선택되었는지 여부, 축소 가능한 트리 구조 보기나 아코디언이 확장되거나 축소되었는지 여부 등이 있다.
+
+참고
+
+성공 기준 4.1.2에서는 모든 사용자 인터페이스 구성 요소에 대해 프로그래밍 방식으로 판별할 수 있는 이름이 필요하다. 이름은 표시될 수도 있고 보이지 않을 수도 있다. 이름이 표시되어야 하는 경우가 있는데, 이 경우 레이블로 식별된다. 자세한 내용은 용어집의 이름 및 레이블 정의를 참조하라.
+
+### 이점
+
+*   모든 사용자 인터페이스 구성 요소에 역할, 상태 및 값 정보를 제공하면 장애인이 사용하는 화면 낭독기, 화면 확대기, 음성 인식 소프트웨어 등 보조 기술과의 호환성이 가능해진다.
+
+### 예제
+
+접근성 API
+
+Java 애플릿은 해당 언어로 정의된 접근성 API를 사용한다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [Dynamic Accessible Web Content Roadmap](https://www.w3.org/WAI/PF/roadmap/)
+*   [Role Taxonomy for Accessible 적응 가능성 Applications](https://www.w3.org/WAI/PF/GUI/)
+*   [Web Accessibility Initiative - Accessible Rich Internet Applications (ARIA)](https://www.w3.org/TR/wai-aria/)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+아래에서 귀하의 콘텐츠와 일치하는 상황을 선택하라. 각 상황에는 해당 상황에 충분하다고 알려져 있고 문서화된 기법 또는 기법의 조합이 포함된다.
+
+##### 상황 A: If using a standard user interface component in a markup language (e.g., HTML):
+
+*   [ARIA14: Using aria-label to provide an invisible label where a visible label cannot be used](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA14)
+*   [ARIA16: Using aria-labelledby to provide a name for user interface controls](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA16)
+*   [G108: Using markup features to expose the name and role, allow user-settable properties to be directly set, and provide notification of changes](https://www.w3.org/WAI/WCAG22/Techniques/general/G108) using technology-specific techniques below:
+    *   [H91: Using HTML form controls and links](https://www.w3.org/WAI/WCAG22/Techniques/html/H91)
+    *   [H44: Using label elements to associate text labels with form controls](https://www.w3.org/WAI/WCAG22/Techniques/html/H44)
+    *   [H64: Using the title attribute of the iframe element](https://www.w3.org/WAI/WCAG22/Techniques/html/H64)
+    *   [H65: Using the title attribute to identify form controls when the label element cannot be used](https://www.w3.org/WAI/WCAG22/Techniques/html/H65)
+    *   [H88: Using HTML according to spec](https://www.w3.org/WAI/WCAG22/Techniques/html/H88)
+
+##### 상황 B: If using script or code to re-purpose a standard user interface component in a markup language:
+
+*   Exposing the names and roles, allowing user-settable properties to be directly set, and providing notification of changes using one of the following techniques:
+    *   [ARIA16: Using aria-labelledby to provide a name for user interface controls](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA16)
+
+##### 상황 C: If using a standard user interface component in a programming technology:
+
+*   [G135: Using the accessibility API features of a technology to expose names and notification of changes](https://www.w3.org/WAI/WCAG22/Techniques/general/G135) using technology-specific techniques below:
+    *   [PDF10: Providing labels for interactive form controls in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF10)
+    *   [PDF12: Providing name, role, value information for form fields in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF12)
+
+##### 상황 D: If creating your own user interface component in a programming language:
+
+*   [G10: Creating components using a technology that supports the accessibility notification of changes](https://www.w3.org/WAI/WCAG22/Techniques/general/G10) using technology-specific techniques below:
+    *   [ARIA4: Using a WAI-ARIA role to expose the role of a user interface component](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA4)
+    *   [ARIA5: Using WAI-ARIA state and property attributes to expose the state of a user interface component](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA5)
+    *   [ARIA16: Using aria-labelledby to provide a name for user interface controls](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA16)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F59: Failure of Success Criterion 4.1.2 due to using script to make div or span a user interface control in HTML without providing a role for the control](https://www.w3.org/WAI/WCAG22/Techniques/failures/F59)
+*   [F15: Failure of Success Criterion 4.1.2 due to implementing custom controls that do not use an accessibility API for the technology, or do so incompletely](https://www.w3.org/WAI/WCAG22/Techniques/failures/F15)
+*   [F20: Failure of Success Criterion 1.1.1 and 4.1.2 due to not updating text alternatives when changes to non-text content occur](https://www.w3.org/WAI/WCAG22/Techniques/failures/F20)
+*   [F68: Failure of Success Criterion 4.1.2 due to a user interface control not having a programmatically determined name](https://www.w3.org/WAI/WCAG22/Techniques/failures/F68)
+*   [F79: Failure of Success Criterion 4.1.2 due to the focus state of a user interface component not being programmatically determinable or no notification of change of focus state available](https://www.w3.org/WAI/WCAG22/Techniques/failures/F79)
+*   [F86: Failure of Success Criterion 4.1.2 due to not providing names for each part of a multi-part form field, such as a US telephone number](https://www.w3.org/WAI/WCAG22/Techniques/failures/F86)
+*   [F89: Failure of Success Criteria 2.4.4, 2.4.9 and 4.1.2 due to not providing an accessible name for an image which is the only content in a link](https://www.w3.org/WAI/WCAG22/Techniques/failures/F89)
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [ARIA attribute is defined in WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/act/rules/5f99a7/)
+*   [ARIA state or property has valid value](https://www.w3.org/WAI/standards-guidelines/act/rules/6a7281/)
+*   [Button has non-empty accessible name](https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/)
+*   [Element with aria-hidden has no content in sequential focus navigation](https://www.w3.org/WAI/standards-guidelines/act/rules/6cfa84/)
+*   [Element with presentational children has no focusable content](https://www.w3.org/WAI/standards-guidelines/act/rules/307n5z/)
+*   [Form field has non-empty accessible name](https://www.w3.org/WAI/standards-guidelines/act/rules/e086e5/)
+*   [Image button has non-empty accessible name](https://www.w3.org/WAI/standards-guidelines/act/rules/59796f/)
+*   [Link has non-empty accessible name](https://www.w3.org/WAI/standards-guidelines/act/rules/c487ae/)
+*   [Menuitem has non-empty accessible name](https://www.w3.org/WAI/standards-guidelines/act/rules/m6b1q3/)
+*   [Role attribute has valid value](https://www.w3.org/WAI/standards-guidelines/act/rules/674b10/)
+*   [ARIA required ID references exist](https://www.w3.org/WAI/standards-guidelines/act/rules/in6db8/proposed/)
+*   [ARIA state or property is permitted](https://www.w3.org/WAI/standards-guidelines/act/rules/5c01ea/proposed/)
+*   [Element with role attribute has required states and properties](https://www.w3.org/WAI/standards-guidelines/act/rules/4e8ab6/proposed/)
+*   [Iframe element has non-empty accessible name](https://www.w3.org/WAI/standards-guidelines/act/rules/cae760/proposed/)
+*   [Iframe elements with identical accessible names have equivalent purpose](https://www.w3.org/WAI/standards-guidelines/act/rules/4b1c6c/proposed/)
+

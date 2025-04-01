@@ -1,0 +1,107 @@
+---
+title: SC 3.1.4 약어
+description: 성공 기준 이해 3.1.4 약어
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 3.1.4](https://w3.org/TR/WCAG22#abbreviations):약어 
+
+(Level AAA)
+
+<Card title="성공 기준(SC)">
+
+[약어](../../../glossary/abbreviation)의 본딧말이나 의미를 인식할 수 있는 [매커니즘](../../../glossary/mechanism)을 제공해야 한다.
+</Card>
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>사용자는 약어의 의미를 식별하고 배울 수 있다.</dd>
+<dt>할 일</dt>
+<dd>사용자에게 확장된 형태의 약어를 제공한다.</dd>
+<dt>중요성</dt>
+<dd>인지 장애가 있는 사람을 포함한 일부 사람들은 단축된 단어를 이해하지 못할 수도 있다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 사용자가 확장된 형태의 약어에 접근할 수 있도록 하는 것이다.
+
+### 이점
+
+이 성공 기준은 다음과 같은 사람들에게 도움이 될 수 있다.
+
+*   단어를 해독하는 데 어려움이 있는
+*   화면 확대기에 의존하는(확대하면 상황에 따른 단서가 줄어들 수 있음)
+*   기억력이 제한된
+*   이해를 돕기 위한 맥락을 사용하는 데 어려움을 겪는
+
+약어는 일부 독자에게 여러 가지 방식으로 혼동을 줄 수 있다.
+
+*   일부 약어는 일반적인 단어처럼 보이지 않으며 일반적인 언어 규칙에 따라 발음될 수 없다. 예를 들어, 영어 단어 "room"은 "rm"으로 축약되는데, 이는 어떤 영어 단어나 음소에도 해당하지 않는다. 사용자는 "rm"이 "room"이라는 단어의 약어라는 것을 알아야 올바르게 말할 수 있다.
+*   때로는 동일한 약어가 다른 맥락에서 다른 것을 의미하기도 한다. 예를 들어, 영어 문장 "Dr. Johnson live on Boswell Dr."에서 첫 번째 "Dr." 는 "Doctor"의 약어이고 두 번째 경우는 "Drive"("거리"를 의미하는)라는 단어의 약어이다. 사용자는 약어의 의미를 알기 위해 문맥을 이해할 수 있어야 한다.
+*   일부 두문자어는 일반적인 단어의 철자이지만 다른 방식으로 사용된다. 예를 들어, "JAWS"는 전체 이름이 "Job Access with Speech"인 화면 낭독기의 약어이다. 이는 치아를 고정하는 입 부분을 가리키는 일반적인 영어 단어이기도 한다. 약어는 일반적인 단어와 다르게 사용된다.
+*   일부 두문자어는 일반적인 단어처럼 들리지만 철자가 다르다. 예를 들어, 동기화된 멀티미디어 통합 언어(Synchronized Multimedia Integration Language, S M I L)의 약어는 영어 단어 "smile"처럼 발음된다.
+
+또한 다음과 같은 시각 장애가 있는 사람들에게도 도움이 될 것이다.
+
+*   화면 확대기를 사용하여 확대하면 맥락이 손실된다.
+
+### 예제
+
+콘텐츠에 약어가 처음 나타날 때 확장이 제공되는 약어
+
+"World Wide Web Consortium"이라는 이름이 조직 홈 페이지의 첫 번째 제목에 나타난다. 같은 제목에는 약어 "W3C"가 괄호 안에 표시된다.
+
+사전 검색 양식
+
+웹 사이트에는 온라인 약어 서비스에서 제공하는 검색 양식이 포함되어 있다. 사용자가 약어를 입력하면 양식은 검색한 소스에서 가능한 확장 목록을 반환한다.
+
+의료 웹 사이트
+
+의료 웹 사이트는 의사와 환자 모두를 위한 정보를 제공한다. 이 사이트에는 계층식 사전 세트가 포함되어 있다. 매우 전문적인 의학사전이 첫 번째이고, 그 다음이 일반 대중을 위한 의학사전이다. 계층에는 사이트 고유의 두문자어 및 약어 목록도 포함되어 있으며, 마지막으로 표준 사전도 있다. 목록 끝에 있는 표준 사전은 텍스트에 있는 대부분의 단어에 대한 정의를 제공한다. 전문 의학 사전은 특이한 의학 용어의 정의를 제공한다. 둘 이상의 사전에 나타나는 단어에 대한 정의는 계층 순서대로 나열된다. 두문자어 및 약어의 의미는 두문자어 및 약어 목록을 통해 제공된다.
+
+확장된 형태의 약어
+
+각 약어의 확장된 형태는 프로그래밍 방식으로 판별 가능한 방식으로 제공된다. 텍스트를 말하는 사용자 에이전트는 확장된 형식을 사용하여 약어를 알릴 수 있다. 다른 사용자 에이전트는 확장된 양식을 도구 설명이나 약어에 대한 상황별 도움말로 사용할 수 있도록 만들 수 있다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [Acronym finder](http://www.acronymfinder.com/) - You can search with the exact acronym, the beginning of the acronym, wildcards and reverse lookup.
+*   [Abbreviations.com](http://www.abbreviations.com/).
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+아래에서 귀하의 콘텐츠와 일치하는 상황을 선택하라. 각 상황에는 해당 상황에 충분하다고 알려져 있고 문서화된 기법 또는 기법의 조합이 포함된다.
+
+##### 상황 A: If the abbreviation has only one meaning within the Web page:
+
+*   [G102: Providing the expansion or explanation of an abbreviation](https://www.w3.org/WAI/WCAG22/Techniques/general/G102) for the first occurrence of the abbreviation in a Web page using one of the following techniques:
+    *   [G97: Providing the first use of an abbreviation immediately before or after the expanded form](https://www.w3.org/WAI/WCAG22/Techniques/general/G97)
+    *   [G55: Linking to definitions](https://www.w3.org/WAI/WCAG22/Techniques/general/G55)
+    *   [H28: Providing definitions for abbreviations by using the abbr element](https://www.w3.org/WAI/WCAG22/Techniques/html/H28)
+    *   [PDF8: Providing definitions for abbreviations via an E entry for a structure element](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF8)
+*   [G102: Providing the expansion or explanation of an abbreviation](https://www.w3.org/WAI/WCAG22/Techniques/general/G102) for all occurrences of the abbreviation in a Web page using one of the following techniques:
+    *   [G55: Linking to definitions](https://www.w3.org/WAI/WCAG22/Techniques/general/G55)
+    *   [G62: Providing a glossary](https://www.w3.org/WAI/WCAG22/Techniques/general/G62)
+    *   [G70: Providing a function to search an online dictionary](https://www.w3.org/WAI/WCAG22/Techniques/general/G70)
+    *   [H28: Providing definitions for abbreviations by using the abbr element](https://www.w3.org/WAI/WCAG22/Techniques/html/H28)
+    *   [PDF8: Providing definitions for abbreviations via an E entry for a structure element](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF8)
+
+##### 상황 B: If the abbreviation means different things within the same Web page:
+
+*   [G102: Providing the expansion or explanation of an abbreviation](https://www.w3.org/WAI/WCAG22/Techniques/general/G102) for all occurrences of abbreviations in a Web page using one of the following techniques:
+    *   [G55: Linking to definitions](https://www.w3.org/WAI/WCAG22/Techniques/general/G55)
+    *   [H28: Providing definitions for abbreviations by using the abbr element](https://www.w3.org/WAI/WCAG22/Techniques/html/H28)
+    *   [PDF8: Providing definitions for abbreviations via an E entry for a structure element](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF8)
+

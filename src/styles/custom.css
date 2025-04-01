@@ -23,3 +23,33 @@
 :not(div.card-grid) .card .title {
   font-size: 1.2rem;
 }
+
+/* Document style override */
+h1#_top {
+  font-size: 2.4rem;
+}
+.content-panel h2 {
+  font-size: 2rem;
+}
+.content-panel h3 {
+  font-size: 1.8rem;
+}
+.content-panel h4 {
+  font-size: 1.6rem;
+}
+.content-panel h5 {
+  font-size: 1.4rem;
+}
+.content-panel h6 {
+  font-size: 1.2rem;
+}
+
+.content-panel ul, .content-panel ol {
+  padding-left: 1.2rem;
+}
+li ul, li ol {
+  padding-left: 1rem;
+}
+.pagination-links a .link-title {
+  font-size: 1.2rem;
+}

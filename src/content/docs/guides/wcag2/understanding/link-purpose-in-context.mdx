@@ -1,0 +1,139 @@
+---
+title: SC 2.4.4 링크 목적(맥락 상의)
+description: 성공 기준 이해 2.4.4 링크 목적(맥락 상의)
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 2.4.4](https://w3.org/TR/WCAG22#link-purpose-in-context):링크 목적(맥락 상의) 
+
+(Level A)
+
+<Card title="성공 기준(SC)"></Card>
+
+[각 링크의 목적](../../../glossary/link-purpose)은 링크 텍스트만으로 식별 가능하거나 [프로그래밍 방식으로 판별되는 링크 맥락](../../../glossary/programmatically-determined-link-context)과 함께 식별 가능해야 한다. 단, 링크의 목적이 [전반적으로 사용자에게 애매한 경우](../../../glossary/ambiguous-to-users-in-general)는 제외한다.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>사용자는 각 링크의 기능을 이해한다.</dd>
+<dt>할 일</dt>
+<dd>모든 링크에 대해 설명적인 이름이나 맥락을 제공하라.</dd>
+<dt>중요성</dt>
+<dd>시각 및 인지 장애가 있는 사람들은 더 쉽게 탐색할 수 있다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 사용자가 각 링크의 목적을 이해하여 링크를 따라갈지 여부를 결정할 수 있도록 돕는 것이다. 가능하다면 추가적인 맥락 없이 링크의 목적을 식별하는 링크 텍스트를 제공하라. 보조 기술에는 사용자에게 웹 페이지에 있는 링크 목록을 제공하는 기능이 있다. 가능한 한 의미 있는 링크 텍스트는 이 링크 목록에서 선택하려는 사용자에게 도움이 될 것이다. 의미 있는 링크 텍스트는 링크에서 링크로 이동하려는 사용자에게도 도움이 된다. 의미 있는 링크는 사용자가 페이지를 이해하기 위해 복잡한 전략을 요구하지 않고도 따라갈 링크를 선택하는 데 도움이 된다.
+
+링크의 텍스트 또는 링크와 관련된 내용은 링크의 목적을 설명하기 위한 것이다. 링크가 문서나 웹 애플리케이션으로 연결되는 경우 문서나 웹 애플리케이션의 이름은 링크의 목적(문서나 웹 애플리케이션으로 이동하는 것)을 설명하기에 충분하다. 문서나 웹 애플리케이션의 이름을 반드시 사용할 필요는 없다. 다른 것들도 링크의 목적을 설명할 수 있다.
+
+[성공 기준 2.4.2](page-titled)는 페이지 제목을 다룬다. 여기서도 페이지에 표시되는 문서 또는 웹 애플리케이션의 이름은 페이지의 목적을 설명하기에 충분하다. 링크와 제목이 일치하거나 매우 유사한 것은 좋은 습관이며 '클릭한' 링크와 사용자가 방문하는 웹 페이지 사이의 연속성을 제공한다.
+
+어떤 상황에서는 저작자가 링크의 설명 일부를 링크의 맥락으로 제공하는 논리적으로 관련된 텍스트에 포함하고 싶을 수 있다. 이 경우 사용자는 링크에서 초점을 이동하지 않고 링크의 목적을 파악할 수 있어야 한다. 즉, 사용자는 링크에 도달한 후 위치를 잃지 않고 링크에 대해 더 알아볼 수 있어야 한다. 이는 링크의 설명을 링크와 직접 관련된 같은 문장, 단락, 목록 항목 또는 데이터 테이블에서 테이블 셀이나 테이블 헤더 셀에 링크를 넣음으로써 달성할 수 있다. 또는 저작자는 ARIA 기법을 사용하여 페이지의 추가 텍스트를 링크와 연관시킬 수 있다.
+
+이런 맥락은 링크 앞에 있을 때 가장 유용하다. (예를 들어, 모호한 링크 텍스트를 사용해야 하는 경우, 문장 시작 부분에 모호한 문구를 넣는 것보다 목적지를 설명하는 문장 끝에 넣는 것이 좋다.) 설명이 링크 뒤에 오는 경우, 페이지를 위에서 아래로 순서대로 읽는 화면 낭독기 사용자에게는 혼란과 어려움이 있을 수 있다.
+
+동일한 대상을 가진 링크는 일관성 있는 텍스트를 갖는 것이 가장 좋습니다(그리고 이는 페이지 세트에 대한 [성공 기준 3.2.4](consistent-identification)에 따른 요구 사항이다). 목적과 대상이 다른 링크에는 링크 텍스트도 다르게 지정하는 것이 가장 좋다.
+
+[적합한 대체 버전](../../../glossary/conforming-alternate-version)에 대한 링크에 대한 모범 사례는 적합한 대체 버전에 대한 링크 텍스트가 연결되는 페이지가 더 접근하기 쉬운 버전을 나타냄을 링크 텍스트에 나타내도록 하는 것이다. 이 정보는 텍스트로도 제공될 수 있다. 목표는 최종 사용자가 링크의 목적을 알 수 있도록 하는 것이다.
+
+성공 기준에는 웹 페이지의 정보로 링크의 목적을 파악할 수 없는 링크에 대한 예외가 포함되어 있다. 이러한 상황에서는 장애를 가진 사람이 불리하지 않다. 링크 목적을 이해하기 위한 추가적인 맥락이 없기 때문이다. 그러나 웹 페이지에서 링크 목적을 해석하는 데 사용할 수 있는 어떤 맥락이라도 링크 텍스트에 포함하거나 프로그래밍적으로 링크와 연결하여 제공해야 성공 기준을 충족할 수 있다.
+
+참고
+
+링크의 목적을 알 수 없거나 모호한 상황이 있을 수 있다. 예를 들어, 게임에는 문 #1, 문 #2, 문 #3으로만 식별되는 링크가 있을 수 있다. 링크의 목적은 모든 사용자에게 긴장감을 조성하는 것이므로 이 링크 텍스트로 충분하다.
+
+참조하라 [2.4.9: 링크 목적 (링크 단독)](link-purpose-link-only).
+
+### 이점
+
+*   이 성공 기준은 운동 장애가 있는 사람들이 관심 없는 링크를 건너뛸 수 있도록 하고, 참조된 콘텐츠를 방문하는 데 필요한 키 입력을 피한 다음 현재 콘텐츠로 돌아가도록 함으로써 도움이 된다.
+*   인지 장애가 있는 사람들은 관심이 없는 콘텐츠를 오가는 다양한 탐색 수단으로 인해 방향 감각을 잃지 않는다.
+*   시각 장애가 있는 사용자는 링크의 맥락을 탐색하여 링크의 목적을 판단할 수 있다.
+
+### 예제
+
+해당 URI의 정보에 대한 설명을 제공하는 텍스트가 포함된 링크
+
+한 페이지에는 '역사의 중세 시대에는 유혈사태가 많았다'는 문장이 적혀 있다. "역사의 중세 시대"는 링크이다.
+
+해당 URI에 있는 정보에 대한 텍스트 설명이 앞에 있는 링크
+
+페이지에 "Learn more about the Government of Ireland's Commission on Electronic Voting at Go Vote!"라는 문장이 포함되어 있다. 링크는 "Go Vote!"이다.
+
+아이콘과 텍스트가 모두 포함된 링크
+
+투표기 아이콘과 '아일랜드 정부 전자 투표 위원회'라는 문구가 결합되어 하나의 링크를 형성한다. 링크의 목적은 이미 아이콘 옆의 링크 텍스트에 설명되어 있으므로 아이콘의 대체 텍스트는 비어있다.
+
+책 제목 목록
+
+책 목록은 HTML, PDF, mp3(책을 읽는 사람의 녹음)의 세 가지 형식으로 제공된다. 각 책의 제목을 세 번(각 형식에 대해 한 번) 듣지 않도록 각 책의 첫 번째 링크는 책 제목이고 두 번째 링크는 "PDF", 세 번째 링크는 "mp3"이다.
+
+뉴스 기사 요약
+
+웹 페이지에는 뉴스 기사 모음이 포함되어 있다. 메인 페이지에는 각 기사의 처음 몇 문장이 나열되어 있으며 그 뒤에 "자세히 보기" 링크가 있다. 현재 단락을 읽는 화면 낭독기 명령은 링크의 목적을 해석하기 위한 맥락을 제공한다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [Using Link Titles to Help Users Predict Where They Are Going](https://www.nngroup.com/articles/using-link-titles-to-help-users-predict-where-they-are-going/)
+*   [WebAIM Techniques for Hypertext Links](http://webaim.org/techniques/hypertext/)
+*   [Hidden barriers - out of sight](http://www.rnib.org.uk/blogs/expert-series?Name=Hidden%20barriers)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G91: Providing link text that describes the purpose of a link](https://www.w3.org/WAI/WCAG22/Techniques/general/G91)
+*   [H30: Providing link text that describes the purpose of a link for anchor elements](https://www.w3.org/WAI/WCAG22/Techniques/html/H30)
+*   [H24: Providing text alternatives for the area elements of image maps](https://www.w3.org/WAI/WCAG22/Techniques/html/H24)
+*   사용자가 아래 기술 중 하나를 사용하여 짧거나 긴 링크 텍스트를 선택할 수 있도록 허용한다.
+    *   [G189: Providing a control near the beginning of the Web page that changes the link text](https://www.w3.org/WAI/WCAG22/Techniques/general/G189)
+    *   [SCR30: Using scripts to change the link text](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR30)
+    *   [FLASH7:](https://www.w3.org/WAI/WCAG22/Techniques//FLASH7)
+*   [G53: Identifying the purpose of a link using link text combined with the text of the enclosing sentence](https://www.w3.org/WAI/WCAG22/Techniques/general/G53)
+*   다음 기술 중 하나를 사용하여 링크 목적에 대한 추가 설명을 제공한다.
+    *   [H33: Supplementing link text with the title attribute](https://www.w3.org/WAI/WCAG22/Techniques/html/H33)
+    *   [C7: Using CSS to hide a portion of the link text](https://www.w3.org/WAI/WCAG22/Techniques/css/C7)
+*   다음 기술 중 하나를 사용하여 프로그래밍 방식으로 판별된 링크 맥락과 결합된 링크 텍스트를 사용하여 링크의 목적을 식별한다.
+    *   [ARIA7: Using aria-labelledby for link purpose](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA7)
+    *   [ARIA8: Using aria-label for link purpose](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA8)
+    *   [H77: Identifying the purpose of a link using link text combined with its enclosing list item](https://www.w3.org/WAI/WCAG22/Techniques/html/H77)
+    *   [H78: Identifying the purpose of a link using link text combined with its enclosing paragraph](https://www.w3.org/WAI/WCAG22/Techniques/html/H78)
+    *   [H79: Identifying the purpose of a link in a data table using the link text combined with its enclosing table cell and associated table header cells](https://www.w3.org/WAI/WCAG22/Techniques/html/H79)
+    *   [H81: Identifying the purpose of a link in a nested list using link text combined with the parent list item under which the list is nested](https://www.w3.org/WAI/WCAG22/Techniques/html/H81)
+*   [G91: Providing link text that describes the purpose of a link](https://www.w3.org/WAI/WCAG22/Techniques/general/G91) **그리고** 다음 기술 중 하나를 사용하여 링크를 의미적으로 표시한다.
+    *   [PDF11: Providing links and link text using the Link annotation and the /Link structure element in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF11)
+    *   [PDF13: Providing replacement text using the /Alt entry for links in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF13)
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   [H2: Combining adjacent image and text links for the same resource](https://www.w3.org/WAI/WCAG22/Techniques/html/H2)
+*   [FLASH5:](https://www.w3.org/WAI/WCAG22/Techniques//FLASH5)
+*   [H80: Identifying the purpose of a link using link text combined with the preceding heading element](https://www.w3.org/WAI/WCAG22/Techniques/html/H80)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F63: Failure of Success Criterion 2.4.4 due to providing link context only in content that is not related to the link](https://www.w3.org/WAI/WCAG22/Techniques/failures/F63)
+*   [F89: Failure of Success Criteria 2.4.4, 2.4.9 and 4.1.2 due to not providing an accessible name for an image which is the only content in a link](https://www.w3.org/WAI/WCAG22/Techniques/failures/F89)
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [Link has non-empty accessible name](https://www.w3.org/WAI/standards-guidelines/act/rules/c487ae/)
+*   [Link in context is descriptive](https://www.w3.org/WAI/standards-guidelines/act/rules/5effbb/proposed/)
+*   [Links with identical accessible names and same context serve equivalent purpose](https://www.w3.org/WAI/standards-guidelines/act/rules/fd3a94/proposed/)
+

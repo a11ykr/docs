@@ -1,0 +1,64 @@
+---
+title: SC 2.3.2 3회 번쩍임
+description: 성공 기준 이해 2.3.2 3회 번쩍임
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 2.3.2](https://w3.org/TR/WCAG22#three-flashes):3회 번쩍임 
+
+(Level AAA)
+
+<Card title="성공 기준(SC)"></Card>
+
+[웹 페이지](../../../glossary/web-page)는 초당 3회 이상 [번쩍이는](../../../glossary/flash) 콘텐츠를 포함해서는 안 된다.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>콘텐츠가 발작을 유발하지 않는다.</dd>
+<dt>할 일</dt>
+<dd>초당 3회 이상 번쩍이는 콘텐츠를 사용하지 않는다.</dd>
+<dt>중요성</dt>
+<dd>번쩍이는 콘텐츠는 편두통, 현기증, 메스꺼움, 발작을 유발할 수 있다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 발작 가능성을 더욱 줄이는 것이다. 일부 사람들은 매우 민감하기 때문에 발작을 완전히 없앨 수는 없다. 그러나 화면의 모든 영역에서 초당 3회 깜박임을 모두 제거함으로써 레벨 A에서와 같이 오늘날 국제 표준에서 일반적으로 사용되는 조치를 충족할 때보다 발작이 발생할 가능성이 더 줄어든다.
+
+[성공 기준 2.3.1](three-flashes-or-below-threshold)은 충분히 어둡거나 면적이 충분히 작은 경우 깜박임을 허용하는 반면, 성공 기준 2.3.2는 밝기나 크기에 관계없이 초당 3회 이상의 깜박임을 허용하지 않는다. 결과적으로 단일 깜박이는 픽셀이라도 이 기준을 위반하게 된다. 단일 픽셀보다 큰 플래시를 방지하려는 의도이지만 알 수 없는 배율이나 고대비 설정이 적용될 수 있으므로 플래시가 금지된다.
+
+참고
+
+일부 경우에 "깜박임"과 "번쩍임"이라는 용어가 약간 겹칠 수 있지만 우리는 두 용어를 다르게 사용한다. 왜냐하면 "깜박임"은 주의 산만을 일으킬 수 있지만, 짧은 시간 동안 허용될 수 있으며 멈추거나 멈출 수 있기 때문이다. 반면 "번쩍임"은 발작을 유발할 수 있어 절대로 허용할 수 없으며, 발작이 대부분의 사용자가 끄기 전에 발생할 수 있기 때문이다. 따라서 "깜박임"은 주의 산만을 일으키는 느리고 반복적인 변화를 의미한다. "번쩍임"은 충분히 밝거나 충분히 오래 지속되면 발작을 유발할 수 있는 변화를 의미한다. 깜박임은 보통 초당 3회 이상의 속도로 발생하지 않으므로 깜박임과 번쩍임이 겹치지 않는다. 그러나 깜박임이 초당 3번 이상의 속도로 발생할 수 있기 때문에 겹칠 수 있다. 깜박임에 대한 자세한 정보는 [2.2.2: 일시 정지, 중지, 숨김](pause-stop-hide)을 참조하라.
+
+### 이점
+
+*   번쩍이는 자료를 볼 때 발작을 일으키는 개인은 대체 텍스트에만 제한되지 않고 발작 없이 사이트의 전체 콘텐츠를 경험할 수 있다. 여기에는 광과민성 간질뿐만 아니라 기타 광과민성 발작 장애가 있는 사람도 포함된다.
+
+### 예제
+
+*   매우 밝은 번개가 번쩍이는 장면이 포함된 영화는 번개가 1초에 세 번만 번쩍이도록 편집된다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [Harding FPA Web Site](https://www.hardingfpa.com/)
+*   [Trace Center Photosensitive Epilepsy Analysis Tool (PEAT)](https://trace.umd.edu/peat/)
+*   [Information about Photosensitive Seizure Disorders](https://trace.umd.edu/information-about-photosensitive-seizure-disorders/)
+*   [Epilepsy Action](https://www.epilepsy.org.uk/)
+*   [Epilepsy Foundation - Photosensitivity and Seizures](http://www.epilepsy.com/learn/triggers-seizures/photosensitivity-and-seizures)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G19: Ensuring that no component of the content flashes more than three times in any 1-second period](https://www.w3.org/WAI/WCAG22/Techniques/general/G19)
+

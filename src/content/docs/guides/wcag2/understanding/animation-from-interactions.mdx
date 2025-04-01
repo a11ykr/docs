@@ -1,0 +1,78 @@
+---
+title: SC 2.3.3 대화형 애니메이션
+description: 성공 기준 이해 2.3.3 대화형 애니메이션
+tableOfContents:
+    maxHeadingLevel: 4
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 2.3.3](https://w3.org/TR/WCAG22#animation-from-interactions):대화형 애니메이션 
+
+(Level AAA)
+
+<Card title="성공 기준(SC)"></Card>
+
+상호 작용에 의해 촉발되는 [모션 애니메이션](../../../glossary/motion-animation)은 기능 조작이나 정보 전달을 위해 반드시 [필수적인](../../../glossary/essential) 경우가 아니라면 비활성화할 수 있어야 한다.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>사용자는 동작으로 인해 피해를 입거나 주의가 산만해지지 않는다.</dd>
+<dt>할 일</dt>
+<dd>모션에 대한 사용자 기본 설정을 지원하고 불필요한 모션 효과를 제거한다.</dd>
+<dt>중요성</dt>
+<dd>사람들은 모션 효과로 인해 아플 수 있다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 사용자가 애니메이션이 웹 페이지에 표시되는 것을 방지할 수 있도록 하는 것이다. 일부 사용자는 애니메이션 콘텐츠로 인해 주의가 산만해지거나 메스꺼움을 경험한다. 예를 들어, 페이지 스크롤로 인해 요소가 이동하는 경우(스크롤링과 관련된 필수 움직임 제외) 전정기능 장애가 발생할 수 있다. 전정(내이)기능 장애 반응에는 현기증, 메스꺼움, 두통이 포함된다. 종종 필수적이지 않은 또 다른 애니메이션은 시차 스크롤(parallax scrolling)이다. 시차 스크롤은 배경이 전경과 다른 속도로 움직일 때 발생한다. 웹 페이지의 기능이나 정보에 필수적인 애니메이션은 이 성공 기준에서 허용된다.
+
+'대화형 애니메이션'은 사용자의 상호작용이 필수적이지 않은 애니메이션을 시작할 때 적용된다. 반면에 [2.2.2 일시 정지, 중지, 숨김](pause-stop-hide.html)은 웹 페이지에서 애니메이션을 시작할 때 적용된다.
+
+참고
+
+전정기능 장애가 있는 사람들에게 애니메이션이 미치는 영향은 상당히 심각할 수 있다. 유발된 반응에는 메스꺼움, 편두통, 잠재적으로 회복을 위해 침상 안정이 필요할 수 있다.
+
+**웹사이트가 전정 장애를 유발할 가능성을 어떻게 줄일 수 있을까?** 다음 솔루션 중 하나를 선택하라. 불필요한 애니메이션 사용을 피하라. 사용자 상호 작용에서 필수적이지 않은 애니메이션을 끌 수 있는 컨트롤을 제공하라. 사용자 에이전트 또는 운영 체제의 움직임 줄이기(reduce motion) 기능을 활용하라.
+
+**사용자가 페이지를 스크롤할 때 발생하는 움직임은 어떻게 해야 하는가?** 새로운 콘텐츠를 뷰포트에 이동시키는 것은 스크롤을 위해 필수적이다. 사용자가 필수적인 스크롤 움직임을 제어하므로 이는 허용된다. 스크롤 상호작용에 비필수적인 애니메이션을 추가할 때는 책임감 있게 하라. 항상 사용자에게 불필요한 움직임을 끌 수 있는 기능을 제공하라.
+
+### 이점
+
+*   **전정기능 장애**
+    *   전정기능 장애가 있는 사람은 상호작용에 의해 촉발되는 움직임에 대한 통제가 필요한다. 필수적이지 않은 움직임은 전정 장애 반응을 유발할 수 있습니다. 전정(내이) 장애 반응에는 산만함, 현기증, 두통 및 메스꺼움이 포함된다.
+    *   페르소나 인용문: "그 이상의 움직임을 멈추세요! 너무 어지러워서 집중할 수 없어요. 이제 컴퓨터를 끄고 누워야겠어요."
+
+### 예제
+
+*   **불필요한 모션을 전체적으로 끄는 옵션이 있는 시차 스크롤:**
+    *   사이트에는 사용자가 스크롤할 때 추가 애니메이션이 포함된다. 필수 페이지 콘텐츠를 수직으로 스크롤하면 장식 요소가 수평으로 표시되거나 표시되지 않는다. 각 페이지 상단에 있는 컨트롤을 통해 사용자는 불필요한 애니메이션을 끌 수 있다. 필수적이지 않은 애니메이션을 끄는 기능은 사이트 전체 설정이다.
+*   **움직임 줄이기 설정을 지원하는 전환:**
+    *   사이트에 새 콘텐츠를 로드할 때 필수적이지 않은 전환이 포함되어 있다. 전환은 모션 감소 CSS 미디어쿼리를 고려한 페이지 넘기기 애니메이션이다. 사용자가 동작 감소 기본 설정을 활성화하면 페이지 넘기기 애니메이션이 꺼진다.
+*   **필수 애니메이션:**
+    *   웹 애플리케이션은 애니메이션 시퀀스를 작성하는 기능을 제공한다. 이 도구의 일부로 저작자는 애니메이션을 미리 봐야 한다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [Mozilla documentation for 'prefers-reduced-motion'](//developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+*   [Demonstration of 'prefers-reduced-motion' in Webkit](//webkit.org/blog-files/prefers-reduced-motion/prm.htm)
+*   [An Introduction to the Reduced Motion Media Query](https://css-tricks.com/introduction-reduced-motion-media-query/)
+*   [Designing Safer Web Animations for Motion Sensitivity](http://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity)
+*   [**iOS:** Reduce Motion on iPhone, iPad or iPod touch](https://support.apple.com/en-gb/HT202655)
+*   [**Mac:** Reduce Motion](https://apple.stackexchange.com/questions/253756/speed-up-mission-control-animations-in-macos-sierra)
+*   [**Windows 10:** Reduce motion](//www.laptopmag.com/articles/disable-minimize-maximize-animations-windows-10)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [C39: Using the CSS reduce-motion query to prevent motion](https://www.w3.org/WAI/WCAG22/Techniques/css/C39)
+*   Gx: Allowing users to set a preference that prevents animation.
+
