@@ -1,0 +1,111 @@
+---
+title: 1.4.4 텍스트 크기 조정
+description: 성공 기준 이해 1.4.4 텍스트 크기 조정
+tableOfContents:
+    maxHeadingLevel: 4
+lastUpdated: 2024-05-02
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+(Level AA)
+
+<Card title="성공 기준(SC)">
+[텍스트](../../../glossary/text)는 콘텐츠나 기능의 손상 없이, 그리고 [보조 기술](../../../glossary/assistive-technology) 없이 최대 200%까지 크기 조정이 가능해야 한다. 단, [자막](../../../glossary/captions)과 [텍스트 이미지](../../../glossary/image-of-text)는 제외한다.
+</Card>
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>텍스트를 확대할 수 있다.</dd>
+<dt>할 일</dt>
+<dd>텍스트 크기가 두 배로 늘어날 수 있는지 확인하라.</dd>
+<dt>중요성</dt>
+<dd>어떤 사람들은 텍스트가 더 클 때만 읽을 수 있다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 시각적으로 렌더링된 텍스트, 텍스트 기반 컨트롤(텍스트 문자가 보이도록 표시된 것\[ASCII와 같은 데이터 형식의 텍스트 문자가 아닌\])이 보조 기술(예: 화면 확대기) 없이도 경증 시각 장애인들이 직접 읽을 수 있도록 성공적으로 확대/축소할 수 있게 하는 것이다. 사용자는 웹 페이지의 모든 콘텐츠를 확대/축소하는 것이 좋지만, 텍스트가 가장 중요하다.
+
+콘텐츠 크기 조정은 주로 사용자 에이전트의 책임이다. [UAAG 1.0 Checkpoint 4.1](https://www.w3.org/TR/WAI-USERAGENT/guidelines.html#tech-configure-text-scale)을 충족하는 사용자 에이전트를 사용하면 사용자가 텍스트 크기를 조정할 수 있다. 저작자의 책임은 사용자 에이전트가 콘텐츠를 효과적으로 확대하는 것을 방해하지 않는 웹 콘텐츠를 만드는 것이다. 저작자는 콘텐츠가 텍스트 기반 컨트롤을 포함하여 텍스트 크기 조정에 대한 사용자 에이전트 지원을 방해하지 않는지 확인하거나 텍스트 크기 조정 또는 레이아웃 변경에 대한 직접적인 지원을 제공함으로써 이 성공 기준을 충족할 수 있다. 직접 지원의 예로는 서버사이드 스크립트를 통해 다양한 스타일 시트를 할당하는 방법이 있다.
+
+저작자가 확대/축소 지원을 제공하지 않는 사용자 에이전트의 기술을 사용하는 경우 저작자는 이러한 유형의 기능을 직접 제공하거나 사용자 에이전트에서 사용 가능한 유형의 기능과 작동하는 콘텐츠를 제공할 책임이 있다. 사용자 에이전트가 확대/축소 기능을 제공하지 않지만 사용자가 텍스트 크기를 변경할 수 있도록 허용하는 경우 저작자는 텍스트 크기가 조정될 때 콘텐츠를 계속 사용할 수 있도록 보장할 책임이 있다.
+
+레이블 역할을 하고 사용자가 콘텐츠에 액세스하기 위해 활성화해야 하는 일부 사용자 인터페이스 구성 요소는 레이블의 콘텐츠를 수용할 만큼 너비가 충분하지 않다. 예를 들어, 웹 메일 응용 프로그램에서 제목 열은 가능한 모든 제목 헤더를 수용할 만큼 넓지 않을 수 있지만 제목 헤더를 활성화하면 사용자는 전체 제목 헤더가 있는 전체 메시지로 이동하게 된다. 웹 기반 스프레드시트에서는 너무 길어서 한 열에 표시할 수 없는 셀 내용이 잘릴 수 있으며, 셀에 포커스가 있을 때 사용자가 셀의 전체 내용을 사용할 수 있다. 사용자가 열 너비의 크기를 조정할 수 있는 사용자 인터페이스에서는 사용자 인터페이스 구성 요소의 콘텐츠가 너무 넓어질 수도 있다. 이러한 유형의 사용자 인터페이스 구성 요소에서는 줄 바꿈이 불필요하다. 구성 요소의 전체 콘텐츠가 포커스가 있거나 사용자 활성화 후에 사용할 수 있고 이 정보에 액세스할 수 있다는 표시가 잘렸다는 사실 외에 어떤 방식으로든 사용자에게 제공되는 경우 잘림이 허용된다.
+
+콘텐츠가 최대 200%, 즉 너비와 높이의 두 배까지 확장될 수 있으면 성공 기준을 충족한다. 저작자는 해당 제한을 초과하는 크기 조정을 지원할 수 있지만 크기 조정이 더욱 극심해짐에 따라 적응형 레이아웃으로 인해 유용성 문제가 발생할 수 있다. 예를 들어, 단어의 폭이 너무 넓어서 사용 가능한 가로 공간에 맞지 않아 잘릴 수 있다. 레이아웃 제약으로 인해 텍스트가 더 크게 확대될 때 다른 콘텐츠와 겹칠 수 있다. 또는 문장의 한 단어만 각 줄에 들어갈 수 있으므로 문장이 읽기 어려운 텍스트의 세로 열로 표시될 수 있다.
+
+실무 그룹에서는 200%가 다양한 디자인과 레이아웃을 지원할 수 있고 최소 200% 배율을 제공하는 기존 화면 돋보기를 보완할 수 있는 합리적인 조정이라 간주한다. 200% 이상에서는 확대/축소(텍스트, 이미지 및 레이아웃 영역의 크기를 조정하고 가로 및 세로 스크롤이 모두 필요할 수 있는 더 큰 캔버스를 생성)가 텍스트 크기 조정보다 더 효과적일 수 있다. 확대/축소 지원 전용 보조 기술은 일반적으로 이러한 상황에서 사용되며 저작자가 사용자를 직접 지원하려는 시도보다 더 나은 접근성을 제공할 수 있다.
+
+<Card title="참고">
+텍스트 이미지는 픽셀화되는 경향이 있으므로 텍스트만큼 크기가 조정되지 않으므로 가능하면 텍스트를 사용하는 것이 좋다. 또한 일부 사용자에게 필요한 텍스트 이미지의 전경 및 배경 대비와 색상 조합을 변경하는 것이 더 어렵다.
+</Card>
+
+참조하라 [1.4.3: 시각적 표현](visual-presentation).
+
+### 이점
+
+*   이 성공 기준은 시력이 약한 사람들이 읽을 수 있게 콘텐츠의 텍스트 크기를 키울 수 있도록 도움을 준다.
+
+### 예제
+
+*   시각 장애가 있는 사용자는 브라우저에서 웹 페이지의 텍스트 크기를 1em에서 1.2em으로 늘린다. 사용자는 작은 크기의 텍스트를 읽을 수 없지만 큰 텍스트는 읽을 수 있다. 텍스트에 큰 글꼴이 사용되는 경우에도 페이지의 모든 정보가 계속 표시된다.
+*   웹 페이지에 페이지 크기를 변경하는 컨트롤이 포함되어 있다. 다른 설정을 선택하면 해당 규모에 가장 적합한 디자인을 사용하도록 페이지 레이아웃이 변경된다.
+*   사용자 에이전트에서 확대/축소 기능을 사용하는 사용자는 콘텐츠의 크기를 변경한다. 모든 콘텐츠의 크기는 균일하게 조정되며 필요한 경우 사용자 에이전트는 스크롤바를 제공한다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [CSS 2 Box Model](https://www.w3.org/TR/CSS2/box.html)
+*   [CSS 2 Visual formatting Model](https://www.w3.org/TR/CSS2/visuren.html)
+*   [CSS 2 Visual formatting Model Details](https://www.w3.org/TR/CSS2/visudet.html)
+*   [About fluid and fixed width layouts](http://www.456bereastreet.com/archive/200504/about_fluid_and_fixed_width_layouts/)
+*   [Accessible CSS](https://cookiecrook.com/AIR/2003/train/accessiblecss.php)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](../understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G142: Using a technology that has commonly-available user agents that support zoom](https://www.w3.org/WAI/WCAG22/Techniques/general/G142)
+*   Ensuring that text containers resize when the text resizes **AND** using measurements that are relative to other measurements in the content by using one or more of the following techniques:
+    *   [C28: Specifying the size of text containers using em units](https://www.w3.org/WAI/WCAG22/Techniques/css/C28)
+    *   Techniques for relative measurements
+        
+        *   [C12: Using percent for font sizes](https://www.w3.org/WAI/WCAG22/Techniques/css/C12)
+        *   [C13: Using named font sizes](https://www.w3.org/WAI/WCAG22/Techniques/css/C13)
+        *   [C14: Using em units for font sizes](https://www.w3.org/WAI/WCAG22/Techniques/css/C14)
+    *   Techniques for text container resizing
+        
+        *   [SCR34: Calculating size and position in a way that scales with text size](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR34)
+        *   [G146: Using liquid layout](https://www.w3.org/WAI/WCAG22/Techniques/general/G146)
+*   [G178: Providing controls on the Web page that allow users to incrementally change the size of all text on the page up to 200 percent](https://www.w3.org/WAI/WCAG22/Techniques/general/G178)
+*   [G179: Ensuring that there is no loss of content or functionality when the text resizes and text containers do not change their width](https://www.w3.org/WAI/WCAG22/Techniques/general/G179)
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   [C17: Scaling form elements which contain text](https://www.w3.org/WAI/WCAG22/Techniques/css/C17)
+*   [C20: Using relative measurements to set column widths so that lines can average 80 characters or less when the browser is resized](https://www.w3.org/WAI/WCAG22/Techniques/css/C20)
+*   [C22: Using CSS to control visual presentation of text](https://www.w3.org/WAI/WCAG22/Techniques/css/C22)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F69: Failure of Success Criterion 1.4.4 when resizing visually rendered text up to 200 percent causes the text, image or controls to be clipped, truncated or obscured](https://www.w3.org/WAI/WCAG22/Techniques/failures/F69)
+*   [F80: Failure of Success Criterion 1.4.4 when text-based form controls do not resize when visually rendered text is resized up to 200%](https://www.w3.org/WAI/WCAG22/Techniques/failures/F80)
+*   [F94: Failure of Success Criterion 1.4.4 due to incorrect use of viewport units to resize text](https://www.w3.org/WAI/WCAG22/Techniques/failures/F94)
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [Meta viewport allows for zoom](https://www.w3.org/WAI/standards-guidelines/act/rules/b4f0c3/)
+*   [Zoomed text node is not clipped with CSS overflow](https://www.w3.org/WAI/standards-guidelines/act/rules/59br37/proposed/)
+

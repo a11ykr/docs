@@ -1,0 +1,78 @@
+---
+title: 2.5.6 동시 입력 매커니즘
+description: 성공 기준 이해 2.5.6 동시 입력 매커니즘
+tableOfContents:
+    maxHeadingLevel: 4
+lastUpdated: 2024-05-02
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 2.5.6](https://w3.org/TR/WCAG22#concurrent-input-mechanisms):동시 입력 매커니즘 
+
+(Level AAA)
+
+<Card title="성공 기준(SC)"></Card>
+
+웹 콘텐츠는 플랫폼 상에서 이용 가능한 입력 방식의 사용을 제한해서는 안 된다. 단, 제한이 [필수적인](../../../glossary/essential) 경우, 콘텐츠 보안이 보장되어야 하는 경우, 또는 사용자 설정을 존중해야 하는 경우는 예외이다
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>사용자는 다양한 콘텐츠 입력 방법을 선택할 수 있다.</dd>
+<dt>할 일</dt>
+<dd>사용자가 입력 모드를 전환하는 것을 막지 않아야 한다.</dd>
+<dt>중요성</dt>
+<dd>사람들은 하나의 입력 방법만으로는 작업할 수 없을 수도 있다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 사람들이 웹 콘텐츠와 상호 작용할 때 다양한 입력 모드를 사용하고 전환할 수 있도록 하는 것이다. 사용자는 웹 콘텐츠와 상호 작용할 때 다양한 입력 매커니즘을 사용할 수 있다. 이는 키보드 또는 키보드와 유사한 인터페이스와 마우스, 스타일러스 또는 터치스크린과 같은 포인터 장치와 같은 매커니즘의 조합일 수 있다.
+
+장치에 기본 입력 매커니즘이 있더라도 사용자는 장치와 상호 작용할 때 대체 입력 매커니즘을 사용하도록 선택할 수 있다. 예를 들어 휴대폰과 태블릿의 기본 매커니즘은 터치스크린이다. 이러한 장치의 사용자는 터치스크린을 사용하는 대신 페어링된 마우스나 외부 키보드를 사용하도록 선택할 수 있다.
+
+사용자는 대체 입력 매커니즘을 사용하여 특정 작업 및 상호 작용을 더 쉽게 수행할 수 있다고 판단하는 경우 언제든지 입력 매커니즘을 전환할 수 있어야 한다. 제한이 필수적이거나 콘텐츠의 보안을 보장하거나 사용자 설정을 존중하는 게 필요한 경우를 제외하고 콘텐츠는 사용자의 상호 작용을 특정 입력 매커니즘으로 제한해서는 안 된다.
+
+참고: 사용자에게 키보드 터치 방법을 가르치거나 숙련도와 속도를 측정하는 터치 타이핑 웹 애플리케이션은 특정 입력 매커니즘에 대한 본질적인 제한의 예이다.
+
+### 이점
+
+*   사용자는 선호하고 사용 가능한 입력 매커니즘을 사용하여 웹 콘텐츠와 상호 작용할 수 있다.
+*   사용자는 원하거나 상황에 따라 필요할 때 입력 매커니즘 간에 전환할 수 있다.
+*   사용자는 운영 체제에서 지원하는 경우 언제든지 입력 매커니즘을 추가하고 제거할 수 있다.
+
+### 예제
+
+*   운동 장애가 있는 사용자가 마우스와 키보드를 터치스크린이 있는 휴대폰에 페어링 한다. 이후에는 해당 입력 장치를 통해 전화기를 작동할 수 있으며 콘텐츠는 터치스크린을 유일한 입력 매커니즘으로 허용하지는 않는다.
+*   정밀도가 낮은 터치 지원 노트북에서는 손 떨림, 제한된 손재주 또는 기타 이유로 인해 작은 타겟을 활성화하는 데 어려움을 겪는 사람들도 여전히 키보드와 트랙패드를 사용하여 콘텐츠와 상호 작용할 수 있다.
+*   사용자는 데스크탑 키보드를 사용하여 페이지와 상호 작용을 시작한 다음 보조 터치 지원 모니터를 연결한다. 새로 추가된 입력 매커니즘을 사용하여 콘텐츠를 조작할 수 있으며, 처음 감지된 입력 매커니즘인 키보드만 사용 중이라고 가정하지 않는다.
+*   음성 입력 사용자는 마우스(및 키보드) 명령을 시뮬레이션하는 음성 명령을 사용하여 콘텐츠를 탐색한다. 그러나 동료와 대화할 때 사용자는 음성 인식을 끄고 마우스를 대신 사용한다.
+*   사용자는 마우스로 메뉴를 연 다음 화살표 키를 사용하여 메뉴 항목 사이를 탐색한다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+*   [W3C Pointer Events - Level 2](https://w3c.github.io/pointerevents/)
+*   [Patrick H. Lauke - Detecting touch: it's the 'why', not the 'how'](https://hacks.mozilla.org/2013/04/detecting-touch-its-the-why-not-the-how/)
+*   [Chris Wilson / Paul Kinlan: Touch And Mouse - Together Again For The First Time](https://www.html5rocks.com/en/mobile/touchandmouse/)
+*   [W3C Touch Events - Level 2: Interaction with Mouse Events and click](https://w3c.github.io/touch-events/#mouse-events)
+*   [W3C CSS Media Queries Level 4: Interaction Media Features](https://www.w3.org/TR/mediaqueries-4/#mf-interaction)
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](../understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   Only using high-level, input-agnostic event handlers, such as `focus`, `blur`, `click`, in Javascript (Potential future technique).
+*   Registering event handlers for keyboard/keyboard-like and pointer inputs simultaneously in Javascript; see [Example 1 in Pointer Events Level 2](https://w3c.github.io/pointerevents/#examples) (Potential future technique)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F98: Failure due to interactions being limited to touch-only on touchscreen devices](https://www.w3.org/WAI/WCAG22/Techniques/failures/F98)
+

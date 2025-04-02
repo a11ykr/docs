@@ -1,0 +1,120 @@
+---
+title: 2.1.1 키보드
+description: 성공 기준 이해 2.1.1 키보드
+tableOfContents:
+    maxHeadingLevel: 4
+lastUpdated: 2024-05-02
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+(Level A)
+
+<Card title="성공 기준(SC)">
+개별 키 입력에 특정 타이밍이 요구되지 않는 [키보드 인터페이스](../../../glossary/keyboard-interface)를 통해 모든 콘텐츠의 [기능](../../../glossary/functionality)을 이용할 수 있어야 한다. 단, 콘텐츠의 기본 기능에 끝점(endpoints) 뿐만 아니라 사용자의 이동 경로 입력이 필요한 경우는 예외로 한다.
+
+    <Card title="참고">
+    이 예외는 기본 기능과 관련되지만, 입력 기법은 아니다. 예를 들어, 필기로 텍스트를 입력한다면, 입력 기법은 경로 의존적인 입력이 필요하지만, 기본 기능인 텍스트 입력은 경로 의존적인 입력을 필요로 하지 않는다.
+    </Card>
+    <Card title="참고">
+    이 성공기준은 키보드 조작 외에 마우스 입력이나 다른 입력 방법을 제공하는 것을 금지하지 않으며, 금지해서도 안된다.
+    </Card>
+</Card>
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>자유로운 움직임(freehand)을 제외한 모든 작업은 키보드로 수행할 수 있다.</dd>
+<dt>할 일</dt>
+<dd>포인터 동작에 동일한 키보드 기능이 있는지 확인하라.</dd>
+<dt>중요성</dt>
+<dd>시각 장애인과 일부 지체 장애가 있는 사람들을 포함하여 많은 사람들이 키보드 인터페이스에 의존한다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 가능한 경우 키보드나 키보드 인터페이스를 통해 콘텐츠를 작동할 수 있도록 하는 것이다(대체 키보드를 사용할 수 있음). 키보드나 대체 키보드를 통해 콘텐츠를 조작할 수 있는 경우 시력이 없는 사람(눈과 손을 함께 이용하는 것이 필수적인 마우스 등의 장치를 사용할 수 없는 사람)뿐만 아니라 대체 키보드나 키보드 에뮬레이터 같은 대체 입력 장치를 사용해야 하는 사람도 조작할 수 있다. 키보드 에뮬레이터에는 음성 입력 소프트웨어, 호흡 대응(sip-and-puff) 소프트웨어, 화면 키보드, 스캐닝 소프트웨어 및 다양한 보조 기술과 대체 키보드가 포함된다. 시력이 낮은 사람도 포인터를 추적하는 데 어려움을 겪을 수 있으며 키보드로 소프트웨어를 제어할 수 있는 경우 소프트웨어 사용이 훨씬 쉬워지거나 가능해진다.
+
+"개별 키 입력에 대한 특정 타이밍"의 예로는 사용자가 짧은 시간 내에 여러 키 입력을 반복하거나 실행해야 하는 상황 또는 키 입력이 등록되기 전에 오랫동안 키를 누르고 있어야 하는 상황이 포함된다.
+
+키보드에서 합리적으로 제어할 수 없는 항목을 구분하기 위해 "기본 기능에 끝점 뿐만 아니라 사용자의 이동 경로에 따라 달라지는 입력이 필요한 경우를 제외하고"라는 문구가 포함되었다.
+
+포인팅 장치로 수행되는 대부분의 작업은 키보드로도 할 수 있다(예: 클릭, 선택, 이동, 크기 조정). 그러나 포인팅 장치로 수행되는 작은 범위의 입력 작업은 과도한 수의 키 입력 없이 어떤 알려진 방식으로도 키보드로는 수행할 수 없다. 자유로운 그리기나 수채화 그리기는 경로 의존적 입력이 필요하다. 직선 그리기, 일반 기하학적 모양 만들기, 창 크기 조정, 객체를 위치로 끌기(그 위치로 가는 경로가 중요하지 않은 경우)는 경로 의존적 입력이 필요하지 않다.
+
+MouseKeys(역자 주: 키보드 자판, 특히 숫자 키패드를 포인팅 장치로 사용하는 소프트웨어 기능)의 사용은 응용 프로그램과 동등한 키보드가 아니기 때문에 이 성공 기준을 충족하지 않는다. 이는 마우스와 동일하다(즉, 응용 프로그램에서는 마우스처럼 보인다).
+
+사용자 입력 기능의 설계에서는 운영 체제 키보드 접근성 기능이 사용될 수 있다는 점을 고려한다고 가정한다. 예를 들어 수식키(modifier key, 역자 주: 함께 누를 때 다른 키의 일반 동작을 일시적으로 수정하는 키보드의 특수키. shift, alt, ctrl 등) 고정이 켜져 있을 수 있다. 콘텐츠는 고정키 기능과 충돌하여 예상치 못한 결과를 생성하는 이벤트를 보내지 않고 이러한 환경에서 계속 작동한다.
+
+<Card title="참고">
+플랫폼과 사용자 에이전트에는 일반적으로 키보드 인터페이스로 웹 콘텐츠나 애플리케이션을 제어하는 방법에 대한 규칙이 있다. 콘텐츠가 플랫폼/사용자 에이전트 규칙을 따르지 않으면 사용자가 다양한 상호 작용 방법을 배워야 하므로 사용하기 어려울 수 있다. *모범 사례*로서 콘텐츠는 플랫폼/사용자 에이전트 규칙을 따라야 한다. 그러나 이러한 규칙에서 벗어나더라도 이 성공 기준의 규범적 요구 사항을 충족하지 *못*한다.
+
+예를 들어 포커스가 있는 버튼은 일반적으로 Enter 키와 Space바를 모두 사용하여 활성화할 수 있다. 대신 웹 애플리케이션의 사용자 정의 버튼 컨트롤이 Enter(또는 완전한 사용자 정의 키 또는 키 조합)에만 반응하는 경우에도 이 성공 기준의 요구 사항을 **충족**한다.
+</Card>
+
+<Card title="참고">
+이 성공 기준에서는 마우스나 터치 스크린을 사용하여 활성화할 수 있는 모든 시각적 컨트롤이 키보드를 사용하여 초점을 맞추고 실행 가능해야 한다고 요구하지 않는다. 규범적인 요구 사항은 키보드 인터페이스 사용자가 동일하거나 비교할 수 있는 작업을 수행하고 콘텐츠를 조작할 수 있는 방법이 있어야 한다는 것이다. 일반적으로 이를 달성하는 가장 쉬운 방법은 가능한 모든 입력 장치에서 작동할 수 있는 컨트롤을 제공하는 것이다. 그러나 웹 애플리케이션이 키보드 인터페이스 사용자를 위한 별도의 작동 모드를 구현하는 경우 성공 기준을 실패하지 **않**는다.
+</Card>
+
+### 이점
+
+*   시각 장애가 있는 사람(마우스 등 눈과 손이 함께 필요한 장치를 사용할 수 없는 사람)
+*   저시력인 사람(화면에서 포인터 표시를 찾거나 추적하는 데 어려움이 있는 사람)
+*   손 떨림 때문에 마우스 사용이 매우 어려워 일반적으로 키보드를 사용하는 일부 사람
+
+### 예제
+
+<dl>
+    <dt>예제 1: 그리기 프로그램</dt>
+    <dd>그리기 프로그램을 사용하면 사용자는 키보드에서 개체를 생성, 크기 조정, 위치 지정 및 회전할 수 있다.</dd>
+    <dt>예 2: 끌어서 놓기(drag and drop) 기능</dt>
+    <dd>끌어서 놓기를 사용하는 응용 프로그램은 개체를 이동하기 위한 "잘라내기" 및 "붙여넣기" 또는 양식 컨트롤도 지원한다.</dd>
+    <dt>예 3: 개별 지점 간 이동 및 연결</dt>
+    <dd>점 연결 프로그램(connect-the-dots program)을 사용하면 사용자가 화면의 점 사이를 이동하고 스페이스바를 사용하여 현재 점을 이전 점에 연결할 수 있다.</dd>
+    <dt>예 4: 예외 - 페인팅 프로그램</dt>
+    <dd>수채화 프로그램은 움직임의 속도와 지속 시간에 따라 브러시 스트로크가 달라지므로 예외로 통과된다.</dd>
+    <dt>예시 5: 예외 - 모형 헬리콥터 비행 훈련 시뮬레이터</dt>
+    <dd>모형 헬리콥터 비행 훈련 시뮬레이터는 모형 헬리콥터의 실시간 동작을 가르치는 것이 시뮬레이터의 본질이기 때문에 예외로 통과된다.</dd>
+    <dt>예 6: 옵션 키보드가 있는 PDA</dt>
+    <dd>일반적으로 스타일러스를 통해 작동하는 PDA 장치에는 부착할 수 있는 옵션 키보드가 있다. 키보드를 사용하면 표준 방식으로 전체 웹 탐색이 가능하다. 웹 콘텐츠는 키보드만 사용하여 작동하도록 설계되었기 때문에 작동 가능하다.</dd>
+    <dt>예 7: 포인터로 작동 가능한 제출 버튼이 있는 간단한 검색 양식</dt>
+    <dd>검색 양식에는 텍스트 입력 필드와 제출 버튼이 포함된다. 제출 버튼 자체는 초점을 받지 않도록 코딩되었으며 포인터 입력을 통해서만 활성화될 수 있다. 그러나 키보드 사용자는 검색어를 입력한 후 텍스트 입력에서 Enter를 눌러 검색을 제출할 수 있으므로 양식은 이 성공 기준을 통과한다.</dd>
+</dl>
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G202: Ensuring keyboard control for all functionality](https://www.w3.org/WAI/WCAG22/Techniques/general/G202)
+*   Ensuring keyboard control by using one of the following techniques.
+    *   [H91: Using HTML form controls and links](https://www.w3.org/WAI/WCAG22/Techniques/html/H91)
+    *   [PDF3: Ensuring correct tab and reading order in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF3)
+    *   [PDF11: Providing links and link text using the Link annotation and the /Link structure element in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF11)
+    *   [PDF23: Providing interactive form controls in PDF documents](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF23)
+*   [G90: Providing keyboard-triggered event handlers](https://www.w3.org/WAI/WCAG22/Techniques/general/G90) using one of the following techniques:
+    *   [SCR20: Using both keyboard and other device-specific functions](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR20)
+    *   [SCR35: Making actions keyboard accessible by using the onclick event of anchors and buttons](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR35)
+    *   [SCR2: Using redundant keyboard and mouse event handlers](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR2)
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   Using XHTML role, state, and value attributes if repurposing static elements as interactive user interface components (future link) AND [SCR29: Adding keyboard-accessible actions to static HTML elements](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR29)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F54: Failure of Success Criterion 2.1.1 due to using only pointing-device-specific event handlers (including gesture) for a function](https://www.w3.org/WAI/WCAG22/Techniques/failures/F54)
+*   [F55: received](https://www.w3.org/WAI/WCAG22/Techniques/failures/F55)
+*   [F42: Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links](https://www.w3.org/WAI/WCAG22/Techniques/failures/F42)
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [Iframe with interactive elements is not excluded from tab-order](https://www.w3.org/WAI/standards-guidelines/act/rules/akn7bn/)
+*   [Scrollable content can be reached with sequential focus navigation](https://www.w3.org/WAI/standards-guidelines/act/rules/0ssw9k/)
+

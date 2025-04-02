@@ -1,0 +1,70 @@
+---
+title: 2.2.4 방해 금지
+description: 성공 기준 이해 2.2.4 방해 금지
+tableOfContents:
+    maxHeadingLevel: 4
+lastUpdated: 2024-05-02
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 2.2.4](https://w3.org/TR/WCAG22#interruptions):방해 금지 
+
+(Level AAA)
+
+<Card title="성공 기준(SC)"></Card>
+
+[긴급 상황](../../../glossary/emergency)과 관련된 방해를 제외하고, 사용자는 작업 중단을 연기하거나 차단할 수 있어야 한다.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>사용자는 방해받지 않는다.</dd>
+<dt>할 일</dt>
+<dd>긴급 상황을 제외하고 사람들이 업데이트를 연기하거나 끄도록 허용한다.</dd>
+<dt>중요성</dt>
+<dd>업데이트는 보조 기술 사용자와 주의력 결핍이 있는 사람들의 주의를 산만하게 하고 방해한다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 사용자가 긴급 상황을 제외하고 저작자/서버의 업데이트를 끌 수 있도록 하는 것이다. 응급 상황에는 민간 긴급 경보 메시지 또는 데이터 손실, 연결 끊김 등을 포함하여 건강, 안전 또는 재산에 대한 위험을 경고하는 기타 메시지가 포함된다.
+
+이를 통해 콘텐츠에 집중할 수 있게 함으로써 인지 장애나 주의력 장애가 있는 사람들이 접근이 가능해진다. 또한 시각 장애가 있거나 시력이 낮은 사용자가 현재 읽고 있는 콘텐츠에 "보기" 초점을 유지할 수 있다.
+
+### 이점
+
+*   주의력 결핍 장애가 있는 개인은 주의가 산만해지지 않고 콘텐츠에 집중할 수 있다.
+*   시력이 낮거나 화면 낭독기를 사용하는 개인이 콘텐츠를 보는 동안 업데이트되지 않는다(한 주제를 읽기 시작해서 다른 주제로 끝나면 연속성이 깨어지고 오해가 발생할 수 있음).
+
+### 예제
+
+예 1. 사용자 기본 설정 제공
+
+웹 포털의 기본 설정 페이지에는 긴급 상황에 관한 경고를 제외하고 현재 세션이 끝날 때까지 모든 업데이트와 경고를 연기하는 옵션이 포함되어 있다.
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](../understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G75: Providing a mechanism to postpone any updating of content](https://www.w3.org/WAI/WCAG22/Techniques/general/G75)
+*   [G76: Providing a mechanism to request an update of the content instead of updating automatically](https://www.w3.org/WAI/WCAG22/Techniques/general/G76)
+*   [SCR14: Using scripts to make nonessential alerts optional](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR14)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F40: Failure due to using meta redirect with a time limit](https://www.w3.org/WAI/WCAG22/Techniques/failures/F40)
+*   [F41: Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh to reload the page](https://www.w3.org/WAI/WCAG22/Techniques/failures/F41)
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [Meta element has no refresh delay](https://www.w3.org/WAI/standards-guidelines/act/rules/bc659a/)
+*   [Meta element has no refresh delay (no exception)](https://www.w3.org/WAI/standards-guidelines/act/rules/bisz58/)
+

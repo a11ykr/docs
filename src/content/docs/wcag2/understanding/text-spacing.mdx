@@ -1,0 +1,201 @@
+---
+title: 1.4.12 텍스트 간격
+description: 성공 기준 이해 1.4.12 텍스트 간격
+tableOfContents:
+    maxHeadingLevel: 4
+lastUpdated: 2024-05-02
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+(Level AA)
+
+<Card title="성공 기준(SC)">
+다음의 [텍스트](../../../glossary/text) [스타일 속성](../../../glossary/style-property)을 지원하는 마크업 언어를 사용하여 구현된 콘텐츠의 경우, 다음과 같은 것을 모두 설정한 후 추가적인 스타일 속성의 변경 없이도 콘텐츠나 기능에 손상이 없어야 한다.
+
+*   줄 높이(줄 간격)는 글자 크기보다 최소 1.5배 이상
+*   문단 간격이 글자 크기보다 최소 2배 이상
+*   글자 간격이 글자 크기보다 최소 0.12배 이상
+*   단어 간격이 글자 크기보다 최소 0.16배 이상
+
+예외: 서면(written) 텍스트에서 이러한 텍스트 스타일 속성 중 하나 이상을 사용하지 않는 사용자 언어와 스크립트는 해당 언어와 스크립트의 조합이 가능한 속성만을 사용하여 준수할 수 있다.
+
+    <Card title="참고">
+    텍스트 간격 값을 사용하는 것은 필수 사항이 아니다. 요구사항은 사용자가 원래 제작된 텍스트 간격을 무시하고 재설정할 때, 콘텐츠나 기능성이 손실되지 않도록 하는 것이다.
+    </Card>
+    <Card title="참고">
+    일부 언어의 쓰기 체계는 단락 시작 들여쓰기와 같은 다른 텍스트 텍스트 설정을 사용한다. 저작자는 쓰기 체계에서 텍스트의 가독성을 향상시키기 위해 현지에서 사용 가능한 지침을 따르는 것이 좋다.
+    </Card>
+</Card>
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>사용자는 읽기 쉽도록 텍스트 간격을 조정할 수 있다.</dd>
+<dt>저작자의 일</dt>
+<dd>콘텐츠가 사용자 정의 텍스트 설정에 맞게 조정되는지 확인하라.</dd>
+<dt>중요성</dt>
+<dd>어떤 사람들에게는 간격이나 글꼴 특성이 다른 텍스트가 필요하다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 사람들이 읽기 환경을 개선하기 위해 저작자가 지정한 텍스트 간격을 재정의할 때 콘텐츠를 계속 읽고 작동할 수 있도록 하는 것이다. 성공 기준의 네 가지 항목에 규정된 각 요구 사항은 사용자가 자신의 필요에 맞게 텍스트 스타일을 조정할 수 있도록 하는 데 도움이 된다.
+
+지정된 지표는 최소 기준을 설정한다. 저작자의 지표와 이 성공 기준에 지정된 지표 사이의 값은 콘텐츠나 기능의 손실을 가져오면 안 된다.
+
+이 성공 기준은 줄, 단어, 문자 및 단락 사이의 간격 증가에 대한 콘텐츠의 적응성에 중점을 둔다. 이들의 조합은 사용자가 텍스트를 효과적으로 읽는 데 도움이 될 수 있다. 또한 사용자가 간격에 대한 저작자 설정을 무시할 때 콘텐츠가 올바르게 조정되도록 하면 사용자가 다른 스타일 기본 설정을 조정할 가능성이 크게 높아진다. 예를 들어, 사용자는 텍스트를 효과적으로 읽으려면 저작자가 설정한 것보다 더 넓은 글꼴로 변경해야 할 수도 있다.
+
+#### 저작자의 책임
+
+이 성공 기준은 저작자가 모든 콘텐츠를 지정된 지표로 설정해야 한다고 지시하지 않으며 모든 사용자가 지정된 지표로 조정할 것임을 암시하려는 의도도 없다. 오히려 사용자가 이러한 지표를 설정하기로 선택한 경우 콘텐츠나 기능의 손실 없이 이를 수행할 수 있음을 의미한다. 저작자 요구 사항은 저작자 설정을 재정의하는 사용자의 기능을 방해하지 않는 것과 이렇게 수정된 콘텐츠가 간격 재정의를 허용하지 않는 효과의 그림 1~3에 표시된 방식으로 콘텐츠를 손상시키지 않도록 하는 것이다.
+
+일부 인간 언어 및 스크립트에서는 성공 기준에서 지정한 일부 지표가 적용되지 않는다. 예를 들어 일본어와 같은 언어에서는 단락 뒤에 공백을 사용하지 않는다. 즉, 사용자가 실제로 단락 간격을 변경할 가능성이 거의 없다. 이 성공 기준의 예외는 저작자가 사용 중인 언어와 스크립트의 조합에 적용할 수 없는 텍스트 스타일 속성을 무시할 수 있도록 허용한다.
+
+저작자가 현지 언어 또는 쓰기 시스템의 가독성을 향상시키기 위해 현지에서 사용 가능한 지침을 사용하는 것이 사용자에게 도움이 된다. 사용자가 지정된 지표를 초과하기로 선택한 경우 이로 인해 발생하는 콘텐츠 또는 기능 손실은 사용자의 책임이다.
+
+또한 이 성공 기준은 사용자가 줄 높이 및 간격 측정항목을 변경하는 *방법*을 고려하지 않는다. 사용자가 이를 수행할 수 있도록 콘텐츠가 자체 매커니즘을 구현할 필요는 없다. 사용자 에이전트나 플랫폼이 사용자에게 이를 수행할 수 있는 방법을 제공하지 않는 경우 이는 콘텐츠의 실패가 아니다. 사용자가 선택한 방법(예: 확장 프로그램이나 북마클릿 사용)이 콘텐츠의 줄 높이 및 간격 텍스트 속성을 올바르게 설정하지 못한 경우 콘텐츠는 이 성공 기준을 미준수한 것이 아니다(단, 콘텐츠가 속성 추가를 적극적이고 의도적으로 방해하지 않는 경우).
+
+##### 해당 여부
+
+사용 중인 마크업 기반 기술이 성공 기준의 지표에 대한 텍스트를 재정의할 수 있는 경우 이 성공 기준을 적용할 수 있다. 예를 들어 CSS/HTML 기술은 지정된 간격 지표를 허용할 수 있다. 플러그인 기술에는 지정된 지표에 맞게 스타일을 수정하는 기능이 내장되어 있어야 한다. 현재 PDF는 마크업을 사용하여 구현되지 않으므로 이 성공 기준이 적용되지 않는다.
+
+일반적으로 [스타일 속성](../../../glossary/style-property)의 영향을 받지 않고 조정되지 않을 것으로 예상되는 텍스트의 예는 다음과 같다.
+
+*   비디오 프레임에 직접 삽입되고 관련 캡션 파일로 제공되지 않는 비디오 캡션
+*   [텍스트 이미지](../../../glossary/image-of-text)
+
+이 성공 기준에서 텍스트를 [canvas](https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element)로 구현한 것은 [텍스트 이미지](../../../glossary/image-of-text)로 간주한다.
+
+##### 말줄임표 사용
+
+디자인 제약(예: 왼쪽 탐색 또는 테이블 열 헤더의 최대 너비)으로 인해 텍스트 컨테이너를 확장할 수 없는 페이지 영역이 있을 수 있다. 텍스트가 공백을 초과하는 경우 일반적인 규칙은 잘린 텍스트를 말줄임표로 바꾸는 것이다. 텍스트 스타일 속성을 수정한 결과로 말줄임표가 나타나는 경우, 콘텐츠를 계속 사용할 수 있는 한 페이지는 여전히 텍스트 간격 요구 사항을 충족할 수 있다. 예를 들어:
+
+*   페이지에서 잘린 텍스트를 표시하는 매커니즘을 제공한다(예: 텍스트가 초점을 받거나 활성화되었을 때 표시)
+*   말줄임표가 링크를 포함하는 콘텐츠 섹션의 일부인 경우 잘린 텍스트가 링크된 페이지에 표시된다.
+
+텍스트가 잘리지 않았지만 간격 조정으로 텍스트가 잘릴 떄 잘린 텍스트를 표시하는 매커니즘이 없으면 이 성공 기준을 준수하지 못한다.
+
+#### 사용자 책임
+
+텍스트 간격 조정은 사용자에게 달려 있다. 사용자는 이 성공 기준에서 정한 간격 조정 범위를 넘어설 수 있다. 간격을 늘려서 콘텐츠나 기능이 손실될 경우, 사용자는 원래 저작자가 설정한 간격이나 성공기준 범위 내의 간격으로 조정하거나 되돌릴 수 있다. 그렇지만 사용자는 콘텐츠나 기능 손실 없이 성공 기준에서 정한 범위 내에서 간격을 자유롭게 조정할 수 있어야 한다. 이런 변경은 사용자 스타일시트, 북마클렛, 확장 프로그램 또는 애플리케이션을 통해 이루어질 수 있다.
+
+#### 간격 설정을 허용하지 않을 때의 효과
+
+다음 이미지는 저작자가 사용자가 이 성공 기준에 지정된 지표에 대한 간격을 설정할 수 있다는 점을 고려하지 않을 때 발생하는 몇 가지 유형의 실패를 보여준다.
+
+##### 텍스트 잘림
+
+그림 1에서는 "귀하의 요구 사항"이라는 단어의 아래쪽 부분이 잘려서 제목을 읽을 수 없게 되었다. "우리는 귀하의 요구 사항을 충족하기 위해 모바일 응용 프로그램 서비스를 제공한다."로 읽어야 한다.
+
+<figure id="figure-text-cut">
+    <img src="/docs/img/spacing_cutoff_fail_vertical.png" alt="제목 텍스트가 세로로 잘렸다." width="420" height="190" />
+    <figcaption>그림 1 세로로 텍스트가 잘린 것은 실패 사례이다.</figcaption>
+</figure>
+
+그림 2에서는 텍스트의 마지막 부분이 3개의 나란히 있는 제목에서 잘린다. 첫 번째 제목은 "A cog in the wheel"로 읽어야 한다. 하지만 "A cog in the whe"라고 적혀 있다. 두 번째 "e"의 절반만 표시되고 문자 "l"은 아예 없다. 두 번째 제목은 "A penny for your thoughts"로 읽어야 한다. 하지만 "A penny for your"라고 적혀 있다. 세 번째는 "Back to the drawing board"로 읽어야 한다. 하지만 "Back to the drawi"라고 적혀 있다.
+
+<figure id="figure-horiz-text-cut">
+    <img src="/docs/img/spacing_cutoff_fail_horizontal.png" alt="잘린 텍스트가 있는 3개의 제목이 나란히 표시된다." width="509" height="184" />
+    <figcaption>그림 2 가로로 텍스트가 잘린 것은 실패 사례이다.</figcaption>
+</figure>
+
+##### 텍스트 겹침
+
+그림 3에서 "Technologists Seeking Input from Groups and Programs"라는 제목의 마지막 세 단어 "Groups and Programs"은 다음 문장과 겹친다. 해당 문장은 "You are invited to share ideas and areas of interest related to the integration of technology from a group or program perspective."라고 읽어야 한다. 그러나 "You are invited to share ideas"라는 문구는 모호하고 읽을 수 없다.
+
+<figure id="figure-overlapping-text">
+    <img src="/docs/img/spacing_overlap_fail.png" alt="제목 텍스트가 단락 텍스트의 일부와 겹친다." width="510" height="170" />
+    <figcaption>그림 3 텍스트가 겹치는 것은 실패 사례이다.</figcaption>
+</figure>
+
+### 이점
+
+*   줄, 단어, 문자 사이에 더 많은 공간이 필요한 저시력 사용자도 텍스트를 읽을 수 있다.
+*   난독증이 있는 사람은 읽기 속도를 높이기 위해 줄, 단어, 글자 사이의 간격을 늘릴 수 있다.
+*   이 성공 기준에서 요구되지는 않지만 텍스트 블록 사이의 공백은 인지 장애가 있는 사용자가 섹션을 식별하고 상자를 설명하는 데 도움이 될 수 있다.
+
+### 예제
+
+성공 기준의 지표 간격이 재정의되는 경우:
+
+1.  텍스트가 잘리지 않고 포함한 상자의 경계 내에 맞춰진다.
+2.  텍스트는 다른 상자와 겹치지 않고 포함한 상자의 경계 내에 맞춰진다.
+
+### 관련 자료
+
+자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.
+
+#### 연구
+
+이 성공 기준의 근거는 [연구를 기반으로 한다](https://www.w3.org/TR/WCAG22/#resources). 척도로 채택된 지표는 [McLeish](http://journals.sagepub.com/doi/pdf/10.1177/0264619607075995) 연구를 기반으로 한다. 그녀는 .04에서 .25em 테스트를 실행했다. McLeish는 실제 자료의 읽기 속도가 .25까지 증가하는 곡선을 발견했지만 .20에서 평평해지기 시작했다. 개선이 없다고 보고된 이전 연구는 .5em에서 시작했는데, 바로 곡선이 평평해지는 지점이었다. [Wayne E. Dick 박사는 McLeish 연구를 분석하고](https://lists.w3.org/Archives/Public/public-low-vision-a11y-tf/2017Jun/0047.html) 점(point) 단위로 번환했다. Dick 박사는 실무 그룹이 채택한 지표를 권장했다.
+
+##### 언어와 스크립트
+
+대략 480개의 다양한 언어와 스크립트를 [검토하였다](https://lists.w3.org/Archives/Public/public-low-vision-a11y-tf/2018Feb/0001.html). 성공 기준에서 허용하는 최대 간격 조정은 다음 3개 페이지에 조정하였다.
+
+1.  [자신의 쓰기 체계를 갖춘 언어(Languages in their own writing systems)](http://www.geonames.de/languages.html)
+2.  [쓰기 체계 및 언어에 대한 온라인 백과사전 - 언어 이름(Online Encyclopedia of writing systems and languages – language names)](https://www.omniglot.com/language/names.htm)
+3.  [세계인권선언 제1조\[Universal Declaration of Human Rights (Article 1)\]](https://www.omniglot.com/language/phrases/index.htm)
+
+##### 결과
+
+부작용은 발생하지 않았다. 구체적인 조사 결과는 다음과 같다.
+
+<dl>
+    <dt>글자 간격</dt>
+    <dd>단어의 개별 문자는 약간 더 떨어져 있지만 그대로 유지되었다.</dd>
+    <dt>단어 간격</dt>
+    <dd>단어의 간격이 더 멀어졌다. 단어 간격이 없는 언어(예: 일본어)에서는 단어 간격을 적용해도 효과가 없다. 이것은 예상된다.</dd>
+    <dt>줄 높이</dt>
+    <dd>줄 높이를 변경해도 발음 구별 부호가 문자와 분리되지 않았으며 문자의 상향부(ascenders)나 하향부(descenders)에 부정적인 영향을 미치지 않았다.</dd>
+</dl>
+
+앞에서 설명한 대로 간격이 조정된 텍스트를 읽는 기능은 사용자의 책임이다. 이것은 언어에 관계없는 사실이다.
+
+성공 기준의 예외는 텍스트 스타일 속성이 언어나 스크립트에서 사용되지 않는 경우를 다룬다. 이러한 경우 저작자는 관련 속성이 레이아웃을 손상시키지 않는지 확인하기만 하면 된다.
+
+#### Other references
+
+*   Allan, Kirkpatrick, Lawton Henry, Editors. (2017). [Accessibility Requirements for People with Low Vision (3.4 Spacing for Reading)](https://www.w3.org/TR/low-vision-needs/#spacing). World Wide Web Consortium.
+*   [Stylus Team](https://github.com/openstyles/stylus/graphs/contributors) (2012). [Stylus browser extension](https://github.com/openstyles/stylus/blob/master/README.md) (Firefox, Chrome, and Opera) (compatible with Userstyles.org material).
+*   Campbell, Alastair. (2017). [Text Adaptation Bookmarklet](https://github.com/alastc/adaptation-scripts/blob/master/scripts/text-adaptation.js). GitHub.
+*   Chung, Susana T. L. (2012). [Dependence of Reading Speed on Letter Spacing in Central Vision Loss](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3429790/). Optom Vis Sci.
+*   Chung, Susana T. L. (2002). [The Effect of Letter Spacing on Reading Speed in Central and Peripheral Vision (PDF)](http://journals.sagepub.com/doi/pdf/10.1177/0264619607075995). IOVS ARVO Journals.
+*   Mcleish, Eve. (2007). [A study of the effect of letter spacing on the reading speed of young readers with low vision (PDF)](http://journals.sagepub.com/doi/pdf/10.1177/0264619607075995). The British Journal of Visual Impairment 25.2: 133-43.
+*   Rello, L., & Baeza-Yates, R. A. (2017). [How to present more readable text for people with dyslexia](https://link.springer.com/article/10.1007/s10209-015-0438-8). Universal Access in the Information Society, 16(1), 29-49.
+*   Sjoblom, A.M., Eaton, E. and Stagg, S.D., (2016). [The effects of letter spacing and coloured overlays on reading speed and accuracy in adult dyslexia](http://onlinelibrary.wiley.com/doi/10.1111/bjep.12127/full). British Journal of Educational Psychology, 86(4), pp. 630-639).
+*   Zorzi, Marco et, al. (2012). [Extra-large letter spacing improves reading in dyslexia](http://www.pnas.org/content/109/28/11455.full). Proceedings of the National Academy of Sciences.
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](../understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [C36: Allowing for text spacing override](https://www.w3.org/WAI/WCAG22/Techniques/css/C36)
+*   [C35: Allowing for text spacing without wrapping](https://www.w3.org/WAI/WCAG22/Techniques/css/C35)
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   [C8: Using CSS letter-spacing to control spacing within a word](https://www.w3.org/WAI/WCAG22/Techniques/css/C8)
+*   [C21: Specifying line spacing in CSS](https://www.w3.org/WAI/WCAG22/Techniques/css/C21)
+*   [C28: Specifying the size of text containers using em units](https://www.w3.org/WAI/WCAG22/Techniques/css/C28)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F104: Failure of Success Criterion 1.4.12 due to clipped or overlapped content when text spacing is adjusted](https://www.w3.org/WAI/WCAG22/Techniques/failures/F104)
+
+### 점검 규칙
+
+다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
+
+*   [Important letter spacing in style attributes is wide enough](https://www.w3.org/WAI/standards-guidelines/act/rules/24afc2/)
+*   [Important line height in style attributes is wide enough](https://www.w3.org/WAI/standards-guidelines/act/rules/78fd32/)
+*   [Important word spacing in style attributes is wide enough](https://www.w3.org/WAI/standards-guidelines/act/rules/9e45ec/)
+

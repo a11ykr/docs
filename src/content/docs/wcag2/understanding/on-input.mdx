@@ -1,0 +1,83 @@
+---
+title: 3.2.2 입력 활성
+description: 성공 기준 이해 3.2.2 입력 활성
+tableOfContents:
+    maxHeadingLevel: 4
+lastUpdated: 2024-05-02
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+## [성공기준 이해 3.2.2](https://w3.org/TR/WCAG22#on-input):입력 활성 
+
+(Level A)
+
+<Card title="성공 기준(SC)"></Card>
+
+어떠한 [사용자 인터페이스 구성요소](../../../glossary/user-interface-component)의 설정 변경도, 해당 구성요소를 사용하기 전에 사용자에게 그 행동을 알리지 않고 자동으로 [맥락의 변화](../../../glossary/changes-of-context)를 초래해서는 안 된다.
+
+## 요약
+
+<dl>
+<dt>목표</dt>
+<dd>콘텐츠를 더욱 예측 가능하게 운용할 수 있다.</dd>
+<dt>할 일</dt>
+<dd>입력에 따라 맥락이 변경되면 사용자에게 미리 경고한다.</dd>
+<dt>중요성</dt>
+<dd>예측 가능하게 동작하는 콘텐츠는 장애인에게 특히 중요하다.</dd>
+</dl>
+
+### 의도
+
+이 성공 기준의 목적은 데이터를 입력하거나 양식 컨트롤을 선택하면 예측 가능한 효과가 있는지 확인하는 것이다. 사용자 인터페이스 구성 요소의 설정을 변경하면 사용자가 더 이상 상호 작용하지 않을 때 유지되는 컨트롤의 일부 측면이 변경된다. 따라서 확인란을 선택하거나 텍스트 필드에 텍스트를 입력하거나 목록 컨트롤에서 선택한 옵션을 변경하면 설정이 변경되지만 링크나 버튼을 활성화하면 변경되지 않는다. 상황의 변화는 변화를 쉽게 인식하지 못하거나 변화로 인해 쉽게 주의가 산만해지는 사용자에게 혼란을 줄 수 있다. 맥락 변화는 사용자의 작업에 대한 응답으로 해당 변경이 발생할 것이 분명한 경우에만 적절하다.
+
+참고
+
+이 성공 기준은 컨트롤 설정 변경으로 인한 상황 변화를 다룬다. 탭 컨트롤의 링크나 탭을 클릭하면 해당 컨트롤의 설정이 변경되는 것이 아니라 컨트롤이 활성화된다.
+
+참고
+
+여기서 "구성요소" 및 "사용자 인터페이스 구성요소"가 의미하는 것은 때때로 "사용자 인터페이스 요소"라고도 한다.
+
+### 이점
+
+*   이 성공 기준은 대화형 콘텐츠를 더욱 예측 가능하게 만들어 장애가 있는 사용자에게 도움이 된다. 예상치 못한 상황 변화는 시각 장애나 인지 장애가 있는 사용자에게 혼란을 주어 콘텐츠를 사용할 수 없게 만들 수 있다.
+*   상황의 변화를 감지할 수 없는 사람은 사이트를 탐색하는 동안 방향을 상실할 가능성이 적다. 예를 들어:
+    *   전맹이나 저시력자는 새 창이 팝업되는 등 시각적 상황 변화가 발생했을 때 알아채기 어려울 수 있다. 이 경우 미리 상황 변화를 경고해주면 뒤로 가기 버튼이 예상과 다르게 동작할 때 혼란을 최소화할 수 있다.
+*   일부 저시력자, 읽기 및 지적 장애인, 그리고 시각적 단서를 해석하기 어려운 사람들은 상황 변화를 감지하기 위해 추가적인 단서가 필요할 수 있다.
+
+### 예제
+
+*   웹 기반 달력 및 일정 관리 응용 프로그램에서 달력 항목을 생성하기 위한 양식이 제공된다. 제목, 시간 및 위치에 대한 표준 필드와 함께 생성할 달력 항목 유형을 선택하는 라디오 버튼 세트가 있다. 캘린더 항목 유형은 회의, 약속 또는 알림일 수 있다. 사용자가 회의용 라디오를 선택하면 회의 참가자를 입력하기 위한 페이지에 추가 필드가 표시된다. 미리 알림 버튼을 선택하면 다른 필드가 나타난다. 항목의 일부만 변경되고 전체 구조는 동일하게 유지되므로 기본 맥락은 사용자에게 그대로 유지된다.
+*   양식에는 미국 전화번호를 나타내는 필드가 포함되어 있다. 모든 전화번호에는 3자리 지역번호, 3자리 국번, 마지막 4자리 숫자가 있으며, 전화번호의 각 부분은 별도의 필드에 입력된다. 사용자가 한 필드 입력을 완료하면 포커스가 자동으로 전화번호의 다음 필드로 이동한다. 전화 필드의 이러한 동작은 양식 시작 부분에서 사용자를 위해 설명된다.
+
+### 기법
+
+이 섹션에서 번호가 매겨진 각 항목은 WCAG 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 간주하는 기법 또는 기법의 조합을 나타낸다. 그러나 이러한 특정 기법을 사용할 필요는 없다. 다른 기법 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 기법 이해](../understanding-techniques), 특히 "기타 기법" 섹션을 참고하라.
+
+#### 충분 기법
+
+*   [G80: Providing a submit button to initiate a change of context](https://www.w3.org/WAI/WCAG22/Techniques/general/G80) using a technology-specific technique listed below
+    *   [H32: Providing submit buttons](https://www.w3.org/WAI/WCAG22/Techniques/html/H32)
+    *   [H84: Using a button with a select element to perform an action](https://www.w3.org/WAI/WCAG22/Techniques/html/H84)
+    *   [PDF15: Providing submit buttons with the submit-form action in PDF forms](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF15)
+*   [G13: Describing what will happen before a change to a form control that causes a change of context to occur is made](https://www.w3.org/WAI/WCAG22/Techniques/general/G13)
+*   [SCR19: Using an onchange event on a select element without causing a change of context](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR19)
+
+참고
+
+내용의 변화가 항상 [맥락의 변화](../../../glossary/changes-of-context)는 아니다. 콘텐츠의 변경이 맥락의 변경도 아닌 경우 이 성공 기준은 자동으로 충족된다.
+
+#### 조언 기법
+
+준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
+
+*   [G201: Giving users advanced warning when opening a new window](https://www.w3.org/WAI/WCAG22/Techniques/general/G201)
+
+#### 오류
+
+다음은 WCAG 실무 그룹에서 이 성공 기준의 실패로 간주하는 일반적인 실수이다.
+
+*   [F36: Failure of Success Criterion 3.2.2 due to automatically submitting a form and given a value](https://www.w3.org/WAI/WCAG22/Techniques/failures/F36)
+*   [F37: Failure of Success Criterion 3.2.2 due to launching a new window without prior warning when the selection of a radio button, check box or select list is changed](https://www.w3.org/WAI/WCAG22/Techniques/failures/F37)
+
