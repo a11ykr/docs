@@ -157,6 +157,7 @@ export default defineConfig({
 						},
 					]
 				},
+				{ label: 'KWCAG 2.2', link: 'kwcag22' },
 				{
 					label: '참고 자료',
 					collapsed: false,
