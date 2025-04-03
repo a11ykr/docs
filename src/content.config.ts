@@ -20,14 +20,14 @@ const docs = defineCollection({ loader: docsLoader(), schema: docsSchema() });
 //     keywords: z.array(z.string()).optional(),
 //   }),
 // });
-// const i18n = defineCollection({
-//   loader: i18nLoader(),
-//   schema: i18nSchema({
-//     extend: z.object({
-//       'custom.label': z.string().optional(),
-//     }),
-//   }),
-// });
+const i18n = defineCollection({
+  loader: i18nLoader(),
+  schema: i18nSchema({
+    extend: z.object({
+      'custom.label': z.string().optional(),
+    }),
+  }),
+});
 // 용어집 컬렉션 자동 구성
 const glossary = defineCollection({
   type: 'content',
