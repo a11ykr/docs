@@ -4,14 +4,30 @@ import { docsSchema, i18nSchema } from '@astrojs/starlight/schema';
 // import { glob } from 'astro/loaders';
 
 const docs = defineCollection({ loader: docsLoader(), schema: docsSchema() });
-const i18n = defineCollection({
-  loader: i18nLoader(),
-  schema: i18nSchema({
-    extend: z.object({
-      'custom.label': z.string().optional(),
-    }),
-  }),
-});
+// const docs = defineCollection({
+//   loader: docsLoader(),
+//   schema: z.object({
+//     title: z.string(),
+//     description: z.string(),
+//     head: z.array(z.object({
+//       tag: z.string(),
+//       content: z.string(),
+//     })).optional(),
+//     tableOfContents: z.object({
+//       maxHeadingLevel: z.number(),
+//     }).optional(),
+//     lastUpdated: z.string().optional(),
+//     keywords: z.array(z.string()).optional(),
+//   }),
+// });
+// const i18n = defineCollection({
+//   loader: i18nLoader(),
+//   schema: i18nSchema({
+//     extend: z.object({
+//       'custom.label': z.string().optional(),
+//     }),
+//   }),
+// });
 // 용어집 컬렉션 자동 구성
 const glossary = defineCollection({
   type: 'content',
