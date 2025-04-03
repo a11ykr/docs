@@ -11,34 +11,47 @@ function convertMdx(mdxFilePath) {
 	try {
 		let mdxContent = fs.readFileSync(mdxFilePath, 'utf8');
 
-		// ## 요약 섹션과 그 하위 항목을 찾습니다.
-		const regex = /## 요약\n(<\/dl>\n)?([\s\S]*?)(?=(^##|$))/gm;
-		mdxContent = mdxContent.replace(regex, (match, dlTag, content) => {
-			// 목표, 할 일, 중요성 부분을 찾습니다.
-			const targetRegex = /목표\n([\s\S]*?)(?=\n\n|$)/;
-			const todoRegex = /할 일\n([\s\S]*?)(?=\n\n|$)/;
-			const importanceRegex = /중요성\n([\s\S]*?)(?=\n\n|$)/;
+		// YAML Frontmatter 수정
+		const frontmatterRegex = /^---\n([\s\S]*?)\n---/;
+		mdxContent = mdxContent.replace(frontmatterRegex, (match, frontmatter) => {
+			let newFrontmatter = frontmatter;
 
-			const targetMatch = content.match(targetRegex);
-			const todoMatch = content.match(todoRegex);
-			const importanceMatch = content.match(importanceRegex);
+			// head content 수정
+			newFrontmatter = newFrontmatter.replace(/head:\n\s*- tag: title\n\s*content:\s*(.+)/, (headMatch, headContent) => {
+				const titleMatch = headContent.match(/(\d+(?:\.\d+)*)\s+(.+)/);
+				if (titleMatch) {
+					const number = titleMatch[1];
+					const titleText = titleMatch[2];
+					const numberParts = number.split('.').length;
+					const prefix = numberParts === 2 ? '지침 이해' : '성공 기준 이해';
+					return `head:\n    - tag: title\n      content: ${prefix} ${number} ${titleText}`;
+				}
+				return headMatch;
+			});
 
-			let dlContent = '';
-			if (targetMatch || todoMatch || importanceMatch) {
-				dlContent += '<dl>\n';
-				if (targetMatch) {
-					dlContent += `<dt>목표</dt>\n<dd>${targetMatch[1].trim().replace(/\n/g, '<br>')}</dd>\n`;
+			// description 수정
+			newFrontmatter = newFrontmatter.replace(/description:\s*WCAG 2\.2 이해 (\d+(?:\.\d+)*)\s+(.+)/, (descriptionMatch, number, titleText) => {
+				const numberParts = number.split('.').length;
+				const prefix = numberParts === 2 ? '지침' : '성공 기준';
+				return `description: WCAG 2.2 이해 ${prefix} ${number} ${titleText}`;
+			});
+
+			return `---\n${newFrontmatter}\n---`;
+		});
+
+		// MDX 내용 수정
+		const contentRegex = /(WCAG 2\.2 이해 )?(성공 기준 이해|성공 기준|지침 이해|지침) (\d+(?:\.\d+)*)/g;
+		mdxContent = mdxContent.replace(contentRegex, (match, wcagPrefix, prefix, number) => {
+			const numberParts = number.split('.').length;
+			if (numberParts === 2) {
+				if (prefix === '성공 기준 이해') {
+					return `${wcagPrefix ? 'WCAG 2.2 이해 지침' : '지침 이해'} ${number}`;
 				}
-				if (todoMatch) {
-					dlContent += `<dt>할 일</dt>\n<dd>${todoMatch[1].trim().replace(/\n/g, '<br>')}</dd>\n`;
+				if (prefix === '성공 기준') {
+					return `${wcagPrefix ? 'WCAG 2.2 이해 지침' : '지침'} ${number}`;
 				}
-				if (importanceMatch) {
-					dlContent += `<dt>중요성</dt>\n<dd>${importanceMatch[1].trim().replace(/\n/g, '<br>')}</dd>\n`;
-				}
-				dlContent += '</dl>\n';
 			}
-
-			return `## 요약\n${dlContent}`;
+			return match;
 		});
 
 		fs.writeFileSync(mdxFilePath, mdxContent, 'utf8');
@@ -49,7 +62,7 @@ function convertMdx(mdxFilePath) {
 }
 
 function main() {
-	const mdxDir = path.join(__dirname, './content/docs/guides/wcag2understanding');
+	const mdxDir = path.join(__dirname, './content/docs/wcag2/understanding');
 
 	const files = fs.readdirSync(mdxDir);
 	files.forEach(file => {

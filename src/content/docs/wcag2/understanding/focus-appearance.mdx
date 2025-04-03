@@ -1,6 +1,9 @@
 ---
-title: 2.4.13 초점 형태
-description: 성공 기준 이해 2.4.13 초점 형태
+title: 2.4.13         초점 형태
+description: WCAG 2.2 이해 성공 기준 2.4.13 초점 형태
+head:
+    - tag: title
+      content: 성공 기준 이해 2.4.13 초점 형태
 tableOfContents:
     maxHeadingLevel: 4
 lastUpdated: 2024-05-02
@@ -14,19 +17,19 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 <Card title="성공 기준(SC)"></Card>
 
-키보드 [초점 표시기(focus indicator)](../../../glossary/focus-indicator)가 보이는 경우, 이 영역은 다음 모든 조건을 충족해야 한다:
+키보드 [초점 표시기(focus indicator)](../../glossary/focus-indicator)가 보이는 경우, 이 영역은 다음 모든 조건을 충족해야 한다:
 
-*   초점을 받지 않은 구성 요소 또는 하위 구성요소의 [외곽](../../../glossary/perimeter) 두께를 2 [CSS 픽셀](../../../glossary/css-pixel) 이상으로 설정헤애 한다.
+*   초점을 받지 않은 구성 요소 또는 하위 구성요소의 [외곽](../../glossary/perimeter) 두께를 2 [CSS 픽셀](../../glossary/css-pixel) 이상으로 설정헤애 한다.
 *   초점을 받은 상태와 받지 않은 상태의 동일한 픽셀 간 명도대비율이 최소 3:1 이상이어야 한다.
 
 예외:
 
-*   초점 표시기가 [사용자 에이전트](../../../glossary/user-agent)에 의해 결정되어 저작자가 조정할 수 없는 경우
+*   초점 표시기가 [사용자 에이전트](../../glossary/user-agent)에 의해 결정되어 저작자가 조정할 수 없는 경우
 *   초점 표시기와 그 배경색이 저작자에 의해 수정되지 않은 경우
 
 참고
 
-사용자 인터페이스 구성요소 또는 하위 구성요소로 인식되는 것(외곽 또는 크기 결정 시)은 [표현(presentation)](../../../glossary/presentation)에 따라 다르다. 표현(presentation)에는 구성 요소에서 보이는 [콘텐츠](../../../glossary/content), 테두리, 고유 배경이 포함된다. 구성 요소의 콘텐츠, 배경, 테두리 바깥의 그림자나 발광 효과는 포함되지 않는다.
+사용자 인터페이스 구성요소 또는 하위 구성요소로 인식되는 것(외곽 또는 크기 결정 시)은 [표현(presentation)](../../glossary/presentation)에 따라 다르다. 표현(presentation)에는 구성 요소에서 보이는 [콘텐츠](../../glossary/content), 테두리, 고유 배경이 포함된다. 구성 요소의 콘텐츠, 배경, 테두리 바깥의 그림자나 발광 효과는 포함되지 않는다.
 
 참고
 
@@ -34,7 +37,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 참고
 
-[기술](../../../glossary/technology)(HTML, CSS, SVG 등) 내에서 정의된 색상을 기반으로 대비를 계산할 수 있다. 사용자 에이전트 해상도 향상 및 안티앨리어싱에 의해 수정된 픽셀은 무시할 수 있다.
+[기술](../../glossary/technology)(HTML, CSS, SVG 등) 내에서 정의된 색상을 기반으로 대비를 계산할 수 있다. 사용자 에이전트 해상도 향상 및 안티앨리어싱에 의해 수정된 픽셀은 무시할 수 있다.
 
 ## 요약
 
@@ -61,7 +64,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 성공 기준의 첫 번째 부분은 초점 표시기의 최소 영역을 지정한다.
 
-> *   초점을 받지 않은 구성 요소 또는 하위 구성요소의 [외곽](../../../glossary/perimeter) 두께를 2 [CSS 픽셀](../../../glossary/css-pixel) 이상으로 설정헤애 한다.
+> *   초점을 받지 않은 구성 요소 또는 하위 구성요소의 [외곽](../../glossary/perimeter) 두께를 2 [CSS 픽셀](../../glossary/css-pixel) 이상으로 설정헤애 한다.
 
 이는 초점 표시기의 최소 영역만 지정한다. 초점 표시기가 문자 그대로 2 CSS 픽셀 두께의 윤곽선일 필요는 없으며 지시자는 최소한 그만큼 커야 한다.
 
@@ -69,7 +72,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 참고
 
-[CSS pixel](../../../glossary/css-pixel)은 개발자가 "width: 200px"와 같은 CSS 선언에 사용하는 것이다. 이는 장치 독립적이며 물리적 픽셀 밀도에 따라 달라지는 장치 픽셀과 혼동하지 않아야 한다. 이 문서의 나머지 부분에서는 CSS 픽셀을 "px"로 표기한다.
+[CSS pixel](../../glossary/css-pixel)은 개발자가 "width: 200px"와 같은 CSS 선언에 사용하는 것이다. 이는 장치 독립적이며 물리적 픽셀 밀도에 따라 달라지는 장치 픽셀과 혼동하지 않아야 한다. 이 문서의 나머지 부분에서는 CSS 픽셀을 "px"로 표기한다.
 
 ##### 실선인 윤곽선 사용
 
@@ -82,7 +85,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 직사각형이 아닌 구성 요소의 경우 "외곽" 정의를 통해 저작자는 다음 유형의 윤곽선 중 하나를 사용할 수 있다.
 
 *   모양을 견고하게 둘러싸는 선, 또는
-*   도형의 [최소 경계 상자(minimum bounding box)](../../../glossary/minimum-bounding-box)를 견고히 둘러싸는 선
+*   도형의 [최소 경계 상자(minimum bounding box)](../../glossary/minimum-bounding-box)를 견고히 둘러싸는 선
 
 예를 들어 별 모양 버튼은 별 모양을 따르는 초점 표시기나 별의 경계 상자를 따르는 초점 표시기를 사용할 수 있다. 다음 예에서는 동일한 별 세 개가 이미 선택되어 있으며 세 번째 별에 초점이 맞춰져 있다. 첫 번째 예에서는 초점이 맞춰진 별의 별 모양과 일치하는 초점 표시기를 사용한다. 두 번째는 직사각형 표시기를 사용한다.
 

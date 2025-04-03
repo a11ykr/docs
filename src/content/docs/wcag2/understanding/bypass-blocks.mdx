@@ -1,6 +1,9 @@
 ---
-title: 2.4.1 블록 건너뛰기
-description: 성공 기준 이해 2.4.1 블록 건너뛰기
+title: 2.4.1         블록 건너뛰기
+description: WCAG 2.2 이해 성공 기준 2.4.1 블록 건너뛰기
+head:
+    - tag: title
+      content: 성공 기준 이해 2.4.1 블록 건너뛰기
 tableOfContents:
     maxHeadingLevel: 4
 lastUpdated: 2024-05-02
@@ -8,13 +11,11 @@ lastUpdated: 2024-05-02
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 2.4.1](https://w3.org/TR/WCAG22#bypass-blocks):블록 건너뛰기 
-
 (Level A)
 
-<Card title="성공 기준(SC)"></Card>
-
-여러 [웹 페이지](../../../glossary/web-page)에 걸쳐 반복되는 콘텐츠 블록이 있는 경우, 이를 건너뛸 수 있는 [매커니즘](../../../glossary/mechanism)을 제공해야 한다.
+<Card title="성공 기준(SC)">
+여러 [웹 페이지](../../glossary/web-page)에 걸쳐 반복되는 콘텐츠 블록이 있는 경우, 이를 건너뛸 수 있는 [매커니즘](../../glossary/mechanism)을 제공해야 한다.
+</Card>
 
 ## 요약
 
@@ -35,15 +36,16 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 저작자에게 사용자 에이전트가 제공하는 기능과 중복되는 방법을 제공하도록 요구하는 것이 이 성공 기준의 목적은 아니다. 대부분의 웹 브라우저는 사용자 포커스를 페이지 상단으로 이동하는 키보드 단축키를 제공하므로 웹 페이지 하단에 탐색 링크 세트가 제공되는 경우 "건너뛰기" 링크를 제공하는 것이 불필요할 수 있다.
 
-참고
 
+<Card title="참고">
 이 성공 기준은 여러 페이지에서 반복되는 콘텐츠 블록 건너뛰기를 다루지만 성공 기준 1.3.1에 따라 개별 페이지의 구조적 마크업도 강력하게 권장한다.
+</Card>
 
 비록 성공 기준이 "웹 페이지 집합 내"라는 용어를 명확히 사용하지는 않지만, 페이지들이 하나의 집합에 속한다는 개념이 내포되어 있다. 저작자는 서로 관련이 없고 "공통의 목적을 공유하며 동일한 저작자, 그룹 또는 조직에 의해 생성된 웹 페이지들"(웹 페이지 집합의 정의)이 아닌 두 페이지 간의 모든 콘텐츠 중복을 피할 것을 기대하지는 않을 것이다.
 
-참고
-
+<Card title="참고">
 세트에 포함되지 않은 웹 페이지의 경우에도 웹 페이지에 페이지 내에서 반복되는 텍스트 블록이 있는 경우 이를 건너뛸 수 있는 수단을 제공하는 것이 도움이 될 수 있다(필수는 아님).
+</Card>
 
 ### 이점
 
@@ -94,5 +96,5 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 다음은 이 성공 기준의 특정 측면에 대한 점검 규칙이다. WCAG 준수 여부를 확인하기 위해 이러한 특정 점검 규칙을 사용할 필요는 없지만 이것은 정의되고 승인된 검사 방법이다. 점검 규칙 사용에 대한 자세한 내용은 [WCAG 성공 기준에 대한 점검 규칙 이해](understanding-act-rules.html)를 참고하라.
 
-*   [블록 건너뛰기 of Repeated Content](https://www.w3.org/WAI/standards-guidelines/act/rules/cf77f2/proposed/)
+*   [반복 콘텐츠의 블록 건너뛰기](https://www.w3.org/WAI/standards-guidelines/act/rules/cf77f2/proposed/)
 

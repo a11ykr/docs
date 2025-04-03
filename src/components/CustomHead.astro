@@ -1,0 +1,23 @@
+---
+// Starlight의 기본 Head 컴포넌트 가져오기
+import StarlightHead from "@astrojs/starlight/components/Head.astro";
+
+// 공통 키워드 정의 (이 부분을 원하는 공통 키워드로 변경하세요)
+const commonKeywords = "접근성, 한국어, A11YKR, accessibility, Korean, A11Y";
+
+// Astro.props에서 페이지 데이터 접근 시도
+const { entry } = Astro.props;
+// console.log('Astro props:', JSON.stringify(Astro.props)); // 디버깅용
+
+// pageKeywords가 있으면 병합, 없으면 공통 키워드만 사용
+let keywords = commonKeywords;
+if (entry?.data?.pageKeywords) {
+	keywords = `${commonKeywords}, ${entry.data.pageKeywords}`;
+}
+---
+
+<!-- 원래 Head 컴포넌트 렌더링 -->
+<StarlightHead {...Astro.props} />
+
+<!-- 키워드 메타 태그 추가 -->
+<meta name="keywords" content={keywords} />

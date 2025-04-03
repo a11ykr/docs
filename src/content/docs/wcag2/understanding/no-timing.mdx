@@ -1,6 +1,9 @@
 ---
-title: 2.2.3 시간 제한 없음
-description: 성공 기준 이해 2.2.3 시간 제한 없음
+title: 2.2.3         시간 제한 없음
+description: WCAG 2.2 이해 성공 기준 2.2.3 시간 제한 없음
+head:
+    - tag: title
+      content: 성공 기준 이해 2.2.3 시간 제한 없음
 tableOfContents:
     maxHeadingLevel: 4
 lastUpdated: 2024-05-02
@@ -8,13 +11,11 @@ lastUpdated: 2024-05-02
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 2.2.3](https://w3.org/TR/WCAG22#no-timing):시간 제한 없음 
-
 (Level AAA)
 
-<Card title="성공 기준(SC)"></Card>
-
-비대화형 [동기화된 미디어](../../../glossary/synchronized-media)와 [실시간 이벤트](../../../glossary/real-time-event)를 제외하고는, 시간 제약이 콘텐츠에 의해 제시되는 이벤트나 활동의 [필수적인](../../../glossary/essential) 부분은 아니다.
+<Card title="성공 기준(SC)">
+비대화형 [동기화된 미디어](../../glossary/synchronized-media)와 [실시간 이벤트](../../glossary/real-time-event)를 제외하고는, 시간 제약이 콘텐츠에 의해 제시되는 이벤트나 활동의 [필수적인](../../glossary/essential) 부분은 아니다.
+</Card>
 
 ## 요약
 
@@ -31,9 +32,9 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 이 성공 기준의 목적은 제한 시간에 대해 상호 작용이 필요한 콘텐츠의 발생을 최소화하는 것이다. 이를 통해 시각 장애, 저시력, 인지 장애 또는 운동 장애가 있는 사람들이 콘텐츠와 상호 작용할 수 있다. 이는 실시간 이벤트에 대한 유일한 예외라는 점에서 레벨 A 성공 기준과 다르다.
 
-참고
-
-[지침 1.1](text-alternatives)에서는 수화와 같은 비디오 전용만 다루고 있다.
+<Card title="참고">
+[지침 1.1](../text-alternatives)에서는 수화와 같은 비디오 전용만 다루고 있다.
+</Card>
 
 ### 이점
 
@@ -42,13 +43,12 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ### 예제
 
-완료 시간이 점수에 영향을 미치지 않도록 설계된 시험
-
-제한 시간을 사용하여 온라인 시험을 보정하는 대신 사용자에게 시간 제한이 없을 때의 점수를 기준으로 한다.
-
-실시간으로 경쟁하는 대신 사용자가 순차적으로 플레이하도록 설계된 게임
-
-한쪽 당사자는 게임의 경쟁적 측면을 무효화하지 않고 게임을 일시 중지할 수 있다.
+<dl>
+    <dt>완료 시간이 점수에 영향을 미치지 않도록 설계된 시험</dt>
+    <dd>제한 시간을 사용하여 온라인 시험을 보정하는 대신 사용자에게 시간 제한이 없을 때의 점수를 기준으로 한다.</dd>
+    <dt>실시간으로 경쟁하는 대신 사용자가 순차적으로 플레이하도록 설계된 게임</dt>
+    <dd>한쪽 당사자는 게임의 경쟁적 측면을 무효화하지 않고 게임을 일시 중지할 수 있다.</dd>
+</dl>
 
 ### 기법
 

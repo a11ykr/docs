@@ -3,6 +3,8 @@ import starlight from '@astrojs/starlight';
 import mdx from '@astrojs/mdx';
 import astroExpressiveCode from 'astro-expressive-code';
 
+const commonKeywords = "접근성, 한국어, A11YKR, accessibility, Korean, A11Y";
+
 export default defineConfig({
 	site: 'https://a11ykr.github.io/',
 	base: '/docs/',
@@ -25,6 +27,9 @@ export default defineConfig({
 			plugins: [],
 			social: {
 				github: 'https://a11ykr.github.io',
+			},
+			components: {
+				Head: './src/components/CustomHead.astro',
 			},
 			customCss: [
 				'./src/styles/custom.css'
