@@ -42,7 +42,7 @@ export default defineConfig({
 					items: [
 						'wcag2/231005',
 						{
-							label: 'WCAG 2 이해(작업 중)',
+							label: 'WCAG 2 이해',
 							collapsed: true,
 							items: [
 								'wcag2/understanding',
@@ -146,6 +146,12 @@ export default defineConfig({
 								'wcag2/understanding/parsing',
 								'wcag2/understanding/name-role-value',
 								'wcag2/understanding/status-messages',
+							]
+						},
+						{
+							label: 'WCAG 2 이해 기타 문서',
+							collapsed: true,
+							items: [
 								'wcag2/understanding/intro',
 								'wcag2/understanding/understanding-techniques',
 								'wcag2/understanding/understanding-act-rules',

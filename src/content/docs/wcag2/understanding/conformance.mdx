@@ -21,9 +21,9 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 표준에 대한 준수는 표준의 '요구 사항'을 충족하거나 만족한다는 것을 의미한다. WCAG 2에서는 '요구 사항'이 성공 기준이다. WCAG 2를 준수하려면 성공 기준을 충족해야 한다. 즉, 성공 기준을 위반하는 콘텐츠가 없어야 한다.
 
-참고
-
+<Card title="참고">
 이는 성공기준이 적용되는 콘텐츠가 없으면 성공기준을 만족한다는 의미이다.
+</Card>
 
 대부분의 표준에는 한 가지 준수 수준만 있다. 다른 상황보다 더 높은 수준의 접근성을 요구하거나 허용할 수 있는 다양한 상황을 수용하기 위해 WCAG 2에는 세 가지 수준의 적합성이 있으므로 세 가지 수준의 성공 기준이 있다.
 
@@ -34,18 +34,17 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 #### 요구사항 1 이해
 
 > **준수 수준(Conformance Level)**: 다음 적합성 수준 중 하나를 완전히 충족한다.
-> 
+>
 > *   레벨 A 준수(최소 준수 레벨)의 경우 [웹 페이지](../../../glossary/web-page)는 레벨 A 성공 기준을 모두 [만족](../../../glossary/satisfies-a-success-criterion)하거나 이를 [준수하는 대체 버전](../../../glossary/conforming-alternate-version)이 제공된다.
 > *   레벨 AA 준수를 위해 웹 페이지는 레벨 A 및 레벨 AA 성공 기준을 모두 충족하거나 레벨 AA를 준수하는 대체 버전이 제공된다.
 > *   레벨 AAA 준수를 위해 웹 페이지는 레벨 A, 레벨 AA 및 레벨 AAA 성공 기준을 모두 충족하거나 레벨 AAA를 준수하는 대체 버전이 제공된다.
-> 
-> 참고
-> 
+>
+> <Card title="참고">
 > 준수는 명시된 수준에서만 달성될 수 있지만 저작자는 달성된 준수 수준을 넘어서 모든 수준에서 성공 기준을 충족하기 위한 진행 상황을 보고하는 것이 좋다.
-> 
-> 참고
-> 
+> </Card>
+> <Card title="참고">
 > 일부 콘텐츠에 대해서는 AAA 레벨 성공 기준을 모두 충족할 수 없기 때문에 전체 사이트에 대한 일반 정책으로 AAA 레벨 준수를 요구하지 않는 것이 좋다.
+> </Card>
 
 첫 번째 요구사항은 준수 수준을 다룬다. 이는 기본적으로 페이지의 모든 정보가 해당 페이지에서 사용할 수 있는 [준수 대체 버전](../../../glossary/conforming-alternate-version)을 따르거나 이를 따르는 것을 의미한다. 또한 요구 사항은 최소한 레벨 A 성공 기준을 모두 충족하지 않으면 준수가 불가능하다고 설명한다.
 
@@ -56,33 +55,31 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 #### 요구사항 2 이해
 
 > **전체 페이지**: [준수](../../../glossary/conformance)(및 준수 수준)은 전체 [웹 페이지](../../../glossary/web-page)에만 적용되며 웹 페이지의 일부가 제외되면 달성할 수 없다.
-> 
-> 참고
-> 
+>
+> <Card title="참고">
 > 준수를 판별하기 위해 페이지 콘텐츠의 일부에 대한 대체 수단은 페이지에서 직접 얻을 수 있는 대체 수단(예: 긴 설명 또는 동영상의 대체 표현 제시)을 페이지의 일부로 간주한다.
-> 
-> 참고
-> 
+> </Card>
+> <Card title="참고">
 > 저작자의 통제 범위를 벗어난 콘텐츠로 인해 준수할 수 없는 웹 페이지 저작자는 [부분 준수 선언문](https://www.w3.org/TR/WCAG22/#conformance-partial)을 고려할 수 있다.
-> 
-> 참고
-> 
+> </Card>
+> <Card title="참고">
 > 전체 페이지에는 다양한 화면 크기에 맞게 페이지에서 자동으로 표시되는 페이지의 각 변형이 포함된다(예: 반응형 웹 페이지의 변형). 전체 페이지가 준수하려면 이러한 각 변형이 준수해야 한다(또는 준수하는 대체 버전이 있어야 함).
+> </Card>
 
 이 조항은 단순히 전체 페이지가 준수하도록 요구한다. "페이지 일부가 준수함"에 대한 설명은 작성할 수 없다.
 
 경우에 따라 한 페이지의 정보에 대한 추가 정보를 다른 페이지에서 사용할 수도 있다. HTML의 longdesc 속성이 그 예이다. longdesc를 사용하면 그래픽에 대한 긴 설명이 사용자가 그래픽이 있는 페이지에서 이동할 수 있는 별도의 페이지에 있을 수 있다. 이는 해당 콘텐츠가 웹 페이지의 일부로 간주되어 단일 웹 페이지로 간주되는 웹 페이지 조합 세트에 대해 요구 사항 #2가 충족된다는 점을 분명히 한다.
 
-참고
-
+<Card title="참고">
 준수 요구 사항 5로 인해, 페이지의 일부가 접근성 지원이 없는 콘텐츠 기술을 사용하더라도 페이지의 나머지 부분을 방해하지 않고 모든 정보와 기능을 페이지의 다른 곳에서 사용할 수 있는 한 전체 페이지는 이를 준수할 수 있다.
+</Card>
 
 미준수 콘텐츠를 포함할 수 있다. [준수 요구 사항 5 이해](https://www.w3.org/TR/WCAG22/#conf-req5)를 참조하라.
 
 #### 요구 사항 3 이해
 
 > **절차(process) 완료**: 웹 페이지가 과정(즉, 활동을 수행하기 위해 완료해야 하는 일련의 단계)을 나타내는 일련의 웹 페이지 중 하나일 때 과정의 모든 웹 페이지는 지정된 수준 또는 더 나은 수준을 준수해야 한다. (과정 중의 페이지가 해당 수준 이상을 준수하지 않는 경우 특정 수준에서는 준수가 불가능하다.)
-> 
+>
 > 온라인 상점에는 제품을 선택하고 구매하는 데 사용되는 일련의 페이지가 있다. 과정의 일부인 모든 페이지가 준수하려면 처음부터 끝까지 일련의 모든 (결제) 페이지가 준수해야 한다.
 
 이 조항은 과정 전체가 그렇지 않은 경우 더 큰 과정의 일부인 웹 페이지가 이를 준수하는 것으로 간주되는 것을 방지한다. 이렇게 하면 쇼핑 및 구매 프로세스의 일부인 결제 또는 사이트의 기타 기능이 준수하지 않는 경우 쇼핑 사이트가 준수로 분류되는 것을 방지할 수 있다.
@@ -96,21 +93,21 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 #### 요구 사항 5 이해
 
 > **불간섭**: [접근성 지원](../../../glossary/accessibility-supported)이 안되는 방식으로 [기술](#)이 사용되거나 부적합한 방식으로 사용되는 경우 사용자가 페이지의 나머지 부분에 접근하는 기능을 차단하지 않는다. 또한 [웹 페이지](../../../glossary/web-page) 전체는 다음 조건 각각에 따라 준수 요구 사항을 계속해서 충족한다.
-> 
+>
 > 1.  사용자 에이전트에서 [의존](../../../glossary/relied-upon)하지 않는 기술이 켜진 경우
 > 2.  사용자 에이전트에서 의존하지 않는 기술이 꺼진 경우
 > 3.  의존하지 않는 기술이 사용자 에이전트에 의해 지원되지 않는 경우
-> 
+>
 > 또한 다음 성공 기준은 준수를 위해 별도로 의존하지 않는 콘텐츠를 포함하여 페이지의 모든 콘텐츠에 적용된다. 기준을 충족하지 못하면 페이지 사용을 방해할 수 있기 때문이다.
-> 
+>
 > *   **1.4.2 - 오디오 제어**,
 > *   **2.1.2 - 키보드 함정 방지**,
 > *   **2.3.1 - 3회 또는 임계값 이하의 번쩍임**, and
 > *   **2.2.2 - 일시정지, 중지, 숨김**.
-> 
-> 참고
-> 
+>
+> <Card title="참고">
 > 페이지가 준수할 수 없는 경우(예: 준수 점검 페이지 또는 예제 페이지) 준수 범위 또는 준수 선언에 포함될 수 없다.
+> </Card>
 
 이는 기본적으로 **접근성이 지원되는** 기술을 사용하여 모든 정보를 이용할 수 있고, **접근성 지원이 없는** 자료가 간섭하지 않는 한, **접근성을 지원하지 않는** 기술을 사용할 수 있음을 의미한다.
 
@@ -128,25 +125,26 @@ Schema.org는 웹 페이지 내에 검색 메타데이터를 포함하기 위한
 
 다음은 Schema.org 메타데이터로 강화된 선언이다.
 
-               <div typeof="WebPage" vocab="http://schema.org/">
-               <p property="accessibilitySummary">On 23 March 2009, all content available on the server at <a href="http://www.wondercall.example.com">http://www.wondercall.example.com</a> conforms to Web Content Accessibility Guidelines 2.0 at <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/" >https://www.w3.org/TR/2008/REC-WCAG20-20081211/</a>. Single-A conformance.</p>
-               <ul>
-               <li>The technology that this content "<a>relies upon</a>" is: HTML 4.01.</li>
-               <li>The technologies that this content "<strong>uses but does not rely upon</strong>" are: CSS2, and gif.</li>
-               <li>This content was tested using the following user agents and assistive technologies: Firefox 1.5 on Windows Vista with Screenreader X 4.0, Firefox 1.5 on Windows XP SP 2 with Screenreader X 3.5, IE 6.0 on Windows
-               2000 SP4 with Screenreader Y 5.0, IE 6.0 on Windows 2000 SP4 with Screenreader Z 2.0, and Firefox 1.5 on Windows XP SP2 with Screenreader X 4.0, Safari 2.0 with OS X 10.4.</li>
-               </ul>
-               <p>This page includes both <span property="accessMode" content="textual">text</span> and <span property="accessMode" content="visual">images</span>. <span property="accessibilityFeature" content="alternativeText">Alternative text</span> is included for all image content and <span property="accessibilityFeature" content="longDescription">long descriptions</span> are also provided for images that require more than simple alternate text. All content is available in text, which can be accessed by assistive technology.</p>
-               </div>
-            
+```html
+<div typeof="WebPage" vocab="http://schema.org/">
+    <p property="accessibilitySummary">On 23 March 2009, all content available on the server at <a href="http://www.wondercall.example.com">http://www.wondercall.example.com</a> conforms to Web Content Accessibility Guidelines 2.0 at <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/" >https://www.w3.org/TR/2008/REC-WCAG20-20081211/</a>. Single-A conformance.</p>
+    <ul>
+    <li>The technology that this content "<a>relies upon</a>" is: HTML 4.01.</li>
+    <li>The technologies that this content "<strong>uses but does not rely upon</strong>" are: CSS2, and gif.</li>
+    <li>This content was tested using the following user agents and assistive technologies: Firefox 1.5 on Windows Vista with Screenreader X 4.0, Firefox 1.5 on Windows XP SP 2 with Screenreader X 3.5, IE 6.0 on Windows
+    2000 SP4 with Screenreader Y 5.0, IE 6.0 on Windows 2000 SP4 with Screenreader Z 2.0, and Firefox 1.5 on Windows XP SP2 with Screenreader X 4.0, Safari 2.0 with OS X 10.4.</li>
+    </ul>
+    <p>This page includes both <span property="accessMode" content="textual">text</span> and <span property="accessMode" content="visual">images</span>. <span property="accessibilityFeature" content="alternativeText">Alternative text</span> is included for all image content and <span property="accessibilityFeature" content="longDescription">long descriptions</span> are also provided for images that require more than simple alternate text. All content is available in text, which can be accessed by assistive technology.</p>
+</div>
+```
 
 때로는 특정 날짜 이후에 추가된 콘텐츠에 대해서만 선언하고 싶을 수도 있다. 또는 최신 콘텐츠에 대해 WCAG 1.0 준수를 선언하고 해당 날짜 이후에 생성되거나 수정된 ​​콘텐츠에 대해 WCAG 2.0을 선언할 수도 있다. 어떤 페이지가 어떤 WCAG 버전을 준수한다고 주장하는지 명확하다면 WCAG 2.0에서는 이러한 관행을 금지하지 않는다.
 
-참고
-
+<Card title="참고">
 "의존"하는 기술에 대해 이야기할 때 우리는 사용자 에이전트(브라우저, 보조 기술 등)가 아닌 웹 콘텐츠 기술(HTML, CSS, JavaScript 등)에 대해 이야기한다.
 
 준수 선언은 일반적으로 준수 범위 내의 각 웹 페이지에 위치하지 않는다.
+</Card>
 
 #### 제3자 콘텐츠로 인한 부분적 준수 선언
 
@@ -233,42 +231,42 @@ Schema.org는 웹 페이지 내에 검색 메타데이터를 포함하기 위한
 기본적으로 웹 콘텐츠 기술은 사용자의 보조 기술이 웹 기술로 작동할 때 **그리고** 주류 기술의 접근성 기능이 해당 기술에서 작동할 때 "접근성 지원"이다. 특히, 접근성 지원 기술 자격을 얻으려면 해당 기술에 대해 다음 사항이 충족되어야 한다.
 
 > 접근성 지원
-> 
+>
 > 사용자의 보조 기술과 브라우저 및 기타 사용자 에이전트의 접근성 기능으로 지원된다.
-> 
+>
 > 웹 콘텐츠 기술(또는 기술의 기능)의 접근성 지원 사용 자격을 얻으려면 웹 콘텐츠 기술(또는 기능)에 대해 1과 2를 모두 충족해야 한다.
-> 
+>
 > 1.  **웹 콘텐츠 기술이 사용되는 방식은 사용자의 보조 기술(AT)에 의해 지원되어야 한다.** 이는 기술이 사용되는 방식이 콘텐츠의 인간 언어로 사용자 보조 기술과의 상호 운용성에 대해 검사되었음을 ​​의미한다.
->     
+>
 >     **그리고**
->     
+>
 > 2.  **웹 콘텐츠 기술에는 사용자가 사용할 수 있는 접근성 지원 사용자 에이전트가 있어야 한다.** 이는 다음 네 가지 진술 중 하나 이상이 사실임을 의미한다.
->     
+>
 >     1.  이 기술이 접근성을 지원하는 널리 배포된 사용자 에이전트에서 기본적으로 지원된다.(예: HTML 및 CSS)
->         
+>
 >         **또는**
->         
+>
 >     2.  이 기술이 접근성을 지원하는 널리 배포된 플러그인에서 지원된다.
->         
+>
 >         **또는**
->         
+>
 >     3.  콘텐츠는 대학이나 기업 네트워크와 같은 폐쇄된 환경에서 사용할 수 있으며, 기술에서 요구하고 조직에서 사용하는 사용자 에이전트도 접근성이 지원된다.
->         
+>
 >         **또는**
->         
+>
 >     4.  기술을 지원하는 사용자 에이전트는 접근성을 지원하며 다음과 같은 방식으로 다운로드하거나 구매할 수 있다.
->         
+>
 >         *   장애인이 장애가 없는 사람보다 더 많은 비용을 들이지 않으며 **그리고**
 >         *   장애가 없는 사람과 마찬가지로 장애인도 쉽게 찾고 얻을 수 있다.
-> 
+>
 > 접근성 지침 실무 그룹과 W3C는 웹 기술이 접근성이 지원되는 것으로 분류되기 위해 특정 사용에 대해 어느 정도의 보조 기술 지원이 있어야 하는지를 명시하지 않는다. (["접근성 지원"에 필요한 보조 기술 지원 수준](https://www.w3.org/WAI/WCAG21/Understanding/conformance#support-level)을 참조하라.)
-> 
+>
 > 웹 기술은 접근성을 지원되지 않는 방법으로 사용될 수 있지만, 전체 페이지가 준수 요구 사항을 충족하는 한, 특히 [준수 요구 사항 4](#cc4) 및 [준수 요구 사항 5](#cc5)를 포함하여, 이에 의존하지 않는 한 허용될 수 있다.
-> 
+>
 > 웹 기술이 "접근성 지원" 방식으로 사용된다고 해서 전체 기술이나 사용된 모든 기술이 지원된다는 의미는 아니다. HTML을 포함한 대부분의 기술은 최소한 하나의 기능이나 용도에 대한 지원이 부족하다. 접근성이 지원되는 기술을 사용하여 WCAG 요구 사항을 충족할 수 있는 경우에만 페이지가 WCAG를 준수한다.
-> 
+>
 > 여러 버전이 있는 웹 콘텐츠 기술을 인용할 경우 지원되는 버전을 명시해야 한다.
-> 
+>
 > 저작자가 접근성이 지원되는 기술의 용법을 찾는 한 가지 방법은 접근성이 지원된다고 문서화된 용법 모음집을 참조하는 것입니다. ([접근성 지원 웹 기술 사용 이해](https://www.w3.org/WAI/WCAG21/Understanding/conformance#documented-lists)를 참조하라.) 저작자, 회사, 기술 공급업체 또는 기타 사람들은 웹 콘텐츠 기술을 사용하는 접근성 지원 방법을 문서화할 수 있다. 그러나 문서에서 기술을 사용하는 모든 방법은 위의 접근성 지원 웹 콘텐츠 기술의 정의를 충족해야 한다.
 
 #### 접근성 지원 웹 기술 사용 이해
@@ -311,32 +309,32 @@ WCAG에는 공개적으로 문서화된 편집물을 사용하거나 그러한 �
 준수 요구사항 #1은 "준수 대체 버전"이 있는 한 미준수 페이지가 준수 범위 내에 포함될 수 있도록 허용한다. 준수 대체 버전은 다음과 같이 정의된다.
 
 > 준수 대체 버전
-> 
+>
 > 버전은
-> 
+>
 > 1.  지정된 수준을 준수하며,
 > 2.  동일한 인간 언어로 동일한 정보와 기능을 모두 제공하고,
 > 3.  미준수 콘텐츠만큼 최신 상태이며,
 > 4.  적어도 다음 중 하나가 참이다
->     
+>
 >     1.  준수 버전은 접근성 지원 매커니즘을 통해 미준수 페이지에서 접근할 수 있거나,
 >     2.  미준수 버전을 준수 버전에서만 접근할 수 있거나,
 >     3.  미준수 버전은 준수 버전에 도달하기 위한 매커니즘도 제공하는 준수 페이지에서만 접근할 수 있다
-> 
+>
 > 이 정의에서 "접근할 수만 있다"는 것은 사용자가 규격에 맞는 버전에서 막 벗어난 경우가 아니면 사용자가 미준수 페이지에 "접근"(로드)하는 것을 방지하는 조건부 리디렉션과 같은 일부 매커니즘이 있음을 의미한다.
-> 
+>
 > 대체 버전은 원본과 페이지별로 일치할 필요는 없다(예: 준수 대체 버전은 여러 페이지로 구성될 수 있음).
-> 
+>
 > 여러 언어 버전을 사용할 수 있는 경우 제공되는 각 언어별 준수 대체 버전이 필요하다.
-> 
+>
 > 다양한 기술 환경이나 사용자 그룹을 수용하기 위해 대체 버전이 제공될 수 있다. 각 버전은 가능한 한 준수해야 한다. [준수 요구 사항 1](#cc1)을 충족하려면 한 버전이 완전히 준수해야 한다.
-> 
+>
 > 준수 대체 버전은 미준수 버전만큼 자유롭게 사용할 수 있는 한 준수 범위 내에 있거나 동일한 웹 사이트에 있을 필요가 없다.
-> 
+>
 > 대체 버전을 원본 페이지를 지원하고 이해력을 높이는 보충 콘텐츠와 혼동해서는 안된다.
-> 
+>
 > 준수 버전을 생성하기 위해 콘텐츠 내에서 사용자 기본 설정을 조정하는 것은 기본 설정을 지정하는 데 사용된 방법이 접근성을 지원하는 한 다른 버전에 도달하기 위한 허용 가능한 매커니즘이다.
-> 
+>
 > [준수 대체 버전 이해](https://www.w3.org/WAI/WCAG21/Understanding/conformance#conforming-alt-versions)를 참조하라.
 
 이는 준수 범위 내의 페이지에 있는 모든 정보와 모든 기능을 준수 웹 페이지에서 사용할 수 있도록 보장한다.
@@ -393,32 +391,32 @@ WCAG는 왜 웹 페이지의 대체 버전을 준수 선언에 포함하도록 �
 ##### 준수대체 버전의 예
 
 *   **여러 버전이 있는 인트라넷 사이트**
-    
+
     한 대기업은 인트라넷 사이트에서 최신 웹 기술을 사용하면 기술 기반이 다른 다양한 사무실 위치와 다양한 사용자 에이전트 및 보조 기술을 사용하는 개별 직원의 요구 사항을 처리하는 능력이 제한될 수 있다는 점을 우려했다. 이러한 문제를 해결하기 위해 회사에서는 접근성 지원 콘텐츠 기술을 보다 제한적으로 사용하여 모든 레벨 A 성공 기준을 충족하는 콘텐츠의 대체 버전을 만들었다. 두 버전은 서로 연결된다.
-    
+
 *   **이전 버전과의 호환성을 보장하는 정보 사이트**
-    
+
     정보 사이트는 다양한 주제를 다루며 방문자가 원하는 주제를 빠르게 찾을 수 있기를 원한다. 이를 위해 사이트에서는 널리 사용되는 두 가지 사용자 에이전트의 최신 버전에서만 지원되는 대화형 메뉴 시스템을 구현했다. 이러한 특정 사용자 에이전트를 사용하지 않는 방문자가 여전히 사이트를 효과적으로 사용할 수 있도록 하기 위해 최신 기술을 지원하지 않는 사용자 에이전트에는 대화형 메뉴 시스템에 의존하지 않는 탐색 매커니즘이 제공된다.
-    
+
 
 ### "웹 페이지" 이해
 
 웹 페이지의 정의는 다음과 같다.
 
 > 웹 페이지
-> 
+>
 > HTTP를 사용하여 단일 URI에서 얻은 미포함(non-embedded) 리소스와 렌더링에 사용되거나 사용자 에이전트에 의해 함께 렌더링되도록 의도된 기타 리소스
-> 
+>
 > "기타 리소스"는 기본 리소스와 함께 렌더링되지만 반드시 서로 동시에 렌더링되는 것은 아니다.
-> 
+>
 > 이러한 지침을 준수하기 위해 리소스는 웹 페이지로 간주되기 위해 준수 범위 내에서 "미포함"되어야 한다.
-> 
+>
 > 포함된 모든 이미지와 미디어를 포함하는 웹 리소스이다.
-> 
+>
 > 웹 메일 프로그램이 AJAX(Asynchronous JavaScript and XML)를 사용하여 구축되었다. 이 프로그램은 전적으로 http://example.com/mail에 존재하지만 받은 편지함, 연락처 영역 및 달력을 포함한다. 받은 편지함, 연락처 또는 달력을 표시하지만 페이지의 URI를 전체적으로 변경하지는 않는 링크나 버튼이 제공된다.
-> 
+>
 > 사용자가 다양한 콘텐츠 모듈 세트에서 표시할 콘텐츠를 선택할 수 있는 사용자 정의 가능한 포털 사이트이다.
-> 
+>
 > 브라우저에 "http://shopping.example.com/"을 입력하면 상점 안을 시각적으로 돌아다니며 주변 선반에서 제품을 당신 앞의 시각적 장바구니로 끌어들이는 영화와 같은 대화형 쇼핑 환경으로 들어간다. 제품을 클릭하면 제품 사양 시트가 옆에 떠 있는 모습을 보여준다. 이는 단일 페이지 웹 사이트일 수도 있고 웹 사이트 내의 한 페이지일 수도 있다.
 
 이 표준에서 "웹 페이지"라는 용어는 정적 HTML 페이지보다 훨씬 더 많은 것을 포함한다는 점에 유의하는 것이 중요하다. 본 지침에서는 지침을 보다 쉽게 ​​이해할 수 있도록 '웹 페이지'라는 용어를 사용했다. 그러나 이 용어는 광범위한 기술을 포괄하는 기술 발전과 함께 의미가 커졌으며 그 중 많은 기술은 전혀 '페이지와 유사'하지 않다. 또한 전체 가상 대화형 커뮤니티를 표시할 수 있는 "페이지"를 포함하여 웹에서 점점 더 동적으로 나타나는 웹 페이지도 포함된다. 예를 들어, "웹 페이지"라는 용어에는 단일 URI에서 찾을 수 있는 몰입형 대화형 영화와 같은 경험이 포함된다.

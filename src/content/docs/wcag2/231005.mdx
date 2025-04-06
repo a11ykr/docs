@@ -52,7 +52,7 @@ import { Aside, Badge , Card } from '@astrojs/starlight/components';
 *   한국어 번역: [조현진](https://github.com/resistan), [방성훈](https://github.com/naruteride)
 *   이 번역본은 최신 지침을 확인하기 위해 제작하였습니다.
 *   W3C의 인증을 받지 않은 비공식 문서이며, 오류가 있을 수 있습니다.
-*   성공 기준별 이해(Understanding) 링크는 [번역본](https://a11ykr.github.io/wai/wcag22/understanding/)으로 연결됩니다.
+*   성공 기준별 이해(Understanding) 링크는 [번역본](../understanding/)으로 연결됩니다.
 *   기법 문서는 현재 번역되지 않아 원문으로 연결됩니다.
 *   용어 해석 등이 불명확한 경우 [WCAG 2.2 원본](https://www.w3.org/TR/WCAG22)을 확인하시기 바랍니다.
 *   작업에 참여하거나 수정을 원하시는 분은 [Github 저장소](https://github.com/a11ykr/wcag22kr/)에 [의견](https://github.com/a11ykr/wcag22kr/issues/new)을 남겨주십시오.
@@ -114,14 +114,14 @@ WCAG 2.2는 전 세계 개인, 조직, 정부의 요구 사항을 충족하는 �
 
 WCAG를 사용하는 개인과 조직은 웹 디자이너와 개발자, 정책 입안자, 구매 대리인, 교사, 학생 등 매우 다양하다. 이런 계층의 다양한 요구 사항을 충족하기 위해 전체 *원칙*, 일반 *지침*, 시험 가능한 *성공 기준* 및 풍부한 *충분 기법*, *권고 기법* 모음, *문서화된 일반 실패* 사례, 리소스 링크 및 코드를 포함하여 여러 위계의 지침을 제공한다.
 
-*   **원칙(Principles)** - 최상위에는 웹 접근성의 기초를 제공하는 4가지 원칙, 즉 *인식의 용이성(perceivable), 운용의 용이성(operable), 이해의 용이성(understandable), 그리고 견고성(robust)*이 있다. [네 가지 접근성 원칙 이해](https://a11ykr.github.io/wai/wcag22/understanding/intro#understanding-the-four-principles-of-accessibility)를 참고하라.
+*   **원칙(Principles)** - 최상위에는 웹 접근성의 기초를 제공하는 4가지 원칙, 즉 *인식의 용이성(perceivable), 운용의 용이성(operable), 이해의 용이성(understandable), 그리고 견고성(robust)*이 있다. [네 가지 접근성 원칙 이해](../understanding/intro#understanding-the-four-principles-of-accessibility)를 참고하라.
 *   **지침(Guidelines)** - 원칙 아래에는 지침이 있다. 13가지 지침은 다양한 장애를 지닌 사용자들이 콘텐츠에 보다 접근 가능하도록 하기 위하여 웹 콘텐츠 저작자들이 노력해야 할 기본적인 목표를 제공한다. 그 지침들은 검증 가능하지 않지만, 웹 콘텐츠 저작자들이 성공 기준을 이해하고 기법들을 보다 더 잘 구현할 수 있도록 도와주는 기본적인 틀과 전반적인 목표를 제공한다.
-*   **성공 기준(Success Criteria)** - 각 지침에 대해 설계 명세서, 구매, 규정 및 계약 계약과 같이 요구 사항 및 적합성 테스트가 필요한 경우 WCAG 2.2를 사용할 수 있도록 검증 가능한 성공 기준을 제공한다. 다양한 그룹과 다양한 상황의 요구 사항을 충족하기 위해 A(최저), AA, AAA(최고)의 세 가지 적합성 수준이 정의된다. WCAG 수준에 대한 추가 정보는 [준수 수준 이해](https://a11ykr.github.io/wai/wcag22/understanding/conformance#levels)에서 확인할 수 있다.
-*   **충분/권고 기법(Sufficient and Advisory Techniques)** - WCAG 2.2 문서 자체의 각 지침과 성공 기준에 대해 작업 그룹은 다양한 기술도 문서화하였다. 기법은 정보를 제공하며 두 가지 범주, 즉 성공 기준을 충족하기에 충분한 기법과 권고되는 기법로 분류된다. 권고 기법은 개별 성공 기준에서 요구하는 것 이상을 제공하며 작성자가 지침을 더 잘 다룰 수 있게 한다. 일부 권고 기법은 검증 가능한 성공 기준에 포함되지 않는 접근성 장애를 다룬다. 일반적인 오류가 알려진 경우 해당 오류도 문서화되었다. [WCAG 2.2 이해에서 충분 및 권고 기법](https://a11ykr.github.io/wai/wcag22/understanding/understanding-techniques)을 참조한다.
+*   **성공 기준(Success Criteria)** - 각 지침에 대해 설계 명세서, 구매, 규정 및 계약 계약과 같이 요구 사항 및 적합성 테스트가 필요한 경우 WCAG 2.2를 사용할 수 있도록 검증 가능한 성공 기준을 제공한다. 다양한 그룹과 다양한 상황의 요구 사항을 충족하기 위해 A(최저), AA, AAA(최고)의 세 가지 적합성 수준이 정의된다. WCAG 수준에 대한 추가 정보는 [준수 수준 이해](../understanding/conformance#levels)에서 확인할 수 있다.
+*   **충분/권고 기법(Sufficient and Advisory Techniques)** - WCAG 2.2 문서 자체의 각 지침과 성공 기준에 대해 작업 그룹은 다양한 기술도 문서화하였다. 기법은 정보를 제공하며 두 가지 범주, 즉 성공 기준을 충족하기에 충분한 기법과 권고되는 기법로 분류된다. 권고 기법은 개별 성공 기준에서 요구하는 것 이상을 제공하며 작성자가 지침을 더 잘 다룰 수 있게 한다. 일부 권고 기법은 검증 가능한 성공 기준에 포함되지 않는 접근성 장애를 다룬다. 일반적인 오류가 알려진 경우 해당 오류도 문서화되었다. [WCAG 2.2 이해에서 충분 및 권고 기법](../understanding/understanding-techniques)을 참조한다.
 
 이러한 모든 지침의 위계 구조(원칙, 지침, 성공 기준, 충분/권고 기법)이 함께 작동하여 콘텐츠에 대한 접근성을 높이는 방법에 대한 지침을 제공한다. 웹 콘텐츠 저작자는 가능한 가장 광범위한 사용자의 요구 사항을 가장 잘 해결하기 위해 권고 기법을 포함하여 가능한 모든 위계 구조를 보고 적용하는 것이 좋다.
 
-최고 수준(AAA)을 준수하는 콘텐츠라도 모든 유형, 정도 또는 중복 장애를 가진, 특히 인지, 언어 및 학습 영역에 장애가 있는 사람이 접근 가능한 것은 아니다. 웹 콘텐츠 저작자들은 권고 기법, [인지 및 학습 장애인이 사용할 수 있는 콘텐츠 만들기](https://www.w3.org/TR/coga-usable/)를 포함한 모든 기법을 고려하고, 가능한 한 이 커뮤니티에서 웹 콘텐츠가 접근 가능하도록 해 주는 현행 모범사례에 대한 적절한 조언을 구하기를 권장한다. [메타데이터](https://a11ykr.github.io/wai/wcag22/understanding/understanding-metadata)는 사용자가 자신의 요구에 가장 적합한 콘텐츠를 찾는 데 도움을 줄 수 있을 것이다.
+최고 수준(AAA)을 준수하는 콘텐츠라도 모든 유형, 정도 또는 중복 장애를 가진, 특히 인지, 언어 및 학습 영역에 장애가 있는 사람이 접근 가능한 것은 아니다. 웹 콘텐츠 저작자들은 권고 기법, [인지 및 학습 장애인이 사용할 수 있는 콘텐츠 만들기](https://www.w3.org/TR/coga-usable/)를 포함한 모든 기법을 고려하고, 가능한 한 이 커뮤니티에서 웹 콘텐츠가 접근 가능하도록 해 주는 현행 모범사례에 대한 적절한 조언을 구하기를 권장한다. [메타데이터](../understanding/understanding-metadata)는 사용자가 자신의 요구에 가장 적합한 콘텐츠를 찾는 데 도움을 줄 수 있을 것이다.
 
 ### WCAG 2.2 지원 문서
 
@@ -129,7 +129,7 @@ WCAG를 사용하는 개인과 조직은 웹 디자이너와 개발자, 정책 �
 WCAG 2.2 문서는 안정적이고 참조 가능한 기술 표준이 필요한 사람들의 요구를 충족하도록 작성되었다. 지원 문서라고 불리는 다른 문서는 WCAG 2.2 문서를 기반으로 하며 WCAG가 새로운 기술에 어떻게 적용되는지 설명하기 위해 업데이트된 기능을 포함하여 다른 중요한 목적을 다룬다. 지원 문서는 다음과 같다:
 
 1.  **[WCAG 2.2 준수방법](https://www.w3.org/WAI/WCAG22/quickref/)** - 모든 지침, 성공 기준 및 작성자가 웹 콘텐츠를 개발하고 평가할 때 사용할 수 있는 기술이다. 여기에는 WCAG 2.0, 2.1 2.2의 콘텐츠가 포함되며 저작자가 관련 콘텐츠에 집중할 수 있도록 다양한 방법으로 필터링할 수 있다.
-2.  **[WCAG 2.2 이해](https://a11ykr.github.io/wai/wcag22/understanding/)** - WCAG 2.2를 이해하고 구현하기 위한 가이드이다. WCAG 2.2의 각 지침과 성공 기준 및 주요 주제에 대한 짧은 "이해" 문서이다.
+2.  **[WCAG 2.2 이해](../understanding/)** - WCAG 2.2를 이해하고 구현하기 위한 가이드이다. WCAG 2.2의 각 지침과 성공 기준 및 주요 주제에 대한 짧은 "이해" 문서이다.
 3.  **[WCAG 2.2 기법](https://www.w3.org/WAI/WCAG22/Techniques/)** - 설명, 예제, 코드 및 테스트가 포함된 별도의 문서로 되어 있는 기법 및 일반적인 실패에 대한 모음.
 4.  **[The WCAG 2 문서](https://www.w3.org/WAI/standards-guidelines/wcag/docs/)** - WCAG 2 지원 문서 및 보충 지침에 대한 간략한 소개.
 5.  **[WCAG 2.2의 새로운 특징](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/)** 새로운 성공 기준을 개별 사례와 함께 소개하여 접근성 이슈를 설명한다.
@@ -193,14 +193,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 1.1 대체 텍스트
 
 
-[대체 텍스트 이해](https://a11ykr.github.io/wai/wcag22/understanding/text-alternatives.html) | [대체 텍스트 기법](https://www.w3.org/WAI/WCAG22/quickref/#text-alternatives)
+[대체 텍스트 이해](../understanding/text-alternatives.html) | [대체 텍스트 기법](https://www.w3.org/WAI/WCAG22/quickref/#text-alternatives)
 
 모든 텍스트가 아닌 콘텐츠에 대한 대체 텍스트를 제공하여, 이를 확대 문자, 점자, 음성, 기호 또는 더 단순한 언어와 같이 사람들이 필요로 하는 다른 형태로 변환할 수 있도록 한다.
 
 #### 성공 기준 1.1.1 텍스트가 아닌 콘텐츠
 
 
-[텍스트가 아닌 콘텐츠 이해](https://a11ykr.github.io/wai/wcag22/understanding/non-text-content.html) | [텍스트가 아닌 콘텐츠 기법](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content)
+[텍스트가 아닌 콘텐츠 이해](../understanding/non-text-content.html) | [텍스트가 아닌 콘텐츠 기법](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content)
 
 (Level A)
 
@@ -208,9 +208,9 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 
 <dl>
     <dt>컨트롤, 입력(Controls, Input)</dt>
-    <dd>텍스트가 아닌 콘텐츠가 컨트롤이거나 사용자 입력을 받는 경우, 해당 목적을 설명하는 [이름](../../glossary/name "소프트웨어가 사용자에게 웹 콘텐츠 내의 구성 요소를 식별할 수 있는 텍스트")이 있어야 한다. (컨트롤과 사용자 입력을 받는 콘텐츠에 대한 추가 요구 사항은 [성공 기준 4.1.2](#name-role-value) 참고)</dd>
+    <dd>텍스트가 아닌 콘텐츠가 컨트롤이거나 사용자 입력을 받는 경우, 해당 목적을 설명하는 [이름](../../glossary/name "소프트웨어가 사용자에게 웹 콘텐츠 내의 구성 요소를 식별할 수 있는 텍스트")이 있어야 한다. (컨트롤과 사용자 입력을 받는 콘텐츠에 대한 추가 요구 사항은 [성공 기준 4.1.2](#성공-기준-412-이름-역할-값) 참고)</dd>
     <dt>시간 기반 미디어(Time-Based Media)</dt>
-    <dd>텍스트 아닌 콘텐츠가 시간 기반 미디어인 경우, 텍스트 아닌 콘텐츠에는 최소한 동등한 설명의 대체 텍스트를 제공해야 한다. (미디어에 대한 추가 요구사항은 [지침 1.2](#time-based-media)를 참고)</dd>
+    <dd>텍스트 아닌 콘텐츠가 시간 기반 미디어인 경우, 텍스트 아닌 콘텐츠에는 최소한 동등한 설명의 대체 텍스트를 제공해야 한다. (미디어에 대한 추가 요구사항은 [지침 1.2](#지침-12-시간-기반-미디어)를 참고)</dd>
     <dt>시험(Test)</dt>
     <dd>텍스트 아닌 콘텐츠가 시험이나 연습 문제로, [텍스트](../../glossary/text "프로그래밍 방식으로 판별될 수 있는 문자 시퀀스(여기서 시퀀스는 인간 언어로 무언가를 표현함)")로 제시될 때 무효화 되는 경우, 최소한 해당 콘텐츠를 설명하는 대체 텍스트를 제공해야 한다.</dd>
     <dt>감각(Sensory)</dt>
@@ -224,14 +224,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 1.2 시간 기반 미디어
 
 
-[시간 기반 미디어 이해](https://a11ykr.github.io/wai/wcag22/understanding/time-based-media.html) | [시간 기반 미디어 기법](https://www.w3.org/WAI/WCAG22/quickref/#time-based-media)
+[시간 기반 미디어 이해](../understanding/time-based-media.html) | [시간 기반 미디어 기법](https://www.w3.org/WAI/WCAG22/quickref/#time-based-media)
 
 시간 기반 미디어에 대한 대체 수단을 제공해야 한다.
 
 #### 성공 기준 1.2.1 오디오 전용 및 비디오 전용(사전 녹음/녹화된)
 
 
-[오디오 전용 및 비디오 전용(사전 녹음/녹화된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/audio-only-and-video-only-prerecorded.html) | [오디오 전용 및 비디오 전용(사전 녹음/녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-only-and-video-only-prerecorded)
+[오디오 전용 및 비디오 전용(사전 녹음/녹화된) 이해](../understanding/audio-only-and-video-only-prerecorded.html) | [오디오 전용 및 비디오 전용(사전 녹음/녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-only-and-video-only-prerecorded)
 
 (Level A)
 
@@ -248,7 +248,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.2.2 자막 (사전 녹음된)
 
 
-[자막 (사전 녹음된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/captions-prerecorded.html) | [자막 (사전 녹음된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#captions-prerecorded)
+[자막 (사전 녹음된) 이해](../understanding/captions-prerecorded.html) | [자막 (사전 녹음된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#captions-prerecorded)
 
 (Level A)
 
@@ -257,7 +257,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.2.3 오디오 해설 또는 미디어 대체 수단 (사전 녹화된)
 
 
-[오디오 해설 또는 미디어 대체 수단 (사전 녹화된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/audio-description-or-media-alternative-prerecorded.html) | [오디오 해설 또는 미디어 대체 수단 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-description-or-media-alternative-prerecorded)
+[오디오 해설 또는 미디어 대체 수단 (사전 녹화된) 이해](../understanding/audio-description-or-media-alternative-prerecorded.html) | [오디오 해설 또는 미디어 대체 수단 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-description-or-media-alternative-prerecorded)
 
 (Level A)
 
@@ -266,7 +266,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.2.4 자막(실시간)
 
 
-[자막(실시간) 이해](https://a11ykr.github.io/wai/wcag22/understanding/captions-live.html) | [자막(실시간) 기법](https://www.w3.org/WAI/WCAG22/quickref/#captions-live)
+[자막(실시간) 이해](../understanding/captions-live.html) | [자막(실시간) 기법](https://www.w3.org/WAI/WCAG22/quickref/#captions-live)
 
 (Level AA)
 
@@ -275,7 +275,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.2.5 오디오 해설 (사전 녹화된)
 
 
-[오디오 해설 (사전 녹화된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/audio-description-prerecorded.html) | [오디오 해설 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-description-prerecorded)
+[오디오 해설 (사전 녹화된) 이해](../understanding/audio-description-prerecorded.html) | [오디오 해설 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-description-prerecorded)
 
 (Level AA)
 
@@ -284,7 +284,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.2.6 수어 (사전 녹화된)
 
 
-[수어 (사전 녹화된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/sign-language-prerecorded.html) | [수어 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#sign-language-prerecorded)
+[수어 (사전 녹화된) 이해](../understanding/sign-language-prerecorded.html) | [수어 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#sign-language-prerecorded)
 
 (Level AAA)
 
@@ -293,7 +293,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.2.7 확장형 오디오 해설 (사전 녹화된)
 
 
-[확장형 오디오 해설 (사전 녹화된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/extended-audio-description-prerecorded.html) | [확장형 오디오 해설 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#extended-audio-description-prerecorded)
+[확장형 오디오 해설 (사전 녹화된) 이해](../understanding/extended-audio-description-prerecorded.html) | [확장형 오디오 해설 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#extended-audio-description-prerecorded)
 
 (Level AAA)
 
@@ -302,7 +302,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.2.8 미디어 대체 수단 (사전 녹음/녹화된)
 
 
-[미디어 대체 수단 (사전 녹음/녹화된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/media-alternative-prerecorded.html) | [미디어 대체 수단 (사전 녹음/녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#media-alternative-prerecorded)
+[미디어 대체 수단 (사전 녹음/녹화된) 이해](../understanding/media-alternative-prerecorded.html) | [미디어 대체 수단 (사전 녹음/녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#media-alternative-prerecorded)
 
 (Level AAA)
 
@@ -311,7 +311,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.2.9 오디오 전용 (실시간)
 
 
-[오디오 전용 (실시간) 이해](https://a11ykr.github.io/wai/wcag22/understanding/audio-only-live.html) | [오디오 전용 (실시간) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-only-live)
+[오디오 전용 (실시간) 이해](../understanding/audio-only-live.html) | [오디오 전용 (실시간) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-only-live)
 
 (Level AAA)
 
@@ -320,14 +320,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 1.3 적응 가능성
 
 
-[적응 가능성 이해](https://a11ykr.github.io/wai/wcag22/understanding/adaptable.html) | [적응 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#adaptable)
+[적응 가능성 이해](../understanding/adaptable.html) | [적응 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#adaptable)
 
 정보나 구조를 잃지 않고 다양한 방식(예: 단순한 레이아웃)으로 표시할 수 있는 콘텐츠를 제작해야 한다.
 
 #### 성공 기준 1.3.1 정보와 관계
 
 
-[정보와 관계 이해](https://a11ykr.github.io/wai/wcag22/understanding/info-and-relationships.html) | [정보와 관계 기법](https://www.w3.org/WAI/WCAG22/quickref/#info-and-relationships)
+[정보와 관계 이해](../understanding/info-and-relationships.html) | [정보와 관계 기법](https://www.w3.org/WAI/WCAG22/quickref/#info-and-relationships)
 
 (Level A)
 
@@ -336,7 +336,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.3.2 의미있는 순서
 
 
-[의미있는 순서 이해](https://a11ykr.github.io/wai/wcag22/understanding/meaningful-sequence.html) | [의미있는 순서 기법](https://www.w3.org/WAI/WCAG22/quickref/#meaningful-sequence)
+[의미있는 순서 이해](../understanding/meaningful-sequence.html) | [의미있는 순서 기법](https://www.w3.org/WAI/WCAG22/quickref/#meaningful-sequence)
 
 (Level A)
 
@@ -345,7 +345,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.3.3 감각 특성
 
 
-[감각 특성 이해](https://a11ykr.github.io/wai/wcag22/understanding/sensory-characteristics.html) | [감각 특성 기법](https://www.w3.org/WAI/WCAG22/quickref/#sensory-characteristics)
+[감각 특성 이해](../understanding/sensory-characteristics.html) | [감각 특성 기법](https://www.w3.org/WAI/WCAG22/quickref/#sensory-characteristics)
 
 (Level A)
 
@@ -358,7 +358,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.3.4 방향
 
 
-[방향 이해](https://a11ykr.github.io/wai/wcag22/understanding/orientation.html) | [방향 기법](https://www.w3.org/WAI/WCAG22/quickref/#orientation)
+[방향 이해](../understanding/orientation.html) | [방향 기법](https://www.w3.org/WAI/WCAG22/quickref/#orientation)
 
 (Level AA)
 
@@ -371,7 +371,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.3.5 입력 목적 식별
 
 
-[입력 목적 식별 이해](https://a11ykr.github.io/wai/wcag22/understanding/identify-input-purpose.html) | [입력 목적 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#identify-input-purpose)
+[입력 목적 식별 이해](../understanding/identify-input-purpose.html) | [입력 목적 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#identify-input-purpose)
 
 (Level AA)
 
@@ -383,7 +383,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.3.6 목적 식별
 
 
-[목적 식별 이해](https://a11ykr.github.io/wai/wcag22/understanding/identify-purpose.html) | [목적 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#identify-purpose)
+[목적 식별 이해](../understanding/identify-purpose.html) | [목적 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#identify-purpose)
 
 (Level AAA)
 
@@ -392,14 +392,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 1.4 식별 가능성
 
 
-[식별 가능성 이해](https://a11ykr.github.io/wai/wcag22/understanding/distinguishable.html) | [식별 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#distinguishable)
+[식별 가능성 이해](../understanding/distinguishable.html) | [식별 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#distinguishable)
 
 배경으로부터 전경을 분리하는 것을 포함하여, 콘텐츠는 사용자가 더 쉽게 보고 들을 수 있도록 제작되어야 한다.
 
 #### 성공 기준 1.4.1 색상 사용
 
 
-[색상 사용 이해](https://a11ykr.github.io/wai/wcag22/understanding/use-of-color.html) | [색상 사용 기법](https://www.w3.org/WAI/WCAG22/quickref/#use-of-color)
+[색상 사용 이해](../understanding/use-of-color.html) | [색상 사용 기법](https://www.w3.org/WAI/WCAG22/quickref/#use-of-color)
 
 (Level A)
 
@@ -412,7 +412,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.2 오디오 제어
 
 
-[오디오 제어 이해](https://a11ykr.github.io/wai/wcag22/understanding/audio-control.html) | [오디오 제어 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-control)
+[오디오 제어 이해](../understanding/audio-control.html) | [오디오 제어 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-control)
 
 (Level A)
 
@@ -425,7 +425,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.3 명도 대비(최소)
 
 
-[명도 대비(최소) 이해](https://a11ykr.github.io/wai/wcag22/understanding/contrast-minimum.html) | [명도 대비(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#contrast-minimum)
+[명도 대비(최소) 이해](../understanding/contrast-minimum.html) | [명도 대비(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#contrast-minimum)
 
 (Level AA)
 
@@ -446,7 +446,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.4 텍스트 크기 조정
 
 
-[텍스트 크기 조정 이해](https://a11ykr.github.io/wai/wcag22/understanding/resize-text.html) | [텍스트 크기 조정 기법](https://www.w3.org/WAI/WCAG22/quickref/#resize-text)
+[텍스트 크기 조정 이해](../understanding/resize-text.html) | [텍스트 크기 조정 기법](https://www.w3.org/WAI/WCAG22/quickref/#resize-text)
 
 (Level AA)
 
@@ -455,7 +455,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.5 텍스트 이미지
 
 
-[텍스트 이미지 이해](https://a11ykr.github.io/wai/wcag22/understanding/images-of-text.html) | [텍스트 이미지 기법](https://www.w3.org/WAI/WCAG22/quickref/#images-of-text)
+[텍스트 이미지 이해](../understanding/images-of-text.html) | [텍스트 이미지 기법](https://www.w3.org/WAI/WCAG22/quickref/#images-of-text)
 
 (Level AA)
 
@@ -476,7 +476,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.6 명도 대비(향상된)
 
 
-[명도 대비(향상된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/contrast-enhanced.html) | [명도 대비(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#contrast-enhanced)
+[명도 대비(향상된) 이해](../understanding/contrast-enhanced.html) | [명도 대비(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#contrast-enhanced)
 
 (Level AAA)
 
@@ -497,7 +497,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.7 낮은 배경음 또는 배경음 없음
 
 
-[낮은 배경음 또는 배경음 없음 이해](https://a11ykr.github.io/wai/wcag22/understanding/low-or-no-background-audio.html) | [낮은 배경음 또는 배경음 없음 기법](https://www.w3.org/WAI/WCAG22/quickref/#low-or-no-background-audio)
+[낮은 배경음 또는 배경음 없음 이해](../understanding/low-or-no-background-audio.html) | [낮은 배경음 또는 배경음 없음 기법](https://www.w3.org/WAI/WCAG22/quickref/#low-or-no-background-audio)
 
 (Level AAA)
 
@@ -522,7 +522,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.8 시각적 표현
 
 
-[시각적 표현 이해](https://a11ykr.github.io/wai/wcag22/understanding/visual-presentation.html) | [시각적 표현 기법](https://www.w3.org/WAI/WCAG22/quickref/#visual-presentation)
+[시각적 표현 이해](../understanding/visual-presentation.html) | [시각적 표현 기법](https://www.w3.org/WAI/WCAG22/quickref/#visual-presentation)
 
 (Level AAA)
 
@@ -545,7 +545,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.9 텍스트 이미지 (예외 없음)
 
 
-[텍스트 이미지 (예외 없음) 이해](https://a11ykr.github.io/wai/wcag22/understanding/images-of-text-no-exception.html) | [텍스트 이미지 (예외 없음) 기법](https://www.w3.org/WAI/WCAG22/quickref/#images-of-text-no-exception)
+[텍스트 이미지 (예외 없음) 이해](../understanding/images-of-text-no-exception.html) | [텍스트 이미지 (예외 없음) 기법](https://www.w3.org/WAI/WCAG22/quickref/#images-of-text-no-exception)
 
 (Level AAA)
 
@@ -558,7 +558,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.10 재정렬
 
 
-[재정렬 이해](https://a11ykr.github.io/wai/wcag22/understanding/reflow.html) | [재정렬 기법](https://www.w3.org/WAI/WCAG22/quickref/#reflow)
+[재정렬 이해](../understanding/reflow.html) | [재정렬 기법](https://www.w3.org/WAI/WCAG22/quickref/#reflow)
 
 (Level AA)
 
@@ -580,7 +580,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.11 텍스트가 아닌 콘텐츠의 명도대비
 
 
-[텍스트가 아닌 콘텐츠의 명도대비 이해](https://a11ykr.github.io/wai/wcag22/understanding/non-text-contrast.html) | [텍스트가 아닌 콘텐츠의 명도대비 기법](https://www.w3.org/WAI/WCAG22/quickref/#non-text-contrast)
+[텍스트가 아닌 콘텐츠의 명도대비 이해](../understanding/non-text-contrast.html) | [텍스트가 아닌 콘텐츠의 명도대비 기법](https://www.w3.org/WAI/WCAG22/quickref/#non-text-contrast)
 
 (Level AA)
 
@@ -597,7 +597,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.12 텍스트 간격
 
 
-[텍스트 간격 이해](https://a11ykr.github.io/wai/wcag22/understanding/text-spacing.html) | [텍스트 간격 기법](https://www.w3.org/WAI/WCAG22/quickref/#text-spacing)
+[텍스트 간격 이해](../understanding/text-spacing.html) | [텍스트 간격 기법](https://www.w3.org/WAI/WCAG22/quickref/#text-spacing)
 
 (Level AA)
 
@@ -621,7 +621,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 1.4.13 마우스오버 혹은 키보드 초점을 받은 콘텐츠
 
 
-[마우스오버 혹은 키보드 초점을 받은 콘텐츠 이해](https://a11ykr.github.io/wai/wcag22/understanding/content-on-hover-or-focus.html) | [마우스오버 혹은 키보드 초점을 받은 콘텐츠 기법](https://www.w3.org/WAI/WCAG22/quickref/#content-on-hover-or-focus)
+[마우스오버 혹은 키보드 초점을 받은 콘텐츠 이해](../understanding/content-on-hover-or-focus.html) | [마우스오버 혹은 키보드 초점을 받은 콘텐츠 기법](https://www.w3.org/WAI/WCAG22/quickref/#content-on-hover-or-focus)
 
 (Level AA)
 
@@ -662,14 +662,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 2.1 키보드 접근성
 
 
-[키보드 접근성 이해](https://a11ykr.github.io/wai/wcag22/understanding/keyboard-accessible.html) | [키보드 접근성 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard-accessible)
+[키보드 접근성 이해](../understanding/keyboard-accessible.html) | [키보드 접근성 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard-accessible)
 
 키보드로 모든 기능을 사용할 수 있어야 한다.
 
 #### 성공 기준 2.1.1 키보드
 
 
-[키보드 이해](https://a11ykr.github.io/wai/wcag22/understanding/keyboard.html) | [키보드 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard)
+[키보드 이해](../understanding/keyboard.html) | [키보드 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard)
 
 (Level A)
 
@@ -686,7 +686,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.1.2 키보드 함정 방지
 
 
-[키보드 함정 방지 이해](https://a11ykr.github.io/wai/wcag22/understanding/no-keyboard-trap.html) | [키보드 함정 방지 기법](https://www.w3.org/WAI/WCAG22/quickref/#no-keyboard-trap)
+[키보드 함정 방지 이해](../understanding/no-keyboard-trap.html) | [키보드 함정 방지 기법](https://www.w3.org/WAI/WCAG22/quickref/#no-keyboard-trap)
 
 (Level A)
 
@@ -699,7 +699,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.1.3 키보드 (예외 없음)
 
 
-[키보드 (예외 없음) 이해](https://a11ykr.github.io/wai/wcag22/understanding/keyboard-no-exception.html) | [키보드 (예외 없음) 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard-no-exception)
+[키보드 (예외 없음) 이해](../understanding/keyboard-no-exception.html) | [키보드 (예외 없음) 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard-no-exception)
 
 (Level AAA)
 
@@ -708,7 +708,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.1.4 문자 단축키
 
 
-[문자 단축키 이해](https://a11ykr.github.io/wai/wcag22/understanding/character-key-shortcuts.html) | [문자 단축키 기법](https://www.w3.org/WAI/WCAG22/quickref/#character-key-shortcuts)
+[문자 단축키 이해](../understanding/character-key-shortcuts.html) | [문자 단축키 기법](https://www.w3.org/WAI/WCAG22/quickref/#character-key-shortcuts)
 
 (Level A)
 
@@ -729,14 +729,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 2.2 충분한 시간 제공
 
 
-[충분한 시간 제공 이해](https://a11ykr.github.io/wai/wcag22/understanding/enough-time.html) | [충분한 시간 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#enough-time)
+[충분한 시간 제공 이해](../understanding/enough-time.html) | [충분한 시간 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#enough-time)
 
 사용자가 콘텐츠를 읽고 사용할 수 있도록 충분한 시간을 제공해야 한다.
 
 #### 성공 기준 2.2.1 시간 제한 조정
 
 
-[시간 제한 조정 이해](https://a11ykr.github.io/wai/wcag22/understanding/timing-adjustable.html) | [시간 제한 조정 기법](https://www.w3.org/WAI/WCAG22/quickref/#timing-adjustable)
+[시간 제한 조정 이해](../understanding/timing-adjustable.html) | [시간 제한 조정 기법](https://www.w3.org/WAI/WCAG22/quickref/#timing-adjustable)
 
 (Level A)
 
@@ -773,7 +773,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.2.2 일시정지, 중지, 숨김
 
 
-[일시정지, 중지, 숨김 이해](https://a11ykr.github.io/wai/wcag22/understanding/pause-stop-hide.html) | [일시정지, 중지, 숨김 기법](https://www.w3.org/WAI/WCAG22/quickref/#pause-stop-hide)
+[일시정지, 중지, 숨김 이해](../understanding/pause-stop-hide.html) | [일시정지, 중지, 숨김 기법](https://www.w3.org/WAI/WCAG22/quickref/#pause-stop-hide)
 
 (Level A)
 
@@ -806,7 +806,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.2.3 시간 제한 없음
 
 
-[시간 제한 없음 이해](https://a11ykr.github.io/wai/wcag22/understanding/no-timing.html) | [시간 제한 없음 기법](https://www.w3.org/WAI/WCAG22/quickref/#no-timing)
+[시간 제한 없음 이해](../understanding/no-timing.html) | [시간 제한 없음 기법](https://www.w3.org/WAI/WCAG22/quickref/#no-timing)
 
 (Level AAA)
 
@@ -815,7 +815,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.2.4 방해 금지
 
 
-[방해 금지 이해](https://a11ykr.github.io/wai/wcag22/understanding/interruptions.html) | [방해 금지 기법](https://www.w3.org/WAI/WCAG22/quickref/#interruptions)
+[방해 금지 이해](../understanding/interruptions.html) | [방해 금지 기법](https://www.w3.org/WAI/WCAG22/quickref/#interruptions)
 
 (Level AAA)
 
@@ -824,7 +824,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.2.5 재인증
 
 
-[재인증 이해](https://a11ykr.github.io/wai/wcag22/understanding/re-authenticating.html) | [재인증 기법](https://www.w3.org/WAI/WCAG22/quickref/#re-authenticating)
+[재인증 이해](../understanding/re-authenticating.html) | [재인증 기법](https://www.w3.org/WAI/WCAG22/quickref/#re-authenticating)
 
 (Level AAA)
 
@@ -833,7 +833,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.2.6 시간 초과(Timeouts)
 
 
-[시간 초과 이해](https://a11ykr.github.io/wai/wcag22/understanding/timeouts.html) | [시간 초과 기법](https://www.w3.org/WAI/WCAG22/quickref/#timeouts)
+[시간 초과 이해](../understanding/timeouts.html) | [시간 초과 기법](https://www.w3.org/WAI/WCAG22/quickref/#timeouts)
 
 (Level AAA)
 
@@ -846,14 +846,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 2.3 발작 및 신체 반응
 
 
-[발작 및 신체 반응 이해](https://a11ykr.github.io/wai/wcag22/understanding/seizures-and-physical-reactions.html) | [발작 및 신체 반응 기법](https://www.w3.org/WAI/WCAG22/quickref/#seizures-and-physical-reactions)
+[발작 및 신체 반응 이해](../understanding/seizures-and-physical-reactions.html) | [발작 및 신체 반응 기법](https://www.w3.org/WAI/WCAG22/quickref/#seizures-and-physical-reactions)
 
 콘텐츠는 발작 또는 신체적 반응을 일으키지 않도록 설계되어야 한다.
 
 #### 성공 기준 2.3.1 3회 또는 임계값 이하의 번쩍임
 
 
-[3회 또는 임계값 이하의 번쩍임 이해](https://a11ykr.github.io/wai/wcag22/understanding/three-flashes-or-below-threshold.html) | [3회 또는 임계값 이하의 번쩍임 기법](https://www.w3.org/WAI/WCAG22/quickref/#three-flashes-or-below-threshold)
+[3회 또는 임계값 이하의 번쩍임 이해](../understanding/three-flashes-or-below-threshold.html) | [3회 또는 임계값 이하의 번쩍임 기법](https://www.w3.org/WAI/WCAG22/quickref/#three-flashes-or-below-threshold)
 
 (Level A)
 
@@ -866,7 +866,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.3.2 3회 번쩍임
 
 
-[3회 번쩍임 이해](https://a11ykr.github.io/wai/wcag22/understanding/three-flashes.html) | [3회 번쩍임 기법](https://www.w3.org/WAI/WCAG22/quickref/#three-flashes)
+[3회 번쩍임 이해](../understanding/three-flashes.html) | [3회 번쩍임 기법](https://www.w3.org/WAI/WCAG22/quickref/#three-flashes)
 
 (Level AAA)
 
@@ -875,7 +875,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.3.3 대화형 애니메이션
 
 
-[대화형 애니메이션 이해](https://a11ykr.github.io/wai/wcag22/understanding/animation-from-interactions.html) | [대화형 애니메이션 기법](https://www.w3.org/WAI/WCAG22/quickref/#animation-from-interactions)
+[대화형 애니메이션 이해](../understanding/animation-from-interactions.html) | [대화형 애니메이션 기법](https://www.w3.org/WAI/WCAG22/quickref/#animation-from-interactions)
 
 (Level AAA)
 
@@ -884,14 +884,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 2.4 탐색 가능성
 
 
-[탐색 가능성 이해](https://a11ykr.github.io/wai/wcag22/understanding/navigable.html) | [탐색 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#navigable)
+[탐색 가능성 이해](../understanding/navigable.html) | [탐색 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#navigable)
 
 사용자가 탐색하고, 콘텐츠를 찾고, 현재 위치를 파악할 수 있는 방법을 제공해야 한다.
 
 #### 성공 기준 2.4.1 블록 건너뛰기
 
 
-[블록 건너뛰기 이해](https://a11ykr.github.io/wai/wcag22/understanding/bypass-blocks.html) | [블록 건너뛰기 기법](https://www.w3.org/WAI/WCAG22/quickref/#bypass-blocks)
+[블록 건너뛰기 이해](../understanding/bypass-blocks.html) | [블록 건너뛰기 기법](https://www.w3.org/WAI/WCAG22/quickref/#bypass-blocks)
 
 (Level A)
 
@@ -900,7 +900,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.2 페이지 제목 제공
 
 
-[페이지 제목 제공 이해](https://a11ykr.github.io/wai/wcag22/understanding/page-titled.html) | [페이지 제목 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#page-titled)
+[페이지 제목 제공 이해](../understanding/page-titled.html) | [페이지 제목 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#page-titled)
 
 (Level A)
 
@@ -909,7 +909,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.3 초점 순서
 
 
-[초점 순서 이해](https://a11ykr.github.io/wai/wcag22/understanding/focus-order.html) | [초점 순서 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-order)
+[초점 순서 이해](../understanding/focus-order.html) | [초점 순서 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-order)
 
 (Level A)
 
@@ -918,7 +918,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.4 링크 목적(맥락 상의)
 
 
-[링크 목적(맥락 상의) 이해](https://a11ykr.github.io/wai/wcag22/understanding/link-purpose-in-context.html) | [링크 목적(맥락 상의) 기법](https://www.w3.org/WAI/WCAG22/quickref/#link-purpose-in-context)
+[링크 목적(맥락 상의) 이해](../understanding/link-purpose-in-context.html) | [링크 목적(맥락 상의) 기법](https://www.w3.org/WAI/WCAG22/quickref/#link-purpose-in-context)
 
 (Level A)
 
@@ -927,7 +927,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.5 다양한 방법 제공
 
 
-[다양한 방법 제공 이해](https://a11ykr.github.io/wai/wcag22/understanding/multiple-ways.html) | [다양한 방법 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#multiple-ways)
+[다양한 방법 제공 이해](../understanding/multiple-ways.html) | [다양한 방법 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#multiple-ways)
 
 (Level AA)
 
@@ -936,7 +936,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.6 제목과 레이블
 
 
-[제목과 레이블 이해](https://a11ykr.github.io/wai/wcag22/understanding/headings-and-labels.html) | [제목과 레이블 기법](https://www.w3.org/WAI/WCAG22/quickref/#headings-and-labels)
+[제목과 레이블 이해](../understanding/headings-and-labels.html) | [제목과 레이블 기법](https://www.w3.org/WAI/WCAG22/quickref/#headings-and-labels)
 
 (Level AA)
 
@@ -945,7 +945,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.7 초점 시각화
 
 
-[초점 표시 이해](https://a11ykr.github.io/wai/wcag22/understanding/focus-visible.html) | [초점 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-visible)
+[초점 표시 이해](../understanding/focus-visible.html) | [초점 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-visible)
 
 (Level AA)
 
@@ -954,7 +954,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.8 위치 제공
 
 
-[위치 제공 이해](https://a11ykr.github.io/wai/wcag22/understanding/location.html) | [위치 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#location)
+[위치 제공 이해](../understanding/location.html) | [위치 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#location)
 
 (Level AAA)
 
@@ -963,7 +963,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.9 링크 목적 (링크 단독)
 
 
-[링크 목적 (링크 단독) 이해](https://a11ykr.github.io/wai/wcag22/understanding/link-purpose-link-only.html) | [링크 목적 (링크 단독) 기법](https://www.w3.org/WAI/WCAG22/quickref/#link-purpose-link-only)
+[링크 목적 (링크 단독) 이해](../understanding/link-purpose-link-only.html) | [링크 목적 (링크 단독) 기법](https://www.w3.org/WAI/WCAG22/quickref/#link-purpose-link-only)
 
 (Level AAA)
 
@@ -972,7 +972,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.10 섹션 제목
 
 
-[섹션 제목 이해](https://a11ykr.github.io/wai/wcag22/understanding/section-headings.html) | [섹션 제목 기법](https://www.w3.org/WAI/WCAG22/quickref/#section-headings)
+[섹션 제목 이해](../understanding/section-headings.html) | [섹션 제목 기법](https://www.w3.org/WAI/WCAG22/quickref/#section-headings)
 
 (Level AAA)
 
@@ -989,7 +989,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.11 초점 표시(최소)
 
 
-[초점 표시(최소) 이해](https://a11ykr.github.io/wai/wcag22/understanding/focus-not-obscured-minimum.html) | [초점 표시(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-not-obscured-minimum)
+[초점 표시(최소) 이해](../understanding/focus-not-obscured-minimum.html) | [초점 표시(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-not-obscured-minimum)
 
 (Level AA)
 
@@ -1008,7 +1008,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.12 초점 표시(향상된)
 
 
-[초점 표시(향상된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/focus-not-obscured-enhanced.html) | [초점 표시(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-not-obscured-enhanced)
+[초점 표시(향상된) 이해](../understanding/focus-not-obscured-enhanced.html) | [초점 표시(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-not-obscured-enhanced)
 
 (Level AAA)
 
@@ -1019,7 +1019,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.4.13 초점 형태
 
 
-[초점 형태 이해](https://a11ykr.github.io/wai/wcag22/understanding/focus-appearance.html) | [초점 형태 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-appearance)
+[초점 형태 이해](../understanding/focus-appearance.html) | [초점 형태 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-appearance)
 
 (Level AAA)
 
@@ -1050,14 +1050,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 2.5 입력 방식
 
 
-[입력 방식 이해](https://a11ykr.github.io/wai/wcag22/understanding/input-modalities.html) | [입력 방식 기법](https://www.w3.org/WAI/WCAG22/quickref/#input-modalities)
+[입력 방식 이해](../understanding/input-modalities.html) | [입력 방식 기법](https://www.w3.org/WAI/WCAG22/quickref/#input-modalities)
 
 사용자가 키보드 이외의 다양한 입력 장치를 통해 기능들을 보다 쉽게 조작할 수 있도록 해야 한다.
 
 #### 성공 기준 2.5.1 포인터 제스처
 
 
-[포인터 제스처 이해](https://a11ykr.github.io/wai/wcag22/understanding/pointer-gestures.html) | [포인터 제스처 기법](https://www.w3.org/WAI/WCAG22/quickref/#pointer-gestures)
+[포인터 제스처 이해](../understanding/pointer-gestures.html) | [포인터 제스처 기법](https://www.w3.org/WAI/WCAG22/quickref/#pointer-gestures)
 
 (Level A)
 
@@ -1070,7 +1070,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.5.2 포인터 입력 취소
 
 
-[포인터 입력 취소 이해](https://a11ykr.github.io/wai/wcag22/understanding/pointer-cancellation.html) | [포인터 입력 취소 기법](https://www.w3.org/WAI/WCAG22/quickref/#pointer-cancellation)
+[포인터 입력 취소 이해](../understanding/pointer-cancellation.html) | [포인터 입력 취소 기법](https://www.w3.org/WAI/WCAG22/quickref/#pointer-cancellation)
 
 (Level A)
 
@@ -1103,7 +1103,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.5.3 이름 안의 레이블
 
 
-[이름 안의 레이블 이해](https://a11ykr.github.io/wai/wcag22/understanding/label-in-name.html) | [이름 안의 레이블 기법](https://www.w3.org/WAI/WCAG22/quickref/#label-in-name)
+[이름 안의 레이블 이해](../understanding/label-in-name.html) | [이름 안의 레이블 기법](https://www.w3.org/WAI/WCAG22/quickref/#label-in-name)
 
 (Level A)
 
@@ -1116,7 +1116,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.5.4 움직임 기반 실행
 
 
-[움직임 기반 실행 이해](https://a11ykr.github.io/wai/wcag22/understanding/motion-actuation.html) | [움직임 기반 실행 기법](https://www.w3.org/WAI/WCAG22/quickref/#motion-actuation)
+[움직임 기반 실행 이해](../understanding/motion-actuation.html) | [움직임 기반 실행 기법](https://www.w3.org/WAI/WCAG22/quickref/#motion-actuation)
 
 (Level A)
 
@@ -1133,7 +1133,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.5.5 타겟 크기(향상된)
 
 
-[타겟 크기(향상된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/target-size-enhanced.html) | [타겟 크기(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#target-size-enhanced)
+[타겟 크기(향상된) 이해](../understanding/target-size-enhanced.html) | [타겟 크기(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#target-size-enhanced)
 
 (Level AAA)
 
@@ -1158,7 +1158,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.5.6 동시 입력 메커니즘
 
 
-[동시 입력 메커니즘 이해](https://a11ykr.github.io/wai/wcag22/understanding/concurrent-input-mechanisms.html) | [동시 입력 메커니즘 기법](https://www.w3.org/WAI/WCAG22/quickref/#concurrent-input-mechanisms)
+[동시 입력 메커니즘 이해](../understanding/concurrent-input-mechanisms.html) | [동시 입력 메커니즘 기법](https://www.w3.org/WAI/WCAG22/quickref/#concurrent-input-mechanisms)
 
 (Level AAA)
 
@@ -1167,7 +1167,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.5.7 끌기(Dragging) 동작
 
 
-[끌기 동작 이해](https://a11ykr.github.io/wai/wcag22/understanding/dragging-movements.html) | [끌기 동작 기법](https://www.w3.org/WAI/WCAG22/quickref/#dragging-movements)
+[끌기 동작 이해](../understanding/dragging-movements.html) | [끌기 동작 기법](https://www.w3.org/WAI/WCAG22/quickref/#dragging-movements)
 
 (Level AA)
 
@@ -1182,7 +1182,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 2.5.8 타겟 크기(최소)
 
 
-[타겟 크기(최소) 이해](https://a11ykr.github.io/wai/wcag22/understanding/target-size-minimum.html) | [타겟 크기(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#target-size-minimum)
+[타겟 크기(최소) 이해](../understanding/target-size-minimum.html) | [타겟 크기(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#target-size-minimum)
 
 (Level AA)
 
@@ -1213,14 +1213,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 3.1 가독성
 
 
-[가독성 이해](https://a11ykr.github.io/wai/wcag22/understanding/readable.html) | [가독성 기법](https://www.w3.org/WAI/WCAG22/quickref/#readable)
+[가독성 이해](../understanding/readable.html) | [가독성 기법](https://www.w3.org/WAI/WCAG22/quickref/#readable)
 
 텍스트 콘텐츠는 읽을 수 있고 이해할 수 있어야 한다.
 
 #### 성공 기준 3.1.1 페이지 언어 표시
 
 
-[페이지 언어 표시 이해](https://a11ykr.github.io/wai/wcag22/understanding/language-of-page.html) | [페이지 언어 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#language-of-page)
+[페이지 언어 표시 이해](../understanding/language-of-page.html) | [페이지 언어 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#language-of-page)
 
 (Level A)
 
@@ -1229,7 +1229,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.1.2 부분적인 언어 표시
 
 
-[부분적인 언어 표시 이해](https://a11ykr.github.io/wai/wcag22/understanding/language-of-parts.html) | [부분적인 언어 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#language-of-parts)
+[부분적인 언어 표시 이해](../understanding/language-of-parts.html) | [부분적인 언어 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#language-of-parts)
 
 (Level AA)
 
@@ -1238,7 +1238,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.1.3 생소한 단어
 
 
-[생소한 단어 이해](https://a11ykr.github.io/wai/wcag22/understanding/unusual-words.html) | [생소한 단어 기법](https://www.w3.org/WAI/WCAG22/quickref/#unusual-words)
+[생소한 단어 이해](../understanding/unusual-words.html) | [생소한 단어 기법](https://www.w3.org/WAI/WCAG22/quickref/#unusual-words)
 
 (Level AAA)
 
@@ -1247,7 +1247,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.1.4 약어
 
 
-[약어 이해](https://a11ykr.github.io/wai/wcag22/understanding/abbreviations.html) | [약어 기법](https://www.w3.org/WAI/WCAG22/quickref/#abbreviations)
+[약어 이해](../understanding/abbreviations.html) | [약어 기법](https://www.w3.org/WAI/WCAG22/quickref/#abbreviations)
 
 (Level AAA)
 
@@ -1256,7 +1256,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.1.5 독해 수준
 
 
-[독해 수준 이해](https://a11ykr.github.io/wai/wcag22/understanding/reading-level.html) | [독해 수준 기법](https://www.w3.org/WAI/WCAG22/quickref/#reading-level)
+[독해 수준 이해](../understanding/reading-level.html) | [독해 수준 기법](https://www.w3.org/WAI/WCAG22/quickref/#reading-level)
 
 (Level AAA)
 
@@ -1265,7 +1265,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.1.6 발음
 
 
-[발음 이해](https://a11ykr.github.io/wai/wcag22/understanding/pronunciation.html) | [발음 기법](https://www.w3.org/WAI/WCAG22/quickref/#pronunciation)
+[발음 이해](../understanding/pronunciation.html) | [발음 기법](https://www.w3.org/WAI/WCAG22/quickref/#pronunciation)
 
 (Level AAA)
 
@@ -1274,14 +1274,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 3.2 예측 가능성
 
 
-[예측 가능성 이해](https://a11ykr.github.io/wai/wcag22/understanding/predictable.html) | [예측 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#predictable)
+[예측 가능성 이해](../understanding/predictable.html) | [예측 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#predictable)
 
 웹 페이지는 예측 가능한 방식으로 제시되고 작동해야 한다.
 
 #### 성공 기준 3.2.1 초점 활성
 
 
-[초점 활성 이해](https://a11ykr.github.io/wai/wcag22/understanding/on-focus.html) | [초점 활성 기법](https://www.w3.org/WAI/WCAG22/quickref/#on-focus)
+[초점 활성 이해](../understanding/on-focus.html) | [초점 활성 기법](https://www.w3.org/WAI/WCAG22/quickref/#on-focus)
 
 (Level A)
 
@@ -1290,7 +1290,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.2.2 입력 활성
 
 
-[입력 활성 이해](https://a11ykr.github.io/wai/wcag22/understanding/on-input.html) | [입력 활성 기법](https://www.w3.org/WAI/WCAG22/quickref/#on-input)
+[입력 활성 이해](../understanding/on-input.html) | [입력 활성 기법](https://www.w3.org/WAI/WCAG22/quickref/#on-input)
 
 (Level A)
 
@@ -1299,7 +1299,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.2.3 일관된 탐색
 
 
-[일관된 탐색 이해](https://a11ykr.github.io/wai/wcag22/understanding/consistent-navigation.html) | [일관된 탐색 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-navigation)
+[일관된 탐색 이해](../understanding/consistent-navigation.html) | [일관된 탐색 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-navigation)
 
 (Level AA)
 
@@ -1308,7 +1308,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.2.4 일관된 식별
 
 
-[일관된 식별 이해](https://a11ykr.github.io/wai/wcag22/understanding/consistent-identification.html) | [일관된 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-identification)
+[일관된 식별 이해](../understanding/consistent-identification.html) | [일관된 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-identification)
 
 (Level AA)
 
@@ -1317,7 +1317,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.2.5 요구에 의한 변화
 
 
-[요구에 의한 변화 이해](https://a11ykr.github.io/wai/wcag22/understanding/change-on-request.html) | [요구에 의한 변화 기법](https://www.w3.org/WAI/WCAG22/quickref/#change-on-request)
+[요구에 의한 변화 이해](../understanding/change-on-request.html) | [요구에 의한 변화 기법](https://www.w3.org/WAI/WCAG22/quickref/#change-on-request)
 
 (Level AAA)
 
@@ -1326,7 +1326,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.2.6 일관된 도움말
 
 
-[일관된 도움말 이해](https://a11ykr.github.io/wai/wcag22/understanding/consistent-help.html) | [일관된 도움말 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-help)
+[일관된 도움말 이해](../understanding/consistent-help.html) | [일관된 도움말 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-help)
 
 (Level A)
 
@@ -1350,14 +1350,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 3.3 입력 지원
 
 
-[입력 지원 이해](https://a11ykr.github.io/wai/wcag22/understanding/input-assistance.html) | [입력 지원 기법](https://www.w3.org/WAI/WCAG22/quickref/#input-assistance)
+[입력 지원 이해](../understanding/input-assistance.html) | [입력 지원 기법](https://www.w3.org/WAI/WCAG22/quickref/#input-assistance)
 
 사용자가 실수를 회피하거나 수정할 수 있도록 지원해야 한다.
 
 #### 성공 기준 3.3.1 오류 식별
 
 
-[오류 식별 이해](https://a11ykr.github.io/wai/wcag22/understanding/error-identification.html) | [오류 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-identification)
+[오류 식별 이해](../understanding/error-identification.html) | [오류 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-identification)
 
 (Level A)
 
@@ -1366,7 +1366,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.3.2 레이블 또는 지시문
 
 
-[레이블 또는 지시문 이해](https://a11ykr.github.io/wai/wcag22/understanding/labels-or-instructions.html) | [레이블 또는 지시문 기법](https://www.w3.org/WAI/WCAG22/quickref/#labels-or-instructions)
+[레이블 또는 지시문 이해](../understanding/labels-or-instructions.html) | [레이블 또는 지시문 기법](https://www.w3.org/WAI/WCAG22/quickref/#labels-or-instructions)
 
 (Level A)
 
@@ -1375,7 +1375,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.3.3 오류 수정 제안
 
 
-[오류 수정 제안 이해](https://a11ykr.github.io/wai/wcag22/understanding/error-suggestion.html) | [오류 수정 제안 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-suggestion)
+[오류 수정 제안 이해](../understanding/error-suggestion.html) | [오류 수정 제안 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-suggestion)
 
 (Level AA)
 
@@ -1384,7 +1384,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.3.4 오류 예방 (법률, 금융, 데이터)
 
 
-[오류 예방 (법률, 금융, 데이터) 이해](https://a11ykr.github.io/wai/wcag22/understanding/error-prevention-legal-financial-data.html) | [오류 예방 (법률, 금융, 데이터) 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-prevention-legal-financial-data)
+[오류 예방 (법률, 금융, 데이터) 이해](../understanding/error-prevention-legal-financial-data.html) | [오류 예방 (법률, 금융, 데이터) 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-prevention-legal-financial-data)
 
 (Level AA)
 
@@ -1405,7 +1405,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.3.5 도움말
 
 
-[도움말 이해](https://a11ykr.github.io/wai/wcag22/understanding/help.html) | [도움말 기법](https://www.w3.org/WAI/WCAG22/quickref/#help)
+[도움말 이해](../understanding/help.html) | [도움말 기법](https://www.w3.org/WAI/WCAG22/quickref/#help)
 
 (Level AAA)
 
@@ -1414,7 +1414,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.3.6 오류 예방 (전체)
 
 
-[오류 예방 (전체) 이해](https://a11ykr.github.io/wai/wcag22/understanding/error-prevention-all.html) | [오류 예방 (전체) 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-prevention-all)
+[오류 예방 (전체) 이해](../understanding/error-prevention-all.html) | [오류 예방 (전체) 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-prevention-all)
 
 (Level AAA)
 
@@ -1435,7 +1435,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.3.7 중복 입력
 
 
-[중복 입력 이해](https://a11ykr.github.io/wai/wcag22/understanding/redundant-entry.html) | [중복 입력 기법](https://www.w3.org/WAI/WCAG22/quickref/#redundant-entry)
+[중복 입력 이해](../understanding/redundant-entry.html) | [중복 입력 기법](https://www.w3.org/WAI/WCAG22/quickref/#redundant-entry)
 
 (Level A)
 
@@ -1455,7 +1455,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.3.8 접근 가능한 인증(최소)
 
 
-[접근 가능한 인증(최소) 이해](https://a11ykr.github.io/wai/wcag22/understanding/accessible-authentication-minimum.html) | [접근 가능한 인증(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#accessible-authentication-minimum)
+[접근 가능한 인증(최소) 이해](../understanding/accessible-authentication-minimum.html) | [접근 가능한 인증(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#accessible-authentication-minimum)
 
 (Level AA)
 
@@ -1493,7 +1493,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 3.3.9 접근 가능한 인증(향상된)
 
 
-[접근 가능한 인증(향상된) 이해](https://a11ykr.github.io/wai/wcag22/understanding/accessible-authentication-enhanced.html) | [접근 가능한 인증(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#accessible-authentication-enhanced)
+[접근 가능한 인증(향상된) 이해](../understanding/accessible-authentication-enhanced.html) | [접근 가능한 인증(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#accessible-authentication-enhanced)
 
 (Level AAA)
 
@@ -1518,14 +1518,14 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ### 지침 4.1 호환성
 
 
-[호환성 이해](https://a11ykr.github.io/wai/wcag22/understanding/compatible.html) | [호환성 기법](https://www.w3.org/WAI/WCAG22/quickref/#compatible)
+[호환성 이해](../understanding/compatible.html) | [호환성 기법](https://www.w3.org/WAI/WCAG22/quickref/#compatible)
 
 보조 기술을 포함하여, 현재나 미래의 사용자 에이전트에 대한 호환성을 극대화해야 한다.
 
 #### 성공 기준 4.1.1 파싱 (무효화 및 삭제)
 
 
-[파싱 (무효화 및 삭제) 이해](https://a11ykr.github.io/wai/wcag22/understanding/parsing.html) | [파싱 (무효화 및 삭제) 기법](https://www.w3.org/WAI/WCAG22/quickref/#parsing)
+[파싱 (무효화 및 삭제) 이해](../understanding/parsing.html) | [파싱 (무효화 및 삭제) 기법](https://www.w3.org/WAI/WCAG22/quickref/#parsing)
 
 참고
 
@@ -1534,7 +1534,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 4.1.2 이름, 역할, 값
 
 
-[이름, 역할, 값 이해](https://a11ykr.github.io/wai/wcag22/understanding/name-role-value.html) | [이름, 역할, 값 기법](https://www.w3.org/WAI/WCAG22/quickref/#name-role-value)
+[이름, 역할, 값 이해](../understanding/name-role-value.html) | [이름, 역할, 값 기법](https://www.w3.org/WAI/WCAG22/quickref/#name-role-value)
 
 (Level A)
 
@@ -1547,7 +1547,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 #### 성공 기준 4.1.3 상태 메시지
 
 
-[상태 메시지 이해](https://a11ykr.github.io/wai/wcag22/understanding/status-messages.html) | [상태 메시지 기법](https://www.w3.org/WAI/WCAG22/quickref/#status-messages)
+[상태 메시지 이해](../understanding/status-messages.html) | [상태 메시지 기법](https://www.w3.org/WAI/WCAG22/quickref/#status-messages)
 
 (Level AA)
 
@@ -1557,7 +1557,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 ------
 
 
-이 섹션에서는 WCAG 2.2 [준수](../../glossary/conform "표준, 가이드라인 또는 명세서의 모든 요구사항을 충족하는 것") 요구사항을 설명한다. 이 섹션은 또한 선택적인 준수 선언(claims) 방법에 대한 정보도 제공한다. 마지막으로, 이 절은 준수를 위해 [접근성 지원](../../glossary/accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된") 기술 활용 방법에만 [의존](../../glossary/relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")할 수 있기 때문에, 지원되는 접근성이 무엇을 의미하는지를 설명한다. [준수 이해](https://a11ykr.github.io/wai/wcag22/understanding/conformance)는 접근성 지원의 개념을 보다 더 자세히 설명한다.
+이 섹션에서는 WCAG 2.2 [준수](../../glossary/conform "표준, 가이드라인 또는 명세서의 모든 요구사항을 충족하는 것") 요구사항을 설명한다. 이 섹션은 또한 선택적인 준수 선언(claims) 방법에 대한 정보도 제공한다. 마지막으로, 이 절은 준수를 위해 [접근성 지원](../../glossary/accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된") 기술 활용 방법에만 [의존](../../glossary/relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")할 수 있기 때문에, 지원되는 접근성이 무엇을 의미하는지를 설명한다. [준수 이해](../understanding/conformance)는 접근성 지원의 개념을 보다 더 자세히 설명한다.
 
 ### 5.1 규범 요구사항 해석
 
@@ -1617,7 +1617,7 @@ WCAG 2.2의 주요 내용은 [규범](../../glossary/normative "준수에 필요
 #### 5.2.4 접근성 지원 기술 활용 방법
 
 
-성공 기준을 충족하기 위해서는 오직 [접근성 지원](../../glossary/accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된") [기술](../../glossary/technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘") 활용 방법에만 [의존](../../glossary/relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")한다. 접근성을 지원하지 않는 어떤 방법을 제공하는 정보나 기능도 접근성을 지원하는 방법에서 이용 가능하다.([접근성 지원 이해](https://a11ykr.github.io/wai/wcag22/understanding/conformance#accessibility-support)를 참고하라.)
+성공 기준을 충족하기 위해서는 오직 [접근성 지원](../../glossary/accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된") [기술](../../glossary/technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘") 활용 방법에만 [의존](../../glossary/relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")한다. 접근성을 지원하지 않는 어떤 방법을 제공하는 정보나 기능도 접근성을 지원하는 방법에서 이용 가능하다.([접근성 지원 이해](../understanding/conformance#accessibility-support)를 참고하라.)
 
 #### 5.2.5 불간섭
 
@@ -1639,7 +1639,7 @@ WCAG 2.2의 주요 내용은 [규범](../../glossary/normative "준수에 필요
 
 페이지가 준수되지 않은 경우(예: 준수 검사 페이지 또는 예제 페이지), 준수 범위 또는 준수 선언에 포함될 수 없다.
 
-예제를 포함한 자세한 내용은 [준수 요구사항 이해](https://a11ykr.github.io/wai/wcag22/understanding/conformance#conformance-requirements)를 참고하라.
+예제를 포함한 자세한 내용은 [준수 요구사항 이해](../understanding/conformance#conformance-requirements)를 참고하라.
 
 ### 5.3 준수 선언 (선택사항)
 
@@ -1685,11 +1685,11 @@ WCAG 2.2의 주요 내용은 [규범](../../glossary/normative "준수에 필요
 
 참고 1
 
-자세한 정보 및 예제 준수 선언에 대한 내용은 [준수 선언 이해](https://a11ykr.github.io/wai/wcag22/understanding/conformance#conformance-claims)를 참고하라.
+자세한 정보 및 예제 준수 선언에 대한 내용은 [준수 선언 이해](../understanding/conformance#conformance-claims)를 참고하라.
 
 참고 2
 
-준수 선언에서 메타데이터 사용에 대한 자세한 내용은 [메타데이터 이해](https://a11ykr.github.io/wai/wcag22/understanding/understanding-metadata)를 참고하라.
+준수 선언에서 메타데이터 사용에 대한 자세한 내용은 [메타데이터 이해](../understanding/understanding-metadata)를 참고하라.
 
 ### 5.4 부분 준수 진술 - 제3자 콘텐츠
 

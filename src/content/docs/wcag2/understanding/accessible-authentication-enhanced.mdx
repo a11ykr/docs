@@ -11,22 +11,18 @@ lastUpdated: 2024-05-02
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 3.3.9](https://w3.org/TR/WCAG22#accessible-authentication-enhanced):접근 가능한 인증 (향상된) 
-
 (Level AAA)
 
-<Card title="성공 기준(SC)"></Card>
-
+<Card title="성공 기준(SC)">
 다음 중 하나 이상을 제공하지 않는 한 인증 [과정](../../../glossary/process)의 어떤 단계에서도 [인지 기능 검사t](../../../glossary/cognitive-function-test)(예: 비밀번호 기억 또는 퍼즐 풀기)를 요구할 수 없다.
 
-대체 수단
-
-인지 기능 검사에 의존하지 않는 또 다른 인증 방법을 제공하는 경우
-
-매커니즘
-
-사용자가 인지 기능 검사를 완수하는 데 도움을 주는 [매커니즘](../../../glossary/mechanism)을 제공하는 경우
-
+<dl>
+    <dt>대체 수단</dt>
+    <dd>인지 기능 검사에 의존하지 않는 또 다른 인증 방법을 제공하는 경우</dd>
+    <dt>매커니즘</dt>
+    <dd>사용자가 인지 기능 검사를 완수하는 데 도움을 주는 [매커니즘](../../../glossary/mechanism)을 제공하는 경우</dd>
+</dl>
+</Card>
 ## 요약
 
 <dl>
@@ -49,13 +45,13 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ### 이점
 
-이 성공 기준의 이점은 [접근 가능한 인증(최소)](accessible-authentication-minimum.html#benefits)과 동일하다.
+이 성공 기준의 이점은 [접근 가능한 인증(최소)](accessible-authentication-minimum)과 동일하다.
 
 기억, 읽기(예: 난독증), 숫자(예: 난산증) 또는 지각 처리 제한과 관련된 인지 문제가 있는 사람이 인지 능력 수준에 관계없이 인증할 수 있다.
 
 ### 예제
 
-이 성공 기준의 예는 [접근 가능한 인증(최소)](accessible-authentication-minimum.html#examples) 예와 매우 유사하다.
+이 성공 기준의 예는 [접근 가능한 인증(최소)](accessible-authentication-minimum) 예와 매우 유사하다.
 
 *   웹 사이트는 적절하게 표시된 사용자 이름(또는 이메일) 및 비밀번호 필드를 로그인 인증으로 사용한다(성공 기준 1.3.5 입력 목적 식별 및 성공 기준 4.1.2: 이름, 역할, 값 충족). 사용자의 브라우저 또는 통합된 타사 비밀번호 관리 확장 프로그램은 입력 목적을 식별하고 사용자 이름과 비밀번호를 자동으로 채울 수 있다.
 *   웹사이트는 붙여넣기 기능을 차단하지 않는다. 사용자는 타사 비밀번호 관리자를 사용하여 자격 증명을 저장하고 복사한 후 로그인 양식에 직접 붙여 넣을 수 있다.
