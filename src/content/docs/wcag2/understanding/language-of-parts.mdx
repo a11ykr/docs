@@ -11,13 +11,11 @@ lastUpdated: 2024-05-02
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 3.1.2](https://w3.org/TR/WCAG22#language-of-parts):부분적인 언어 표시 
-
 (Level AA)
 
-<Card title="성공 기준(SC)"></Card>
-
+<Card title="성공 기준(SC)">
 콘텐츠에서 각 절이나 문구의 [인간 언어](../../../glossary/human-language)는 적절한 명칭, 전문용어, 불확실한 단어, 텍스트의 모국어(방언)에 포함된 단어나 구절을 제외하고는 [프로그래밍 방식으로 판별](../../../glossary/programmatically-determined)될 수 있어야 한다.
+</Card>
 
 ## 요약
 
@@ -63,13 +61,13 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 ### 예제
 
 *   **영어 문장의 독일어 문구.**
-    
-    "그는 DDR(독일민주공화국)이 단지 'Treppenwitz der Weltgeschichte'일 뿐이라고 주장했다"는 문장에서 독일어 문구 'Treppenwitz der Weltgeschichte'는 독일어로 표기되어 있다. 마크업 언어에 따라 영어는 지정된 경우를 제외하고 전체 문서의 언어로 표시되거나 단락 수준에서 표시될 수 있다. 화면 낭독기가 독일어 구문을 발견하면 발음 규칙을 영어에서 독일어로 변경하여 단어를 올바르게 발음한다.
-    
+
+    "그는 DDR(독일민주공화국)이 단지 '<span lang="de">Treppenwitz der Weltgeschichte</span>'일 뿐이라고 주장했다"는 문장에서 독일어 문구 '<span lang="de">Treppenwitz der Weltgeschichte</span>'는 독일어로 표기되어 있다. 마크업 언어에 따라 영어는 지정된 경우를 제외하고 전체 문서의 언어로 표시되거나 단락 수준에서 표시될 수 있다. 화면 낭독기가 독일어 구문을 발견하면 발음 규칙을 영어에서 독일어로 변경하여 단어를 올바르게 발음한다.
+
 *   **대체 언어 링크**
-    
+
     HTML 웹 페이지에는 다른 언어(예: Deutsch, Français, Nederlands, Catalan 등)의 페이지 버전에 대한 링크가 포함되어 있다. 각 링크의 텍스트는 해당 언어의 언어 이름이다. 각 링크의 언어는 lang 속성을 통해 표시된다.
-    
+
     ```
     <ul>
        <li><a href="..." lang="de">Deutsch</a></li>
@@ -79,11 +77,11 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
        <li><a href="..." lang="zh-hant">繁體中文</a></li>
     </ul>
     ```
-    
+
 *   **프랑스어 문장에 사용되는 "팟캐스트".**
-    
-    "팟캐스트"는 다음 발췌문 "À l'occasion de l'exposition "Energie éternelle. 1500 ans d'art indien", le Palais des Beaux-Arts de Bruxelles a lancé son premier podcast. Vous pouvez télécharger ce podcast au format M4A et MP3", 에서 바로 주변 텍스트가 모국어의 일부이기 때문에 언어 변경 표시가 필요하지 않다.
-    
+
+    "팟캐스트"는 다음 발췌문 "<span lang="fr">À l'occasion de l'exposition "Energie éternelle. 1500 ans d'art indien", le Palais des Beaux-Arts de Bruxelles a lancé son premier podcast. Vous pouvez télécharger ce podcast au format M4A et MP3</span>", 에서 바로 주변 텍스트가 모국어의 일부이기 때문에 언어 변경 표시가 필요하지 않다.
+
 
 ### 관련 자료
 

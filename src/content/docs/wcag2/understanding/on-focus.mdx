@@ -11,13 +11,11 @@ lastUpdated: 2024-05-02
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 3.2.1](https://w3.org/TR/WCAG22#on-focus):초점 활성 
-
 (Level A)
 
-<Card title="성공 기준(SC)"></Card>
-
+<Card title="성공 기준(SC)">
 [사용자 인터페이스 구성요소](../../../glossary/user-interface-component)가 초점을 받은 경우, [맥락의 변화](../../../glossary/changes-of-context)가 발생해서는 안 된다.
+</Card>
 
 ## 요약
 
@@ -40,9 +38,9 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 초점은 키보드(예: 컨트롤 탭 이동) 또는 마우스(예: 텍스트 필드 클릭)를 통해 컨트롤로 이동할 수 있다. 스크립팅에서 이 동작을 구현하지 않는 한 컨트롤 위로 마우스를 이동해도 포커스가 이동하지 않는다. 일부 컨트롤 유형의 경우 컨트롤을 클릭하면 컨트롤(예: 버튼)이 활성화되어 맥락 변화가 시작될 수도 있다.
 
-참고
-
+<Card title="참고">
 여기서 "구성요소"가 의미하는 것은 "사용자 인터페이스 요소" 또는 "사용자 인터페이스 구성요소"라고도 한다.
+</Card>
 
 ### 이점
 
@@ -50,13 +48,18 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ### 예제
 
-예 1: 드롭다운 메뉴
-
-페이지의 드롭다운 메뉴를 통해 사용자는 점프 대상 중에서 선택할 수 있다. 사용자가 키보드를 사용하여 선택 항목으로 이동하고 이를 활성화하면(스페이스바 또는 Enter 키 사용) 새 페이지로 이동한다. 그러나 사용자가 선택 항목으로 이동하여 풀다운 메뉴에서 벗어나기 위해 Esc 키나 Tab 키를 누르는 경우 초점이 드롭다운 메뉴 밖으로 이동하므로 새 화면으로 이동하지 않는다.
-
-실패의 예: 도움말 대화 상자
-
-필드에 초점이 맞춰지면 해당 필드를 설명하고 옵션을 제공하는 도움말 대화 상자 창이 열린다. 키보드 사용자가 웹 페이지를 탭하면 대화 상자가 열리고 사용자가 필드를 탭하여 지나갈 때마다 키보드 초점이 컨트롤에서 멀어진다.
+<dl>
+    <dt>예 1: 드롭다운 메뉴</dt>
+    <dd>
+        페이지의 드롭다운 메뉴를 통해 사용자는 점프 대상 중에서 선택할 수 있다. 사용자가 키보드를 사용하여 선택 항목으로 이동하고 이를 활성화하면(스페이스바 또는 Enter 키 사용) 새 페이지로 이동한다.
+        그러나 사용자가 선택 항목으로 이동하여 풀다운 메뉴에서 벗어나기 위해 Esc 키나 Tab 키를 누르는 경우 초점이 드롭다운 메뉴 밖으로 이동하므로 새 화면으로 이동하지 않는다.
+    </dd>
+    <dt>실패의 예: 도움말 대화 상자</dt>
+    <dd>
+        필드에 초점이 맞춰지면 해당 필드를 설명하고 옵션을 제공하는 도움말 대화 상자 창이 열린다. 키보드 사용자가 웹 페이지를 탭하면 대화 상자가 열리고 사용자가 필드를 탭하여 지나갈 때마다 키보드 초점이
+        컨트롤에서 멀어진다.
+    </dd>
+</dl>
 
 ### 기법
 
@@ -66,9 +69,9 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 *   [G107: Using "activate" rather than "focus" as a trigger for changes of context](https://www.w3.org/WAI/WCAG22/Techniques/general/G107)
 
-참고
-
+<Card title="참고">
 내용의 변화가 항상 [맥락의 변화](../../../glossary/changes-of-context)는 아니다. 콘텐츠의 변경이 맥락의 변경도 아닌 경우 이 성공 기준은 자동으로 충족된다.
+</Card>
 
 #### 조언 기법
 

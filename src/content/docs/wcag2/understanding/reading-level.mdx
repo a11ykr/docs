@@ -11,13 +11,11 @@ lastUpdated: 2024-05-02
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 3.1.5](https://w3.org/TR/WCAG22#reading-level):독해 수준 
-
 (Level AAA)
 
-<Card title="성공 기준(SC)"></Card>
-
+<Card title="성공 기준(SC)">
 고유명사와 제목을 제외하고, 텍스트 독해에 [중학교 수준 이상](../../../glossary/lower-secondary-education-level)의 독해능력이 요구되는 경우, 중학교 수준 이상의 독해 능력이 요구되지 않는 [보충 콘텐츠](../../../glossary/supplemental-content)나 그에 상응하는 버전을 제공해야 한다.
+</Card>
 
 ## 요약
 
@@ -53,27 +51,22 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 콘텐츠의 가독성은 선택한 구절에 가독성 공식을 적용하여 결정할 수도 있다. (전부는 아니지만) 많은 가독성 공식은 100단어의 구절을 기준으로 계산한다. 이러한 공식은 여러 언어에 맞게 개발되었습니다. 구절의 단어 수를 세고, 음절 수나 문자 수를 세어 단어의 길이를 결정한다. 대부분의 가독성 공식은 문장의 수와 길이도 계산한다. 그런 다음 콘텐츠에 포함된 단어와 문장의 평균 길이를 사용하여 가독성 점수를 계산한다. (일본어와 같은 일부 언어에는 동일한 구절 내에 여러 스크립트가 포함될 수 있다. 이러한 언어의 가독성 공식은 계산에 이러한 "실행"의 수와 길이를 사용할 수 있다.) 결과는 숫자로 표시될 수 있다(예: 0-100 범위) 또는 학년 수준으로 표시된다. 이러한 결과는 국제 표준 교육 분류에 설명된 교육 수준을 사용하여 해석될 수 있다. 문서 검사가 완료되면 통계를 얻도록 이 엔진의 옵션을 지정하면 널리 사용되는 소프트웨어에서 맞춤법 검사기를 실행할 때 적어도 일부 언어에 대한 가독성 공식을 사용할 수 있다.
 
-초등교육
-
-학교에서 첫 6년
-
-중등교육
-
-학교에서 7~9년
-
-고등교육
-
-학교에서 10~12년
-
-고급 교육
-
-12년 이상의 학교 재학
+<dl>
+    <dt>초등교육</dt>
+    <dd>학교에서 첫 6년</dd>
+    <dt>중등교육</dt>
+    <dd>학교에서 7\~9년</dd>
+    <dt>고등교육</dt>
+    <dd>학교에서 10\~12년</dd>
+    <dt>고급 교육</dt>
+    <dd>12년 이상의 학교 재학</dd>
+</dl>
 
 [국제 표준 교육 분류 (UNESCO)](https://uis.unesco.org/en/topic/international-standard-classification-education-isced)에서 채택하였다.
 
-참고
-
-Open Society Mental Health Initiative에 따르면 읽기 쉽다는 개념은 보편적일 수 없으며 읽고 쓰는 능력과 이해력에 문제가 있는 모든 사람의 능력에 맞는 텍스트를 쓰는 것도 불가능하다. 가장 명확하고 간단한 언어를 적절하게 사용하는 것이 매우 바람직하지만 WCAG 실무 그룹은 이것이 달성되었는지 테스트할 방법을 찾지 못했다. 읽기 수준을 사용하는 것은 명확한 쓰기를 장려하는 성공 기준에 테스트 가능성을 도입하는 방법이다. 보충 콘텐츠는 일부 인지 장애가 있는 사람들에게 강력한 기술이 될 수 있다.
+<Card title="참고">
+<span lang="en">Open Society Mental Health Initiative</span>에 따르면 읽기 쉽다는 개념은 보편적일 수 없으며 읽고 쓰는 능력과 이해력에 문제가 있는 모든 사람의 능력에 맞는 텍스트를 쓰는 것도 불가능하다. 가장 명확하고 간단한 언어를 적절하게 사용하는 것이 매우 바람직하지만 WCAG 실무 그룹은 이것이 달성되었는지 테스트할 방법을 찾지 못했다. 읽기 수준을 사용하는 것은 명확한 쓰기를 장려하는 성공 기준에 테스트 가능성을 도입하는 방법이다. 보충 콘텐츠는 일부 인지 장애가 있는 사람들에게 강력한 기술이 될 수 있다.
+</Card>
 
 ### 이점
 
@@ -83,36 +76,37 @@ Open Society Mental Health Initiative에 따르면 읽기 쉽다는 개념은 �
 
 ### 예제
 
-복잡한 연구 논문의 읽기 쉬운 요약을 포함하는 과학 저널
-
-과학 저널에는 해당 분야의 전문가를 대상으로 매우 전문적인 언어로 작성된 기사가 포함되어 있다. 저널의 목차 페이지에는 각 기사에 대한 일반 언어 요약이 포함되어 있다. 요약은 8년 동안 학교를 다녔던 일반 청중을 대상으로 작성되었다. 저널의 메타데이터는 Dublin Core 명세를 사용하여 기사의 대상 독자의 교육 수준을 "고급"으로 식별하고 요약의 대상 독자의 교육 수준을 "중등 교육"으로 식별한다.
-
-일반인을 위한 의료정보
-
-한 의과대학에서는 최근의 의학 및 과학적 발견을 설명하는 웹사이트를 운영하고 있다. 사이트의 기사는 의료 훈련을 받지 않은 사람들을 위해 작성되었다. 각 기사는 Dublin Core 메타데이터 명세를 사용하여 대상 독자의 교육 수준을 "중등 교육"으로 식별하고 기사에 대한 Flesch Reading Ease 점수를 포함한다. 각 페이지의 링크에는 교육 수준과 기타 메타데이터가 표시된다. 기사는 중학교 수준의 글을 읽는 사람도 읽을 수 있으므로 보충 내용은 필요하지 않다.
-
-e-러닝 애플리케이션
-
-스페인 문화사에 관한 온라인 과정에는 무어 건축에 대한 단원이 포함되어 있다. 이 단원에는 다양한 읽기 능력을 가진 학생들을 위해 작성된 텍스트가 포함되어 있다. 건물의 사진과 그림은 건축 개념과 스타일을 보여준다. 그래픽 구성 도구는 복잡한 관계를 설명하는 데 사용되며 합성 음성을 사용하는 오디오 버전을 사용할 수 있다. 각 버전의 메타데이터는 콘텐츠의 학문적 수준을 설명하고 스페인어 텍스트용으로 개발된 공식을 기반으로 한 가독성 점수를 포함한다. 학습 애플리케이션은 이 메타데이터와 학생에 대한 메타데이터를 사용하여 개별 학생의 요구 사항에 맞는 교육 콘텐츠 버전을 제공한다.
-
-중학교 수준의 독해 능력을 요구하는 과학정보
-
-아래 텍스트(총 116단어)는 Flesch-Kincaid 공식에 따라 미국 기준 4.2등급의 읽기 능력이 필요하다. 미국에서는 4.2학년이 초등교육 수준이다.
-
-Science is about testing — and about looking closely. Some scientists use microscopes to take a close look. We're going to use a simple piece of paper.
-
-Here's what you do: Print this page and cut out the square to make a "window" one inch square. (It's easiest to fold the page in half before you cut.)
-
-Choose something interesting: a tree trunk, a leaf, flower, the soil surface, or a slice of soil from a shovel.
-
-Put your window over the thing and look at it closely. Take your time — this is not a race.
-
-To help you see more details, draw a picture of what's inside your square.
-
-Now let's think about what you've found.
-
-(출처: Howard Hughes Medical Institute "어린이를 위한 CoolScience" 프로젝트)
-
+<dl>
+    <dt>복잡한 연구 논문의 읽기 쉬운 요약을 포함하는 과학 저널</dt>
+    <dd>
+        과학 저널에는 해당 분야의 전문가를 대상으로 매우 전문적인 언어로 작성된 기사가 포함되어 있다. 저널의 목차 페이지에는 각 기사에 대한 일반 언어 요약이 포함되어 있다. 요약은 8년 동안 학교를 다녔던
+        일반 청중을 대상으로 작성되었다. 저널의 메타데이터는 <span lang="en">Dublin Core</span> 명세를 사용하여 기사의 대상 독자의 교육 수준을 "고급"으로 식별하고 요약의 대상 독자의 교육 수준을 "중등 교육"으로 식별한다.
+    </dd>
+    <dt>일반인을 위한 의료정보</dt>
+    <dd>
+        한 의과대학에서는 최근의 의학 및 과학적 발견을 설명하는 웹사이트를 운영하고 있다. 사이트의 기사는 의료 훈련을 받지 않은 사람들을 위해 작성되었다. 각 기사는 <span lang="en">Dublin Core</span> 메타데이터 명세를
+        사용하여 대상 독자의 교육 수준을 "중등 교육"으로 식별하고 기사에 대한 <span lang="en">Flesch Reading Ease</span> 점수를 포함한다. 각 페이지의 링크에는 교육 수준과 기타 메타데이터가 표시된다. 기사는 중학교
+        수준의 글을 읽는 사람도 읽을 수 있으므로 보충 내용은 필요하지 않다.
+    </dd>
+    <dt>e-러닝 애플리케이션</dt>
+    <dd>
+        스페인 문화사에 관한 온라인 과정에는 무어 건축에 대한 단원이 포함되어 있다. 이 단원에는 다양한 읽기 능력을 가진 학생들을 위해 작성된 텍스트가 포함되어 있다. 건물의 사진과 그림은 건축 개념과 스타일을
+        보여준다. 그래픽 구성 도구는 복잡한 관계를 설명하는 데 사용되며 합성 음성을 사용하는 오디오 버전을 사용할 수 있다. 각 버전의 메타데이터는 콘텐츠의 학문적 수준을 설명하고 스페인어 텍스트용으로 개발된
+        공식을
+        기반으로 한 가독성 점수를 포함한다. 학습 애플리케이션은 이 메타데이터와 학생에 대한 메타데이터를 사용하여 개별 학생의 요구 사항에 맞는 교육 콘텐츠 버전을 제공한다.
+    </dd>
+    <dt>중학교 수준의 독해 능력을 요구하는 과학정보</dt>
+    <dd>
+        <p>아래 텍스트(총 116단어)는 Flesch-Kincaid 공식에 따라 미국 기준 4.2등급의 읽기 능력이 필요하다. 미국에서는 4.2학년이 초등교육 수준이다.</p>
+        <p lang="en">Science is about testing — and about looking closely. Some scientists use microscopes to take a close look. We're going to use a simple piece of paper.</p>
+        <p lang="en">Here's what you do: Print this page and cut out the square to make a "window" one inch square. (It's easiest to fold the page in half before you cut.)</p>
+        <p lang="en">Choose something interesting: a tree trunk, a leaf, flower, the soil surface, or a slice of soil from a shovel.</p>
+        <p lang="en">Put your window over the thing and look at it closely. Take your time — this is not a race.</p>
+        <p lang="en">To help you see more details, draw a picture of what's inside your square.</p>
+        <p lang="en">Now let's think about what you've found. </p>
+        <p>(출처: <span lang="en">Howard Hughes Medical Institute</span> "어린이를 위한 <span lang="en">CoolScience</span>" 프로젝트)</p>
+    </dd>
+</dl>
 ### 관련 자료
 
 자료는 정보 제공 목적으로만 제공되며 보증을 암시하지 않는다.

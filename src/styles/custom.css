@@ -27,6 +27,9 @@
 :not(div.card-grid) .card .title {
   font-size: 1.2rem;
 }
+:not(div.card-grid) .card li>p {
+  margin-bottom: .5rem;
+}
 
 /* Document style override */
 h1#_top {

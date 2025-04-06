@@ -11,13 +11,11 @@ lastUpdated: 2024-05-02
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
-## [성공기준 이해 3.1.1](https://w3.org/TR/WCAG22#language-of-page):페이지 언어 표시 
-
 (Level A)
 
-<Card title="성공 기준(SC)"></Card>
-
+<Card title="성공 기준(SC)">
 각 [웹 페이지](../../../glossary/web-page)의 기본 [인간 언어](../../../glossary/human-language)는 [프로그래밍 방식으로 판별](../../../glossary/programmatically-determined)될 수 있어야 한다.
+</Card>
 
 ## 요약
 
@@ -36,9 +34,9 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 웹 페이지의 기본 인간 언어는 [국제화 모범 사례: XHTML 및 HTML 콘텐츠에서 언어 지정(Internationalization Best Practices: Specifying Language in XHTML & HTML Content)](https://www.w3.org/International/techniques/authoring-html#gslang)에 설명된 기본 텍스트 처리 언어이다. 웹 페이지가 여러 언어를 사용하는 경우 기본 텍스트 처리 언어는 가장 많이 사용되는 언어이다. (여러 언어를 동일하게 사용하는 경우 처음 사용하는 언어를 기본 인간 언어로 선택해야 한다.)
 
-참고
-
+<Card title="참고">
 레벨 A 준수를 목표로 하는 다국어 사이트의 경우 실무 그룹은 개발자가 성공 기준 3.1.2를 따르도록 강력히 권장한다. 성공 기준 3.1.2가 수준 AA 성공 기준이더라도 마찬가지이다.
+</Card>
 
 ### 이점
 
@@ -51,9 +49,13 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ### 예제
 
-예 1. 두 가지 언어로 된 콘텐츠가 포함된 웹 페이지
-
-독일에서 제작되고 HTML로 작성된 웹 페이지에는 독일어와 영어로 된 콘텐츠가 모두 포함되어 있지만 대부분의 콘텐츠는 독일어로 되어 있다. 기본 인간 언어는 html 요소의 lang 속성에 의해 독일어(de)로 식별된다.
+<dl>
+    <dt>예 1. 두 가지 언어로 된 콘텐츠가 포함된 웹 페이지</dt>
+    <dd>
+        독일에서 제작되고 HTML로 작성된 웹 페이지에는 독일어와 영어로 된 콘텐츠가 모두 포함되어 있지만 대부분의 콘텐츠는 독일어로 되어 있다. 기본 인간 언어는 html 요소의 lang 속성에 의해
+        독일어(de)로 식별된다.
+    </dd>
+</dl>
 
 ### 관련 자료
 
