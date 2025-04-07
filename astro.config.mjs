@@ -37,7 +37,7 @@ export default defineConfig({
 			sidebar: [
 				{ label: '문서 목록', link: '/guides/' },
 				{
-					label: 'WCAG 2',
+					label: 'WCAG 2 한국어 번역본',
 					collapsed: false,
 					items: [
 						'wcag2/231005',
@@ -161,6 +161,7 @@ export default defineConfig({
 								'wcag2/understanding/understanding-metadata',
 							]
 						},
+						{ label: 'WCAG2ICT', link: '/wcag2ict/' },
 					]
 				},
 				{ label: 'KWCAG 2.2', link: 'kwcag22' },
