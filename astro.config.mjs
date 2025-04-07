@@ -40,7 +40,8 @@ export default defineConfig({
 					label: 'WCAG 2 한국어 번역본',
 					collapsed: false,
 					items: [
-						'wcag2/231005',
+						{ label: 'WCAG 2.2', link: '/wcag2/' },
+						{ label: 'WCAG 2.2 - 231005', link: 'wcag2/231005' },
 						{
 							label: 'WCAG 2 이해',
 							collapsed: true,

@@ -14,7 +14,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 (Level A)
 
 <Card title="성공 기준(SC)">
-모든 [사용자 인터페이스 구성요소](../../../glossary/user-interface-component)(서식 요소, 링크, 스크립트에 의해 생성된 요소를 포함하되, 이에 국한되지 않음)의 경우, [이름](../../../glossary/name)과 [역할](../../../glossary/role)은 [프로그래밍 방식으로 판별](../../../glossary/programmatically-determined)되어야 한다. 사용자에 의해서 설정될 수 있는 상태(states), 속성(properties) 및 값(values)은 [프로그래밍 방식으로 설정](../../../glossary/programmatically-set)될 수 있어야 한다. 이러한 항목의 변경사항은, [보조 기술](../../../glossary/assistive-technology)을 포함하여, [사용자 에이전트](../../../glossary/user-agent)에 제공되어야 한다.
+모든 [사용자 인터페이스 구성요소](../../glossary/user-interface-component)(서식 요소, 링크, 스크립트에 의해 생성된 요소를 포함하되, 이에 국한되지 않음)의 경우, [이름](../../glossary/name)과 [역할](../../glossary/role)은 [프로그래밍 방식으로 판별](../../glossary/programmatically-determined)되어야 한다. 사용자에 의해서 설정될 수 있는 상태(states), 속성(properties) 및 값(values)은 [프로그래밍 방식으로 설정](../../glossary/programmatically-set)될 수 있어야 한다. 이러한 항목의 변경사항은, [보조 기술](../../glossary/assistive-technology)을 포함하여, [사용자 에이전트](../../glossary/user-agent)에 제공되어야 한다.
 
     <Card title="참고">
     이 성공기준은 주로 사용자 인터페이스 구성요소를 개발하거나 스크립팅하는 웹 개발자를 위한 것이다. 예를 들어, 표준 HTML 컨트롤은 명세서에 따라 사용되었을 때, 이미 이 성공기준을 준수한 것이다.
@@ -40,7 +40,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 그러나 사용자 정의 컨트롤이 생성되거나 인터페이스 요소가 평소와 다른 역할 및/또는 기능을 갖도록 프로그래밍(코드 또는 스크립트에서)된 경우 컨트롤이 보조 기술에 중요하고 적절한 정보를 제공하고 보조 기술을 통해 스스로 제어하는 것을 허용하도록 추가적인 조치를 취해야 한다.
 
-보조 기술에 전달하는 데 적합한 역할과 상태는 컨트롤이 나타내는 내용에 따라 달라진다. 이러한 정보에 대한 세부 사항은 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 또는 관련 플랫폼 표준과 같은 다른 사양에 의해 정의된다. 고려해야 할 다른 점은 지정된 대로 정보를 전달하기 위한 보조 기술을 통한 충분한 [접근성 지원](../../../glossary/accessibility-supported)이 있는지 여부이다.
+보조 기술에 전달하는 데 적합한 역할과 상태는 컨트롤이 나타내는 내용에 따라 달라진다. 이러한 정보에 대한 세부 사항은 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 또는 관련 플랫폼 표준과 같은 다른 사양에 의해 정의된다. 고려해야 할 다른 점은 지정된 대로 정보를 전달하기 위한 보조 기술을 통한 충분한 [접근성 지원](../../glossary/accessibility-supported)이 있는지 여부이다.
 
 사용자 인터페이스 컨트롤의 특히 중요한 상태는 초점을 받는지 여부이다. 컨트롤의 초점 상태는 프로그래밍 방식으로 판별될 수 있으며 초점 변경에 대한 알림은 사용자 에이전트 및 보조 기술로 전송된다. 사용자 인터페이스 제어 상태의 다른 예로는 체크박스나 라디오 버튼이 선택되었는지 여부, 축소 가능한 트리 구조 보기나 아코디언이 확장되거나 축소되었는지 여부 등이 있다.
 

@@ -1,0 +1,3139 @@
+---
+title: WCAG 2.2 - 20241212
+description: 접근성 표준 문서 모음
+head:
+    - tag: title
+      content: 웹 콘텐츠 접근성 지침 2.2(한국어 비공식 번역본)
+tableOfContents:
+    maxHeadingLevel: 4
+lastUpdated: 2023-10-05
+---
+
+import { Aside, Badge , Card } from '@astrojs/starlight/components';
+
+<Aside title="안내" type="danger">
+이 번역본은 현재 변환 작업 중에 있으며, 일부 링크 등이 작동하지 않을 수 있습니다.
+</Aside>
+<Aside title="안내" type="caution">
+*   이 문서는 W3C의 인증을 받지 않은 비공식 버전이며, 오류가 있을 수 있습니다.
+*   이 번역본은 최신 지침을 확인하기 위해 제작하였습니다.
+*   성공 기준별 이해(Understanding) 링크는 내부 링크로 연결되고, 기법 문서는 현재 번역되지 않아 원문으로 연결됩니다.
+*   용어 등 해석이 불명확한 부분은 [원문](https://www.w3.org/TR/2024/REC-WCAG22-20241212/)을 확인하시기 바랍니다.
+*   작업에 참여하거나 수정을 원하시는 분은 [Github 저장소](https://github.com/a11ykr/wcag22/)에 [의견](https://github.com/a11ykr/wcag22/issues/new)을 남겨주십시오.
+*   [2023년 10월 5일 권고안 번역본](20231005)도 있습니다.
+</Aside>
+
+[![W3C](https://www.w3.org/StyleSheets/TR/2021/logos/W3C)](https://www.w3.org/)
+
+웹 콘텐츠 접근성 지침(WCAG) 2.2
+======================
+
+[W3C 권장 표준](https://www.w3.org/standards/types#REC) 2024년 12월 12일
+
+<details open="">
+	<summary>이 문서에 관한 상세 정보</summary>
+	<dl>
+		<dt>현재 버전:</dt>
+		<dd>[https://www.w3.org/TR/2024/REC-WCAG22-20241212/](https://www.w3.org/TR/2024/REC-WCAG22-20241212/)</dd>
+		<dt>최신 발행 버전:</dt>
+		<dd>[https://www.w3.org/TR/WCAG22/](https://www.w3.org/TR/WCAG22/)</dd>
+		<dt>최신 편집자 초안:</dt>
+		<dd>[https://w3c.github.io/wcag/guidelines/22/](https://w3c.github.io/wcag/guidelines/22/)</dd>
+		<dt>개정 이력:</dt>
+		<dd>[https://www.w3.org/standards/history/WCAG22/](https://www.w3.org/standards/history/WCAG22/)</dd>
+		<dd>[Commit history](https://github.com/w3c/wcag/commits/)</dd>
+		<dt>구현 보고서:</dt>
+		<dd>[https://www.w3.org/WAI/WCAG22/implementation-report/](https://www.w3.org/WAI/WCAG22/implementation-report/)</dd>
+		<dt>이전 권고안:</dt>
+		<dd>[https://www.w3.org/TR/WCAG21/](https://www.w3.org/TR/WCAG21/)</dd>
+		<dt>편집자들:</dt>
+		<dd data-editor-id="44689"><a class="ed_mailto u-email email p-name" href="mailto:acampbell@nomensa.com">Alastair Campbell</a> (<span class="p-org org h-org">Nomensa</span>)</dd>
+		<dd data-editor-id="104852"><a class="ed_mailto u-email email p-name" href="mailto:charles.adams@oracle.com">Chuck Adams</a> (<span class="p-org org h-org">Oracle</span>)</dd>
+		<dd data-editor-id="90310"><a class="ed_mailto u-email email p-name" href="mailto:rachael@accessiblecommunity.org">Rachael Bradley Montgomery</a> (<span class="p-org org h-org">Library of Congress</span>)</dd>
+		<dd data-editor-id="34017"><a class="u-url url p-name fn" href="https://www.w3.org/People/cooper">Michael Cooper</a> (<span class="p-org org h-org">W3C</span>)</dd>
+		<dd data-editor-id="39770"><a class="ed_mailto u-email email p-name" href="mailto:akirkpat@adobe.com">Andrew Kirkpatrick</a> (<span class="p-org org h-org">Adobe</span>)</dd>
+		<dt>피드백:</dt>
+		<dd>
+			<a href="https://github.com/w3c/wcag/">GitHub w3c/wcag</a>
+			(<a href="https://github.com/w3c/wcag/pulls/">pull requests</a>,
+			<a href="https://github.com/w3c/wcag/issues/new/choose">new issue</a>,
+			<a href="https://github.com/w3c/wcag/issues/">open issues</a>)
+		</dd>
+		<dt>정오표:</dt>
+		<dd><a href="https://www.w3.org/WAI/WCAG22/errata/">Errata exists</a>.</dd>
+	</dl>
+</details>
+
+[**번역본 목록**](https://www.w3.org/Translations/?technology=WCAG22) 참고.
+
+[저작권](https://www.w3.org/Consortium/Legal/ipr-notice#Copyright) © 2020-2024 [World Wide Web Consortium](https://www.w3.org/). W3C® [liability](https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer), [trademark](https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks) and [document use](https://www.w3.org/Consortium/Legal/copyright-documents "W3C Document License") rules apply.
+
+* * *
+
+<details open="">
+	<summary>번역 정보</summary>
+	<dl>
+		<dt>한국어 번역:</dt>
+		<dd>[조현진](https://github.com/resistan)</dd>
+		<dd>[방성훈](https://github.com/naruteride)</dd>
+	</dl>
+</details>
+
+* * *
+
+요약
+--
+
+웹 콘텐츠 접근성 지침(WCAG) 2.2는 웹 콘텐츠의 접근성을 높이기 위한 다양한 권장 사항을 다루고 있다. 이러한 지침을 따르면 시각 장애, 저시력, 청각 장애 및 청력 상실, 제한된 움직임, 언어 장애, 광과민증 및 이들의 조합에 대한 편의 제공, 학습 장애 및 인지적 한계; 그러나 이러한 장애가 있는 사람들의 모든 사용자 요구 사항을 해결하지는 않는다. 이 지침은 데스크톱, 노트북, 키오스크 및 모바일 장치의 웹 콘텐츠 접근성을 다룹니다. 이러한 지침을 따르면 일반적으로 사용자가 웹 콘텐츠를 더 쉽게 사용할 수 있게 된다.
+
+WCAG 2.2 성공 기준은 특정 기술에 국한되지 않는 테스트 가능한 설명으로 작성되었다. 특정 기술의 성공 기준 충족에 대한 지침과 성공 기준 해석에 대한 일반적인 정보는 별도의 문서로 제공된다. WCAG 기술 및 교육 자료에 대한 소개와 링크는 [웹 콘텐츠 접근성 지침(WCAG) 개요](https://www.w3.org/WAI/standards-guidelines/wcag/)를 참고한다.
+
+WCAG 2.2는 [웹 콘텐츠 접근성 지침 2.1](https://www.w3.org/TR/WCAG21/) \[[WCAG21](#bib-wcag21 "Web Content Accessibility Guidelines (WCAG) 2.1")\]을 확장하였다. 웹 콘텐츠 접근성 지침(WCAG) 2.1은 2018년 6월 W3C 권고안으로 게시되었다. WCAG 2.2를 준수하는 콘텐츠는 WCAG 2.0 및 WCAG 2.1도 준수한다. 실무 그룹은 WCAG 2.0 또는 WCAG 2.1 준수를 요구하는 정책에 대해 WCAG 2.2가 적합한 대체 수단을 제공할 수 있도록 의도하고 있다. WCAG 2.2를 발표했지만 WCAG 2.0 또는 WCAG 2.1을 더 이상 사용하지 않거나 대체하는 것은 아니다. WCAG 2.0 및 WCAG 2.1은 W3C 권장사항으로 남아 있지만 W3C는 접근성 노력의 향후 적용 가능성을 최대화하기 위해 WCAG 2.2 사용을 권장한다. W3C는 또한 웹 접근성 정책을 개발하거나 업데이트할 때 최신 버전의 WCAG 사용을 장려한다.
+
+문서 상태
+-----
+
+_이 절에서는 발행일 기준에서 이 문서의 발행 상태를 설명한다. 현재 W3C 간행물 목록과 이 기술 보고서의 최신 개정판은 [W3C 기술 보고서 색인](https://www.w3.org/TR/) https://www.w3.org/TR/에서 확인할 수 있다._
+
+의견을 제시하려면 [W3C WCAG GitHub 저장소](https://github.com/w3c/wcag/issues/new)에 이슈를 제출한다. 이 문서에서 제안된 성공 기준은 논의 추적 문제를 참조하지만 실무 그룹은 공개 의견을 각각 하나의 이슈로 제출하도록 요청한다. GitHub 계정을 만들고 이슈를 제기하는 것은 무료이다. GitHub에 이슈를 제출하는 것이 불가능할 경우 [public-agwg-comments@w3.org](mailto:public-agwg-comments@w3.org?subject=WCAG%202.1%20public%20comment) ([comment archive](https://lists.w3.org/Archives/Public/public-agwg-comments/))로 이메일을 보낼 수 있다.
+
+이 문서는 [접근성 지침 실무 그룹](https://www.w3.org/groups/wg/ag)에서 [권고안 트랙(Recommendation track)](https://www.w3.org/2023/Process-20230612/#recs-and-notes)에 따라 작성하였다.
+
+W3C는 이 명세서을 웹 표준으로 광범위하게 배포할 것을 권고한다.
+
+W3C 권고안은 광범위한 합의 구축 후 구현을 위해 W3C와 회원이 승인하고 실무 그룹 회원이 [로열티 없는 라이센스(royalty-free licensing)](https://www.w3.org/Consortium/Patent-Policy/#sec-Requirements)를 보장한다.
+
+이 문서는 [2017년 8월 1일 W3C 특허 정책](https://www.w3.org/Consortium/Patent-Policy-20170801/)에 따라 운영되는 그룹에서 작성되었다. W3C는 그룹의 결과물과 관련하여 [공개 특허 목록](https://www.w3.org/groups/wg/ag/ipr)을 유지 관리한다. 해당 페이지에는 특허 공개에 대한 지침도 포함되어 있다. 개인이 [필수 주장(들)](https://www.w3.org/Consortium/Patent-Policy-20170801/#def-essential)을 포함하고 있다고 생각하는 특허에 대한 실제 지식을 갖고 있는 개인은 [W3C 특허 정책의 섹션 6](https://www.w3.org/Consortium/Patent-Policy-20170801/#sec-Disclosure)에 따라 정보를 공개해야 한다.
+
+이 문서는 [2023년 11월 3일 W3C 프로세스 문서](https://www.w3.org/policies/process/20231103/)의 적용을 받는다.
+
+소개
+--
+
+_이 섹션은 비규범(non-normative) 내용을 다룬다._
+
+### WCAG 2의 배경
+
+웹 콘텐츠 접근성 지침 2.2는 장애가 있는 사람들이 웹 콘텐츠에 더 쉽게 접근할 수 있도록 하는 방법을 정의한다. 접근성에는 시각, 청각, 신체, 언어, 인지, 언어, 학습 및 신경 장애를 포함한 광범위한 장애가 포함된다. 이러한 지침은 광범위한 문제를 다루고 있지만 모든 유형, 정도 및 중복 장애를 가진 사람들의 요구 사항을 해결할 수는 없다. 또한 이러한 지침은 노화로 인해 능력이 변화하는 노년층이 웹 콘텐츠를 더 쉽게 사용할 수 있도록 하며 일반적인 사용자의 사용성을 향상시키는 경우도 있다.
+
+WCAG 2.2는 전 세계 개인, 조직, 정부의 요구 사항을 충족하는 웹 콘텐츠 접근성에 대한 공유 표준을 제공하는 것을 목표로 전 세계 개인 및 조직과 협력하여 [W3C W3C 프로세스](https://www.w3.org/WAI/standards-guidelines/w3c-process/)를 통해 개발되었다. WCAG 2.2는 WCAG2.0 \[[WCAG20](#bib-wcag20 "Web Content Accessibility Guidelines (WCAG) 2.0")\] 및 WCAG 2.1 \[[WCAG21](#bib-wcag21 "Web Content Accessibility Guidelines (WCAG) 2.1")\]을 기반으로 하며 이는 WCAG 1.0 \[[WAI-WEBCONTENT](#bib-wai-webcontent "Web Content Accessibility Guidelines 1.0")\]를 기반으로 한다. 현재와 미래의 다양한 웹 기술에 광범위하게 적용하고 테스트할 수 있도록 설계되었다. 자동화된 테스트와 사람의 평가를 결합해 테스트할 수 있다.WCAG에 대한 소개는 [웹 콘텐츠 접근성 지침 개요](https://www.w3.org/WAI/standards-guidelines/wcag/)를 참고한다.
+
+인지, 언어 및 학습 장애를 해결하기 위한 추가 기준을 정의하는데 있어 짧은 개발 일정뿐만 아니라 테스트 가능성, 구현 가능성 및 제안의 국제적 고려 사항에 대한 합의에 도달하는 데 따른 어려움을 포함하여 상당한 어려움이 있었다. 이 영역에 대한 작업은 WCAG의 향후 버전에서 계속될 것이다. 저작자들은 [학습 및 인지 장애, 저시력 등 장애가 있는 사람에 대한 포용성 향상](https://www.w3.org/WAI/standards-guidelines/wcag/#supplement)에 관한 추가 지침을 참조할 것을 권장한다.
+
+웹 접근성은 접근 가능한 콘텐츠뿐만 아니라 접근 가능한 웹 브라우저 및 기타 사용자 에이전트에 따라 달라진다. 저작 도구는 웹 접근성에서도 중요한 역할을 한다. 웹 개발 및 상호 작용의 이러한 구성 요소가 함께 작동하는 방식에 대한 개요는 다음을 참고하라.
+
+*   **[웹 접근성 필수 구성요소(Essential Components of Web Accessibility)](https://www.w3.org/WAI/fundamentals/components/)**
+*   **[사용자 에이전트 접근성 지침 개요(User Agent Accessibility Guidelines Overview)](https://www.w3.org/WAI/standards-guidelines/uaag/)**
+*   **[저작도구 접근성 지침 개요(Authoring Tool Accessibility Guidelines Overview)](https://www.w3.org/WAI/standards-guidelines/atag/)**
+
+이 문서에서 WCAG 2를 언급하는 경우 이는 2로 시작하는 모든 WCAG 버전을 의미한다.
+
+### WCAG 2 지침의 위계
+
+WCAG를 사용하는 개인과 조직은 웹 디자이너와 개발자, 정책 입안자, 구매 대리인, 교사, 학생 등 매우 다양하다. 이런 계층의 다양한 요구 사항을 충족하기 위해 전체 _원칙_, 일반 _지침_, 시험 가능한 _성공 기준_ 및 풍부한 _충분 기법_, _권고 기법_ 모음, _문서화된 일반 실패_ 사례, 리소스 링크 및 코드를 포함하여 여러 위계의 지침을 제공한다.
+
+*   **원칙(Principles)** - 최상위에는 웹 접근성의 기초를 제공하는 4가지 원칙, 즉 _인식의 용이성(perceivable), 운용의 용이성(operable), 이해의 용이성(understandable), 그리고 견고성(robust)_이 있다. [네 가지 접근성 원칙 이해](./understanding/intro#understanding-the-four-principles-of-accessibility)를 참고하라.
+
+*   **지침(Guidelines)** - 원칙 아래에는 지침이 있다. 13가지 지침은 다양한 장애를 지닌 사용자들이 콘텐츠에 보다 접근 가능하도록 하기 위하여 웹 콘텐츠 저작자들이 노력해야 할 기본적인 목표를 제공한다. 그 지침들은 검증 가능하지 않지만, 웹 콘텐츠 저작자들이 성공 기준을 이해하고 기법들을 보다 더 잘 구현할 수 있도록 도와주는 기본적인 틀과 전반적인 목표를 제공한다.
+
+*   **성공 기준(Success Criteria)** - 각 지침에 대해 설계 명세서, 구매, 규정 및 계약 계약과 같이 요구 사항 및 적합성 테스트가 필요한 경우 WCAG 2.2를 사용할 수 있도록 검증 가능한 성공 기준을 제공한다. 다양한 그룹과 다양한 상황의 요구 사항을 충족하기 위해 A(최저), AA, AAA(최고)의 세 가지 적합성 수준이 정의된다. WCAG 수준에 대한 추가 정보는 [준수 수준 이해](./understanding/conformance#levels)에서 확인할 수 있다.
+
+*   **충분/권고 기법(Sufficient and Advisory Techniques)** - WCAG 2.2 문서 자체의 각 지침과 성공 기준에 대해 작업 그룹은 다양한 기술도 문서화하였다. 기법은 정보를 제공하며 두 가지 범주, 즉 성공 기준을 충족하기에 충분한 기법과 권고되는 기법로 분류된다. 권고 기법은 개별 성공 기준에서 요구하는 것 이상을 제공하며 작성자가 지침을 더 잘 다룰 수 있게 한다. 일부 권고 기법은 검증 가능한 성공 기준에 포함되지 않는 접근성 장애를 다룬다. 일반적인 오류가 알려진 경우 해당 오류도 문서화되었다. [WCAG 2.2 이해에서 충분 및 권고 기법](./understanding/understanding-techniques)을 참조한다.
+
+
+이러한 모든 지침의 위계 구조(원칙, 지침, 성공 기준, 충분/권고 기법)이 함께 작동하여 콘텐츠에 대한 접근성을 높이는 방법에 대한 지침을 제공한다. 웹 콘텐츠 저작자는 가능한 가장 광범위한 사용자의 요구 사항을 가장 잘 해결하기 위해 권고 기법을 포함하여 가능한 모든 위계 구조를 보고 적용하는 것이 좋다.
+
+최고 수준(AAA)을 준수하는 콘텐츠라도 모든 유형, 정도 또는 중복 장애를 가진, 특히 인지, 언어 및 학습 영역에 장애가 있는 사람이 접근 가능한 것은 아니다. 웹 콘텐츠 저작자들은 권고 기법, [인지 및 학습 장애인이 사용할 수 있는 콘텐츠 만들기](https://www.w3.org/TR/coga-usable/)를 포함한 모든 기법을 고려하고, 가능한 한 이 커뮤니티에서 웹 콘텐츠가 접근 가능하도록 해 주는 현행 모범사례에 대한 적절한 조언을 구하기를 권장한다. [메타데이터](./understanding/understanding-metadata)는 사용자가 자신의 요구에 가장 적합한 콘텐츠를 찾는 데 도움을 줄 수 있을 것이다.
+
+### WCAG 2.2 지원 문서
+
+WCAG 2.2 문서는 안정적이고 참조 가능한 기술 표준이 필요한 사람들의 요구를 충족하도록 작성되었다. 지원 문서라고 불리는 다른 문서는 WCAG 2.2 문서를 기반으로 하며 WCAG가 새로운 기술에 어떻게 적용되는지 설명하기 위해 업데이트된 기능을 포함하여 다른 중요한 목적을 다룬다. 지원 문서는 다음과 같다:
+
+1.  **[WCAG 2.2 준수방법](https://www.w3.org/WAI/WCAG22/quickref/)** - 모든 지침, 성공 기준 및 작성자가 웹 콘텐츠를 개발하고 평가할 때 사용할 수 있는 기술이다. 여기에는 WCAG 2.0, 2.1, 2.2의 콘텐츠가 포함되며 저작자가 관련 콘텐츠에 집중할 수 있도록 다양한 방법으로 필터링할 수 있다.
+
+2.  **[WCAG 2.2 이해](./understanding/)** - WCAG 2.2를 이해하고 구현하기 위한 가이드이다. WCAG 2.2의 각 지침과 성공 기준 및 주요 주제에 대한 짧은 "이해" 문서이다.
+
+3.  **[WCAG 2.2 기법](https://www.w3.org/WAI/WCAG22/Techniques/)** - 설명, 예제, 코드 및 테스트가 포함된 별도의 문서로 되어 있는 기법 및 일반적인 실패에 대한 모음.
+
+4.  **[The WCAG 2 문서](https://www.w3.org/WAI/standards-guidelines/wcag/docs/)** - WCAG 2 지원 문서 및 보충 지침에 대한 간략한 소개.
+
+5.  **[WCAG 2.2의 새로운 특징](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/)** 새로운 성공 기준을 개별 사례와 함께 소개하여 접근성 이슈를 설명한다.
+
+
+WCAG 2 관련 교육 리소스를 포함하여 WCAG 2.2 지원 자료에 대한 설명은 [웹 콘텐츠 접근성 지침(WCAG) 개요](https://www.w3.org/WAI/standards-guidelines/wcag/)를 참조한다. 웹 접근성에 대한 비즈니스 사례, 웹 사이트 접근성 개선을 위한 구현 계획, 접근성 정책 등의 주제를 다루는 리소스는 [WAI 자료](https://www.w3.org/WAI/Resources/Overview)에 열거되어 있다.
+
+### WCAG 2.2 요구 사항
+
+WCAG 2.2는 [WCAG 2.2 요구 사항](https://w3c.github.io/wcag/requirements/22/)을 준수하며, 이는 이전 WCAG 2 버전의 요구 사항을 상속한다. 요구 사항은 지침의 전체 틀을 구성하고 이전 버전과의 호환성을 보장한다. 또한 실무 그룹은 성공 기준이 WCAG2.0과 스타일과 품질이 유사하도록 하기 위해 성공 기준에 대해 덜 공식적인(formal) 허용 기준을 사용하였다. 이러한 요구 사항은 WCAG 2.2에 포함될 수 있는 것으로 제한했다. 이 제약 조건은 WCAG 2의 버전으로써 특성을 유지하는 데 중요했다.
+
+### WCAG 2.1과 비교
+
+WCAG 2.2는 WCAG 2.1의 작업을 계승하여 진행되었으며, 특히 인지 또는 학습 장애를 가진 사용자, 시력 저하 사용자, 모바일 기기 사용 장애인을 위한 웹 접근성 지침 개선에 중점을 두었다. 상기 세 그룹의 요구 사항을 충족시키기 위한 다양한 방안들이 제시되고 평가되었으며, 이 중 일부는 실무 그룹에 의해 개선되었다. WCAG 2.0에서 이어받은 구조적 요건, 제안의 명확성과 효과, 작업 일정 등을 고려하여 최종적으로 본 버전에 포함된 성공 기준이 도출되었다. 실무 그룹은 WCAG 2.2가 상기 모든 영역에서 웹 콘텐츠 접근성 지침을 점진적으로 발전시켰다고 간주하지만, 이 지침으로 모든 사용자 요구 사항을 충족시킬 수 없음을 강조한다.
+
+WCAG 2.2는 WCAG 2.1을 기반으로 하며 하위 호환성을 제공한다. 이는 WCAG 2.2를 준수하는 웹 페이지가 최소한 WCAG 2.1의 접근성 수준을 만족함을 의미한다. WCAG 2.2에는 2.1 및 2.0 버전을 계승하여 발전된 요구 사항들이 추가되었다. 단, [4.1.1 Parsing](#parsing) 성공 기준은 WCAG 2.2에서 삭제되었다. 기존 정책상 WCAG 2.0 또는 2.1을 준수해야 하는 저자들은 WCAG 2.2로 콘텐츠를 업데이트할 수 있으나, 4.1.1 항목에 대해서는 지속적인 테스트와 보고가 필요할 수 있다. 복수의 가이드라인 버전을 적용해야 하는 저자들은 다음과 같은 차이에 유의해야 한다.
+
+#### WCAG 2.2의 새로운 특징
+
+WCAG 2.2는 새로운 성공 기준, 이를 뒷받침하는 정의, 추가 사항을 구성하는 지침을 더함으로써 WCAG 2.1을 확장한다. 이러한 추가적 접근 방식은 WCAG 2.2를 준수하는 사이트가 WCAG 2.1도 준수함을 명확히 하는 데 도움이 된다. 웹 접근성 지침 실무 그룹은 향상된 접근성을 제공하고 향후 정책 변경을 예상하기 위해, 공식 의무 사항에 이전 버전이 언급되더라도 사이트들이 WCAG 2.2를 새로운 준수 대상으로 채택할 것을 권장한다.
+
+WCAG 2.2에서 새로 추가된 성공 기준은 다음과 같다:
+
+*   2.4.11 [초점 표시(최소)](#focus-not-obscured-minimum) (AA)
+*   2.4.12 [초점 표시 (향상)](#focus-not-obscured-enhanced) (AAA)
+*   2.4.13 [초점 형태](#focus-appearance) (AAA)
+*   2.5.7 [끌기 동작](#dragging-movements) (AA)
+*   2.5.8 [타겟 크기(최소)](#target-size-minimum) (AA)
+*   3.2.6 [일관된 도움말](#consistent-help) (A)
+*   3.3.7 [중복 입력](#redundant-entry) (A)
+*   3.3.8 [접근 가능한 인증(최소)](#accessible-authentication-minimum) (AA)
+*   3.3.9 [접근 가능한 인증 (향상)](#accessible-authentication-enhanced) (AAA)
+
+새로운 성공 기준은 용어집에 추가된 새로운 용어를 참조할 수 있으며, 이는 성공 기준의 규범적 요구 사항의 일부를 구성한다.
+
+WCAG 2.2는 또한 [프라이버시](#privacy-summary)와 [보안](#security-summary)에 영향을 줄 수 있는 규격의 측면을 자세히 설명하는 새로운 섹션을 소개한다.
+
+#### WCAG 2.2의 번호 체계
+
+WCAG 2의 호환성이 중요한 구현자(implementer)의 혼란을 피하기 위해, WCAG 2.2의 새로운 성공 기준은 해당 지침에 설정된 성공 기준의 끝에 추가되었다. 이를 통해 지침 내 기존 성공 기준 사이에 새로운 성공 기준을 삽입함으로써 발생할 수 있는 WCAG 2의 성공 기준 절(section) 번호 변경 필요성을 피할 수 있다. 그러나 이것은 각 지침의 성공 기준이 더 이상 준수수준별로 묶이지 않는다는 것을 의미한다. 각 지침 내의 성공 기준의 순서는 준수수준에 대한 정보를 의미하지 않는다. 즉, 그것은 성공 기준 자체에 대한 준수 수준 지표(A / AA / AAA)만을 나타낸다. [WCAG 2.2 빠른 참고](https://www.w3.org/WAI/WCAG22/quickref/)는 많은 다른 필터 및 정렬 옵션과 함께 준수 수준별로 묶인 성공 기준을 볼 수 있는 방법을 제공한다.
+
+#### WCAG 2.2 준수
+
+WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준수하는 사이트는 WCAG 2.0과 WCAG 2.1도 준수하도록 의도하었으며, 이는 해당 사이트가 WCAG 2.0 또는 WCAG 2.1을 참조하는 정책의 요구사항을 충족시킴과 동시에 현재 웹 사용자의 요구사항을 보다 잘 충족시킴을 의미한다.
+
+### 접근성 지침의 이후 버전
+
+웹 접근성 지침 실무 그룹은 WCAG 2.2와 병행하여 접근성 지침의 또 다른 주요 버전을 개발하고 있다. 이 작업의 결과물은 WCAG 2의 점진적 릴리스에 비해 웹 접근성 지침의 상당한 구조 개편이 예상된다. 이 작업은 콘텐츠 제작, 사용자 에이전트 지원, 저작 도구 지원 등의 역할을 포함하여 가장 효과적이고 유연한 결과를 산출하기 위한 연구 중심의 사용자 중심 설계 방법론을 따르고 있다. 이는 수년에 걸친 작업이므로 WCAG 2.0 발간 이후 웹의 변화를 반영하기 위해 WCAG 2.2와 같은 중간 조치가 필요하다. 실무 그룹은 주요 버전 완성 시까지 추가 지원을 제공하기 위해 WCAG 2.2를 계속해서 짧은 기간 내에 추가 중간 버전을 개발할 수도 있다.
+
+1\. 인식의 용이성
+-----------
+
+정보와 사용자 인터페이스 요소는 사용자가 인식할 수 있는 방법으로 제시되어야 한다.
+
+### 지침 1.1 대체 텍스트
+
+[대체 텍스트 이해](./understanding/text-alternatives) |
+[대체 텍스트 기법](https://www.w3.org/WAI/WCAG22/quickref/#text-alternatives)
+
+모든 텍스트가 아닌 콘텐츠에 대한 대체 텍스트를 제공하여, 이를 확대 문자, 점자, 음성, 기호 또는 더 단순한 언어와 같이 사람들이 필요로 하는 다른 형태로 변환할 수 있도록 한다.
+
+#### 성공 기준 1.1.1 텍스트가 아닌 콘텐츠
+
+[텍스트가 아닌 콘텐츠 이해](./understanding/non-text-content) |
+[텍스트가 아닌 콘텐츠 기법](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content)
+
+(Level A)
+
+사용자에게 제시되는 모든 [텍스트가 아닌 콘텐츠](#dfn-non-text-content "프로그래밍 방식으로 판별될 수 있는 문자 시퀀스가 아니거나 시퀀스가 인간 언어로 무언가를 표현하지 않는 콘텐츠")는 그 목적에 상응하는 [대체 텍스트](#dfn-text-alternative "프로그래밍 방식으로 텍스트가 아닌 콘텐츠와 연결되거나 텍스트가 아닌 콘텐츠와 프로그래밍 방식으로 연결된 텍스트에서 참조되는 텍스트. 프로그래밍 방식으로 연결된 텍스트는 텍스트가 아닌 콘텐츠에서 프로그래밍 방식으로 위치를 확인할 수 있는 텍스트.")를 제공해야 한다. 예외는 다음과 같다.
+
+컨트롤, 입력(Controls, Input)
+
+텍스트가 아닌 콘텐츠가 컨트롤이거나 사용자 입력을 받는 경우, 해당 목적을 설명하는 [이름](#dfn-name "소프트웨어가 사용자에게 웹 콘텐츠 내의 구성 요소를 식별할 수 있는 텍스트")이 있어야 한다. (컨트롤과 사용자 입력을 받는 콘텐츠에 대한 추가 요구 사항은 [성공 기준 4.1.2](#name-role-value) 참고)
+
+시간 기반 미디어(Time-Based Media)
+
+텍스트 아닌 콘텐츠가 시간 기반 미디어인 경우, 텍스트 아닌 콘텐츠에는 최소한 동등한 설명의 대체 텍스트를 제공해야 한다. (미디어에 대한 추가 요구사항은 [지침 1.2](#time-based-media)를 참고)
+
+시험(Test)
+
+텍스트 아닌 콘텐츠가 시험이나 연습 문제로, [텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자 시퀀스(여기서 시퀀스는 인간 언어로 무언가를 표현함)")로 제시될 때 무효화 되는 경우, 최소한 해당 콘텐츠를 설명하는 대체 텍스트를 제공해야 한다.
+
+감각(Sensory)
+
+텍스트 아닌 콘텐츠가 [특정 감각에 기반한 경험](#dfn-specific-sensory-experience "순전히 장식적이지 않고 주로 중요한 정보를 전달하거나 기능을 수행하지 않는 감각적 경험")을 제공하는 것이 주 목적일 경우, 최소한 해당 콘텐츠를 설명하는 대체 텍스트를 제공해야 한다.
+
+[캡챠(CAPTCHA)](#dfn-captcha ""Completely Automated Public Turing test to tell Computers and Humans Apart"에 대한 두문자어")
+
+텍스트가 아닌 콘텐츠의 목적이 컴퓨터가 아닌 사람이 콘텐츠에 접근하고 있는지 확인하는 것이라면, 해당 콘텐츠의 목적을 설명하는 대체 텍스트를 제공해야 한다. 또한, 다양한 감각 인식을 지원하는 출력 모드(output modes)를 사용하는 대체 CAPTCHA를 제공하여 다른 유형의 감각적 접근 방식을 필요로 하는 사용자도 이용할 수 있도록 해야 한다.
+
+장식(Decoration), 형식(Formatting), 보이지 않음(Invisible)
+
+텍스트가 아닌 콘텐츠가 [순수한 장식](#dfn-pure-decoration "미적 목적만 제공하고 정보를 제공하지 않으며 기능도 없는 것") 요소, 시각적 형식 요소, 또는 사용자에게 표시되지 않는 콘텐츠인 경우, [보조 기술](#dfn-assistive-technologies "보편적인 사용자 에이전트가 제공하는 것 이상으로 장애가 있는 사용자의 요구 사항을 충족하는 기능을 제공하기 위해 사용자 에이전트 역할을 하거나 보편적인 사용자 에이전트와 함께 작동하는 하드웨어 및/또는 소프트웨어")이 이를 무시할 수 있도록 구현해야 한다.
+
+### 지침 1.2 시간 기반 미디어
+
+[시간 기반 미디어 이해](./understanding/time-based-media) |
+[시간 기반 미디어 기법](https://www.w3.org/WAI/WCAG22/quickref/#time-based-media)
+
+시간 기반 미디어에 대한 대체 수단을 제공해야 한다.
+
+#### 성공 기준 1.2.1 오디오 전용 및 비디오 전용(사전 녹음/녹화된)
+
+[오디오 전용 및 비디오 전용(사전 녹음/녹화된) 이해](./understanding/audio-only-and-video-only-prerecorded) |
+[오디오 전용 및 비디오 전용(사전 녹음/녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-only-and-video-only-prerecorded)
+
+(Level A)
+
+[사전 녹음된](#dfn-prerecorded "실시간이 아닌 정보") [오디오 전용](#dfn-audio-only "오디오만 포함한 시간기반 프레젠테이션(어떠한 비디오 및  상호 작용이 없음)") 및 사전 녹화된 [비디오 전용](#dfn-video-only "오디오만 포함된 시간 기반 프레젠테이션(비디오 및 상호 작용 없음)") 미디어의 경우, 다음을 준수해야 한다. 단, 오디오 또는 비디오가 [텍스트에 대한 미디어 대체 수단](#dfn-media-alternative-for-text "이미 제시된 텍스트보다 더 많은 정보를 제공하지 않는 미디어(직접 또는 대체 텍스트를 통해)")이고, 대체 수단임이 분명하게 명시된 경우는 예외이다.
+
+사전 녹음된 오디오 전용
+
+사전 녹음된 오디오전용 콘텐츠에는 동등한 정보를 제공하는 [시간 기반 미디어에 대한 대체 수단](#dfn-alternative-for-time-based-media "시간 기반 시각 및 청각 정보를 올바른 순서로 제공하는 텍스트 설명과 시간 기반 상호 작용의 결과를 달성하기 위한 수단을 제공하는 문서")을 제공해야 한다.
+
+사전 녹화된 비디오 전용
+
+사전 녹화된 비디오 전용 콘텐츠에는 동등한 정보를 제공하는 시간 기반 미디어 또는 오디오 트랙에 대한 대체 수단을 제공해야 한다.
+
+#### 성공 기준 1.2.2 자막 (사전 녹음된)
+
+[자막 (사전 녹음된) 이해](./understanding/captions-prerecorded) |
+[자막 (사전 녹음된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#captions-prerecorded)
+
+(Level A)
+
+[동기화된 미디어](#dfn-synchronized-media "정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 오디오 또는 비디오. 단, 미디어가 텍스트에 대한 미디어 대체수단이라고 명확하게 명명된 경우는 예외이다")에 포함된 모든 [사전 녹음된](#dfn-prerecorded "실시간이 아닌 정보") [오디오](#dfn-audio "음향 재생 기술") 콘텐츠에는 [자막](#dfn-captions "미디어 콘텐츠를 이해하는 데 필요한 음성 및 비음성 오디오 정보에 대한 동기화된 시각자료 대체 텍스트")을 제공해야 한다. 단, 미디어가 [텍스트에 대한 미디어 대체 수단](#dfn-media-alternative-for-text "텍스트(직접적으로 또는 텍스트 대체수단을 통해)로 이미 제시된 것 이상의 정보를 제시해 주지 않는 미디어")이고, 대체 수단임이 분명하게 명시된 경우는 제외한다.
+
+#### 성공 기준 1.2.3 오디오 해설 또는 미디어 대체 수단 (사전 녹화된)
+
+[오디오 해설 또는 미디어 대체 수단 (사전 녹화된) 이해](./understanding/audio-description-or-media-alternative-prerecorded) |
+[오디오 해설 또는 미디어 대체 수단 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-description-or-media-alternative-prerecorded)
+
+(Level A)
+
+[동기화된 미디어](#dfn-synchronized-media "정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 오디오 또는 비디오. 단, 미디어가 텍스트에 대한 미디어 대체수단이라고 명확하게 명명된 경우는 예외이다")에는 [사전 녹화된](#dfn-prerecorded "실시간이 아닌 정보") [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술") 콘텐츠의 [시간 기반 미디어에 대한 대체 수단](#dfn-alternative-for-time-based-media "시간 기반 시각 및 청각 정보를 올바른 순서로 제공하는 텍스트 설명과 시간 기반 상호 작용의 결과를 달성하기 위한 수단을 제공하는 문서") 또는 [오디오 해설](#dfn-audio-descriptions "주요 사운드 트랙만으로는 이해할 수 없는 중요한 시각적인 세부사항을 설명하기 위하여 사운드 트랙에 추가된 나레이션")을 제공해야 한다. 단, 미디어가 [텍스트에 대한 미디어 대체 수단](#dfn-media-alternative-for-text "텍스트(직접적으로 또는 텍스트 대체수단을 통해)로 이미 제시된 것 이상의 정보를 제시해 주지 않는 미디어")임이 분명하게 명시된 경우는 제외한다.
+
+#### 성공 기준 1.2.4 자막(실시간)
+
+[자막(실시간) 이해](./understanding/captions-live) |
+[자막(실시간) 기법](https://www.w3.org/WAI/WCAG22/quickref/#captions-live)
+
+(Level AA)
+
+[동기화된 미디어](#dfn-synchronized-media "정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 오디오 또는 비디오. 단, 미디어가 텍스트에 대한 미디어 대체수단이라고 명확하게 명명된 경우는 예외이다")에 포함된 모든 [실시간](#dfn-live "information captured from a real-world event and transmitted to the receiver with no more than a broadcast delay") [오디오](#dfn-audio "음향 재생 기술") 콘텐츠에는 [자막](#dfn-captions "미디어 콘텐츠를 이해하는 데 필요한 음성 및 비음성 오디오 정보에 대한 동기화된 시각자료 대체 텍스트")을 제공해야 한다.
+
+#### 성공 기준 1.2.5 오디오 해설 (사전 녹화된)
+
+[오디오 해설 (사전 녹화된) 이해](./understanding/audio-description-prerecorded) |
+[오디오 해설 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-description-prerecorded)
+
+(Level AA)
+
+[동기화된 미디어](#dfn-synchronized-media "정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 오디오 또는 비디오. 단, 미디어가 텍스트에 대한 미디어 대체수단이라고 명확하게 명명된 경우는 예외이다")에 포함된 모든 [사전 녹화된](#dfn-prerecorded "실시간이 아닌 정보") [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술") 콘텐츠에는 [오디오 해설](#dfn-audio-descriptions "주요 사운드 트랙만으로는 이해할 수 없는 중요한 시각적인 세부사항을 설명하기 위하여 사운드 트랙에 추가된 나레이션")을 제공해야 한다.
+
+#### 성공 기준 1.2.6 수어 (사전 녹화된)
+
+[수어 (사전 녹화된) 이해](./understanding/sign-language-prerecorded) |
+[수어 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#sign-language-prerecorded)
+
+(Level AAA)
+
+[동기화된 미디어](#dfn-synchronized-media "정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 오디오 또는 비디오. 단, 미디어가 텍스트에 대한 미디어 대체수단이라고 명확하게 명명된 경우는 예외이다")에 포함된 모든 [사전 녹음된](#dfn-prerecorded "실시간이 아닌 정보") [오디오](#dfn-audio "음향 재생 기술") 콘텐츠에는 수어 통역을 제공해야 한다.
+
+#### 성공 기준 1.2.7 확장형 오디오 해설 (사전 녹화된)
+
+[확장형 오디오 해설 (사전 녹화된) 이해](./understanding/extended-audio-description-prerecorded) |
+[확장형 오디오 해설 (사전 녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#extended-audio-description-prerecorded)
+
+(Level AAA)
+
+[오디오 해설](#dfn-audio-descriptions "주요 사운드 트랙만으로는 이해할 수 없는 중요한 시각적인 세부사항을 설명하기 위하여 사운드 트랙에 추가된 나레이션")이 [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술")의 느낌을 전달하는 데 전경 오디오의 일시정지(pause)만으로는 충분하지 않은 경우, [동기화된 미디어](#dfn-synchronized-media "정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 오디오 또는 비디오. 단, 미디어가 텍스트에 대한 미디어 대체수단이라고 명확하게 명명된 경우는 예외이다")에 포함된 모든 [사전 녹화된](#dfn-prerecorded "실시간이 아닌 정보") 비디오 콘텐츠에 대해 [확장형 오디오 해설](#dfn-extended-audio-description "부가 설명을 추가할 시간이 벌기 위하여 비디오를 일시정지하고 시청각 프레젠테이션에 추가한 오디오 해설")을 제공해야 한다.
+
+#### 성공 기준 1.2.8 미디어 대체 수단 (사전 녹음/녹화된)
+
+[미디어 대체 수단 (사전 녹음/녹화된) 이해](./understanding/media-alternative-prerecorded) |
+[미디어 대체 수단 (사전 녹음/녹화된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#media-alternative-prerecorded)
+
+(Level AAA)
+
+모든 사전 녹음된 [동기화된 미디어](#dfn-synchronized-media "정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 오디오 또는 비디오. 단, 미디어가 텍스트에 대한 미디어 대체수단이라고 명확하게 명명된 경우는 예외이다")와 [사전 녹화된](#dfn-prerecorded "실시간이 아닌 정보") [비디오 전용](#dfn-video-only "비디오만을 포함한 시간기반 프레젠테이션(어떠한 오디오나 상호 작용이 없음)") 미디어에는 [시간 기반 미디어에 대한 대체수단](#dfn-alternative-for-time-based-media "시간 기반 시각 및 청각 정보를 올바른 순서로 제공하는 텍스트 설명과 시간 기반 상호 작용의 결과를 달성하기 위한 수단을 제공하는 문서")을 제공해야 한다.
+
+#### 성공 기준 1.2.9 오디오 전용 (실시간)
+
+[오디오 전용 (실시간) 이해](./understanding/audio-only-live) |
+[오디오 전용 (실시간) 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-only-live)
+
+(Level AAA)
+
+[실시간](#dfn-live "실제 이벤트(event)에서 캡처하여 방송 지연 없이 수신기로 전송되는 정보") [오디오 전용](#dfn-audio-only "오디오만 포함한 시간기반 프레젠테이션(어떠한 비디오 및  상호 작용이 없음)") 콘텐츠에는 동등한 정보를 제공하는 [시간 기반 미디어에 대한 대체수단](#dfn-alternative-for-time-based-media "시간 기반 시각 및 청각 정보를 올바른 순서로 제공하는 텍스트 설명과 시간 기반 상호 작용의 결과를 달성하기 위한 수단을 제공하는 문서")을 제공해야 한다.
+
+### 지침 1.3 적응 가능성
+
+[적응 가능성 이해](./understanding/adaptable) |
+[적응 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#adaptable)
+
+정보나 구조를 잃지 않고 다양한 방식(예: 단순한 레이아웃)으로 표시할 수 있는 콘텐츠를 제작해야 한다.
+
+#### 성공 기준 1.3.1 정보와 관계
+
+[정보와 관계 이해](./understanding/info-and-relationships) |
+[정보와 관계 기법](https://www.w3.org/WAI/WCAG22/quickref/#info-and-relationships)
+
+(Level A)
+
+[표현(presentation)](#dfn-presentation "사용자가 인식할 수 있는 형태로 콘텐츠를 렌더링하는 것")을 통해 전달되는 정보, [구조](#dfn-structure "웹 페이지의 각 부분이 서로 연관되어 구성되는 방식, 웹페이지 모음이 조직되는 방식"), [관계](#dfn-relationships "구별되는 콘텐츠들 간의 유의미한 연관성")는 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")되거나 텍스트로 이용 가능해야 한다.
+
+#### 성공 기준 1.3.2 의미있는 순서
+
+[의미있는 순서 이해](./understanding/meaningful-sequence) |
+[의미있는 순서 기법](https://www.w3.org/WAI/WCAG22/quickref/#meaningful-sequence)
+
+(Level A)
+
+콘텐츠가 표시되는 순서가 의미에 영향을 미치는 경우, [올바른 읽기 순서](#dfn-correct-reading-sequence "단어와 단락이 콘텐츠의 의미를 변경하지 않는 순서로 제시되는 어떤 순서")는 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")되어야 한다.
+
+#### 성공 기준 1.3.3 감각 특성
+
+[감각 특성 이해](./understanding/sensory-characteristics) |
+[감각 특성 기법](https://www.w3.org/WAI/WCAG22/quickref/#sensory-characteristics)
+
+(Level A)
+
+콘텐츠를 이해하고 작동하기 위해 제공된 지시문은 모양, 색상, 크기, 시각적 위치, 방향 또는 소리와 같은 구성요소의 감각적인 특성에만 전적으로 의존해서는 안된다.
+
+참고
+
+색상 관련 요구사항은 [지침 1.4](#distinguishable)를 참고하라.
+
+#### 성공 기준 1.3.4 방향
+
+[방향 이해](./understanding/orientation) |
+[방향 기법](https://www.w3.org/WAI/WCAG22/quickref/#orientation)
+
+(Level AA)
+
+특정 디스플레이 방향이 [필수적](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는")이지 않는 한, 콘텐츠는 세로 또는 가로와 같이 한 방향으로만 보거나 작동되도록 제한해서는 안 된다.
+
+참고
+
+특정 디스플레이 방향이 필수적일 수 있는 예로는 은행 수표, 피아노 애플리케이션, 프로젝터나 TV용 슬라이드 또는 디스플레이의 가로 세로 방향을 적용할 수 없는 가상현실 콘텐츠를 들 수 있다.
+
+#### 성공 기준 1.3.5 입력 목적 식별
+
+[입력 목적 식별 이해](./understanding/identify-input-purpose) |
+[입력 목적 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#identify-input-purpose)
+
+(Level AA)
+
+사용자 정보를 수집하는 각 입력 필드의 목적이 다음과 같은 경우 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")되어야 한다.
+
+*   입력 필드가 [사용자 인터페이스 구성요소 섹션의 입력 목적](#input-purposes)을 제공하는 경우
+*   콘텐츠가 양식 입력 데이터에 대한 예상 의미를 식별하는 것을 지원하는 기술을 사용하여 구현된 경우
+
+#### 성공 기준 1.3.6 목적 식별
+
+[목적 식별 이해](./understanding/identify-purpose) |
+[목적 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#identify-purpose)
+
+(Level AAA)
+
+마크업 언어로 구현된 콘텐츠에서 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부"), 아이콘, [영역](#dfn-regions "인식 가능하고 프로그래밍 방식으로 판별되는 콘텐츠 섹션")의 목적은 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")되어야 한다.
+
+### 지침 1.4 식별 가능성
+
+[식별 가능성 이해](./understanding/distinguishable) |
+[식별 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#distinguishable)
+
+배경으로부터 전경을 분리하는 것을 포함하여, 콘텐츠는 사용자가 더 쉽게 보고 들을 수 있도록 제작되어야 한다.
+
+#### 성공 기준 1.4.1 색상 사용
+
+[색상 사용 이해](./understanding/use-of-color) |
+[색상 사용 기법](https://www.w3.org/WAI/WCAG22/quickref/#use-of-color)
+
+(Level A)
+
+색상은 정보 전달, 동작 표시, 반응 유발 또는 시각적 요소 구별을 위한 유일한 시각적 수단으로만 사용되어서는 안 된다.
+
+참고
+
+이 성공 기준은 색상 인식을 구체적으로 다루고 있다. 다른 형태의 인식은 색상 및 다른 표현(presentation) 코딩에 대한 프로그래밍 방식의 접근을 포함하고 있는 [지침 1.3 적응 가능성](#adaptable)에서 다루고 있다.
+
+#### 성공 기준 1.4.2 오디오 제어
+
+[오디오 제어 이해](./understanding/audio-control) |
+[오디오 제어 기법](https://www.w3.org/WAI/WCAG22/quickref/#audio-control)
+
+(Level A)
+
+웹 페이지에 있는 어떤 오디오가 3초 이상 자동으로 재생되는 경우, 해당 오디오를 일시정지 또는 중지할 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")이나 오디오 음량을 전체 시스템 음량 볼륨과는 별도로 제어할 수 있는 메커니즘을 제공해야 한다.
+
+참고
+
+이 성공 기준을 준수하지 않은 콘텐츠는 사용자의 전체 페이지 이용을 방해할 수 있으므로, (다른 성공 기준 충족 여부와 관계없이) 웹 페이지의 모든 콘텐츠는 이 성공 기준을 준수해야 한다. 자세한 내용은 [준수 요구사항 5: 불간섭](#cc5)을 참고하라.
+
+#### 성공 기준 1.4.3 명도 대비(최소)
+
+[명도 대비(최소) 이해](./understanding/contrast-minimum) |
+[명도 대비(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#contrast-minimum)
+
+(Level AA)
+
+[텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.")와 [텍스트 이미지](#dfn-images-of-text "특정 시각적인 효과를 달성하기 위해 텍스트가 아닌 형식(예: 이미지)으로 렌더링된 텍스트")의 표현(presentation)을 위한 [명도대비율](#dfn-contrast-ratio "(L1 + 0.05) / (L2 + 0.05)")은 최소한 4.5:1 이상이 되어야 한다. 단, 다음의 경우는 제외한다.
+
+큰 텍스트
+
+[커다란](#dfn-large-scale "최소 18포인트 또는 14포인트의 볼드체(bold), 또는 중국어, 일본어 및 한국어(CJK) 글꼴과 같은 크기를 산출하는 글꼴 크기") 텍스트와 텍스트 이미지의 명도대비가 최소 3:1 이상이어야 한다.
+
+부수적인
+
+비활성 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")의 일부, [순수한 장식](#dfn-pure-decoration "어떠한 정보도 제공하지 않고 어떠한 기능도 없는, 오직 심미적인 목적으로만 사용된"), 사용자에게 보이지 않는, 또는 의미있는 다른 시각적 콘텐츠를 포함하고 있는 그림의 일부인 텍스트 또는 텍스트 이미지에는 어떠한 명도대비 요구사항도 없다.
+
+로고타입
+
+로고 또는 상표명에 포함된 텍스트에는 어떠한 명도대비 요구사항도 없다.
+
+#### 성공 기준 1.4.4 텍스트 크기 조정
+
+[텍스트 크기 조정 이해](./understanding/resize-text) |
+[텍스트 크기 조정 기법](https://www.w3.org/WAI/WCAG22/quickref/#resize-text)
+
+(Level AA)
+
+[텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.")는 콘텐츠나 기능의 손상 없이, 그리고 [보조 기술](#dfn-assistive-technologies "보편적인 사용자 에이전트가 제공하는 것 이상으로 장애가 있는 사용자의 요구 사항을 충족하는 기능을 제공하기 위해 사용자 에이전트 역할을 하거나 보편적인 사용자 에이전트와 함께 작동하는 하드웨어 및/또는 소프트웨어") 없이 최대 200%까지 크기 조정이 가능해야 한다. 단, [자막](#dfn-captions "미디어 콘텐츠를 이해하는 데 필요한 음성 및 비음성 오디오 정보에 대한 동기화된 시각자료 대체 텍스트")과 [텍스트 이미지](#dfn-images-of-text "특정 시각적인 효과를 달성하기 위해 텍스트가 아닌 형식(예: 이미지)으로 렌더링된 텍스트")는 제외한다.
+
+#### 성공 기준 1.4.5 텍스트 이미지
+
+[텍스트 이미지 이해](./understanding/images-of-text) |
+[텍스트 이미지 기법](https://www.w3.org/WAI/WCAG22/quickref/#images-of-text)
+
+(Level AA)
+
+사용되는 기술이 표현(presentation)을 할 수 있는 경우라 하더라도, 정보는 [텍스트 이미지](#dfn-images-of-text "특정 시각적인 효과를 달성하기 위해 텍스트가 아닌 형식(예: 이미지)으로 렌더링된 텍스트")보다 [텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.")로 전달해야 한다. 단, 다음의 경우는 제외한다.
+
+사용자 정의 가능한
+
+텍스트 이미지가 사용자의 요구에 따라 [시각적으로 조절(visually customized)](#dfn-visually-customized "글꼴, 크기, 색상 및 배경을 설정할 수 있는") 가능한 경우
+
+필수적인
+
+텍스트의 특정 표현이 전달되는 정보에 [필수적](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는")인 경우
+
+참고
+
+로고타입(로고 또는 상품명의 일부인 텍스트)은 필수적인 것으로 간주한다.
+
+#### 성공 기준 1.4.6 명도 대비(향상된)
+
+[명도 대비(향상된) 이해](./understanding/contrast-enhanced) |
+[명도 대비(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#contrast-enhanced)
+
+(Level AAA)
+
+[텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.")와 [텍스트 이미지](#dfn-images-of-text "특정 시각적인 효과를 달성하기 위해 텍스트가 아닌 형식(예: 이미지)으로 렌더링된 텍스트")의 표현(presentation)을 위한 [명도대비율](#dfn-contrast-ratio "(L1 + 0.05) / (L2 + 0.05)")은 최소한 7:1 이상 되어야 한다. 단, 다음의 경우는 제외한다.
+
+큰 텍스트
+
+[커다란](#dfn-large-scale "최소 18포인트 또는 14포인트의 볼드체(bold), 또는 중국어, 일본어 및 한국어(CJK) 글꼴과 같은 크기를 산출하는 글꼴 크기") 텍스트와 텍스트 이미지가 최소한 4.5:1의 명도대비를 가지고 있다.
+
+부수적인
+
+비활성 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")의 일부, [순수한 장식](#dfn-pure-decoration "어떠한 정보도 제공하지 않고 어떠한 기능도 없는, 오직 심미적인 목적으로만 사용된"), 사용자에게 보이지 않는, 또는 의미있는 다른 시각적 콘텐츠를 포함하고 있는 그림의 일부인 텍스트 또는 텍스트 이미지에는 어떠한 명도대비 요구사항도 없다.
+
+로고타입
+
+로고 또는 상표명에 포함된 텍스트에는 어떠한 명도대비 요구사항도 없다.
+
+#### 성공 기준 1.4.7 낮은 배경음 또는 배경음 없음
+
+[낮은 배경음 또는 배경음 없음 이해](./understanding/low-or-no-background-audio) |
+[낮은 배경음 또는 배경음 없음 기법](https://www.w3.org/WAI/WCAG22/quickref/#low-or-no-background-audio)
+
+(Level AAA)
+
+(1) 주로 전경에 음성이 포함되어 있고, (2) 오디오 [캡챠](#dfn-captcha ""Completely Automated Public Turing test to tell Computers and Humans Apart"에 대한 두문자어")나 오디오 로고가 아니며, (3) 노래나 랩과 같은 주로 음악적 표현을 위한 해 음성으로 표현된 것이 아닌 [사전 녹음된](#dfn-prerecorded "실시간이 아닌 정보") [오디오 전용](#dfn-audio-only "오디오만 포함한 시간기반 프레젠테이션(어떠한 비디오 및  상호 작용이 없음)") 콘텐츠의 경우 다음 중 하나 이상을 준수해야 한다.
+
+배경음 없음
+
+오디오는 배경음을 전혀 포함하고 있지 않아야 한다.
+
+배경음 끔
+
+배경음을 끌 수 있어야 한다.
+
+20 dB
+
+단지 1~2초 동안만 지속되는 간헐적인 소리를 제외하고, 배경음은 전경 음성 콘텐츠보다 최소한 20dB 이상 낮아야 한다.
+
+참고
+
+“데시벨(decibel)”의 정의에 따르면, 이 요구 조건을 준수하는 배경음은 전경 음성 콘텐츠보다 대략 4배 정도 더 조용할 것이다.
+
+#### 성공 기준 1.4.8 시각적 표현
+
+[시각적 표현 이해](./understanding/visual-presentation) |
+[시각적 표현 기법](https://www.w3.org/WAI/WCAG22/quickref/#visual-presentation)
+
+(Level AAA)
+
+[텍스트 블록](#dfn-blocks-of-text "한 문장 이상의 텍스트")을 시각적으로 표현하고자 하는 경우, 다음과 같은 것을 할 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+*   사용자가 전경색과 배경색을 선택할 수 있어야 한다.
+*   가로폭은 80자(한국어, 중국어, 일본어는 40자) 또는 글리프(glyph) 이하이어야 한다.
+*   텍스트는 양쪽 정렬을 해서는 안 된다(왼쪽과 오른쪽 여백에 정렬).
+*   줄 간격은 문단 내에서 최소 1.5배 이상되어야 하고, 문단 간격은 행 간격보다 최소 1.5배 이상이어야 한다.
+*   보조 기술 없이도 [전체 화면 창에서](#dfn-on-a-full-screen-window "뷰포트(viewport)가 최대화된 가장 일반적인 크기의 데스크톱/노트북 디스플레이") 텍스트 줄을 읽기 위해 수평으로 스크롤할 필요가 없도록 텍스트 크기를 최대 200%까지 조절할 수 있어야 한다.
+
+참고 1
+
+콘텐츠에서 이러한 값을 사용할 필요는 없다. 요구 사항은 사용자가 이러한 표현 방식을 변경할 수 있는 메커니즘을 제공하는 것이다. 이 메커니즘은 브라우저나 다른 사용자 에이전트에 의해 제공될 수 있다. 콘텐츠에서 메커니즘을 제공할 필요는 없다.
+
+참고 2
+
+일부 언어의 문자 체계는 가독성과 명확성을 향상시키기 위해 다른 표현 방식을 사용한다. 이 성공 기준의 표현 방식이 특정 문자 체계에서 사용되지 않는 경우, 해당 문자 체계의 콘텐츠는 이런 설정을 사용할 필요가 없으며 그것 없이도 준수할 수 있다. 저작자들은 자신의 문자 체계에서 텍스트의 가독성과 명확성을 향상시키기 위한 지침을 따르는 것이 좋다.
+
+#### 성공 기준 1.4.9 텍스트 이미지 (예외 없음)
+
+[텍스트 이미지 (예외 없음) 이해](./understanding/images-of-text-no-exception) |
+[텍스트 이미지 (예외 없음) 기법](https://www.w3.org/WAI/WCAG22/quickref/#images-of-text-no-exception)
+
+(Level AAA)
+
+[텍스트 이미지](#dfn-images-of-text "특정 시각적인 효과를 달성하기 위해 텍스트가 아닌 형식(예: 이미지)으로 렌더링된 텍스트")는 [순수한 장식](#dfn-pure-decoration "어떠한 정보도 제공하지 않고 어떠한 기능도 없는, 오직 심미적인 목적으로만 사용된") 또는 특정 [텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.")의 표현이 전달되는 정보에 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 경우에만 사용되어야 한다.
+
+참고
+
+로고타입(로고 또는 상품명의 일부인 텍스트)은 필수적인 것으로 간주된다.
+
+#### 성공 기준 1.4.10 재정렬
+
+[재정렬 이해](./understanding/reflow) |
+[재정렬 기법](https://www.w3.org/WAI/WCAG22/quickref/#reflow)
+
+(Level AA)
+
+콘텐츠는 정보나 기능의 손실 없이, 그리고 다음의 경우에 대하여 2차원으로 스크롤할 필요 없이 제공되어야 한다.
+
+*   320 [CSS 픽셀](#dfn-css-pixels "약 0.0213도의 시야각") 너비의 세로 스크롤 콘텐츠
+*   256 [CSS 픽셀](#dfn-css-pixels "약 0.0213도의 시야각") 높이의 가로 스크롤 콘텐츠
+
+사용상 또는 의미상 2차원적인 레이아웃이 필요한 콘텐츠는 예외로 한다.
+
+참고 1
+
+320 CSS 픽셀은 400% 확대에서 1280 CSS 픽셀의 시작 뷰포트(viewport) 너비와 같다. 가로 방향으로 스크롤링하도록 설계된 웹 콘텐츠(예: 세로 텍스트)의 경우, 256 CSS 픽셀은 400% 확대에서 1024px 시작 뷰포트 높이와 같다.
+
+참고 2
+
+2차원 레이아웃이 필요한 콘텐츠의 예로는 이미지, 지도, 다이어그램, 비디오, 게임, 프레젠테이션, 데이터 테이블, 그리고 콘텐츠를 조작하는 동안 보기(view) 탭에서 도구모음(toolbar)을 유지할 필요가 있는 인터페이스 등이 있다.
+
+#### 성공 기준 1.4.11 텍스트가 아닌 콘텐츠의 명도대비
+
+[텍스트가 아닌 콘텐츠의 명도대비 이해](./understanding/non-text-contrast) |
+[텍스트가 아닌 콘텐츠의 명도대비 기법](https://www.w3.org/WAI/WCAG22/quickref/#non-text-contrast)
+
+(Level AA)
+
+다음과 같은 [시각 표현](#dfn-presentation "사용자가 인식할 수 있는 형태로 콘텐츠를 렌더링하는 것")은 인접 색상 대비 [명도대비율](#dfn-contrast-ratio "(L1 + 0.05) / (L2 + 0.05)")이 최소한 3:1 이상이어야 한다.
+
+사용자 인터페이스 구성요소
+
+[사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")와 [상태](#dfn-states "사용자 행동 또는 자동화된 과정에 따라 반응이 변경될 수 있는 사용자 인터페이스 구성요소의 특성을 표현하는 동적 속성")를 식별하기 위해 요구되는 시각적 정보. 단, 비활성 구성요소 또는 구성요소의 모양이 사용자 에이전트에 의해 결정되고 저작자에 의해 수정되지 않는 경우는 제외
+
+그래픽 객체
+
+콘텐츠를 이해하기 위해서 요구되는 그래픽의 일부. 단, 특정 그래픽 표현이 전달되는 정보에 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 경우는 제외
+
+#### 성공 기준 1.4.12 텍스트 간격
+
+[텍스트 간격 이해](./understanding/text-spacing) |
+[텍스트 간격 기법](https://www.w3.org/WAI/WCAG22/quickref/#text-spacing)
+
+(Level AA)
+
+다음의 [텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.") [스타일 속성](#dfn-style-properties "사용자 에이전트가 콘텐츠 요소들을 렌더링할 때(예: 화면에서, 스피커를 통해, 점자 표시장치를 통해), 그 요소들의 프레젠테이션(예: 글꼴, 색상, 크기, 위치, 패딩, 볼륨, 합성된 음성 운율)을 결정하는 속성값")을 지원하는 마크업 언어를 사용하여 구현된 콘텐츠의 경우, 다음과 같은 것을 모두 설정한 후 추가적인 스타일 속성의 변경 없이도 콘텐츠나 기능에 손상이 없어야 한다.
+
+*   줄 높이(줄 간격)는 글자 크기보다 최소 1.5배 이상
+*   문단 간격이 글자 크기보다 최소 2배 이상
+*   글자 간격이 글자 크기보다 최소 0.12배 이상
+*   단어 간격이 글자 크기보다 최소 0.16배 이상
+
+예외: 서면(written) 텍스트에서 이러한 텍스트 스타일 속성 중 하나 이상을 사용하지 않는 사용자 언어와 스크립트는 해당 언어와 스크립트의 조합이 가능한 속성만을 사용하여 준수할 수 있다.
+
+참고 1
+
+텍스트 간격 값을 사용하는 것은 필수 사항이 아니다. 이 기준은 사용자가 원래 제작된 텍스트 간격을 무시하고 재설정할 때, 콘텐츠나 기능성이 손실되지 않도록 하는 것이다.
+
+참고 2
+
+일부 언어의 작성 방식는 단락 시작 들여쓰기와 같은 다른 텍스트 설정을 사용한다. 저작자는 작성 방식에서 텍스트의 가독성을 향상시키기 위해 현지에서 제공하는 지침을 따르는 것이 좋다.
+
+#### 성공 기준 1.4.13 마우스오버 혹은 키보드 초점을 받은 콘텐츠
+
+[마우스오버 혹은 키보드 초점을 받은 콘텐츠 이해](./understanding/content-on-hover-or-focus) |
+[마우스오버 혹은 키보드 초점을 받은 콘텐츠 기법](https://www.w3.org/WAI/WCAG22/quickref/#content-on-hover-or-focus)
+
+(Level AA)
+
+마우스 포인터로 가리키거나(hover) 키보드 초점을 받은 다음 이를 제거했을 때 추가 콘텐츠가 보였다가 사라지도록 하는 경우, 다음을 준수해야 한다.
+
+해제 가능
+
+추가 콘텐츠가 [입력 오류](#dfn-input-error "사용자가 제공하였으나 수용되지 않는 정보")를 전달하거나 다른 콘텐츠를 숨기거나 바꾸지 않는 한, 마우스 포인터로 가리키거나 키보드 포커스를 이동하지 않고 추가 콘텐츠를 해제할 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+마우스오버
+
+마우스 포인터로 가리켜 추가 콘텐츠를 보여줄 경우, 포인터는 콘텐츠가 사라지지 않게 하면서 그 콘텐츠 위로 이동할 수 있어야 한다.
+
+지속적인
+
+추가 콘텐츠는 마우스오버, 키보드 초점이 해제되거나, 사용자가 해제하거나, 정보가 더 이상 유효하지 않을 때까지 볼 수 있어야 한다.
+
+예외: 추가 콘텐츠의 표현(presentation)이 사용자 에이전트로 제어되고, 웹 콘텐츠 저작자가 그 표현(presentation)을 수정할 수 없는 경우
+
+참고 1
+
+사용자 에이전트가 제어하는 추가 콘텐츠의 예로는 HTML [`title` 속성](https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute) \[[HTML](#bib-html "HTML Standard")\]을 사용하여 만든 브라우저 툴팁이 있다.
+
+참고 2
+
+마우스오버나 키보드 초점에 따라 표시되는 사용자 맞춤형 툴팁, 부메뉴 및 기타 모달 방식이 아닌 팝업은 이 기준을 적용받는 추가 콘텐츠의 예이다.
+
+참고 3
+
+이 기준은 트리거 구성 요소 자체 외에 표시되는 콘텐츠에도 적용된다. 키보드 초점에 표시되는 숨겨진 구성 요소(예: 페이지의 다른 부분으로 건너뛰는 링크)는 추가 콘텐츠를 제공하지 않으므로 이 기준에서 다루지 않는다.
+
+2\. 운용의 용이성
+-----------
+
+사용자 인터페이스 구성요소 및 네비게이션은 운용 가능해야 한다.
+
+### 지침 2.1 키보드 접근성
+
+[키보드 접근성 이해](./understanding/keyboard-accessible) |
+[키보드 접근성 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard-accessible)
+
+키보드로 모든 기능을 사용할 수 있어야 한다.
+
+#### 성공 기준 2.1.1 키보드
+
+[키보드 이해](./understanding/keyboard) |
+[키보드 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard)
+
+(Level A)
+
+개별 키 입력에 특정 타이밍이 요구되지 않는 [키보드 인터페이스](#dfn-keyboard-interface "키 누름 입력을 얻기 위해 소프트웨어에서 사용하는 인터페이스")를 통해 모든 콘텐츠의 [기능](#dfn-functionality "사용자의 행동을 통해 달성할 수 있는 과정과 결과")을 이용할 수 있어야 한다. 단, 콘텐츠의 기본 기능에 끝점(endpoints) 뿐만 아니라 사용자의 이동 경로 입력이 필요한 경우는 예외로 한다.
+
+참고 1
+
+이 예외는 기본 기능과 관련되지만, 입력 기법은 아니다. 예를 들어, 필기로 텍스트를 입력한다면, 입력 기법은 경로 의존적인 입력이 필요하지만, 기본 기능인 텍스트 입력은 경로 의존적인 입력을 필요로 하지 않는다.
+
+참고 2
+
+이 성공 기준은 키보드 조작 외에 마우스 입력이나 다른 입력 방법을 제공하는 것을 금지하지 않으며, 금지해서도 안된다.
+
+#### 성공 기준 2.1.2 키보드 함정 방지
+
+[키보드 함정 방지 이해](./understanding/no-keyboard-trap) |
+[키보드 함정 방지 기법](https://www.w3.org/WAI/WCAG22/quickref/#no-keyboard-trap)
+
+(Level A)
+
+[키보드 인터페이스](#dfn-keyboard-interface "키 누름 입력을 얻기 위해 소프트웨어에서 사용하는 인터페이스")를 사용하여 키보드 포커스를 페이지의 구성요소로 이동할 수 있는 경우, 키보드 인터페이스만으로도 해당 구성요소에서 포커스를 이동시킬 수 있어야 한다. 수정되지 않은 화살표, 탭 키, 또는 다른 표준 종료 방법이 필요한 경우, 사용자에게 포커스를 이동시키는 방법에 대해 안내해야 한다.
+
+참고
+
+이 성공 기준을 충족하지 못하는 콘텐츠는 모든 페이지를 사용하는 사용자들의 능력을 방해할 수 있다. 웹 페이지의 모든 콘텐츠는 다른 성공 기준의 충족 여부와 관계없이 반드시 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#cc5)을 참고하라.
+
+#### 성공 기준 2.1.3 키보드 (예외 없음)
+
+[키보드 (예외 없음) 이해](./understanding/keyboard-no-exception) |
+[키보드 (예외 없음) 기법](https://www.w3.org/WAI/WCAG22/quickref/#keyboard-no-exception)
+
+(Level AAA)
+
+콘텐츠의 모든 [기능](#dfn-functionality "사용자의 행동을 통해 달성할 수 있는 과정과 결과")은 개별 키 입력에 대해 특정 시점(timing)을 요구하지 않는 [키보드 인터페이스](#dfn-keyboard-interface "키 누름 입력을 얻기 위해 소프트웨어에서 사용하는 인터페이스")를 통해 운용 가능해야 한다.
+
+#### 성공 기준 2.1.4 문자 단축키
+
+[문자 단축키 이해](./understanding/character-key-shortcuts) |
+[문자 단축키 기법](https://www.w3.org/WAI/WCAG22/quickref/#character-key-shortcuts)
+
+(Level A)
+
+[키보드 단축키](#dfn-keyboard-shortcuts "하나 이상의 키를 눌러 동작을 발생시키는 대체수단")를 문자(대문자 및 소문자), 구두점, 숫자 또는 기호만 이용하도록 구현할 경우, 다음 중 하나 이상을 준수해야 한다.
+
+해제
+
+단축키를 끌 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+재설정
+
+하나 이상의 인쇄 불가능한 문자(예: Ctrl, Alt 등)를 사용하여 단축키로 재설정(remap)하는 메커니즘을 제공해야 한다.
+
+초점을 받았을 때 활성화
+
+[사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")의 단축키는 해당 구성요소가 초점을 받았을 때만 활성화되어야 한다.
+
+### 지침 2.2 충분한 시간 제공
+
+[충분한 시간 제공 이해](./understanding/enough-time) |
+[충분한 시간 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#enough-time)
+
+사용자가 콘텐츠를 읽고 사용할 수 있도록 충분한 시간을 제공해야 한다.
+
+#### 성공 기준 2.2.1 시간 제한 조정
+
+[시간 제한 조정 이해](./understanding/timing-adjustable) |
+[시간 제한 조정 기법](https://www.w3.org/WAI/WCAG22/quickref/#timing-adjustable)
+
+(Level A)
+
+콘텐츠에 제한 시간이 설정된 경우, 다음 중 하나 이상을 준수해야 한다.
+
+해제
+
+시간 제한이 시작되기 전에 사용자가 시간 제한을 해제할 수 있어야 한다.
+
+조정
+
+시간 제한이 시작되기 전에 사용자가 기본 설정 길이의 10배 이상의 넓은 범위에서 제한 시간을 조정할 수 있어야 한다.
+
+연장
+
+사용자는 시간 만료 최소 20초 전에 경고를 받고, 간단한 동작(예: “스페이스 바를 누르시오”)을 사용하여 제한 시간을 10회 이상 연장할 수 있어야 한다.
+
+실시간 예외
+
+시간 제한이 필수적이며 이에 대한 다른 대안이 없는 실시간 이벤트(예: 경매)인 경우는 예외이다.
+
+필수 예외
+
+시간 제한이 [필수적](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는")이며 제한 시간 연장이 활동을 무효화하는 경우는 예외이다.
+
+20시간 예외
+
+제한 시간이 20시간을 초과하는 경우는 예외이다.
+
+참고
+
+이 성공 기준은 사용자가 시간 제한으로 인해 발생하는 예상치 못한 변경 없이 과업을 완료할 수 있도록 돕는다. 이 성공 기준은 사용자의 행동으로 인해 콘텐츠나 맥락이 변경되는 것을 제한하는 [성공 기준 3.2.1](#on-focus)과 함께 권장된다.
+
+#### 성공 기준 2.2.2 일시정지, 중지, 숨김
+
+[일시정지, 중지, 숨김 이해](./understanding/pause-stop-hide) |
+[일시정지, 중지, 숨김 기법](https://www.w3.org/WAI/WCAG22/quickref/#pause-stop-hide)
+
+(Level A)
+
+이동, [깜빡임](#dfn-blinking "주의를 끌기 위한 방법으로, 두 가지의 시각적인 상태를 왔다 갔다 하는 것"), 스크롤, 자동 업데이트의 경우, 다음의 모든 사항을 준수해야 한다.
+
+이동, 깜빡임, 스크롤
+
+사용자가 콘텐츠의 이동, 깜박임, 스크롤을 [일시정지](#dfn-pause "사용자 요청에 의해 중지된 후 사용자가 요청할 때까지 재개되지 않는 상태"), 중지, 숨김할 수 있는 메커니즘을 제공해야 한다. 단, (1) 자동 시작, (2) 5초 이상 지속, (3) 다른 콘텐츠와 병행하여 표시되는 콘텐츠가 활동에 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 구성요소인 경우는 예외이다.
+
+자동 업데이트
+
+사용자가 자동 업데이트 정보를 일시정지, 중지, 숨김할 수 있는 기능, 또는 업데이트의 빈도를 조절할 수 있는 메커니즘을 제공해야 한다. 단, (1) 자동 시작, (2) 다른 콘텐츠와 병행하여 표시되는 자동 업데이트 정보가 활동에 필수적인 구성요소인 경우는 예외이다.
+
+참고 1
+
+깜빡임, 번쩍임과 관련된 요구사항은 [지침 2.3](#seizures-and-physical-reactions)을 참고하라.
+
+참고 2
+
+이 성공 기준을 준수하지 못하는 콘텐츠는 사용자가 전체 페이지를 사용하는 것을 방해할 수 있으므로, 웹 페이지의 모든 콘텐츠는 (다른 성공 기준의 준수 여부와 상관없이) 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#cc5)을 참고하라.
+
+참고 3
+
+소프트웨어에 의해 정기적으로 업데이트되거나 사용자 에이전트로 스트리밍되는 콘텐츠의 경우, 일시정지의 시작 시점부터 재시작 시점 사이에 생성되거나 수신되는 정보를 보존 또는 제시하는 것이 기술적으로 가능하지 않을 수 있으며, 많은 경우 사용자가 오도할 수 있으므로 요구사항이 아니다.
+
+참고 4
+
+프리로드 단계나 유사한 상황에서 발생하는 애니메이션은 그 단계에서 모든 사용자가 상호작용할 수 없고, 진행 상황을 표시하지 않으면 사용자들이 혼란을 겪거나 콘텐츠가 고정되었거나 깨졌다고 생각할 수 있는 경우에는 필수적인 것으로 간주될 수 있다.
+
+#### 성공 기준 2.2.3 시간 제한 없음
+
+[시간 제한 없음 이해](./understanding/no-timing) |
+[시간 제한 없음 기법](https://www.w3.org/WAI/WCAG22/quickref/#no-timing)
+
+(Level AAA)
+
+비대화형 [동기화된 미디어](#dfn-synchronized-media "정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 오디오 또는 비디오. 단, 미디어가 텍스트에 대한 미디어 대체수단이라고 명확하게 명명된 경우는 예외이다")와 [실시간 이벤트](#dfn-real-time-events "a) 보기와 동시에 발생하고, b) 완전히 콘텐츠에 의해 생성되지 않는 이벤트")를 제외하고는, 시간 제약이 콘텐츠에 의해 제시되는 이벤트나 활동의 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 부분은 아니다.
+
+#### 성공 기준 2.2.4 방해 금지
+
+[방해 금지 이해](./understanding/interruptions) |
+[방해 금지 기법](https://www.w3.org/WAI/WCAG22/quickref/#interruptions)
+
+(Level AAA)
+
+[긴급 상황](#dfn-emergency "건강, 안전 또는 재산을 보존하기 위해 즉각적인 조치가 필요한 갑작스럽고 예상치 못한 상황 또는 사건")과 관련된 방해를 제외하고, 사용자는 작업 방해를 연기하거나 차단할 수 있어야 한다.
+
+#### 성공 기준 2.2.5 재인증
+
+[재인증 이해](./understanding/re-authenticating) |
+[재인증 기법](https://www.w3.org/WAI/WCAG22/quickref/#re-authenticating)
+
+(Level AAA)
+
+세션 인증이 만료되었을 경우, 사용자는 재인증 후 데이터 손실없이 지속적으로 이용할 수 있어야 한다.
+
+#### 성공 기준 2.2.6 시간 초과(Timeouts)
+
+[시간 초과 이해](./understanding/timeouts) |
+[시간 초과 기법](https://www.w3.org/WAI/WCAG22/quickref/#timeouts)
+
+(Level AAA)
+
+사용자가 아무런 활동을 하지 않은 상황에서도 데이터가 20시간 이상 보존되지 않는 한, 사용자에게 데이터의 손실을 초래할 수 있는 [사용자 비활동 상태](#dfn-user-inactivity "사용자 행동이 발생하지 않는 지속적인 시간")에 대해 알려주어야 한다.
+
+참고
+
+개인정보 보호 규정에 따라 사용자 인증과 사용자 데이터를 보존하기 전에 명시적인 사용자 동의가 필요할 수 있다. 사용자가 미성년자인 경우, 대부분의 관할 지역이나 국가, 지역에서는 명시적 동의를 구하지 않을 수 있다. 이 성공 기준을 충족시키기 위한 방안으로 데이터 보존을 고려할 때는 개인정보 보호 전문가와 법률 자문을 구하는 것이 바람직하다.
+
+### 지침 2.3 발작 및 신체 반응
+
+[발작 및 신체 반응 이해](./understanding/seizures-and-physical-reactions) |
+[발작 및 신체 반응 기법](https://www.w3.org/WAI/WCAG22/quickref/#seizures-and-physical-reactions)
+
+콘텐츠는 발작 또는 신체적 반응을 일으키지 않도록 설계되어야 한다.
+
+#### 성공 기준 2.3.1 3회 또는 임계값 이하의 번쩍임
+
+[3회 또는 임계값 이하의 번쩍임 이해](./understanding/three-flashes-or-below-threshold) |
+[3회 또는 임계값 이하의 번쩍임 기법](https://www.w3.org/WAI/WCAG22/quickref/#three-flashes-or-below-threshold)
+
+(Level A)
+
+[웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")는 초당 3회 이상 번쩍이는 콘텐츠를 포함해서는 안 된다. 또는 [번쩍임](#dfn-flashes "충분히 크고 적절한 주파수 범위에 있지만 일부 사람들에게 발작을 일으킬 수 있는 상대 휘도에서의 상반되는 변경의 쌍")은 [일반 번쩍임과 적색 번쩍임 임계값](#dfn-general-flash-and-red-flash-thresholds "번쩍임 또는 빠르게 변경되는 이미지 시퀀스가 다음 중 하나에 해당되는 경우 임계값 이하이다.") 이하로 설정해야 한다.
+
+참고
+
+이 성공 기준을 준수하지 못하는 콘텐츠는 사용자가 전체 웹 페이지를 사용하는 것을 방해할 수 있으므로, 웹 페이지의 모든 콘텐츠는 (다른 성공 기준의 준수 여부와 상관없이) 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#cc5)을 참고하라.
+
+#### 성공 기준 2.3.2 3회 번쩍임
+
+[3회 번쩍임 이해](./understanding/three-flashes) |
+[3회 번쩍임 기법](https://www.w3.org/WAI/WCAG22/quickref/#three-flashes)
+
+(Level AAA)
+
+[웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")는 초당 3회 이상 [번쩍이는](#dfn-flashes "충분히 크고 적절한 주파수 범위에 있지만 일부 사람들에게 발작을 일으킬 수 있는 상대 휘도에서의 상반되는 변경의 쌍") 콘텐츠를 포함해서는 안 된다.
+
+#### 성공 기준 2.3.3 대화형 애니메이션
+
+[대화형 애니메이션 이해](./understanding/animation-from-interactions) |
+[대화형 애니메이션 기법](https://www.w3.org/WAI/WCAG22/quickref/#animation-from-interactions)
+
+(Level AAA)
+
+상호 작용에 의해 촉발되는 모션 애니메이션은 기능 조작이나 정보 전달을 위해 반드시 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 경우가 아니라면 비활성화할 수 있어야 한다.
+
+### 지침 2.4 탐색 가능성
+
+[탐색 가능성 이해](./understanding/navigable) |
+[탐색 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#navigable)
+
+사용자가 탐색하고, 콘텐츠를 찾고, 현재 위치를 파악할 수 있는 방법을 제공해야 한다.
+
+#### 성공 기준 2.4.1 블록 건너뛰기
+
+[블록 건너뛰기 이해](./understanding/bypass-blocks) |
+[블록 건너뛰기 기법](https://www.w3.org/WAI/WCAG22/quickref/#bypass-blocks)
+
+(Level A)
+
+여러 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")에 걸쳐 반복되는 콘텐츠 블록이 있는 경우, 이를 건너뛸 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+#### 성공 기준 2.4.2 페이지 제목 제공
+
+[페이지 제목 제공 이해](./understanding/page-titled) |
+[페이지 제목 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#page-titled)
+
+(Level A)
+
+[웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")는 주제나 목적을 설명하는 제목을 포함해야 한다.
+
+#### 성공 기준 2.4.3 초점 순서
+
+[초점 순서 이해](./understanding/focus-order) |
+[초점 순서 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-order)
+
+(Level A)
+
+[웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")를 [순차적으로 탐색](#dfn-navigated-sequentially "키보드 인터페이스를 사용하여 초점을 이동시키기 위해 (한 요소에서 다음 요소로) 정의된 순서대로 탐색하는")할 수 있고 탐색 순서가 의미 또는 운용에 영향을 주는 경우, 초점을 받는 요소들은 의미와 운용가능성이 유지되는 순서로 초점을 받아야 한다.
+
+#### 성공 기준 2.4.4 링크 목적(맥락 상의)
+
+[링크 목적(맥락 상의) 이해](./understanding/link-purpose-in-context) |
+[링크 목적(맥락 상의) 기법](https://www.w3.org/WAI/WCAG22/quickref/#link-purpose-in-context)
+
+(Level A)
+
+[각 링크의 목적](#dfn-purpose-of-each-link "하이퍼링크를 작동하여 얻은 결과의 성격")은 링크 텍스트만으로 식별 가능하거나 프로그래밍 방식으로 판별되는 링크 맥락과 함께 식별 가능해야 한다. 단, 링크의 목적이 [전반적으로 사용자에게 애매한](#dfn-ambiguous-to-users-in-general "링크와 링크가 제시된 웹 페이지의 모든 정보만으로는 그 목적을 알 수 없는 경우(즉,장애가 없는 사용자라도 링크를 활성화하기 전까지는 그 링크가 어떤 역할을 하는지 알 수 없는 경우)") 경우는 제외한다.
+
+#### 성공 기준 2.4.5 다양한 방법 제공
+
+[다양한 방법 제공 이해](./understanding/multiple-ways) |
+[다양한 방법 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#multiple-ways)
+
+(Level AA)
+
+[웹 페이지 세트](#dfn-set-of-web-pages "동일한 개발자, 그룹 또는 조직에 의해 작성되고 공통의 목적을 공유하는 웹 페이지의 모음") 내에 위치한 특정 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")를 찾을 수 있는 방법을 한 가지 이상 제공해야 한다. 단, 웹 페이지가 [과정](#dfn-processes "활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업")상의 단계이거나 결과물일 경우는 제외한다.
+
+#### 성공 기준 2.4.6 제목과 레이블
+
+[제목과 레이블 이해](./understanding/headings-and-labels) |
+[제목과 레이블 기법](https://www.w3.org/WAI/WCAG22/quickref/#headings-and-labels)
+
+(Level AA)
+
+제목과 [레이블](#dfn-labels "웹 콘텐츠 내의 구성요소를 식별하기 위해 사용자에게 제공되는 대체 텍스트를 가지고 있는 텍스트나 다른 구성 요소")은 주제나 목적을 설명해야 한다.
+
+#### 성공 기준 2.4.7 초점 시각화
+
+[초점 표시 이해](./understanding/focus-visible) |
+[초점 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-visible)
+
+(Level AA)
+
+키보드로 조작할 수 있는 사용자 인터페이스는 키보드 초점이 표시되는 작동 모드를 제공해야 한다.
+
+#### 성공 기준 2.4.8 위치 제공
+
+[위치 제공 이해](./understanding/location) |
+[위치 제공 기법](https://www.w3.org/WAI/WCAG22/quickref/#location)
+
+(Level AAA)
+
+웹 사이트가 [웹 페이지 세트](#dfn-set-of-web-pages "동일한 개발자, 그룹 또는 조직에 의해 작성되고 공통의 목적을 공유하는 웹 페이지의 모음")로 구성되어 있는 경우, 사용자 위치 정보를 제공해야 한다.
+
+#### 성공 기준 2.4.9 링크 목적 (링크 단독)
+
+[링크 목적 (링크 단독) 이해](./understanding/link-purpose-link-only) |
+[링크 목적 (링크 단독) 기법](https://www.w3.org/WAI/WCAG22/quickref/#link-purpose-link-only)
+
+(Level AAA)
+
+링크 텍스트만으로도 각 링크의 목적을 식별 가능하게 해 주는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다. 단, 링크의 목적이 [전반적으로 사용자에게 애매한](#dfn-ambiguous-to-users-in-general "링크와 링크가 제시된 웹 페이지의 모든 정보만으로는 그 목적을 알 수 없는 경우(즉,장애가 없는 사용자라도 링크를 활성화하기 전까지는 그 링크가 어떤 역할을 하는지 알 수 없는 경우)") 경우는 제외한다.
+
+#### 성공 기준 2.4.10 섹션 제목
+
+[섹션 제목 이해](./understanding/section-headings) |
+[섹션 제목 기법](https://www.w3.org/WAI/WCAG22/quickref/#section-headings)
+
+(Level AAA)
+
+콘텐츠는 [섹션](#dfn-section "하나 이상의 관련 주제 또는 생각을 다루는 서면 콘텐츠의 독립된 부분") 제목을 사용하여 구조화해야 한다.
+
+참고 1
+
+“제목”(Heading)은 일반적인 의미로 사용되며, 타이틀(titles)과 상이한 유형의 콘텐츠에 제목을 추가하는 다른 방법을 포함한다.
+
+참고 2
+
+이 성공 기준은 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")가 아닌 글쓰기(writing) 내에서의 섹션을 다룬다. 사용자 인터페이스 구성요소는 [성공 기준 4.1.2](#name-role-value)를 참고하라.
+
+#### 성공 기준 2.4.11 초점 표시(최소)
+
+[초점 표시(최소) 이해](./understanding/focus-not-obscured-minimum) |
+[초점 표시(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-not-obscured-minimum)
+
+(Level AA)
+
+신규
+
+[사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")에 키보드 초점이 있을 때, 저작자가 생성한 콘텐츠로 인해 해당 요소가 완전히 가려지지 않아야 한다.
+
+참고 1
+
+사용자가 구성 가능한 인터페이스에서 콘텐츠의 위치를 재배치할 수 있는 경우, 이 성공 기준의 점검과 준수 여부를 판단할 때는 사용자가 이동할 수 있는 콘텐츠의 초기 위치만을 고려한다.
+
+참고 2
+
+_사용자_에 의해 열린 콘텐츠가 초점을 받는 요소를 가릴 수 있다. 그러나 사용자가 키보드 초점을 전환하지 않고도 초점을 받은 요소를 드러낼 수 있다면, 초점을 받은 요소는 저작자가 생성한 콘텐츠로 인해 시각적으로 숨겨진 것으로 간주되지 않는다.
+
+#### 성공 기준 2.4.12 초점 표시(향상된)
+
+[초점 표시(향상된) 이해](./understanding/focus-not-obscured-enhanced) |
+[초점 표시(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-not-obscured-enhanced)
+
+(Level AAA)
+
+신규
+
+[사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")에 키보드 초점이 있을 때, 저작자가 생성한 콘텐츠로 인해 해당 요소를 가리는 부분이 없어야 한다.
+
+#### 성공 기준 2.4.13 초점 형태
+
+[초점 형태 이해](./understanding/focus-appearance) |
+[초점 형태 기법](https://www.w3.org/WAI/WCAG22/quickref/#focus-appearance)
+
+(Level AAA)
+
+신규
+
+키보드 [초점 표시기(focus indicator)](#dfn-focus-indicator "신규")가 보이는 경우, 이 영역은 다음 모든 조건을 충족해야 한다:
+
+*   초점을 받지 않은 구성 요소 또는 하위 구성요소의 [외곽](#dfn-perimeter "신규") 두께를 2 [CSS 픽셀](#dfn-css-pixels "약 0.0213도의 시야각") 이상으로 설정해야 한다.
+*   초점을 받은 상태와 받지 않은 상태의 동일한 픽셀 간 명도대비율이 최소 3:1 이상이어야 한다.
+
+예외:
+
+*   초점 표시기가 [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에 의해 결정되어 저작자가 조정할 수 없는 경우
+*   초점 표시기와 그 배경색이 저작자에 의해 수정되지 않은 경우
+
+참고 1
+
+사용자 인터페이스 구성요소 또는 하위 구성요소로 인식되는 것은 (외곽 판별을 위해) [표현(presentation)](#dfn-presentation "사용자가 인식할 수 있는 형태로 콘텐츠를 렌더링하는 것")에 따라 다르다. 표현(presentation)에는 구성 요소에서 보이는 [콘텐츠](#dfn-content "콘텐츠의 구조, 표현 및 상호 작용을 정의하는 코드나 마크업을 포함하여 사용자 에이전트를 통해 사용자에게 전달되는 정보 및 감각 경험"), 테두리, 고유 배경이 포함된다. 구성 요소의 콘텐츠, 배경, 테두리 바깥의 그림자나 발광 효과는 포함되지 않는다.
+
+참고 2
+
+초점 표시기가 나타날 수 있는 하위 구성요소의 예로는 열린 드롭다운 메뉴의 메뉴 항목이나 그리드의 초점 가능한 셀 등이 있다.
+
+참고 3
+
+[기술](#dfn-technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘")(HTML, CSS, SVG 등) 내에서 정의된 색상을 기반으로 대비를 계산할 수 있다. 사용자 에이전트 해상도 향상 및 안티앨리어싱에 의해 수정된 픽셀은 무시할 수 있다.
+
+### 지침 2.5 입력 방식
+
+[입력 방식 이해](./understanding/input-modalities) |
+[입력 방식 기법](https://www.w3.org/WAI/WCAG22/quickref/#input-modalities)
+
+사용자가 키보드 이외의 다양한 입력 장치를 통해 기능들을 보다 쉽게 조작할 수 있도록 해야 한다.
+
+#### 성공 기준 2.5.1 포인터 제스처
+
+[포인터 제스처 이해](./understanding/pointer-gestures) |
+[포인터 제스처 기법](https://www.w3.org/WAI/WCAG22/quickref/#pointer-gestures)
+
+(Level A)
+
+멀티 포인트 또는 경로 기반 제스처로 작동되는 모든 [기능](#dfn-functionality "사용자의 행동을 통해 달성할 수 있는 과정과 결과")은 경로 기반 제스처 없이 [단일 포인터](#dfn-single-pointer "단일 탭과 클릭, 더블 탭과 클릭, 길게 누르기, 경로기반 제스처 등을 포함하여, 화면과 접촉하는 한 지점에서 작동하는 포인터 입력")로 작동 가능해야 한다. 단, 멀티 포인트 또는 경로 기반 제스처가 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 경우는 예외이다.
+
+참고
+
+이 성공 기준은 포인터의 동작을 해석하는 웹 콘텐츠에 적용된다. (즉, 사용자 에이전트나 보조 기술 조작이 요구되는 동작에는 적용되지 않는다.)
+
+#### 성공 기준 2.5.2 포인터 입력 취소
+
+[포인터 입력 취소 이해](./understanding/pointer-cancellation) |
+[포인터 입력 취소 기법](https://www.w3.org/WAI/WCAG22/quickref/#pointer-cancellation)
+
+(Level A)
+
+[단일 포인터](#dfn-single-pointer "단일 탭과 클릭, 더블 탭과 클릭, 길게 누르기, 경로기반 제스처 등을 포함하여, 화면과 접촉하는 한 지점에서 작동하는 포인터 입력")로 조작 가능한 [기능](#dfn-functionality "사용자의 행동을 통해 달성할 수 있는 과정과 결과")은 다음 중 한 가지 이상을 준수해야 한다.
+
+다운 이벤트(Down-Event) 실행 금지
+
+포인터의 [다운 이벤트](#dfn-down-event "포인터의 트리거 자극이 눌렸을 때 발생하는 플랫폼 이벤트")는 어떠한 기능도 실행해서는 안 된다.
+
+중지 또는 실행취소
+
+단일 포인터를 사용한 기능은 [업 이벤트(up-event)](#dfn-up-event "포인터의 트리거 자극이 해제될 때 발생하는 플랫폼 이벤트")에 실행되며, 실행 전에 기능을 중지하거나 실행 후에 기능을 취소할 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+업 이벤트 역전(Up Reversal)
+
+업 이벤트는 앞서 실행한 다운필수적인 이벤트의 결과를 되돌릴 수 있어야 한다.
+
+필수적인
+
+다운 이벤트에서 기능을 완료하는 것이 [필수적](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는")이다.
+
+참고 1
+
+키보드 또는 숫자 키패드 키 누르기를 에뮬레이션하는 기능은 필수적인 것으로 간주된다.
+
+참고 2
+
+이 성공 기준은 포인터 동작으로 실행되는 웹 콘텐츠에 적용된다. (즉, 사용자 에이전트 또는 보조 기술을 작동하는 데 필요한 동작에는 적용되지 않는다.)
+
+#### 성공 기준 2.5.3 이름 안의 레이블
+
+[이름 안의 레이블 이해](./understanding/label-in-name) |
+[이름 안의 레이블 기법](https://www.w3.org/WAI/WCAG22/quickref/#label-in-name)
+
+(Level A)
+
+[텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.") 또는 [텍스트 이미지](#dfn-images-of-text "특정 시각적인 효과를 달성하기 위해 텍스트가 아닌 형식(예: 이미지)으로 렌더링된 텍스트")가 포함된 [레이블](#dfn-labels "웹 콘텐츠 내의 구성요소를 식별하기 위해 사용자에게 제공되는 대체 텍스트를 가지고 있는 텍스트나 다른 구성 요소")을 가지고 있는 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")의 경우, [이름](#dfn-name "소프트웨어가 사용자에게 웹 콘텐츠 내의 구성요소를 식별할 수 있도록 해 주는 텍스트")은 시각적으로 표시되는 텍스트를 포함해야 한다.
+
+참고
+
+레이블의 텍스트는 네임(name)의 시작 부분에 제시하는 것이 가장 좋다.
+
+#### 성공 기준 2.5.4 움직임 기반 실행
+
+[움직임 기반 실행 이해](./understanding/motion-actuation) |
+[움직임 기반 실행 기법](https://www.w3.org/WAI/WCAG22/quickref/#motion-actuation)
+
+(Level A)
+
+장치나 사용자의 움직임으로 실행할 수 있는 [기능](#dfn-functionality "사용자의 행동을 통해 달성할 수 있는 과정과 결과")은 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")로 작동할 수 있어야 하며, 움직임에 대한 반응은 우발적인 작동을 방지할 수 있도록 비활성화될 수 있어야 한다. 다음의 경우는 예외이다.
+
+지원 인터페이스
+
+기능을 실행하기 위해 [접근성 지원](#dfn-accessibility-supported "사용자의 보조 기기뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된") 인터페이스를 통해 움직임을 이용하는 경우
+
+필수적인
+
+움직임이 기능에 [필수적](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는")이고, 이를 통해 동작을 무효화하는 경우
+
+#### 성공 기준 2.5.5 타겟 크기(향상된)
+
+[타겟 크기(향상된) 이해](./understanding/target-size-enhanced) |
+[타겟 크기(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#target-size-enhanced)
+
+(Level AAA)
+
+[포인터 입력](#dfn-pointer-inputs "마우스, 펜 또는 터치 접촉과 같이, 화면에서 특정 좌표(또는 좌표 세트)를 대상으로 하는 장치를 통한 입력") [타겟(target)](#dfn-targets "사용자 인터페이스 구성요소의 대화형 영역과 같이 포인터 동작을 허용하는 디스플레이 영역")의 크기는 최소한 44×44 [CSS 픽셀](#dfn-css-pixels "약 0.0213도의 시야각") 이상이어야 한다. 다음의 경우는 예외이다.
+
+동등한
+
+타겟이 최소한 44×44 CSS 픽셀 이상인 동일 페이지에서 동등한 링크 또는 컨트롤을 통해 이용 가능한 경우
+
+인라인
+
+타겟이 텍스트의 문장이나 블록 안에 있는 경우
+
+사용자 에이전트 컨트롤
+
+타겟 크기가 사용자 에이전트에 의해 결정되고 개발자에 의해 수정되지 않은 경우
+
+필수적인
+
+타겟이의 표현(presentation)이 전달해야 할 정보에 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 경우
+
+#### 성공 기준 2.5.6 동시 입력 메커니즘
+
+[동시 입력 메커니즘 이해](./understanding/concurrent-input-mechanisms) |
+[동시 입력 메커니즘 기법](https://www.w3.org/WAI/WCAG22/quickref/#concurrent-input-mechanisms)
+
+(Level AAA)
+
+웹 콘텐츠는 플랫폼 상에서 이용 가능한 입력 방식의 사용을 제한해서는 안 된다. 단, 제한이 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 경우, 콘텐츠 보안이 보장되어야 하는 경우, 또는 사용자 설정을 존중해야 하는 경우는 예외이다.
+
+#### 성공 기준 2.5.7 끌기(Dragging) 동작
+
+[끌기 동작 이해](./understanding/dragging-movements) |
+[끌기 동작 기법](https://www.w3.org/WAI/WCAG22/quickref/#dragging-movements)
+
+(Level AA)
+
+신규
+
+조작을 위해 [끌기 동작](#dfn-dragging-movements "신규")을 사용하는 모든 [기능](#dfn-functionality "사용자의 행동을 통해 달성할 수 있는 과정과 결과")은 끌기 없이 [단일 포인터](#dfn-single-pointer "단일 탭과 클릭, 더블 탭과 클릭, 길게 누르기, 경로기반 제스처 등을 포함하여, 화면과 접촉하는 한 지점에서 작동하는 포인터 입력")로 이용할 수 있어야 한다. 끌기 동작이 [필수적](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는")이거나 기능이 [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에 의해 결정되고 작성자가 수정하지 않은 경우는 예외로 한다.
+
+참고
+
+이 성공 기준은 포인터의 동작을 해석하는 웹 콘텐츠에 적용된다. (즉, 사용자 에이전트나 보조 기술 조작이 요구되는 동작에는 적용되지 않는다.)
+
+#### 성공 기준 2.5.8 타겟 크기(최소)
+
+[타겟 크기(최소) 이해](./understanding/target-size-minimum) |
+[타겟 크기(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#target-size-minimum)
+
+(Level AA)
+
+신규
+
+[포인터 입력](#dfn-pointer-inputs "마우스, 펜 또는 터치 접촉과 같이, 화면에서 특정 좌표(또는 좌표 세트)를 대상으로 하는 장치를 통한 입력") [타겟(target)](#dfn-targets "사용자 인터페이스 구성요소의 대화형 영역과 같이 포인터 동작을 허용하는 디스플레이 영역")의 크기는 최소한 24×24 [CSS 픽셀](#dfn-css-pixels "약 0.0213도의 시야각") 이상이어야 한다. 다음의 경우는 예외이다.
+
+간격
+
+크기가 작은 타겟(24 × 24 CSS 픽셀 미만)은 24 CSS 픽셀 직경의 원이 각 [경계 상자](#dfn-bounding-boxes "신규")의 중앙에 있는 때 각 원이 다른 타겟이나 크기가 작은 다른 타겟의 원과 겹치지 않도록 배치된 경우
+
+동등한
+
+이 기준을 충족하는 동일 페이지의 다른 컨트롤을 통해 기능을 이용할 수 있는 경우
+
+인라인
+
+타겟이 문장 안에 있거나 텍스트의 줄 높이에 따라 크기가 제한되는 경우
+
+사용자 에이전트 컨트롤
+
+타겟의 크기가 [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에 의해 결정되고 저작자에 의해 수정되지 않은 경우
+
+필수적인
+
+타겟에 대한 특정 [표현(presentation)](#dfn-presentation "사용자가 인식할 수 있는 형태로 콘텐츠를 렌더링하는 것")이 [필수적](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는")이거나 전달되는 정보에 법적으로 요구되는 경우
+
+참고 1
+
+타겟 내의 위치를 기반으로 공간적으로 값을 선택할 수 있는 것은 성공 기준의 목적에 따라 하나의 타겟으로 간주한다. 예로는 슬라이더, 색상 그라데이션을 표시하는 색상 선택기(color picker) 또는 커서를 배치하는 편집기가 있다.
+
+참고 2
+
+인라인 타겟의 경우 줄 높이는 텍스트 흐름에 수직인 것으로 해석되어야 한다. 예를 들어, 수직 방향으로 표시되는 언어에서는 줄 높이가 수평이 된다.
+
+3\. 이해의 용이성
+-----------
+
+사용자 인터페이스의 정보와 운용은 이해 가능해야 한다.
+
+### 지침 3.1 가독성
+
+[가독성 이해](./understanding/readable) |
+[가독성 기법](https://www.w3.org/WAI/WCAG22/quickref/#readable)
+
+텍스트 콘텐츠는 읽을 수 있고 이해할 수 있어야 한다.
+
+#### 성공 기준 3.1.1 페이지 언어 표시
+
+[페이지 언어 표시 이해](./understanding/language-of-page) |
+[페이지 언어 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#language-of-page)
+
+(Level A)
+
+각 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")의 기본 [인간 언어](#dfn-human-language-s "인간 간에 의사소통을 하기 위해 (시각적 또는 촉각적 수단을 통해) 말을 하거나 쓰거나 신호를 보내는 언어")는 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")될 수 있어야 한다.
+
+#### 성공 기준 3.1.2 부분적인 언어 표시
+
+[부분적인 언어 표시 이해](./understanding/language-of-parts) |
+[부분적인 언어 표시 기법](https://www.w3.org/WAI/WCAG22/quickref/#language-of-parts)
+
+(Level AA)
+
+콘텐츠에서 각 절이나 문구의 [인간 언어](#dfn-human-language-s "인간 간에 의사소통을 하기 위해 (시각적 또는 촉각적 수단을 통해) 말을 하거나 쓰거나 신호를 보내는 언어")는 적절한 명칭, 전문용어, 불확실한 단어, 텍스트의 주변 언어에 포함된 단어나 구절을 제외하고는 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")될 수 있어야 한다.
+
+#### 성공 기준 3.1.3 생소한 단어
+
+[생소한 단어 이해](./understanding/unusual-words) |
+[생소한 단어 기법](https://www.w3.org/WAI/WCAG22/quickref/#unusual-words)
+
+(Level AAA)
+
+[관용어](#dfn-idioms "개별 단어의 의미에서는 전체 의미를 추론할 수 없고, 의미의 손상 없이는 특정 단어를 변경할 수 없는 구문")와 [전문용어](#dfn-jargon "특정 분야의 사람들이 특정 방식으로 사용하는 단어")를 포함하여, [특이하거나 제한된 방식으로 사용된](#dfn-used-in-an-unusual-or-restricted-way "내용을 올바르게 이해하기 위해 사용자가 어떤 정의를 적용해야 하는지 정확히 알아야 하는 방식으로 사용되는") 단어나 문구의 정의를 식별할 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+#### 성공 기준 3.1.4 약어
+
+[약어 이해](./understanding/abbreviations) |
+[약어 기법](https://www.w3.org/WAI/WCAG22/quickref/#abbreviations)
+
+(Level AAA)
+
+[약어](#dfn-abbreviations "약어가 언어의 일부가 되지 않는 단어, 구, 또는 이름의 축약형")의 본딧말이나 의미를 인식할 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+#### 성공 기준 3.1.5 독해 수준
+
+[독해 수준 이해](./understanding/reading-level) |
+[독해 수준 기법](https://www.w3.org/WAI/WCAG22/quickref/#reading-level)
+
+(Level AAA)
+
+고유명사와 제목을 제외하고, 텍스트 독해에 [중학교 수준](#dfn-lower-secondary-education-level "6년의 교육과정을 마친 후에 시작되고, 초등교육이 시작된 후 9년 뒤에 끝나는 2~3년의 교육기간") 이상의 독해능력이 요구되는 경우, 중학교 수준 이상의 독해 능력이 요구되지 않는 [보충 콘텐츠](#dfn-supplementary-content "기본 콘텐츠를 설명하거나 명확하게 해 주는 부가적인 콘텐츠")나 그에 상응하는 버전을 제공해야 한다.
+
+#### 성공 기준 3.1.6 발음
+
+[발음 이해](./understanding/pronunciation) |
+[발음 기법](https://www.w3.org/WAI/WCAG22/quickref/#pronunciation)
+
+(Level AAA)
+
+발음을 모르면 문맥상 그 의미가 확실하지 않은 용어에 대해서는 구체적인 발음을 인식할 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+### 지침 3.2 예측 가능성
+
+[예측 가능성 이해](./understanding/predictable) |
+[예측 가능성 기법](https://www.w3.org/WAI/WCAG22/quickref/#predictable)
+
+웹 페이지는 예측 가능한 방식으로 제시되고 작동해야 한다.
+
+#### 성공 기준 3.2.1 초점 활성
+
+[초점 활성 이해](./understanding/on-focus) |
+[초점 활성 기법](https://www.w3.org/WAI/WCAG22/quickref/#on-focus)
+
+(Level A)
+
+[사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")가 초점을 받은 경우, [맥락의 변화](#dfn-change-of-context "사용자가 인지하지 못한 상태에서 일어나면 전체 페이지를 동시에 볼 수 없는 사용자에게 방향감을 상실하게 할 수 있는 웹 페이지의 콘텐츠에서의 중요한 변경")가 발생해서는 안 된다.
+
+#### 성공 기준 3.2.2 입력 활성
+
+[입력 활성 이해](./understanding/on-input) |
+[입력 활성 기법](https://www.w3.org/WAI/WCAG22/quickref/#on-input)
+
+(Level A)
+
+어떠한 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")의 설정 변경도, 해당 구성요소를 사용하기 전에 사용자에게 그 행동을 알리지 않고 자동으로 [맥락의 변화](#dfn-change-of-context "사용자가 인지하지 못한 상태에서 일어나면 전체 페이지를 동시에 볼 수 없는 사용자에게 방향감을 상실하게 할 수 있는 웹 페이지의 콘텐츠에서의 중요한 변경")를 초래해서는 안 된다.
+
+#### 성공 기준 3.2.3 일관된 탐색
+
+[일관된 탐색 이해](./understanding/consistent-navigation) |
+[일관된 탐색 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-navigation)
+
+(Level AA)
+
+[웹 페이지 세트](#dfn-set-of-web-pages "동일한 개발자, 그룹 또는 조직에 의해 작성되고 공통의 목적을 공유하는 웹 페이지의 모음") 내에 있는 여러 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")에 걸쳐 반복되는 탐색 메커니즘은, 사용자가 변경하지 않는 한, 반복될 때마다 [동일한 상대적 순서](#dfn-same-relative-order "다른 항목들과 대비하여 동일한 위치")대로 제시되어야 한다.
+
+#### 성공 기준 3.2.4 일관된 식별
+
+[일관된 식별 이해](./understanding/consistent-identification) |
+[일관된 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-identification)
+
+(Level AA)
+
+[웹 페이지 세트](#dfn-set-of-web-pages "동일한 개발자, 그룹 또는 조직에 의해 작성되고 공통의 목적을 공유하는 웹 페이지의 모음") 내에 있는 [동일한 기능](#dfn-same-functionality "사용했을 때 동일한 결과가 도출되는")을 지닌 구성요소들은 일관되게 식별되어야 한다.
+
+#### 성공 기준 3.2.5 요구에 의한 변화
+
+[요구에 의한 변화 이해](./understanding/change-on-request) |
+[요구에 의한 변화 기법](https://www.w3.org/WAI/WCAG22/quickref/#change-on-request)
+
+(Level AAA)
+
+[맥락의 변화](#dfn-change-of-context "사용자가 인지하지 못한 상태에서 일어나면 전체 페이지를 동시에 볼 수 없는 사용자에게 방향감을 상실하게 할 수 있는 웹 페이지의 콘텐츠에서의 중요한 변경")는 사용자의 요청에 의해서만 촉발되어야 하며, 그러한 변경을 해제할 수 있는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공해야 한다.
+
+#### 성공 기준 3.2.6 일관된 도움말
+
+[일관된 도움말 이해](./understanding/consistent-help) |
+[일관된 도움말 기법](https://www.w3.org/WAI/WCAG22/quickref/#consistent-help)
+
+(Level A)
+
+신규
+
+[웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")에 다음 도움말 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법") 중 하나가 포함되어 있고, 해당 매커니즘이 [웹 페이지 세트](#dfn-set-of-web-pages "동일한 개발자, 그룹 또는 조직에 의해 작성되고 공통의 목적을 공유하는 웹 페이지의 모음") 내의 여러 웹 페이지에서 반복되는 경우, 사용자가 변경을 시작하지 않는 한 다른 페이지 콘텐츠와 상대적으로 동일한 순서로 제공되어야 한다.
+
+*   사람의 연락처 정보
+*   사람의 연락 방법
+*   자가 도움말 옵션
+*   완전 자동화된 연락 방법
+
+참고 1
+
+도움말 메커니즘은 페이지에서 직접 제공되거나 정보가 포함된 다른 페이지에 대한 직접 링크를 통해 제공될 수 있다.
+
+참고 2
+
+이 성공 기준의 경우 "다른 페이지 콘텐츠와 상대적으로 동일한 순서"는 페이지가 직렬화될 때 콘텐츠가 정렬되는 방식으로 생각할 수 있다. 도움말 메커니즘의 시각적 위치는 동일한 페이지 변형(예: CSS 중단점)에 대해 페이지 전체에서 일관될 가능성이 높다. 사용자는 페이지의 확대/축소나 방향 변경과 같은 변경 작업을 시작할 수 있으며, 이로 인해 다른 페이지 변형이 발생할 수 있다. 이 기준은 동일한 페이지 변형(예: 동일한 확대/축소 수준 및 방향)에 표시되는 페이지 간의 상대적 순서와 관련이 있다.
+
+### 지침 3.3 입력 지원
+
+[입력 지원 이해](./understanding/input-assistance) |
+[입력 지원 기법](https://www.w3.org/WAI/WCAG22/quickref/#input-assistance)
+
+사용자가 실수를 회피하거나 수정할 수 있도록 지원해야 한다.
+
+#### 성공 기준 3.3.1 오류 식별
+
+[오류 식별 이해](./understanding/error-identification) |
+[오류 식별 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-identification)
+
+(Level A)
+
+[입력 오류](#dfn-input-error "사용자가 제공하였으나 수용되지 않는 정보")가 자동으로 감지되면, 사용자에게 오류 항목을 보여주고, 오류에 대한 설명을 텍스트로 제공해야 한다.
+
+#### 성공 기준 3.3.2 레이블 또는 지시문
+
+[레이블 또는 지시문 이해](./understanding/labels-or-instructions) |
+[레이블 또는 지시문 기법](https://www.w3.org/WAI/WCAG22/quickref/#labels-or-instructions)
+
+(Level A)
+
+사용자 입력이 필요한 콘텐츠에는 [레이블](#dfn-labels "웹 콘텐츠 내의 구성요소를 식별하기 위해 사용자에게 제공되는 대체 텍스트를 가지고 있는 텍스트나 다른 구성 요소") 또는 지시문을 제공해야 한다.
+
+#### 성공 기준 3.3.3 오류 수정 제안
+
+[오류 수정 제안 이해](./understanding/error-suggestion) |
+[오류 수정 제안 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-suggestion)
+
+(Level AA)
+
+[입력 오류](#dfn-input-error "사용자가 제공하였으나 수용되지 않는 정보")가 자동으로 감지되고 수정 제안 사항이 알려져 있다면, 콘텐츠의 보안 또는 목적에 저촉되지 않는 한, 해당 제안사항을 사용자에게 제공해야 한다.
+
+#### 성공 기준 3.3.4 오류 예방 (법률, 금융, 데이터)
+
+[오류 예방 (법률, 금융, 데이터) 이해](./understanding/error-prevention-legal-financial-data) |
+[오류 예방 (법률, 금융, 데이터) 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-prevention-legal-financial-data)
+
+(Level AA)
+
+사용자에 대한 [법률 이행](#dfn-legal-commitments "법적 구속력이 있는 의무나 혜택을 받는 거래") 또는 금융 거래가 발생하거나, 데이터 스토리지 시스템에서 [사용자가 제어 가능한](#dfn-user-controllable "사용자가 접근할 수 있도록 만들어진 데이터") 데이터를 수정 또는 삭제하거나, 사용자의 시험(test) 응답을 제출하는 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")의 경우, 적어도 다음 중 하나를 준수해야 한다.
+
+되돌릴 수 있는
+
+제출 내역을 되돌릴 수 있어야 한다.
+
+점검된
+
+사용자가 입력한 데이터는 입력 오류를 점검하고 사용자에게 오류를 수정할 수 있는 기회를 제공해야 한다.
+
+확인된
+
+제출을 완료하기 전에 정보를 검토, 확인, 수정할 수 있는 메커니즘을 제공해야 한다.
+
+#### 성공 기준 3.3.5 도움말
+
+[도움말 이해](./understanding/help) |
+[도움말 기법](https://www.w3.org/WAI/WCAG22/quickref/#help)
+
+(Level AAA)
+
+[맥락에 적합한 도움말](#dfn-context-sensitive-help "현재 실행 중인 기능과 관련된 정보를 제공하는 도움말 텍스트")이 제공되어야 한다.
+
+#### 성공 기준 3.3.6 오류 예방 (전체)
+
+[오류 예방 (전체) 이해](./understanding/error-prevention-all) |
+[오류 예방 (전체) 기법](https://www.w3.org/WAI/WCAG22/quickref/#error-prevention-all)
+
+(Level AAA)
+
+사용자가 정보를 제출해야 하는 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")의 경우, 적어도 다음 중 하나를 준수해야 한다.
+
+되돌릴 수 있는
+
+제출 내역을 되돌릴 수 있어야 한다.
+
+점검된
+
+사용자가 입력한 데이터는 입력 오류를 점검하고 사용자에게 오류를 수정할 수 있는 기회를 제공해야 한다.
+
+확인된
+
+제출을 완료하기 전에 정보를 검토, 확인, 수정할 수 있는 메커니즘을 제공해야 한다.
+
+#### 성공 기준 3.3.7 중복 입력
+
+[중복 입력 이해](./understanding/redundant-entry) |
+[중복 입력 기법](https://www.w3.org/WAI/WCAG22/quickref/#redundant-entry)
+
+(Level A)
+
+신규
+
+사용자가 이전에 입력했거나 사용자에게 제공된 정보 중 동일한 [과정](#dfn-processes "활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업")으로 다시 입력해야 하는 정보는 다음 중 하나를 준수해야 한다.
+
+*   자동 완성
+*   사용자 선택 가능
+
+다음의 경우는 예외로 한다.
+
+*   정보를 재입력하는 것이 [필수적인](#dfn-essential "제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, 그리고 정보와 기능이 다른 방식으로는 준수될 수 없는") 경우
+*   콘텐츠의 보안을 보장하기 위해 해당 정보가 필요한 경우
+*   이전에 입력한 정보가 더 이상 유효하지 않을 경우
+
+#### 성공 기준 3.3.8 접근 가능한 인증(최소)
+
+[접근 가능한 인증(최소) 이해](./understanding/accessible-authentication-minimum) |
+[접근 가능한 인증(최소) 기법](https://www.w3.org/WAI/WCAG22/quickref/#accessible-authentication-minimum)
+
+(Level AA)
+
+신규
+
+다음 중 하나 이상을 제공하지 않는 한, 인증 [과정](#dfn-processes "활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업")의 어떤 단계에서도 [인지 기능 검사](#dfn-cognitive-function-test "신규")(예: 비밀번호 기억 또는 퍼즐 풀기)를 요구할 수 없다.
+
+대체 수단
+
+인지 기능 검사에 의존하지 않는 또 다른 인증 방법을 제공하는 경우
+
+매커니즘
+
+사용자가 인지 기능 검사를 완수하는 데 도움을 주는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공하는 경우
+
+객체 인식
+
+인지 기능 검사가 사물을 인식하는 것인 경우
+
+개인 콘텐츠
+
+인지 기능 검사가 웹 사이트에 제공한 [텍스트가 아닌 콘텐츠](#dfn-non-text-content "프로그래밍 방식으로 판별될 수 있는 문자 시퀀스가 아니거나 시퀀스가 인간 언어로 무언가를 표현하지 않는 콘텐츠")를 사용자가 식별하는 것일 경우
+
+참고 1
+
+"객체 인식" 및 "개인 콘텐츠"는 이미지, 동영상, 오디오 등으로 표현될 수 있다.
+
+참고 2
+
+이 기준을 충족하는 메커니즘의 예는 다음과 같다.
+
+1.  기억 부담을 줄이기 위해 비밀번호 관리자의 비밀번호 입력 지원
+2.  재입력의 인지적 부담을 줄이기 위해 복사하여 붙여넣기
+
+#### 성공 기준 3.3.9 접근 가능한 인증(향상된)
+
+[접근 가능한 인증(향상된) 이해](./understanding/accessible-authentication-enhanced) |
+[접근 가능한 인증(향상된) 기법](https://www.w3.org/WAI/WCAG22/quickref/#accessible-authentication-enhanced)
+
+(Level AAA)
+
+신규
+
+다음 중 하나 이상을 제공하지 않는 한, 인증 [과정](#dfn-processes "활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업")의 어떤 단계에서도 [인지 기능 검사](#dfn-cognitive-function-test "신규")(예: 비밀번호 기억 또는 퍼즐 풀기)를 요구할 수 없다.
+
+대체 수단
+
+인지 기능 검사에 의존하지 않는 또 다른 인증 방법을 제공하는 경우
+
+매커니즘
+
+사용자가 인지 기능 검사를 완수하는 데 도움을 주는 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 제공하는 경우
+
+4\. 견고성
+-------
+
+콘텐츠는 보조 기술을 포함한 다양한 사용자 에이전트가 해석할 수 있을 정도로 견고해야 한다.
+
+### 지침 4.1 호환성
+
+[호환성 이해](./understanding/compatible) |
+[호환성 기법](https://www.w3.org/WAI/WCAG22/quickref/#compatible)
+
+보조 기술을 포함하여, 현재나 미래의 사용자 에이전트에 대한 호환성을 극대화해야 한다.
+
+#### 성공 기준 4.1.1 파싱 (무효화 및 삭제)
+
+[파싱 (무효화 및 삭제) 이해](./understanding/parsing) |
+[파싱 (무효화 및 삭제) 기법](https://www.w3.org/WAI/WCAG22/quickref/#parsing)
+
+참고
+
+이 기준은 원래 보조 기술이 HTML을 직접 파싱(Parsing)하는 문제를 해결하기 위해 채택되었다. 보조 기술은 더 이상 HTML을 직접 파싱할 필요가 없다. 결과적으로 이러한 문제는 더 이상 존재하지 않거나 다른 기준으로 해결된다. 이 기준은 더 이상 유용성이 없으므로 제거되었다.
+
+#### 성공 기준 4.1.2 이름, 역할, 값
+
+[이름, 역할, 값 이해](./understanding/name-role-value) |
+[이름, 역할, 값 기법](https://www.w3.org/WAI/WCAG22/quickref/#name-role-value)
+
+(Level A)
+
+모든 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")(서식 요소, 링크, 스크립트에 의해 생성된 요소를 포함하되, 이에 국한되지 않음)의 경우, [이름](#dfn-name "소프트웨어가 사용자에게 웹 콘텐츠 내의 구성요소를 식별할 수 있도록 해 주는 텍스트")과 [역할](#dfn-role "소프트웨어가 웹 콘텐츠 내에 있는 구성요소의 기능을 식별할 수 있도록 해 주는 텍스트나 숫자")은 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")되어야 한다. 사용자에 의해서 설정될 수 있는 상태(states), 속성(properties) 및 값(values)은 [프로그래밍 방식으로 설정](#dfn-programmatically-set "보조 기술을 포함하여, 사용자 에이전트가 지원하는 방법으로 소프트웨어에 의해 설정된")될 수 있어야 한다. 이러한 항목의 변경사항은, [보조 기술](#dfn-assistive-technologies "사용자 에이전트 역할을 하거나 주류 사용자 에이전트와 함께 작동하며, 주류 사용자 에이전트가 제공하는 것 이상의, 장애를 지닌 사용자의 요구사항을 충족하는 기능을 제공하는 하드웨어나 소프트웨어")을 포함하여, [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에 제공되어야 한다.
+
+참고
+
+이 성공 기준은 주로 사용자 인터페이스 구성요소를 개발하거나 스크립팅하는 웹 개발자를 위한 것이다. 예를 들어, 표준 HTML 컨트롤은 명세서에 따라 사용되었을 때, 이미 이 성공 기준을 준수한 것이다.
+
+#### 성공 기준 4.1.3 상태 메시지
+
+[상태 메시지 이해](./understanding/status-messages) |
+[상태 메시지 기법](https://www.w3.org/WAI/WCAG22/quickref/#status-messages)
+
+(Level AA)
+
+마크업 언어를 사용하여 구현된 콘텐츠의 경우, [상태 메시지](#dfn-status-messages "맥락의 변화가 아닌, 사용자에게 작업의 성공 또는 결과, 애플리케이션의 대기 상태, 프로세스의 진행 또는 오류 존재 여부에 대한 정보를 제공하는 콘텐츠의 변화")는 초점을 받지 않고 [보조 기술](#dfn-assistive-technologies "사용자 에이전트 역할을 하거나 주류 사용자 에이전트와 함께 작동하며, 주류 사용자 에이전트가 제공하는 것 이상의, 장애를 지닌 사용자의 요구사항을 충족하는 기능을 제공하는 하드웨어나 소프트웨어")을 통해 사용자에게 제시될 수 있도록 [역할](#dfn-role "소프트웨어가 웹 콘텐츠 내에 있는 구성요소의 기능을 식별할 수 있도록 해 주는 텍스트나 숫자")이나 속성을 통해 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")될 수 있어야 한다.
+
+5\. 준수
+------
+
+이 섹션에서는 WCAG 2.2 [준수](#dfn-conform "표준, 가이드라인 또는 명세서의 모든 요구사항을 충족하는 것") 요구사항을 설명한다. 이 섹션은 또한 선택적인 준수 선언(claims) 방법에 대한 정보도 제공한다. 마지막으로, 이 절은 준수를 위해 [접근성 지원](#dfn-accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된") 기술 활용 방법에만 [의존](#dfn-relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")할 수 있기 때문에, 지원되는 접근성이 무엇을 의미하는지를 설명한다. [준수 이해](./understanding/conformance)는 접근성 지원의 개념을 보다 더 자세히 설명한다.
+
+### 5.1 규범 요구사항 해석
+
+WCAG 2.2의 주요 내용은 [규범](#dfn-normative "준수에 필요한")이며, 준수 선언에 영향을 미치는 요구사항을 정의하고 있다. 소개 자료, 부록, “비규범”으로 표시된 섹션, 다이어그램, 예제 및 참고는 [정보성](#dfn-informative "정보 제공만을 목적으로 하며, 준수(conformance)에는 꼭 필요하지는 않은")의(비규범적) 것이다. 비규범 자료는 지침을 해석하는 데 도움이 되는 조언적인 정보를 제공하지만 준수 선언(conformance claim)에 영향을 미치는 요구사항은 아니다.
+
+핵심단어인 '~할 수 있다'(_MAY_), '반드시 ~해야 한다'(_MUST_), '반드시 ~해서는 안 된다'(_MUST NOT_), '권장하지 않는다'(_NOT RECOMMENDED_), '권장한다'(_RECOMMENDED_), '~해야 한다'(_SHOULD_), 그리고 '~해서는 안된다'(_SHOULD NOT_)는 \[[RFC2119](#bib-rfc2119 "요구 사항 수준을 나타내기 위해 RFC에서 사용되는 키워드")\]에 기술된대로 해석되어야 한다.
+
+### 5.2 준수 요구사항
+
+웹 페이지가 WCAG 2.2를 준수하려면 다음 준수 요구 사항을 모두 충족해야 한다.
+
+#### 5.2.1 준수 수준
+
+다음의 준수 수준 중 하나를 완전히 준수해야 한다.
+
+*   Level A 준수(최소 준수 수준)의 경우, [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")는 모든 Level A 성공 기준을 [충족](#dfn-satisfies "성공 기준을 페이지에 적용할 때 ‘미준수’로 평가되지 않는 경우")하거나, Level A를 [준수한 대안 버전](#dfn-conforming-alternate-versions "version that")을 제공해야 한다.
+*   Level AA 준수의 경우, 웹 페이지는 모든 Level A 및 Level AA 성공 기준을 충족하거나, Level AA를 준수한 대안 버전을 제공해야 한다.
+*   Level AAA 준수의 경우, 웹 페이지는 모든 Level A, Level AA 및 Level AAA 성공 기준을 충족하거나, Level AAA를 준수한 대안 버전을 제공해야 한다.
+
+참고 1
+
+준수는 진술된 수준에서만 달성할 수 있지만, 저작자는 달성된 준수수준을 초과하는 모든 수준의 성공 기준의 준수에 대한 진행 상황(선언에서)을 보고해야 한다.
+
+참고 2
+
+일부 콘텐츠의 경우, 모든 Level AAA 성공 기준을 충족시키기는 불가능하기 때문에, Level AAA 준수를 전체 사이트에 대한 일반적인 정책으로 요구하는 것은 권장하지 않는다.
+
+#### 5.2.2 전체 페이지
+
+[준수](#dfn-conform "표준, 가이드라인 또는 명세서의 모든 요구사항을 충족하는 것")(그리고 준수 수준)는 전체 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")에 적용되며, 웹 페이지의 일부가 제외된 경우는 달성할 수 없다.
+
+참고 1
+
+준수를 결정할 목적인 경우, 한 페이지의 콘텐츠의 일부분에 대한 대체수단은 대체수단이 그 페이지로부터 직접적으로 획득할 수 있을 때 해당 페이지의 일부로 간주된다\[예: 긴 설명(long description), 또는 비디오의 대안적인 표현\].
+
+참고 2
+
+웹 콘텐츠 저작자의 통제 범위를 벗어난 콘텐츠로 인해 준수할 수 없는 웹 페이지의 저작자는 [부분 준수 진술](#conformance-partial)을 고려할 수 있다.
+
+참고 3
+
+신규(New) 새로운 전체 페이지는 다양한 화면 크기(예: 반응형 웹 페이지의 변형)에서 자동적으로 제시되는 여러 버전의 변형 페이지를 포함한다. 전체 페이지가 준수되기 위해서는 이러한 변형 페이지들 각각이 준수(또는 준수하는 대체수단을 제공)할 필요가 있다.
+
+#### 5.2.3 전체 과정
+
+한 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")가 어떤 [과정](#dfn-processes "활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업")을 제시하는 일련의 웹 페이지 중 하나(예: 어떤 활동을 완수하기 위해 필요한 여러 단계들 중 하나)일 때, 그 과정에 있는 모든 웹 페이지는 특정 수준 이상을 준수해야 한다. (해당 과정에 있는 페이지가 특정 수준 이상을 준수하지 못한다면, 전체 페이지는 그 특정 수준을 준수할 수 없다.)
+
+예제
+
+온라인 상점은 제품을 선택하고 구매하기 위하여 사용되는 일련의 페이지가 있다. 그 과정의 일부인 어떤 페이지가 준수되어야 처음부터 끝까지(결제)의 절차의 모든 페이지가 준수된다.
+
+#### 5.2.4 접근성 지원 기술 활용 방법
+
+성공 기준을 충족하기 위해서는 오직 [접근성 지원](#dfn-accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된") [기술](#dfn-technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘") 활용 방법에만 [의존](#dfn-relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")한다. 접근성을 지원하지 않는 어떤 방법을 제공하는 정보나 기능도 접근성을 지원하는 방법에서 이용 가능하다.([접근성 지원 이해](./understanding/conformance#accessibility-support)를 참고하라.)
+
+#### 5.2.5 불간섭
+
+[기술](#dfn-technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘")이 [접근성을 지원](#dfn-accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된")하지 않는 방식으로 사용되거나 준수하지 못하는 방법으로 사용되는 경우라도, 사용자가 나머지 페이지에 접근하는 기능은 방해받지 않아야 한다. 아울러, 전체 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")는 다음과 같은 조건들 각각에서 준수 요구사항을 계속 준수해야 한다.
+
+1.  [의존](#dfn-relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")하지 않는 기술이 사용자 에이전트에서 설정되어 있는 경우
+2.  의존하지 않는 기술이 사용자 에이전트에서 해제되어 있는 경우
+3.  의존하지 않는 기술이 사용자 에이전트에서 지원하지 않는 경우
+
+또한 다음의 성공 기준은, 준수하지 않아도 되는 콘텐츠를 포함하여, 페이지의 모든 콘텐츠에 적용된다. 다음과 같은 콘텐츠를 준수하지 못한 경우, 페이지를 사용하는 데 방해가 될 수 있다.
+
+*   **1.4.2 - 오디오 제어**
+*   **2.1.2 - 키보드 함정 방지**
+*   **2.3.1 - 3회 또는 임계값 이하의 번쩍임**
+*   **2.2.2 - 일시정지, 중지, 숨김**
+
+참고
+
+페이지가 준수되지 않은 경우(예: 준수 검사 페이지 또는 예제 페이지), 준수 범위 또는 준수 선언에 포함될 수 없다.
+
+예제를 포함한 자세한 내용은 [준수 요구사항 이해](./understanding/conformance#conformance-requirements)를 참고하라.
+
+### 5.3 준수 선언 (선택사항)
+
+준수는 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")에 한정된다. 그러나 준수 선언(conformance claim)은 하나의 페이지, 일련의 페이지 또는 여러 개의 관련 웹 페이지를 포괄할 수도 있다.
+
+#### 5.3.1 준수 선언의 필수 구성요소
+
+준수 선언은 **필수적인 것이 아니다**. 웹 콘텐츠 저작자는 준수 선언하지 않고 WCAG 2.1을 준수할 수 있다. 그러나 준수 선언이 행해지려면, 준수 선언은 다음과 같은 정보를 포함**해야 한다**.
+
+1.  선언 **날짜**
+2.  **지침 제목, 버전, URI** "Web Content Accessibility Guidelines 2.2 at [https://www.w3.org/TR/WCAG22/](https://www.w3.org/TR/WCAG22/)"
+3.  충족한 **준수 수준**: (Level A, AA or AAA)
+4.  하위 도메인이 선언에 포함되는지 여부를 포함하여, 선언된 URI 리스트와 같이, **웹 페이지에 대한 간략한 기술**
+
+    참고 1
+
+    웹 페이지는 목록이나 선언에 포함된 모든 URI로 기술할 수 있다.
+
+    참고 2
+
+    고객의 웹 사이트에 설치하기 전에 URI가 없는 웹기반 제품은 설치 시 해당 제품이 준수한다는 진술을 포함할 수 있다.
+
+5.  [의존](#dfn-relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")하는 [웹 콘텐츠 기술](#dfn-technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘") 리스트
+
+참고 3
+
+준수 로고가 사용될 경우, 선언을 포함하고, 위에서 열거된 준수 선언의 필수 구성요소를 함께 표시해야 한다.
+
+#### 5.3.2 준수 선언의 선택적 구성요소
+
+위의 준수 선언의 필수 구성요소 이외에도, 사용자를 지원하기 위한 추가 정보를 제공하는 것을 고려해 보라. 권장되는 추가 정보는 다음과 같다.
+
+*   선언된 준수수준 이상의 충족된 성공 기준 리스트. 이 정보는 사용자가 사용할 수 있는 형태로 제공되어야 하며, 가능한 기계가 판독할 수 있는 메타데이터여야 한다.
+*   "_사용되었지만 [의존](#dfn-relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")하지 않는_" 특정 기술 목록
+*   콘텐츠 테스트에 사용된 보조 기술을 포함한 사용자 에이전트 목록
+*   기계가 판독할 수 있는 메타데이터로 제공되는 콘텐츠의 특정 접근성 특성 목록
+*   접근성을 높이기 위해 성공 기준을 넘어서는 추가 단계에 대한 정보
+*   [의존](#dfn-relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")하는 특정 기술 목록의 기계가 판독할 수 있는 메타데이터 버전
+*   준수 선언의 기계가 판독할 수 있는 메타데이터 버전
+
+참고 1
+
+자세한 정보 및 예제 준수 선언에 대한 내용은 [준수 선언 이해](./understanding/conformance#conformance-claims)를 참고하라.
+
+참고 2
+
+준수 선언에서 메타데이터 사용에 대한 자세한 내용은 [메타데이터 이해](./understanding/understanding-metadata)를 참고하라.
+
+### 5.4 부분 준수 진술 - 제3자 콘텐츠
+
+경우에 따라, 나중에 웹 페이지에 추가적인 콘텐츠가 추가될 수 있다. 예를 들어, 전자 메일 프로그램, 블로그, 사용자가 설명을 추가할 수 있는 기사 또는 사용자가 제공한 콘텐츠를 지원하는 애플리케이션 등을 들 수 있다. 또 다른 예로는 여러 기고자들로부터 수합된 콘텐츠로 구성된 포털이나 뉴스 사이트, 광고가 동적으로 삽입되는 경우와 같이 시간 경과에 따라 다른 소스로의 콘텐츠를 자동적으로 삽입하는 사이트들이 있다.
+
+이러한 경우, 원본 게시 시점에 페이지에서 통제되지 않은 콘텐츠가 무엇인지 알 수 없다. 통제되지 않은 콘텐츠는 통제된 콘텐츠의 접근성에도 영향을 미칠 수 있다는 점에 유의해야 한다. 두 가지 옵션을 사용할 수 있다.
+
+1.  준수 여부는 최선의 지식을 바탕으로 결정될 수 있다. 영업일 기준 2일 이내에 이러한 유형의 페이지를 모니터링하고 복구(부적합한 콘텐츠를 제거하거나 준수 상태로 전환하는 경우)하면, 문제가 있을 때 수정되거나 제거할 수 있는 외부에서 제공된 콘텐츠의 오류는 제외하고, 해당 페이지는 준수하였기 때문에 준수의 결정이나 선언이 행해질 수 있다. 미준수 콘텐츠를 모니터링하거나 수정할 수 없을 경우, 어떠한 준수 선언도 할 수 없다.
+
+    **또는**
+
+2.  “부분 준수 진술”은 페이지가 준수하지는 않지만 특정 부분들이 제거되면 준수할 수 있음을 나타낸다. 이 진술의 형식은 다음과 같습니다. “이 페이지는 준수하지는 않지만 통제되지 않은 출처의 다음 부분들이 제거될 경우 Level X에서 WCAG 2.2를 준수하게 된다.” 또한 다음과 같은 경우 부분 준수 진술에 기술된 통제되지 않은 콘텐츠에도 적용된다.
+
+    1.  웹 콘텐츠 저작자의 통제 하에 있는 콘텐츠가 아닌 경우
+    2.  사용자가 식별할 수 있는 방식으로 기술되어 있는 경우\[예: 명확하게 표시하지 않는 한 “통제할 수 없는 모든 부분”이라고 기술할 수 없다.\]
+
+### 5.5 부분 준수 진술 – 언어
+
+“언어로 인한 부분 준수 진술"은 페이지가 준수하지는 않았지만, 페이지에서 사용된 (모든) 언어(들)에 대한 [접근성 지원](#dfn-accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된")이 있는 경우, 접근성 지원을 준수할 수 있을 때 제시된다. 이 진술의 형식은 다음과 같다. “이 페이지는 준수하지는 않았지만, 다음 언어에 대한 접근성 지원이 있는 경우 Level X에서 WCAG 2.2을 준수하게 된다."
+
+### 5.6 개인 정보 보호 고려 사항
+
+_이 섹션은 비규범적 내용을 다룬다._
+
+최종 사용자를 위한 보호 기능을 제공하거나 웹 사이트 제공업체가 사용자 개인 정보 보호를 위해 설계된 기능을 구현할 때 고려해야 할 중요한 개인 정보 보호에 대한 가능한 영향을 실무 그룹이 식별한 이 명세서 내 성공 기준은 아래에 나열되어 있다. 이 목록은 실무 그룹의 현재 이해를 반영하지만 다른 성공 기준에는 출판 당시 실무 그룹이 인식하지 못한 개인 정보 보호 관련 사항이 있을 수 있다.
+
+개인 정보 보호와 관련될 수 있는 성공 기준은 다음과 같다.
+
+*   [2.2.6 시간 초과(Timeouts) (AAA)](#timeouts)
+*   [3.3.7 중복 입력 (A)](#redundant-entry)
+
+### 5.7 보안 고려 사항
+
+_이 섹션은 비규범적 내용을 다룬다._
+
+최종 사용자를 위한 보호 기능을 제공하거나 웹 사이트 제공업체가 사용자 보안을 보호하기 위해 설계된 기능을 구현할 때 고려해야 할 중요한 보안에 대한 가능한 영향을 실무 그룹이 식별한 이 명세서 내 성공 기준은 아래에 나열되어 있다. 이 목록은 실무 그룹의 현재 이해를 반영하지만 다른 성공 기준에는 출판 당시 실무 그룹이 인식하지 못한 보안 관련 사항이 있을 수 있다.
+
+보안과 관련될 수 있는 성공 기준은 다음과 같다.
+
+*   [1.1.1 텍스트가 아닌 콘텐츠 (A)](#non-text-content)
+*   [1.3.5 입력 목적 식별 (AA)](#identify-input-purpose)
+*   [1.4.7 낮은 배경음 또는 배경음 없음 (AAA)](#low-or-no-background-audio)
+*   [2.2.1 시간 제한 조정 (A)](#timing-adjustable)
+*   [2.2.5 재인증 (AAA)](#re-authenticating)
+*   [2.2.6 시간 초과(Timeouts) (AAA)](#timeouts)
+*   [2.5.6 동시 입력 메커니즘 (AAA)](#concurrent-input-mechanisms)
+*   [3.3.3 오류 수정 제안 (AA)](#error-suggestion)
+*   [3.3.7 중복 입력 (A)](#redundant-entry)
+*   [3.3.8 접근 가능한 인증(최소) (AA)](#accessible-authentication-minimum)
+*   [3.3.9 접근 가능한 인증(향상된) (AAA)](#accessible-authentication-enhanced)
+
+6\. 용어 해설
+---------
+
+약어(abbreviation)
+
+약어가 언어의 일부가 되지 않는 단어, 구, 또는 이름의 축약형
+
+참고 1
+
+여기에는 다음과 같은 이니셜(initialism)이나 두문자어(acronym)가 포함된다:
+
+1.  **이니셜(initialisms)** 은 이름 또는 구에 포함된 단어 또는 음절로 된 이름 또는 구의 축약형이다.
+
+    참고 2
+
+    모든 언어에서 정의되지는 않는다.
+
+    예제 1
+
+    SNCF는 프랑스 국영 철도인 Société Nationale des Chemins de Fer의 첫 글자를 포함하고 있는 프랑스어 이니셜이다.
+
+    예제 2
+
+    ESP는 초감각적인 지각의 이니셜이다.
+
+2.  **두문자어(acronyms)**는 단어로 발음될 수 있는 다른 단어의 첫 글자 또는 일부(이름이나 구절에서)로 만들어진 약어 형태이다.
+
+    예제 3
+
+    NOAA는 미국 National Oceanic and Atmospheric Administration(국립해양대기청)의 첫 글자로 만들어진 약어이다.
+
+
+참고 3
+
+일부 회사들은 자신들의 회사명으로 이니셜을 채택했다. 이 경우, 회사의 새 이름은 문자(예: ECMA)이며, 더 이상 약어로 간주되지 않는다.
+
+접근성 지원(accessibility supported)
+
+사용자의 [보조 기술](#dfn-assistive-technologies "사용자 에이전트 역할을 하거나 주류 사용자 에이전트와 함께 작동하며, 주류 사용자 에이전트가 제공하는 것 이상의, 장애를 지닌 사용자의 요구사항을 충족하는 기능을 제공하는 하드웨어나 소프트웨어")뿐만 아니라 브라우저와 다른 [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에 있는 접근성 특성들에 의해 지원된
+
+웹 콘텐츠 기술(또는 어떤 기술의 특성)이 접근성이 지원하는 것으로 인정을 받으려면, 해당 웹 콘텐츠 기술(또는 특성)은 다음의 1과 2를 모두 충족해야 한다.
+
+1.  **[웹 콘텐츠 기술](#dfn-technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘")이 사용되는 방법은 사용자의 보조 기술(AT)에 의해 지원되어야 한다.** 이는 기술이 사용되는 방법이 콘텐츠의 [인간 언어](#dfn-human-language-s "인간 간에 의사소통을 하기 위해 (시각적 또는 촉각적 수단을 통해) 말을 하거나 쓰거나 신호를 보내는 언어")에서 사용자의 보조 기술과의 상호운용성이 테스트되었음을 의미한다.
+
+    **그리고**
+
+2.  **웹 콘텐츠 기술은 사용자가 사용할 수 있는, 접근성을 지원하는 사용자 에이전트를 가지고 있어야 한다.** 이는 다음 4개의 항목 중 최소 하나를 준수해야 함을 의미한다.
+
+    1.  해당 기술은 접근성이 지원되면서 널리 사용되는 사용자 에이전트에서 기본적으로 지원(예: HTML과 CSS)한다.
+
+        **또는**
+
+    2.  해당 기술은 접근성이 지원되면서 널리 사용되는 플러그인에서도 지원한다.
+
+        **또는**
+
+    3.  콘텐츠는 대학교 또는 기업 네트워크와 같은 폐쇄된 환경에서 사용할 수 있는데, 이때 폐쇄된 환경이란 해당 기술이 요구하고 조직이 사용하는 사용자 에이전트 또한 접근성이 지원되는 곳이다.
+
+        **또는**
+
+    4.  해당 기술을 지원하는 사용자 에이전트는 접근성이 지원되고, 다음과 같은 방법으로 다운로드 또는 구입할 수 있다.
+
+        *   장애인이 비장애인보다 더 많은 비용을 지불하지 않는다. **그리고**
+        *   비장애인처럼, 장애인도 쉽게 찾고 다운로드/구매할 수 있다.
+
+참고 1
+
+WCAG 실무그룹과 W3C는 웹 기술을 접근성이 지원되는 것으로 분류하기 위해 보조 기술에 의해 지원되는 어떤 특정 웹 기술을 사용해야 하는지 또는 얼마나 많이 지원되어야 하는지를 명시하지 않는다. (["접근성 지원"에 필요한 보조 기술의 수준](https://www.w3.org/WAI/WCAG21/Understanding/conformance#support-level)을 참고하라.)
+
+참고 2
+
+웹 기술이 [의존](#dfn-relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")하지 않고, 그리고 전체 페이지가 [준수 요구사항 4](#cc4)와 [준수 요구사항 5](#cc5)를 포함한 준수 기준을 충족하는 한 접근성이 지원되지 않는 방식으로 사용될 수 있다.
+
+참고 3
+
+[웹 기술](#dfn-technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘")이 “접근이 지원되는” 방식으로 사용될 때, 전체 기술 또는 모든 기술의 사용이 지원된다는 것을 의미하지는 않는다. HTML을 포함한 대부분의 기술은 최소한 하나 이상의 기능 또는 사용에 대한 지원이 부족하다. 페이지는 WCAG 요구사항을 충족하기 위해 접근성이 지원되는 기술을 사용할 수 있는 경우에만 WCAG를 준수한다.
+
+참고 4
+
+여러 버전이 있는 웹 콘텐츠 기술을 인용할 경우, 지원되는 버전을 구체적으로 명시해야 한다.
+
+참고 5
+
+개발자가 접근성이 지원되는 기술의 사용을 찾는 한, 가지 방법은 접근성이 지원되는 것으로 문서화된 사용 책자를 참고하는 것이다. ([접근성이 지원되는 웹 기술 활용 이해](https://www.w3.org/WAI/WCAG21/Understanding/conformance#documented-lists)를 참고하라.) 웹 콘텐츠 저작자, 회사, 기술공급업체 또는 기타 업체가 웹 콘텐츠 기술을 사용하는 접근성이 지원되는 방법을 문서화할 수 있다. 그러나 문서에서 기술을 사용하는 모든 방법은 위의 접근성이 지원되는 웹 콘텐츠 기술의 정의를 충족해야 한다.
+
+시간 기반 미디어에 대한 대체수단(alternative for time-based media)
+
+시간기반 시각 및 청각 정보를 올바른 순서로 제공하는 텍스트 설명과 시간기반 상호 작용의 결과를 달성하기 위한 수단을 제공하는 문서
+
+참고
+
+동기화된 미디어 콘텐츠를 만들기 위해 사용된 영화 대본은 편집 후 최종 동기화된 미디어를 정확하게 나타내도록 수정된 경우에만 이 정의에 부합한다.
+
+일반적으로 사용자에게 애매한(ambiguous to users in general)
+
+링크 자체나 링크와 함께 사용자에게 제공되는 웹 페이지의 모든 정보로도 목적을 확인할 수 없는 상태(즉, 비장애 사용자도 그것을 활성화하기 전까지 링크가 무엇을 하는지 알 수 없는)
+
+예제
+
+다음 문장 “유명한 수출 중 하나는 구아바(guava)이다”에서 구아바는 링크다. 이 링크를 통해 구아바의 정의, 수출된 구아바의 양을 나열한 도표 또는 구아바를 수확하는 사람들의 사진을 볼 수 있다. 모든 사용자들은 링크가 활성화될 때까지 그 내용을 알 수 없으며, 이는 장애인이라고하더라도 특별히 더 불리한 상황은 아니다.
+
+ASCII 아트(ASCII art)
+
+문자 또는 글리프(glyphs)(일반적으로, ASCII로 정의된 95자의 인쇄 가능 문자)의 공간 배치로 생성된 그림
+
+보조 기술(assistive technology) (이 문서에서 사용된 바와 같이)
+
+보편적인 [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")가 제공하는 것 이상으로 장애가 있는 사용자의 요구 사항을 충족하는 기능을 제공하기 위해 사용자 에이전트 역할을 하거나 보편적인 사용자 에이전트와 함께 작동하는 하드웨어 및/또는 소프트웨어
+
+참고 1
+
+보조 기술이 제공하는 기능에는 대체 표현(예: 음성 합성 또는 콘텐츠 확대), 대체 입력 방법(예: 음성), 부가적인 네비게이션 또는 방향 메커니즘 및 콘텐츠 변환(예: 표를 더 접근성 있게 만드는)이 포함된다.
+
+참고 2
+
+보조 기술은 보통 API를 이용하고 모니터링하여 주류 사용자 에이전트와 데이터 및 메시지를 주고 받는다.
+
+참고 3
+
+주류 사용자 에이전트와 보조 기술의 구분은 절대적이지 않다. 많은 주류 사용자 에이전트는 장애인을 돕기 위한 몇 가지 기능을 제공한다. 주류 사용자 에이전트가 일반적으로 장애인이나 비장애인을 모두 포함하는 광범위하고 다양한 사용자층을 대상으로 한다는 것이 기본적인 차이점이다. 보조 기술은 특정 장애를 가진 좁게 정의된 사용자층을 대상으로 한다. 보조 기술이 제공하는 지원은 대상 사용자층의 요구에 보다 적합하게 특화되어 있다. 주류 사용자 에이전트는 프로그램 객체에서 웹 콘텐츠를 검색하거나 마크업을 식별 가능한 번들로 파싱하는 것과 같이 보조 기술에 중요한 기능을 제공할 수 있다.
+
+예제
+
+이 문서의 맥락에서 중요하게 여겨지는 보조 기술은 다음과 같은 것을 포함한다.
+
+*   시각장애, 지각장애, 인쇄물 판독 장애를 지닌 사용자가 렌더링된 텍스트 및 이미지의 시각적 가독성을 개선하기 위해 텍스트 글꼴, 크기, 간격, 색상, 음성 동기화 등을 변경하기 위하여 사용하는 화면 확대기와 기타 시각적 읽기 보조장치
+*   시각장애인이 합성된 음성 또는 점자를 통해 텍스트 정보를 읽기 위해 사용하는 화면낭독기
+*   인지장애, 언어장애, 학습장애를 지닌 사용자가 텍스트를 합성 음성으로 변환하기 위하여 사용하는 문자를 음성으로 변환해 주는(TTS) 소프트웨어
+*   특정 신체장애를 지닌 사용자가 사용할 수 있는 음성 인식 소프트웨어
+*   특정 신체장애를 지닌 사용자가 키보드를 시뮬레이션하기 위하여 사용하는 대체 키보드(헤드 포인터, 단일 스위치, 들여마시기/불기(sip/puff) 입력 보조 장치 및 기타 특수 입력 장치를 사용하는 대체 키보드 포함)
+*   특정 신체장애를 지닌 사용자가 마우스 포인팅 및 버튼 작동을 시뮬레이션하기 위하여 사용하는 대체 포인팅 장치
+
+오디오(audio)
+
+음향 재생 기술
+
+참고
+
+오디오는 합성하거나(음성 합성 포함), 실제 소리에서 녹음되거나, 두 가지를 조합하여 만들 수 있다.
+
+오디오 해설(audio description)
+
+주요 사운드 트랙만으로는 이해할 수 없는 중요한 시각적인 세부사항을 설명하기 위하여 사운드 트랙에 추가된 나레이션
+
+참고 1
+
+[비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술")의 오디오 해설은 액션, 캐릭터, 장면 변경, 화면상의 텍스트 및 기타 시각적 콘텐츠에 대한 정보를 제공한다.
+
+참고 2
+
+표준 오디오 해설에서, 나레이션은 대화 중간 중간에 있는 기존의 일시 정지(pause) 부분에 추가된다. ([확장형 오디오 해설](#dfn-extended-audio-description "부가 설명을 추가할 시간이 벌기 위하여 비디오를 일시정지하고 시청각 프레젠테이션에 추가한 오디오 해설")도 참고하라.)
+
+참고 3
+
+기존 [오디오](#dfn-audio "음향 재생 기술")에 모든 [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술") 정보가 이미 제공된 경우, 추가적인 오디오 해설은 필요하지 않다.
+
+참고 4
+
+또한 “화면 해설”과 “설명이 포함된 나레이션”이라고도 한다.
+
+오디오전용(audio-only)
+
+[오디오](#dfn-audio "음향 재생 기술")만 포함한 시간기반 프레젠테이션(어떠한 [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술") 및 상호 작용도 없음)
+
+깜빡임(blinking)
+
+주의를 끌기 위한 방법으로, 두 가지의 시각적인 상태를 왔다 갔다 하는 것
+
+참고
+
+[번쩍임](#dfn-flashes "충분히 크고 적절한 주파수 범위에 있지만 일부 사람들에게 발작을 일으킬 수 있는 상대 휘도에서의 상반되는 변경의 쌍")도 참고하라. 어떤 콘텐츠가 충분히 크고 적절한 주파수에서 충분히 밝게 깜박이는 것은 번쩍임으로 분류될 수 있다.
+
+텍스트 블록(blocks of text)
+
+한 문장 이상의 텍스트
+
+캡챠(CAPTCHA)
+
+“Completely Automated Public Turing test to tell Computers and Humans Apart(컴퓨터와 인간을 구분하기 위한 완전히 자동화된 공개적인 튜링 테스트)”의 이니셜
+
+참고 1
+
+캡챠 테스트는 보통 사용자에게 흐릿한 이미지나 오디오 파일로 제시된 텍스트를 입력하도록 요구한다.
+
+참고 2
+
+튜링 테스트(Turing test)는 인간과 컴퓨터를 구별하기 위해 고안된 테스트 시스템이다. 이것은 유명한 컴퓨터과학자 앨런 튜링(Alan Turing)의 이름을 따서 지어졌다. 이 용어는 카네기멜론대학교 연구원들이 만들었다.
+
+자막(captions)
+
+미디어 콘텐츠를 이해하는 데 필요한 음성 및 비음성 오디오 정보에 대한 동기화된 시각자료 [대체 텍스트](#dfn-text-alternative "텍스트 아닌 콘텐츠와 프로그래밍 방식으로 연계되어 있거나 텍스트 아닌 콘텐츠와 프로그래밍 방식으로 연계된 텍스트로부터 참고되는 텍스트. 프로그래밍 방식으로 연계된 텍스트는 텍스트 아닌 콘텐츠에서 위치를 프로그래밍 방식으로 판별할 수 있는 텍스트")
+
+참고 1
+
+자막은 대화 전용 부제목과 유사하다. 그러나 자막은 대화의 내용뿐만 아니라 프로그램의 내용을 이해하는 데 필요한 음향 효과, 음악, 웃음, 말하는 이의 식별 및 위치 등을 포함한, 대화가 아닌 오디오 정보에 해당하는 내용도 전달한다.
+
+참고 2
+
+폐쇄 자막(Closed Captions)은 일부 플레이어에서 켜거나 끌 수 있다.
+
+참고 3
+
+열린 자막(Open Captions)은 끌 수 없는 자막이다. 예를 들어, 자막이 [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술")에 포함된 [텍스트 이미지](#dfn-images-of-text "특정 시각적인 효과를 달성하기 위해 텍스트가 아닌 형식(예: 이미지)으로 렌더링된 텍스트")와 시각적으로 동등한 이미지인 경우가 이에 해당한다.
+
+참고 4
+
+자막은 비디오 내의 관련 정보를 이해하기 어렵게 하거나 가려서는 안 된다.
+
+참고 5
+
+일부 국가에서는 caption을 subtitle이라 부른다.
+
+\[역자주\] Captions(접근성 자막)은 음향 효과나 화자 정보까지 포함하는 반면, 일반적으로 Subtitles(번역 자막)은 대사만을 제공하며 상황이나 음향 효과 등은 포함하지 않는다.
+
+참고 6
+
+[오디오 해설](#dfn-audio-descriptions "주요 사운드 트랙만으로는 이해할 수 없는 중요한 시각적인 세부사항을 설명하기 위하여 사운드 트랙에 추가된 나레이션")은 이미 시각적으로 표현된 정보의 설명이기 때문에, 자막으로 제시할 수는 있지만, 반드시 그렇게 할 필요는 없다.
+
+맥락의 변화(changes of context)
+
+사용자가 인식하지 못한 채 실행되면 전체 페이지를 동시에 볼 수 없는 사용자에게 혼란을 줄 수 있는 중요한 변화
+
+맥락에서의 변화는 다음과 같은 변경을 포함한다.
+
+1.  [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")
+2.  [뷰포트](#dfn-viewport "object in which the user agent presents content")
+3.  초점(focus)
+4.  [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")의 의미를 변경하는 콘텐츠
+
+참고
+
+콘텐츠가 변경되었다고 해서 항상 맥락이 변경된 것은 아니다. 확장 개요(outline), 동적 메뉴 또는 탭 제어와 같은 콘텐츠의 변경은 앞에서 언급한 것 중 하나(예: 초점)가 변경되지 않는 한 반드시 맥락이 변경된 것은 아니다.
+
+예제
+
+새 창 열기, 다른 구성요소로 초점 이동, 새 페이지로 이동(사용자가 새 페이지로 이동한 것처럼 보이는 모든 항목 포함) 또는 페이지 내용을 대대적으로 재배치하는 것 등이 맥락 변경의 예이다.
+
+인지 기능 검사(Cognitive function test)
+
+신규
+
+사용자가 정보를 기억, 조작 또는 전사(transcribe)해야 하는 작업이다다. 예시는 다음과 같지만 이에 국한되지는 않는다:
+
+*   사용자 이름, 비밀번호, 문자 집합, 이미지 또는 패턴 등을 기억하는 것과 같은 암기. 이름, 이메일, 전화번호와 같은 일반적인 식별자는 개인 정보이며 웹사이트 간에 일관되므로 인지 기능 테스트로 간주되지 않는다.
+*   문자를 입력하는 것과 같은 전사
+*   정확한 철자 사용
+*   계산 수행
+*   퍼즐 풀기
+
+준수(conformance)
+
+표준, 가이드라인 또는 명세서의 모든 요구사항을 충족하는 것
+
+준수 대체 버전(conforming alternate version)
+
+다음과 같은 버전을 말함
+
+1.  지정된 수준을 준수한
+2.  모든 동일한 정보와 [기능](#dfn-functionality "사용자의 행동을 통해 달성할 수 있는 과정과 결과")을 동일한 [인간 언어](#dfn-human-language-s "인간 간에 의사소통을 하기 위해 (시각적 또는 촉각적 수단을 통해) 말을 하거나 쓰거나 신호를 보내는 언어")로 제공하는
+3.  미준수 콘텐츠의 최신 정보
+4.  최소한 다음 중 하나를 준수한 경우:
+
+    1.  [접근성이 지원된](#dfn-accessibility-supported "사용자의 보조 기술뿐만 아니라 브라우저와 다른 사용자 에이전트에 있는 접근성 특성들에 의해 지원된") [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")을 통해 미준수 페이지에서 준수 버전으로 도달할 수 있는 경우
+    2.  미준수 버전이 준수 버전을 통해서만 도달할 수 있는 경우
+    3.  미준수 버전이 준수 버전에 도달할 수 있는 메커니즘을 제공하는 준수페이지를 통해서만 도달할 수 있는 경우
+
+참고 1
+
+이 정의에서, “~도달할 수 있는”이라는 표현은 조건부 리디렉션(redirect)과 같은 메커니즘이 있고, 사용자가 준수 버전을 경유하지 않으면 미준수 페이지에 “도달하는 것”(로딩)을 방지한다는 것을 의미한다.
+
+참고 2
+
+대체 버전 페이지는 원본 페이지와 일치할 필요가 없다(예: 준수 대체 버전은 여러 페이지로 구성될 수 있다).
+
+참고 3
+
+여러 언어 버전을 사용하는 경우, 제공되는 각 언어에 대한 준수 대체 버전이 요구된다.
+
+참고 4
+
+다양한 기술 환경이나 사용자 그룹을 수용하기 위하여 대체 버전을 제공할 수 있다. 각 버전은 가능한 한 준수되어야 한다. 하나의 버전은 [준수 요구사항 1](#cc1)을 준수하기 위하여 완전히 준수되어야 한다.
+
+참고 5
+
+준수 대체 버전은, 미준수 버전처럼 자유롭게 이용할 수 있는 한, 준수 범위 내에 또는 심지어 동일한 웹 사이트에 있을 필요는 없다.
+
+참고 6
+
+대체 버전은 원본 페이지를 지원하고 이해를 도와주는 [보충 콘텐츠](#dfn-supplementary-content "기본 콘텐츠를 설명하거나 명확하게 해 주는 부가적인 콘텐츠")와 혼동하지 않아야 한다.
+
+참고 7
+
+콘텐츠 내에서 사용자 환경설정을 조정하여 준수 버전을 생성하는 것은 허용되는 매커니즘이다. 다만, 그 환경설정 자체가 접근성을 지원해야 한다.
+
+[준수 대체 버전 이해](https://www.w3.org/WAI/WCAG21/Understanding/conformance#conforming-alt-versions)를 참고하라.
+
+콘텐츠(content) (웹 콘텐츠)
+
+콘텐츠의 [구조](#dfn-structure "웹 페이지의 각 부분이 서로 연관되어 구성되는 방식, 웹페이지 모음이 조직되는 방식"), [표현(presentation)](#dfn-presentation "사용자가 인식할 수 있는 형태로 콘텐츠를 렌더링하는 것") 및 상호 작용을 정의하는 코드 또는 마크업을 포함하여, [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")를 통해 사용자에게 전달되는 정보와 감각 경험
+
+맥락에 적합한 도움말(context-sensitive help)
+
+현재 실행 중인 기능과 관련된 정보를 제공하는 도움말 텍스트
+
+참고
+
+명확한 레이블은 맥락에 적합한 도움말 역할을 할 수 있다.
+
+명도대비율(contrast ratio)
+
+(L1 + 0.05) / (L2 + 0.05), 여기에서
+
+*   L1는 더 밝은 색상의 [상대 휘도](#dfn-relative-luminance "색 공간상에 있는 모든 지점의 상대적 밝기. 가장 어두운 검은색의 경우 0으로, 가장 밝은 흰색의 경우 1로 표준화되어 있음")이고,
+*   L2는 더 어두운 색상의 [상대 휘도](#dfn-relative-luminance "색 공간상에 있는 모든 지점의 상대적 밝기. 가장 어두운 검은색의 경우 0으로, 가장 밝은 흰색의 경우 1로 표준화되어 있음")이다.
+
+참고 1
+
+명도대비율은 1에서 21까지(일반적으로 1:1에서 21:1로 기술함)의 범위에 있을 수 있다.
+
+참고 2
+
+저작자는 텍스트 렌더링 방법\[예: 글꼴 다듬기(smoothing) 또는 안티앨리어싱(anti-aliasing)\]에 대한 사용자 설정을 제어할 수 없기 때문에, 텍스트의 명도대비율은 안티앨리어싱이 꺼진 상태에서 평가할 수 있다.
+
+참고 3
+
+성공 기준 1.4.3 명도대비(최소)와 1.4.6 명도대비(향상된)의 목적을 달성하기 위하여, 명도대비는 텍스트가 정상적으로 사용될 때 렌더링되는 특정 배경과 관련하여 측정된다. 어떠한 배경색도 지정되지 않은 경우, 흰색으로 가정한다.
+
+참고 4
+
+배경색은 텍스트가 정상적으로 사용될 때 렌더링되는 특정 콘텐츠의 색상이다. 사용자의 기본 배경색을 알 수 없고 충분한 명도대비를 평가할 수 없기 때문에, 텍스트 색상을 지정할 때 어떠한 배경색도 지정되지 않은 경우, 준수하지 못한 것이다. 동일한 이유로, 배경색을 지정할 때 어떠한 텍스트 색상도 지정하지 않은 경우도 준수하지 못한 것이다.
+
+참고 5
+
+문자 주위에 테두리가 있으면, 테두리는 명도대비를 추가할 수 있으며, 문자와 배경 간의 명도대비를 계산하는 데 사용된다. 문자 주위의 좁은 테두리는 문자로 사용될 것이다. 문자의 안쪽 세부사항을 채우는 문자 주위의 넓은 테두리는 후광 역할을 하며, 배경으로 간주된다.
+
+참고 6
+
+저작자가 일반적인 표현(presentation)에 인접하여 나타날 것으로 예상되는 콘텐츠에 지정된 색상 쌍을 대상으로 WCAG 준수 여부를 평가해야 한다. 저작자의 코드에 인해 발생하는 상황을 제외하고, 사용자 에이전트에 의해 발생한 색상 변경과 같은 특이한 표현을 고려할 필요가 없다.
+
+올바른 읽기 순서(correct reading sequence)
+
+단어와 단락이 콘텐츠의 의미를 변경하지 않는 순서로 제시되는 어떤 순서
+
+CSS 픽셀(CSS pixel)
+
+약 0.0213도의 시야각
+
+CSS 픽셀은 CSS의 모든 길이와 측정을 위한 표준 측정 단위이다. 이 단위는 밀도와 무관하며, 디스플레이에서 제시되는 실제 하드웨어 픽셀과는 구별된다. 사용자 에이전트와 운영체제는 CSS 픽셀이 디스플레이의 물리적 치수 및 예상 시청거리(콘텐츠 개발자가 결정할 수 없는 요소)를 고려한 [CSS 값 및 단위 모듈 레벨 3 준거 픽셀](https://www.w3.org/TR/css3-values/#reference-pixel) \[[css3 값(css3-values)](#bib-css3-values "CSS Values and Units Module Level 3")\]에 최대한 가깝게 설정되었는지 확인해야 한다.
+
+다운 이벤트(down-event)
+
+포인터의 트리거 자극을 눌렀을 때 발생하는 플랫폼 이벤트
+
+다운이벤트는, “터치 스타트(touchstart)” 또는 “마우스다운(mousedown)”과 같이, 플랫폼에 따라 다른 이름으로 불릴 수 있다.
+
+끌기 동작(dragging movement)
+
+신규
+
+포인터가 [다운 이벤트](#dfn-down-event "포인터의 트리거 자극이 눌렸을 때 발생하는 플랫폼 이벤트")가 발생한 요소에 물린 채로 요소(또는 해당 위치의 표현)에 [업 이벤트](#dfn-up-event "포인터의 트리거 자극이 해제될 때 발생하는 플랫폼 이벤트")가 발생할 때까지 포인터를 따라가는 조작
+
+참고
+
+끌기 가능한 요소의 예로는 목록 항목, 텍스트 요소 및 이미지가 있다.
+
+긴급 상황(emergency)
+
+건강, 안전 또는 재산을 보존하기 위해 즉각적인 조치가 필요한 갑작스럽고 예상치 못한 상황 또는 사건
+
+필수적인(essential)
+
+제거될 경우, 콘텐츠의 정보 또는 기능을 근본적으로 변경할 수 있으며, **그리고** 정보와 기능이 다른 방식으로는 준수될 수 없는
+
+확장형 오디오 해설(extended audio description)
+
+부가 설명을 추가할 시간이 벌기 위하여 [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술")를 일시정지하고 시청각 프레젠테이션에 추가한 오디오 해설
+
+참고
+
+이 기법은 추가적인 [오디오 해설](#dfn-audio-descriptions "주요 사운드 트랙만으로는 이해할 수 없는 중요한 시각적인 세부사항을 설명하기 위하여 사운드 트랙에 추가된 나레이션") 없이는 [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술")의 내용을 이해할 수 없고 대화와 나레이션 간의 일시정지(pause)가 너무 짧은 경우에만 사용된다.
+
+번쩍임(flash)
+
+충분히 크고 적절한 주파수 범위에 있지만 일부 사람들에게 발작을 일으킬 수 있는 [상대 휘도](#dfn-relative-luminance "색 공간상에 있는 모든 지점의 상대적 밝기. 가장 어두운 검은색의 경우 0으로, 가장 밝은 흰색의 경우 1로 표준화되어 있음")에서의 상반되는 변경의 짝
+
+참고 1
+
+허용되지 않는 번쩍임 유형에 대한 자세한 내용은 [일반 번쩍임과 적색 번쩍임 임계값](#dfn-general-flash-and-red-flash-thresholds "번쩍임 또는 빠르게 변경되는 이미지 시퀀스가 다음 중 하나에 해당되는 경우 임계값 이하이다.")을 참고하라.
+
+참고 2
+
+또한 [깜빡임](#dfn-blinking "주의를 끌기 위한 방법으로, 두 가지의 시각적인 상태를 왔다 갔다 하는 것")을 참고하라.
+
+초점 표시기(focus indicator)
+
+신규
+
+[사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")가 초점을 받은 [상태](#dfn-states "사용자 행동 또는 자동화된 과정에 따라 반응이 변경될 수 있는 사용자 인터페이스 구성요소의 특성을 표현하는 동적 속성")인 것을 시각적으로 나타내기 위해 변화된 픽셀
+
+기능(functionality)
+
+사용자의 행동을 통해 달성할 수 있는 [과정](#dfn-processes "활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업")과 결과(outcomes)
+
+일반 번쩍임과 적색 번쩍임 임계값(general flash and red flash thresholds)
+
+[번쩍임](#dfn-flashes "충분히 크고 적절한 주파수 범위에 있지만 일부 사람들에게 발작을 일으킬 수 있는 상대 휘도에서의 상반되는 변경의 쌍") 또는 연속된 이미지의 빠른 변화가 다음 중 하나에 해당되는 경우 임계값 이하(즉, 콘텐츠 통과)이다.
+
+1.  1초 이내에 3회 이하의 **일반 번쩍임**과 **적색 번쩍임**이 있다.
+2.  동시에 발생하는 번쩍임의 결합 영역이 일반적인 시야 거리의 화면에서 10도 시야 범위 내에서 총 0.006의 스테라디안(10도 시야 범위 내 화면의 25%)보다 적게 차지한다.
+
+여기서:
+
+*   **일반 번쩍임**은 더 어두운 이미지의 [상대 휘도](#dfn-relative-luminance "색 공간상에 있는 모든 지점의 상대적 밝기. 가장 어두운 검은색의 경우 0으로, 가장 밝은 흰색의 경우 1로 표준화되어 있음")가 0.80 이하일 때 최대 상대 휘도(1.0) 기준으로 10% 이상의 변화가 있는 한 쌍이 상반되게 전환하는 상태로 정의한다. “한 쌍이 서로 상반되게 전환하는 상태”는 휘도가 증가했다가 감소하거나 감소했다가 증가하는 경우를 말한다.
+*   **적색 번쩍임**은 강렬한 적색을 포함해 상반되는 전환의 쌍으로 정의한다.
+
+_예외:_ 백색잡음(white noise)이나 측면에 0.1도(일반적인 시야 거리의 가시범위)보다 더 작은 “사각형” 모양으로 교차하는 바둑판 패턴과 같은 미세하고 균형 잡힌 패턴으로 번쩍이는 경우는 임계값을 위반한 것이 아니다.
+
+\[역자주\] 백색잡음(white noise)은 송출 중이 아닌 TV 화면 전체에 작은 불규칙적인 점들이 고르게 분포된 모습처럼 모든 색상의 빛이 고르게 혼합된 무작위 패턴을 말하기도 한다.
+
+참고 1
+
+일반 소프트웨어 또는 웹 콘텐츠의 경우, 콘텐츠를 1024×768픽셀에서 볼 때 디스플레이된 화면 영역의 어느 곳에서나 341×256픽셀의 직사각형을 사용하면 표준 화면크기와 시청거리(예: 22-26인치 거리에 있는 15-17인치 크기의 화면)에 대해 10도의 시야각을 예측할 수 있다. (동일한 콘텐츠 렌더링을 보여주는 고해상도 디스플레이는 더 작고 안전한 이미지를 산출하므로 임계값을 정의하는 데 사용되는 해상도가 더 낮다.)
+
+참고 2
+
+전환(transition)이란 시간 대비 상대 휘도(또는 적색 번쩍임에 대한 상대 휘도/색상) 측정 도표에서 인접한 최대값과 최소값 간의 상대 휘도(또는 적색 번쩍임에 대한 상대 휘도/색상)의 변화를 말한다. 번쩍임은 두 개의 상반되는 전환으로 구성된다.
+
+참고 3
+
+**"강렬한 적색이 포함된 상반되는 전환의 쌍"**에 대한 (WCAG 2.2에서) 새로운 정의는 다음과 같다. 한 쪽의 R/(R + G + B) 값이 0.8이상이고 CIE 1976 UCS 색도도(chromaticity diagram)에서 반대 쪽과의 차이가 0.2(단위 없음)보다 큰 한 쌍의 전환이다. \[[ISO\_9241-391](#bib-iso_9241-391 "Ergonomics of human-system interaction—Part 391: Requirements, analysis and compliance test methods for the reduction of photosensitive seizures")\]
+
+참고 4
+
+비디오 화면 캡처에서 분석을 수행할 수 있는 도구가 있다. 그러나 깜빡임이 1초에 3회 이하인 경우, 이 상태를 평가하기 위해서는 어떠한 도구도 필요하지 않다. 콘텐츠는 자동으로 통과된다(위의 1번과 2번 참고).
+
+인간 언어(human language)
+
+인간 간에 의사소통을 하기 위해 (시각적 또는 촉각적 수단을 통해) 말을 하거나 쓰거나 신호를 보내는 언어
+
+참고
+
+[수어](#dfn-sign-language "의미를 전달하기 위해 손과 팔, 얼굴표정 또는 몸의 자세를 조합한 움직임을 사용하여 표현하는 언어")도 참고하라.
+
+관용어(idiom)
+
+개별 단어의 의미에서는 전체 의미를 추론할 수 없고, 의미의 손상 없이는 특정 단어를 변경할 수 없는 구문
+
+참고
+
+관용어는 그 (문화적 또는 언어종속적인) 의미를 잃지 않고 단어 대 단어로 번역할 수 없다.
+
+예제 1
+
+영어에서, “spilling the beans”는 “비밀을 누설하는 것”을 의미한다. 그러나 “knocking over the beans”과 “spilling the vegetables”는 의미가 다르다.
+
+예제 2
+
+일본어에서, 구문 "さじを投げる"는 문자 그대로 번역하면 ‘그는 숟가락을 던진다’라는 뜻이지만, 실제로는 그가 할 수 있는 일이 아무 것도 없어서 결국 포기한다는 것을 의미한다.
+
+예제 3
+
+네덜란드어에서, "Hij ging met de kippen op stok" 은 문자 그대로 번역하면 “그는 닭과 함께 보금자리로 돌아갔다”라는 뜻이지만, 실제로는 일찍 잠자리에 들었다는 것을 의미한다.
+
+텍스트 이미지(image of text)
+
+특정 시각적인 효과를 달성하기 위해 텍스트가 아닌 형식(예: 이미지)으로 렌더링된 텍스트
+
+참고
+
+여기에는 중요한 다른 시각적 콘텐츠가 포함된 그림의 일부인 [텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.")는 포함되지 않는다.
+
+예제
+
+사진에서 명찰에 있는 사람의 이름
+
+정보성(informative)
+
+정보 제공만을 목적으로 하며, 준수(conformance)에는 꼭 필요하지는 않은
+
+참고
+
+[준수](#dfn-conform "표준, 가이드라인 또는 명세서의 모든 요구사항을 충족하는 것")에 필요한 콘텐츠는 "[규범](#dfn-normative "준수에 필요한")"이라고 한다.
+
+입력 오류(input error)
+
+사용자가 제공하였으나 수용되지 않는 정보
+
+참고
+
+여기에는 다음과 같은 것이 포함된다.
+
+1.  [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")에 필요하지만 사용자가 빠뜨린 정보
+2.  사용자가 제공하지만 필요한 데이터 형식 또는 허용 값을 벗어나는 정보
+
+전문 용어(jargon)
+
+특정 분야의 사람들이 특정 방식으로 사용하는 단어
+
+예제
+
+고정키(StickyKeys)라는 단어는 보조 기술/접근성 분야의 전문용어이다.
+
+키보드 인터페이스(keyboard interface)
+
+키 누름 입력을 얻기 위해 소프트웨어에서 사용하는 인터페이스
+
+참고 1
+
+키보드 인터페이스는 기본 기술이 키보드를 포함하지 않더라도 사용자가 프로그램에 키 입력 정보를 제공할 수 있도록 해준다.
+
+예제
+
+터치스크린 PDA에는 외부 키보드 연결부와 운영체제에 내장된 키보드 인터페이스가 있다. PDA의 애플리케이션은 외부 키보드나 “키보드 에뮬레이션” 기능이 있는 손글씨 변환기 또는 음성-문자 변환 애플리케이션과 같이 시뮬레이션된 키보드 출력을 제공하는 다른 애플리케이션으로부터 키보드 입력을 받을 수 있다.
+
+참고 2
+
+마우스키(MouseKeys)와 같은 키보드 작동 마우스 에뮬레이터를 통한 애플리케이션(또는 애플리케이션의 일부)의 조작은 프로그램의 조작이 키보드 인터페이스가 아닌 포인팅 장치 를 통해 이루어지기 때문에 키보드 인터페이스를 통한 조작으로 보지 않는다.
+
+키보드 단축키(keyboard shortcut)
+
+하나 이상의 키를 눌러 동작을 발생시키는 대체수단
+
+레이블(label)
+
+웹 [콘텐츠](#dfn-content "콘텐츠의 구조, 표현 및 상호 작용을 정의하는 코드나 마크업을 포함하여 사용자 에이전트를 통해 사용자에게 전달되는 정보 및 감각 경험") 내의 구성요소를 식별하기 위해 사용자에게 제공되는 [대체 텍스트](#dfn-text-alternative "텍스트 아닌 콘텐츠와 프로그래밍 방식으로 연계되어 있거나 텍스트 아닌 콘텐츠와 프로그래밍 방식으로 연계된 텍스트로부터 참고되는 텍스트. 프로그래밍 방식으로 연계된 텍스트는 텍스트 아닌 콘텐츠에서 위치를 프로그래밍 방식으로 판별할 수 있는 텍스트")를 가지고 있는 [텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다.")나 다른 구성요소
+
+참고 1
+
+레이블은 모든 사용자에게 표시되는 반면, [이름](#dfn-name "소프트웨어가 사용자에게 웹 콘텐츠 내의 구성요소를 식별할 수 있도록 해 주는 텍스트")은 숨길 수 있고 보조 기술을 통해서만 노출할 수 있다. 많은 경우(전부는 아님), 네임과 레이블은 동일하다.
+
+참고 2
+
+레이블이라는 용어는 HTML의 label 요소에 국한되지 않는다.
+
+커다란(large scale) (텍스트)
+
+최소 18포인트 또는 14포인트의 볼드체(bold), 또는 한국어, 중국어, 일본어(CJK) 글꼴에서 이에 상응하는 크기의 글꼴
+
+참고 1
+
+획이 매우 가늘거나 문자 형태의 친숙성을 감소시키는 특이한 특징과 특성이 있는 글꼴은 특히 명도 대비율이 낮을 경우 읽기 더 어렵다.
+
+참고 2
+
+글자 크기는 콘텐츠를 전달할 때의 크기이다. 그것은 사용자가 행할 수 있는 크기 조정은 포함하지 않는다.
+
+참고 3
+
+사용자가 보는 문자의 실제 크기는 개발자 정의 크기와 사용자의 디스플레이 또는 사용자 에이전트 설정에 따라 달라진다. 대부분의 주류 본문 텍스트의 경우, 14와 18pt는 대략 1.2em과 1.5em 또는 본문 텍스트의 기본 크기의 120% 또는 150%(본문 글자 크기를 100%로 가정했을 때)와 동일하지만, 저작자는 사용 중인 특정 글꼴에 대해서도 확인해야 한다. 글자 크기가 상대 단위로 정의된 경우, 실제 포인트 크기는 디스플레이용 사용자 에이전트에 의해 계산된다. 이 성공 기준을 평가할 때 포인트 크기는 사용자 에이전트에서 얻거나 사용자 에이전트처럼 글꼴 메트릭스(font metrics)를 기반으로 계산해야 한다. 저시력 사용자는 적절한 설정을 선택할 책임이 있다.
+
+\[역자주\] 글꼴 메트릭스(font metrics)란 글자 크기, 자간, 줄 높이, 기준선, 알파벳 등에서 위아래로 처리되는 높이 등을 포함한 글꼴의 구조적 정보이다. 따라서 14pt로 지정되어도 글꼴의 특성에 따라 사용자에게는 충분히 크게 보이지 않을 수 있다.
+
+참고 4
+
+글자 크기를 지정하지 않고 텍스트를 사용할 때, 주요 브라우저에서 지정되지 않은 텍스트로 사용되는 가장 작은 글자 크기를 적용하는 것이 적절한 크기일 것이다. 만약 주요 브라우저에서 제목 1 수준(level 1 heading)이 14pt 이상 볼드체로 랜더링다면, 이 제목은 큰 텍스트라고 볼 수 있다. 상대적 크기는 기본 크기에서 비슷한 방식으로 계산할 수 있다.
+
+참고 5
+
+로마자 텍스트의 18pt와 14pt 크기는 대형 인쇄물(14pt)과 대형 표준 글꼴 크기(18pt)의 최소 크기로부터 도출되었다. 한국어, 중국어, 일본어와 같은 기타 글꼴의 경우, “동등한” 크기는 해당 언어에 사용되는 가장 작은 대형 인쇄 크기와 그다음으로 더 큰 표준 대형 인쇄 크기의 최소 크기가 될 것이다.
+
+법률 이행(legal commitments)
+
+법적 구속력이 있는 의무나 혜택을 받는 거래
+
+예제
+
+결혼 허가증, 주식 거래(금융 및 법률), 유언장, 대출금, 입양, 군대 등록, 모든 종류의 계약서 등
+
+링크 목적(link purpose)
+
+하이퍼링크를 작동하여 얻은 결과의 성격
+
+실시간(live)
+
+실제 이벤트(event)에서 캡처하여 방송 지연(broadcast delay) 없이 수신기로 전송되는 정보
+
+참고 1
+
+방송 지연은 예를 들어 방송사가 오디오(또는 비디오) 피드(feed)에 신호를 주거나 검열할 시간을 주기 위해 사용되지만, 상당한 편집을 하기에는 충분하지 않은, 아주 짧은(일반적으로 자동화된) 지연 시간을 말한다.
+
+참고 2
+
+완전히 컴퓨터로 생성된 정보는 실시간이 아니다.
+
+중학교 수준(lower secondary education level)
+
+6년의 교육과정을 마친 후에 시작되고, [초등 교육](#dfn-primary-education "사전 교육이 없을 수 있는, 5~7세 사이에 시작된 6년 간의 교육 기간")이 시작된 후 9년 뒤에 끝나는 2~3년의 교육기간
+
+참고
+
+이 정의는 국제표준교육분류(International Standard Classification of Education) \[[UNESCO](#bib-unesco "International Standard Classification of Education")\]에 기초한다.
+
+메커니즘(mechanism)
+
+결과(result) 성취를 위한 [과정](#dfn-processes "활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업")이나 기법
+
+참고 1
+
+메커니즘은 콘텐츠 내에서 명시적으로 제공되거나 플랫폼 또는 [보조 기술](#dfn-assistive-technologies "사용자 에이전트 역할을 하거나 주류 사용자 에이전트와 함께 작동하며, 주류 사용자 에이전트가 제공하는 것 이상의, 장애를 지닌 사용자의 요구사항을 충족하는 기능을 제공하는 하드웨어나 소프트웨어")을 포함한 [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에 의해 제공되는 것에 [의존](#dfn-relied-upon "해당 기술이 해제되거나 지원하지 않으면, 콘텐츠가 준수되지 않는")할 수도 있다.
+
+참고 2
+
+메커니즘은 요구되는 준수수준에 대한 모든 성공 기준을 충족해야 한다.
+
+텍스트에 대한 미디어 대체수단(media alternative for text)
+
+텍스트(직접적으로 또는 대체 텍스트를 통해)로 이미 제시된 것 이상의 정보를 제시해 주지 않는 미디어
+
+참고
+
+텍스트에 대한 미디어 대체수단은 텍스트를 대안적으로 표현함으로써 이익을 얻는 사람들을 위해 제공된다. 텍스트에 대한 미디어 대체수단은 오디오 전용, 비디오 전용(수어 비디오 포함) 또는 오디오-비디오일 수 있다.
+
+모션 애니메이션(motion animation)
+
+움직임의 환영을 만들거나 부드러운 전환 감각을 주기 위해 조건 사이에 단계를 추가한 것
+
+예제
+
+예를 들어, 나타날 때 특정 위치로 이동하거나 크기가 변경되는 요소는 애니메이션으로 간주된다. 전환 과정 없이 바로 나타나는 요소는 애니메이션을 사용하지 않은 것이다. 색상, 흐릿함 또는 불투명도의 변화는 모션 애니메이션에 해당되지 않는다.
+
+최소 경계 상자(minimum bounding box)
+
+신규
+
+모든 도형 점들이 포함되는 수평축에 정렬된 가장 작은 사각형 영역. 문장이나 텍스트 블록의 일부로 여러 줄에 걸쳐 있는 구성 요소(하이퍼링크 등)의 경우, 경계 상자는 단일 줄에 표시되는 모습을 기준으로 한다.
+
+이름(name)
+
+소프트웨어가 사용자에게 웹 콘텐츠 내의 구성요소를 식별할 수 있도록 해 주는 텍스트
+
+참고 1
+
+이름(name)은 숨길 수 있고 보조 기술에 의해서만 노출할 수 있는 반면, [레이블](#dfn-labels "웹 콘텐츠 내의 구성요소를 식별하기 위해 사용자에게 제공되는 대체 텍스트를 가지고 있는 텍스트나 다른 구성 요소")은 모든 사용자에게 제시된다. 대부분의 경우(전부는 아님), 레이블과 네임은 동일하다.
+
+참고 2
+
+이것은 HTML의 name 속성과는 관련이 없다.
+
+순차적으로 탐색된(navigated sequentially)
+
+[키보드 인터페이스](#dfn-keyboard-interface "키 누름 입력을 얻기 위해 소프트웨어에서 사용하는 인터페이스")를 사용하여 포커스를 이동시키기 위해 정의된 순서대로 탐색하는(한 요소에서 다음 요소로)
+
+텍스트가 아닌 콘텐츠(non-text content)
+
+[프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")될 수 있는 문자 순서가 아니거나 문자 순서가 [인간 언어](#dfn-human-language-s "인간 간에 의사소통을 하기 위해 (시각적 또는 촉각적 수단을 통해) 말을 하거나 쓰거나 신호를 보내는 언어")로 표현되지 않은 콘텐츠
+
+참고
+
+[ASCII 아트](#dfn-ascii-art "picture created by a spatial arrangement of characters or glyphs (typically from the 95 printable characters defined by ASCII)")(문자 패턴), 이모티콘, (문자를 대체하기 위해 사용하는) 인터넷 속어(leetspeak) 및 텍스트를 나타내는 이미지 등이 여기에 포함된다.
+
+규범적인(normative)
+
+준수에 요구되는
+
+참고 1
+
+이 문서를 잘 정의된 다양한 방식으로 준수할 수 있다.
+
+참고 2
+
+"[정보성](#dfn-informative "정보 제공만을 목적으로 하며, 준수(conformance)에는 꼭 필요하지는 않은")" 또는 “비규범(non-normative)” 콘텐츠는 [준수](#dfn-conform "표준, 가이드라인 또는 명세서의 모든 요구사항을 충족하는 것")할 필요가 없다.
+
+전체화면 창(on a full-screen window)
+
+뷰포트(viewport)가 최대화된 가장 일반적인 크기의 데스크톱/노트북 디스플레이
+
+참고
+
+사람들은 일반적으로 컴퓨터를 몇 년간이나 사용하므로, 이 평가를 수행할 때 최신 데스크톱/노트북 디스플레이 해상도에 의존하기보다 몇 년 동안의 일반적인 데스크톱/노트북 디스플레이 해상도를 고려하는 것이 가장 좋다.
+
+일시정지된(paused)
+
+사용자 요청에 의해 중지된 후 사용자가 요청할 때까지 재개되지 않는 상태
+
+외곽(perimeter)
+
+신규
+
+공유된 픽셀을 포함하지 않고 모양의 경계를 형성하는 연속된 선 또는 [최소 경계 상자](#dfn-bounding-boxes "신규") 중 가장 짧은 것.
+
+예제
+
+직사각형 주위의 2 CSS 픽셀 외곽(둘레)에 대한 계산은 4_h_+4_w_이다. 여기서 _h_는 높이이고 _w_는 너비이다. 원 주위의 2 CSS 픽셀 외곽의 경우 4𝜋_r_이다.
+
+포인터 입력(pointer input)
+
+마우스, 펜 또는 터치 접촉과 같이, 화면에서 특정 좌표(또는 좌표 세트)를 대상으로 삼는 입력
+
+참고
+
+["포인터"에 대한 포인터 이벤트 정의](https://www.w3.org/TR/pointerevents/#dfn-pointer)\[[pointerevents](#bib-pointerevents "Pointer Events")\]를 참고하라.
+
+사전 녹음된/녹화된(prerecorded)
+
+[실시간](#dfn-live "information captured from a real-world event and transmitted to the receiver with no more than a broadcast delay")이 아닌 정보
+
+표현(presentation)
+
+사용자가 인식할 수 있는 형태로 [콘텐츠](#dfn-content "콘텐츠의 구조, 표현 및 상호 작용을 정의하는 코드나 마크업을 포함하여 사용자 에이전트를 통해 사용자에게 전달되는 정보 및 감각 경험")를 렌더링하는 것
+
+초등 교육 수준(primary education level)
+
+사전 교육이 없을 수 있는, 5~7세 사이에 시작된 6년 간의 교육 기간
+
+참고
+
+이 정의는 국제표준교육분류\[[UNESCO](#bib-unesco "International Standard Classification of Education")\]에 기초한다.
+
+과정(process)
+
+활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업
+
+예제 1
+
+쇼핑 사이트에서 일련의 웹 페이지를 성공적으로 사용하려면, 사용자는 대체 상품, 가격 및 할인을 보고, 상품을 선택하며, 주문서를 제출하고, 배송 정보를 제공하며, 결제 정보를 제공할 필요가 있다.
+
+예제 2
+
+계정 등록 페이지는 등록 양식에 접근하기 전에 [튜링 테스트](https://www.w3.org/TR/turingtest/)를 성공적으로 통과해야 한다.
+
+프로그래밍 방식으로 판별되는(programmatically determined) \[프로그래밍 방식으로 결정/판단 가능한(programmatically determinable)\]
+
+[보조 기술](#dfn-assistive-technologies "사용자 에이전트 역할을 하거나 주류 사용자 에이전트와 함께 작동하며, 주류 사용자 에이전트가 제공하는 것 이상의, 장애를 지닌 사용자의 요구사항을 충족하는 기능을 제공하는 하드웨어나 소프트웨어")을 포함하여 다른 [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")가 정보를 추출하여 사용자에게 다른 형식으로 제시할 수 있도록 제공된 저작자 제공 데이터로부터 소프트웨어에 의해 결정되거나 확인 가능한
+
+예제 1
+
+일반적으로 이용할 수 있는 보조 기술에 의해 직접 접속되는 요소 및 속성에서 마크업 언어로 결정됨
+
+예제 2
+
+비마크업(non-makeup) 언어에서 특정 기술에 제한된(technology-specific) 데이터 구조로 결정되며, 일반적으로 이용할 수 있는 보조 기술에서 지원하는 접근성 API를 통해 보조 기술에 노출됨
+
+프로그래밍 방식으로 판별되는 링크 맥락(programmatically determined link context)
+
+링크 텍스트와 결합되어 링크와의 [관계](#dfn-relationships "구별되는 콘텐츠들 간의 유의미한 연관성")에서 [프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")되고 사용자에게 다른 형식으로 제시할 수 있는 추가 정보
+
+예제
+
+HTML에서, 영어로 된 링크로부터 프로그래밍 방식으로 판별(확인)할 수 있는 정보는 링크로서 동일한 단락, 목록 항목 또는 표 셀에 있는 텍스트, 또는 링크를 포함하고 있는 표 셀과 연결된 표 헤더 셀에 있는 텍스트를 포함한다.
+
+참고
+
+화면낭독기는 구두점을 해석하기 때문에, 포커스가 그 문장의 링크에 있으면 현재 문장의 맥락도 제공할 수 있다.
+
+프로그래밍 방식으로 설정된(programmatically set)
+
+보조 기술을 포함하여, 사용자 에이전트가 지원하는 방법으로 소프트웨어에 의해 설정된
+
+순수한 장식(pure decoration)
+
+어떠한 정보도 제공하지 않고 어떠한 기능도 없는, 오직 심미적인 목적으로만 사용된
+
+참고
+
+목적을 변경하지 않고 단어를 재배열하거나 대체할 수 있는 경우에 해당 텍스트는 순수하게 장식적인 것이라 할 수 있다.
+
+예제
+
+배경에 매우 엷어 인식하기 어려운 텍스트로 된, 무작위 단어들이 배치된 사전의 표지
+
+실시간 이벤트(real-time event)
+
+a) 보기와 동시에 발생하고, b) 완전히 콘텐츠에 의해 생성되지 않는 이벤트
+
+예제 1
+
+라이브 공연의 인터넷 방송(보는 것과 동시에 발생되고 사전 녹화되지 않음)
+
+예제 2
+
+사람들이 경매에 입찰하는 온라인 경매(보는 것과 동시에 발생하는)
+
+예제 3
+
+아바타를 사용하여 가상 세계에서 상호 작용하는 살아있는 인간(콘텐츠에 의해 완전히 생성되지는 않으며, 보는 것과 동시에 발생함)
+
+영역(region)
+
+인식 가능하고, 프로그래밍 방식으로 판별되는 콘텐츠의 일부
+
+참고
+
+HTML에서, 랜드마크 역할로 지정된 모든 부분이 영역이다.
+
+관계(relationships)
+
+구별되는 콘텐츠들 간의 유의미한 연관성
+
+상대 휘도(relative luminance)
+
+색 공간상에 있는 모든 지점의 상대적 밝기. 가장 어두운 검은색의 경우 0으로, 가장 밝은 흰색의 경우 1로 표준화되어 있음
+
+참고 1
+
+sRGB 색 공간의 경우, 색의 상대적인 휘도는 L = 0.2126 \* **R** + 0.7152 \* **G** + 0.0722 \* **B**로 정의되는데, 여기에서 **R**, **G**, **B**는 다음과 같다.
+
+*   RsRGB &lt;= 0.04045일 경우, **R** = RsRGB/12.92 아니라면 **R** = ((RsRGB+0.055)/1.055) ^ 2.4
+*   GsRGB &lt;= 0.04045일 경우, **G** = GsRGB/12.92 아니라면 **G** = ((GsRGB+0.055)/1.055) ^ 2.4
+*   BsRGB &lt;= 0.04045일 경우, **B** = BsRGB/12.92 아니라면 **B** = ((BsRGB+0.055)/1.055) ^ 2.4
+
+RsRGB, GsRGB, BsRGB은 다음과 같이 정의된다.
+
+*   RsRGB = R8bit/255
+*   GsRGB = G8bit/255
+*   BsRGB = B8bit/255
+
+"^"는 지수 연산자이다. (\[[SRGB](#bib-srgb "Multimedia systems and equipment - Colour measurement and management - Part 2-1: Colour management - Default RGB colour space - sRGB")\]에서 가져온 공식)
+
+참고 2
+
+2021년 5월 이전에는 정의의 0.04045 값이 달랐다(0.03928). 이는 이전 버전의 명세서에서 가져와 업데이트되었다. 이는 본 지침의 맥락에서 계산에 실질적인 영향을 미치지 않는다.
+
+참고 3
+
+오늘날 웹 콘텐츠를 보는 데 사용하는 거의 모든 시스템은 sRGB 인코딩을 사용한다고 가정한다. 콘텐츠를 처리하고 표시하기 위하여 다른 색 공간이 사용되지 않는 한, 웹 콘텐츠 저작자는 sRGB 색 공간을 사용하여 평가해야 한다. 다른 색 공간을 사용하는 경우, “[성공 기준 4.1.3 이해](./understanding/contrast-minimum)”를 참고하라.
+
+참고 4
+
+전달 후 디더링이 발생할 경우, 원본 색상 값이 사용된다. 원본에서 디더링되는 색상의 경우, 디더링되는 색상의 평균값(평균 R, 평균 G, 평균 B)을 사용해야 한다.
+
+참고 5
+
+명도대비 및 번쩍임을 검사할 경우, 자동으로 계산해 주는 도구를 사용할 수 있다.
+
+참고 6
+
+[상대 휘도 정의를 MathML을 이용한 별도의 페이지](https://www.w3.org/TR/WCAG22/relative-luminance.html)를 이용해 수식으로 표시할 수 있다.
+
+의존하는(relied upon) \[의존하는 기술(technologies that are)\]
+
+해당 [기술](#dfn-technologies "사용자 에이전트가 렌더링, 재생 또는 실행할 인코딩 명령을 위한 메커니즘")이 해제되거나 지원하지 않으면, 콘텐츠가 [준수](#dfn-conform "표준, 가이드라인 또는 명세서의 모든 요구사항을 충족하는 것")되지 않는
+
+역할(role)
+
+소프트웨어가 웹 콘텐츠 내에 있는 구성요소의 기능을 식별할 수 있도록 해 주는 텍스트나 숫자
+
+예제
+
+이미지가 하이퍼링크, 명령어 버튼 또는 체크박스로 작동하는지 여부를 나타내는 숫자
+
+동일한 기능(same functionality)
+
+사용했을 때 동일한 결과가 도출되는
+
+예제
+
+한 웹 페이지의 “검색(search)” 버튼과 다른 웹 페이지의 “찾기(find)” 버튼은 모두 검색어를 입력할 수 있는 양식(field)을 가지고 있고, 입력한 검색어와 관련된 주제를 웹사이트 내에 나열한다. 이 경우, 두 버튼은 동일한 기능을 가지고 있지만 레이블이 일관성 있게 부여되지 않은 것이다.
+
+동일한 상대 순서(same relative order)
+
+다른 항목들과 대비하여 동일한 위치
+
+참고
+
+다른 항목이 원래 순서에서 삽입되거나 제거되더라도, 항목은 상대 순서가 동일한것으로 간주한다. 예를 들어, 1차 메뉴를 확장하면 부가적인 상세 수준이 삽입되거나 2차 메뉴 섹션이 읽기 순서에 삽입될 수 있다.
+
+성공 기준 충족(satisfies a success criterion)
+
+성공 기준을 페이지에 적용할 때 ‘미준수’로 평가되지 않는 경우
+
+섹션(section)
+
+하나 이상의 관련 주제 또는 생각을 다루는 문자로 된(written) 콘텐츠의 독립된 부분
+
+참고
+
+섹션은 하나 이상의 단락으로 구성될 수 있으며, 그래픽, 표, 목록 및 하위 섹션을 포함한다.
+
+웹 페이지 세트(set of web pages)
+
+동일한 저작자, 그룹 또는 조직에 의해 작성되고 공통의 목적을 공유하는 [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")의 모음
+
+예제
+
+다음의 예를 포함한다
+
+*   출판물이 여러 웹 페이지에 걸쳐 나누어져 있고, 각 페이지에는 작품의 한 장(chapter) 또는 다른 주요 섹션이 포함되어 있다. 출판물은 논리적으로 하나의 연속적인 단위이며, 전체 페이지 세트에 액세스할 수 있는 탐색 기능을 포함하고 있다.
+*   전자상거래 웹 사이트에서 제품을 일련의 웹 페이지로 보여주며, 모든 페이지는 동일한 탐색 및 식별 방식을 공유한다. 그러나 결제 과정으로 진행하면 템플릿이 변경되어 탐색과 다른 요소가 제거되므로 해당 과정의 페이지는 기능적으로나 시각적으로 다르다. 결제 페이지는 제품 페이지 세트의 일부가 아니다.
+*   하위 도메인(예: blog.example.com)의 블로그는 기본 도메인(example.com)의 페이지와 다른 탐색 체계를 가지며, 별도의 저자 그룹에 의해 작성된다.
+
+참고
+
+다른 언어 버전은 다른 웹 페이지 세트로 간주될 것이다.
+
+수어(sign language)
+
+의미를 전달하기 위해 손과 팔, 얼굴표정 또는 몸의 자세를 조합한 움직임을 사용하여 표현하는 언어
+
+수어 통역(sign language interpretation)
+
+일반적으로 구어를 [수어](#dfn-sign-language "의미를 전달하기 위해 손과 팔, 얼굴표정 또는 몸의 자세를 조합한 움직임을 사용하여 표현하는 언어")로 하는 한 언어의 번역
+
+참고
+
+실제 수어는 동일한 국가나 지역의 구어(들)와 관련이 없는 독립된 언어이다.
+
+단일 포인터(single pointer)
+
+화면과 접촉하는 한 개의 접촉점으로 작동하는 포인터 입력으로, 단일 탭과 클릭, 더블 탭과 클릭, 길게 누르기, 그리고 경로 기반 제스처를 포함한다. 한 번에 페이지/화면 상의 단일 지점만을 대상으로 하는 입력 방식 - 마우스, 터치 스크린에서의 한 손가락, 또는 스타일러스와 같은 것이다.
+
+참고
+
+단일 포인터 상호작용에는 클릭, 더블 클릭, 탭, 드래그 동작, 그리고 한 손가락 스와이프 제스처가 포함된다. 이와 대조적으로, 다중 포인트 상호작용은 터치스크린에서의 두 손가락 상호작용이나 마우스와 스타일러스의 동시 사용과 같이 두 개 이상의 포인터를 동시에 사용하는 것을 포함한다.
+
+특정 감각에 기반한 경험(specific sensory experience)
+
+순수하게 장식적이지 않고, 주로 중요한 정보를 전달하거나 기능을 수행하지 않는 감각적 경험
+
+예제
+
+예를 들어, 플루트 독주, 시각 예술 작품 등이 있다.
+
+상태(state)
+
+사용자 행동 또는 자동화된 과정에 따라 반응이 변경될 수 있는 사용자 인터페이스 구성요소의 특성을 표현하는 동적 속성
+
+상태는 구성요소의 본질에 영향을 미치지 않지만, 구성요소 또는 사용자의 상호 작용 가능성과 관련된 데이터를 나타낸다. 그것의 예로는 초점, 마우스오버, 선택, 누르기, 체크, 방문하거나(visited)/방문하지 않음, 펼치기/접기 등을 들 수 있다.
+
+상태 메시지(status message)
+
+[맥락의 변화](#dfn-change-of-context "사용자가 인지하지 못한 상태에서 일어나면 전체 페이지를 동시에 볼 수 없는 사용자에게 방향감을 상실하게 할 수 있는 웹 페이지의 콘텐츠에서의 중요한 변경")가 아닌, 사용자에게 작업의 성공 또는 결과, 애플리케이션의 대기 상태, 프로세스의 진행 또는 오류 존재 여부에 대한 정보를 제공하는 콘텐츠의 변화
+
+구조(structure)
+
+1.  [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")의 각 부분이 서로 관련되어 조직화된 방식
+2.  [웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")의 모음이 조직화된 방식
+
+스타일 속성(style property)
+
+사용자 에이전트가 콘텐츠 요소들을 렌더링할 때(예: 화면에서, 스피커를 통해, 점자 표시장치를 통해), 그 요소들의 표현(예: 글꼴, 색상, 크기, 위치, 패딩, 볼륨, 합성된 음성 운율)을 결정하는 속성값
+
+스타일 속성은 다음의 요소에서 설정될 수 있다
+
+*   사용자 에이전트 기본 스타일(User agent default styles): 어떠한 웹 콘텐츠 저작자나 사용자 스타일이 없을 때 적용되는 기본 스타일 속성값. 몇몇 웹 콘텐츠 기술은 기본 렌더링을 지정하지만 다른 기술은 그렇지 않다.
+*   저작자 스타일(Author styles): 웹 콘텐츠 저작자가 콘텐츠의 일부로 설정한 스타일 속성값(예: 인라인 스타일, 저작자 스타일 시트)
+*   사용자 스타일(User styles): 사용자가 설정한 스타일 속성값(예: 사용자 에이전트 인터페이스 설정, 사용자 스타일 시트)
+
+보충 콘텐츠(supplemental content)
+
+기본 콘텐츠를 설명하거나 명확하게 해 주는 부가적인 [콘텐츠](#dfn-content "콘텐츠의 구조, 표현 및 상호 작용을 정의하는 코드나 마크업을 포함하여 사용자 에이전트를 통해 사용자에게 전달되는 정보 및 감각 경험")
+
+예제 1
+
+[웹 페이지](#dfn-web-page-s "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")의 오디오 버전
+
+예제 2
+
+복잡한 [과정](#dfn-processes "활동을 완료하기 위해 각 작업이 필요한 일련의 사용자 작업")에 대한 삽화(illustration)
+
+예제 3
+
+연구의 주요 결과와 권고사항을 요약한 단락
+
+동기화된 미디어(synchronized media)
+
+정보나 시간 기반 대화형 구성요소를 표시하기 위해 다른 형식과 동기화된 [오디오](#dfn-audio "음향 재생 기술") 또는 [비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술"). 단, 미디어가 [텍스트에 대한 미디어 대체수단](#dfn-media-alternative-for-text "텍스트(직접적으로 또는 텍스트 대체수단을 통해)로 이미 제시된 것 이상의 정보를 제시해 주지 않는 미디어")이라고 명확하게 명명된 경우는 예외이다.
+
+타겟(target)
+
+사용자 인터페이스 구성요소의 대화형 영역과 같이 포인터 동작을 허용하는 디스플레이 영역
+
+참고
+
+타겟이 두 개 이상 중복되는 경우, 중복되는 대상이 동일한 동작을 수행하거나 동일한 페이지를 여는 경우를 제외하고, 타겟 크기의 측정시 중복 영역을 포함하지 않아야 한다.
+
+기술(technology) (웹 콘텐츠)
+
+[사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에서 지시사항을 렌더링, 재생 또는 실행하기 위한 [매커니즘](#dfn-mechanism "결과에 도달하기 위한 과정이나 기법")
+
+참고 1
+
+이 지침에서 사용된 “웹 기술(Web Technology)”과 “기술(technology)”(독자적으로 사용될 때)이라는 단어는 모두 웹 콘텐츠 기술(Web Content Technologies)을 의미한다.
+
+참고 2
+
+웹 콘텐츠 기술에는 정적 웹 페이지에서부터 동기화된 미디어 표현(presentation), 동적 웹 애플리케이션에 이르기까지 최종 사용자 경험을 조성하기 위해 개발자가 단독으로 또는 함께 사용할 수 있는 마크업 언어, 데이터 형식 또는 프로그래밍 언어가 포함될 수 있다.
+
+예제
+
+웹 콘텐츠 기술의 몇 가지 일반적인 예로는 HTML, CSS, SVG, PNG, PDF, Flash, JavaScript가 있다.
+
+텍스트(text)
+
+[프로그래밍 방식으로 판별](#dfn-programmatically-determinable "저작자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 보조 기술을 포함한 다양한 사용자 에이전트가 이를 추출하고 여러 방식으로 사용자에게 제공할 수 있도록 한")될 수 있는 문자들의 순서로서, 그 순서는 [인간 언어](#dfn-human-language-s "인간 간에 의사소통을 하기 위해 (시각적 또는 촉각적 수단을 통해) 말을 하거나 쓰거나 신호를 보내는 언어")로 무언가를 표현한다.
+
+대체 텍스트(text alternative)
+
+[텍스트가 아닌 콘텐츠](#dfn-non-text-content "프로그래밍 방식으로 판별될 수 있는 문자 시퀀스가 아니거나 시퀀스가 인간 언어로 무언가를 표현하지 않는 콘텐츠")와 프로그래밍 방식으로 연계되어 있거나 텍스트 아닌 콘텐츠와 프로그래밍 방식으로 연계된 텍스트로부터 참고되는 [텍스트](#dfn-text "프로그래밍 방식으로 판별될 수 있는 문자들의 순서로서, 그 순서는 인간 언어로 무언가를 표현한다."). 프로그래밍 방식으로 연계된 텍스트는 텍스트 아닌 콘텐츠에서 위치를 프로그래밍 방식으로 판별할 수 있는 텍스트이다.
+
+예제
+
+차트의 이미지가 해당 그 다음 단락에서 텍스트로 설명되어 있다. 이 차트에 대한 짧은 대체 텍스트는 설명이 뒤따른다는 것을 나타낸다.
+
+참고
+
+자세한 내용은 [대체 텍스트 이해](https://www.w3.org/WAI/WCAG21/Understanding/conformance#text-alternatives)를 참고하라.
+
+업 이벤트(up-event)
+
+포인터의 트리거 자극이 해제될 때 발생하는 플랫폼 이벤트
+
+업 이벤트는, “터치앤드(touchend)” 또는 “마우스업(mouseup)”과 같이, 플랫폼에 따라 다른 이름으로 불릴 수 있다.
+
+특이하거나 제한된 방식으로 사용된(used in an unusual or restricted way)
+
+콘텐츠를 정확하게 이해하기 위해 어떤 정의를 적용할지 사용자가 정확히 알아야 하는 방식으로 사용된 단어
+
+예제
+
+“gig”라는 용어는 컴퓨터 하드 드라이브 공간에 관한 기사에서와는 달리 음악 콘서트의 토론에서 사용될 경우 의미가 다르지만, 문맥상에서 정의를 적절하게 결정할 수 있다. 반면, “텍스트(text)”라는 단어는 WCAG 2에서 매우 특수한 방식으로 사용되므로, 해당 용어에 대한 정의를 용어해설에서 제공한다.
+
+사용자 에이전트(user agent)
+
+사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어
+
+예제
+
+웹 콘텐츠를 불러오고 렌더링하며 상호 작용을 도와주는 웹 브라우저, 미디어 플레이어, 플러그인, 웹 콘텐츠 검색, 기타 프로그램([보조 기술](#dfn-assistive-technologies "사용자 에이전트 역할을 하거나 주류 사용자 에이전트와 함께 작동하며, 주류 사용자 에이전트가 제공하는 것 이상의, 장애를 지닌 사용자의 요구사항을 충족하는 기능을 제공하는 하드웨어나 소프트웨어") 포함)
+
+사용자가 제어 가능한(user-controllable)
+
+사용자가 접근할 수 있도록 만들어진 데이터
+
+참고
+
+이것은 인터넷 로그(logs)와 검색 엔진 모니터링 데이터와 같은 것을 의미하지 않는다.
+
+예제
+
+사용자 계정의 이름과 주소 필드
+
+사용자 인터페이스 구성요소(user interface component)
+
+사용자가 고유 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부
+
+참고 1
+
+다중 사용자 인터페이스 구성요소는 단일 프로그래밍 요소로 구현될 수 있다. 여기에서 구성요소는 프로그래밍 기법이 아니라 사용자가 별도의 컨트롤로 인식하는 것을 말한다.
+
+참고 2
+
+사용자 인터페이스 구성요소에는 스크립트로 생성한 구성요소뿐만 아니라 서식(form) 요소 및 링크도 포함된다.
+
+참고 3
+
+여기에서 “구성요소” 또는 “사용자 인터페이스 구성요소”가 의미하는 것은 때때로 “사용자 인터페이스 요소(user interface element)”라고도 한다.
+
+예제
+
+애플릿(applet)은 선이나 페이지 또는 무작위로 콘텐츠를 이동하는 데 사용될 수 있는 “컨트롤”를 가지고 있다. 이들 각각은 별도의 이름이 있어야 하고 독립적으로 설정할 필요가 있기 때문에, 각각 “사용자 인터페이스 구성요소”가 될 것이다.
+
+사용자 비활동(user inactivity)
+
+사용자 행동이 발생하지 않는 지속적인 시간
+
+추적 방법은 웹 사이트나 애플리케이션에 의해 결정될 것이다.
+
+비디오(video)
+
+움직이거나 순서화된 그림이나 사진에 관한 기술
+
+참고
+
+비디오는 애니메이션 또는 사진 이미지 또는 둘 다로 구성될 수 있다.
+
+비디오 전용(video-only)
+
+[비디오](#dfn-video "움직이거나 순서화된 그림이나 사진에 관한 기술")만을 포함한 시간기반 프레젠테이션(어떠한 [오디오](#dfn-audio "음향 재생 기술")나 상호 작용도 없음)
+
+뷰포트(viewport)
+
+사용자 에이전트가 콘텐츠를 표시하는 객체
+
+참고 1
+
+[사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")는 하나 이상의 뷰포트를 통해 콘텐츠를 제시한다. 뷰포트는 창(windows), 프레임, 스피커, 가상확대기를 포함한다. 뷰포트는 다른 뷰포트(예: 중첩된 프레임)를 포함할 수 있다. 프롬프트, 메뉴 및 경고와 같은 사용자 에이전트에 의해 생성된 인터페이스 구성요소는 뷰포트가 아니다.
+
+참고 2
+
+이 정의는 [사용자 에이전트 접근성 지침 1.0 용어 해설](https://www.w3.org/TR/WAI-USERAGENT/glossary.html)\[[UAAG10](#bib-uaag10 "User Agent Accessibility Guidelines 1.0")\]에 근거한다.
+
+시각적으로 변경 가능한(visually customized)
+
+글꼴, 크기, 색상 및 배경을 설정할 수 있는
+
+웹 페이지(Web page)
+
+HTTP를 사용하여 단일 URI에서 얻어진 내포되지 않은 리소스(non-embedded resource)과 렌더링에 사용되거나 [사용자 에이전트](#dfn-user-agents "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")에서 렌더링되도록 의도된 모든 다른 리소스
+
+참고 1
+
+모든 “다른 리소스(other resources)”는 주요 리소스와 함께 랜더링되지만, 반드시 서로 동시에 렌더링되지는 않는다.
+
+참고 2
+
+이러한 지침을 준수하려면, 리소스는 웹 페이지로 간주되기 위해 준수 범위 내에 “포함되지 않은(non-embedded)” 상태여야 한다.
+
+예제 1
+
+삽입된(embedded) 모든 이미지 및 미디어를 포함하는 웹 리소스
+
+예제 2
+
+AJAX(Asynchronous JavaScript and XML)를 사용하여 작성된 웹 메일 프로그램. 이 프로그램은 http://example.com/mail에 전부 있지만, 받은 편지함, 연락처 영역 및 캐린더를 포함한다. 받은 편지함, 연락처 또는 캘린더를 표시하는 링크나 버튼이 제공되지만, 전체 페이지의 URI를 변경하지는 않는다.
+
+예제 3
+
+사용자가 일련의 다른 콘텐츠 모듈에서 표시할 콘텐츠를 선택할 수 있는 사용자 지정 가능한 포털 사이트
+
+예제 4
+
+브라우저에 “http://shopping.example.com/”을 입력하면, 영화에서처럼 상호 작용할 수 있는 쇼핑환경으로 들어갈 수 있다. 즉, 시각적으로 상점에 들어가서 돌아다니다가 주변의 선반에서 제품을 끌어와 앞에 있는 쇼핑 카트에 넣을 수 있다. 제품을 클릭하면, 해당 제품 옆에 명세서서가 함께 제시된다. 이것은 한 페이지로 된 웹 사이트일 수도 있고, 웹 사이트 내의 한 페이지일 수도 있다.
+
+7\. 사용자 인터페이스 구성요소의 입력 목적
+-------------------------
+
+이 섹션에는 일반적인 [사용자 인터페이스 구성요소](#dfn-user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부") 입력 목적을 열거하고 있다. 아래의 용어는 반드시 사용해야 하는 키워드가 아니라, 웹 페이지에서 채택한 분류 체계에 반영해야 하는 목적을 나타낸다. 해당되는 경우, 저작자는 선택한 분류 체계를 사용하여 컨트롤에 의미론적 목적을 표시해야 한다. 이를 통해 사용자 에이전트와 보조 기술이 더 많은 사람들이 콘텐츠를 이해하고 사용할 수 있도록 개인화된 표현(presentation)을 적용할 가능성을 제공한다.
+
+참고
+
+입력 유형 목적의 목록은 [HTML 명세서 5.2 자동완성(Autofill) 섹션](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)에 정의된 컨트롤 목적을 기반으로 하지만, 다른 기술에서는 동일한 개념들이 각 명세서에 일부 또는 전부 정의되어 있을 수 있다는 점을 이해하는 것이 중요하다. 아래에 매핑된 의미에 해당하는 개념들만 요구한다.
+
+다음의 입력 컨트롤 목적은 콘텐츠 사용자와 관련되고, 해당 개인과 관련된 정보에만 해당된다.
+
+*   **name** - 전체 이름
+*   **honorific-prefix** - 경칭이나 칭호(예: "Mr.", "Ms.", "Dr.", "Mlle")
+*   **given-name** -이름(일부 서양문화에서는 _first name_이라고도 함)
+*   **additional-name** - 부가 이름(일부 서양문화에서는, first name과는 다른 _middle names_, forenames이라고도 함)
+*   **family-name** - 성씨(일부 서양문화에서는 _last name_ 또는 _surname_이라고도 함)
+*   **honorific-suffix** - 접미어(예: "Jr.", "B.Sc.", "MBASW", "II")
+*   **nickname** - 별명, 대화명(screen name), handle: 이름 전체 대신에 사용되는 일반적으로 짧은 이름
+*   **organization-title** - 직위(예: “소프트웨어 엔지니어”, “수석 부사장”, “부사장”)
+*   **username** - 사용자명
+*   **new-password** - 신규 비밀번호(예: 계정을 만들거나 비밀번호를 변경했을 때)
+*   **current-password** - **사용자명(username)** 필드(field)에 의해 식별된 계정의 현재 비밀번호(예: 로그인할 때)
+*   **organization** - 사용자 이름 필드와 연관된 다른 필드의 사람, 주소 또는 연락처 정보에 해당하는 회사 이름
+*   **street-address** - 거리 주소(여러 줄, 새로운 줄 생성 가능)
+*   **address-line1** - 거리 주소(필드 당 1줄, 첫번째 줄)
+*   **address-line2** - 거리 주소(필드 당 1줄, 두번째 줄)
+*   **address-line3** - 거리 주소(필드 당 1줄, 세번째 줄)
+*   **address-level4** - 행정단위가 네 가지 수준인 주소에서, 가장 상세한 행정단위 수준
+*   **address-level3** - 행정단위가 세 개 이상 수준인 주소에서, 세 번째 행정단위 수준
+*   **address-level2** - 행정단위가 두 개 이상 수준인 주소에서, 두 번째 행정단위 수준; 행정단위가 두 개 수준인 국가들에서, 이것은 일반적으로 시, 읍, 마을, 또는 관련 거리 주소가 있는 기타 지역이 될 것이다.
+*   **address-level1** - 행정단위가 가장 광범위한 수준의 주소. 즉, 해당 지역이 있는 주(예: 미국에서는 주, 스위스에서는 자치구(canton), 영국에서는 읍(post town)이 될 수 있다.)
+*   **country** - 국가 코드
+*   **country-name** - 국가명
+*   **postal-code** - 우편번호, ZIP 코드, CEDEX 코드 (CEDEX인 경우, “CEDEX”를 추가하고, 해당되는 경우 **address-level2** 필드에 _arrondissement_ 추가)
+*   **cc-name** - 결제수단에 주어진 전체 이름(full name)
+*   **cc-given-name** - 결제수단에 주어진 이름(일부 서양문화권에서는 _first name_이라고도 함)
+*   **cc-additional-name** - 결제수단에 주어진 부가 이름(일부 서양문화권에서는 first name보다 _middle names_, forenames라고도 함)
+*   **cc-family-name** - 결제수단에 주어진 가족 성씨(일부 서구문화권에서는 _last name_ 또는 _surname_이라고도 함)
+*   **cc-number** - 결제수단 식별 코드(예: 신용카드번호)
+*   **cc-exp** - 결제수단 만료일
+*   **cc-exp-month** - 결제수단 만료일의 월(month) 구성요소
+*   **cc-exp-year** - 결제수단 만료일의 년(year) 구성요소
+*   **cc-csc** - 결제수단의 보안 코드\[또한 카드보안코드(card security code: CSC), 카드 유효성 확인 코드(card validation code: CVC), 카드 검증값(card verification value: CVV), 서명 패널 코드(signature panel code: SPC), 신용카드 ID(credit card ID: CCID) 등\]
+*   **cc-type** - 결제수단 유형
+*   **transaction-currency** - 이용자가 거래를 위해 사용하고자 하는 통화
+*   **transaction-amount** - 이용자가 거래하고자 하는 금액(예: 매입 또는 매도 가격을 입력할 때)
+*   **language** - 선호 언어
+*   **bday** - 생일
+*   **bday-day** - 생일의 일(day) 구성요소
+*   **bday-month** - 생일의 월(month) 구성요소
+*   **bday-year** - 생일의 년(year) 구성요소
+*   **sex** - 성별 정체성(예: 여성, Fa’afafine)
+*   **url** - 필드(field)와 연관된 다른 필드의 회사, 사용자, 주소 또는 연락처 정보에 해당하는 홈 페이지 또는 기타 웹 페이지
+*   **photo** - 필드(field)와 연관된 다른 분야의 회사, 사람, 주소 또는 연락처 정보에 해당하는 사진, 아이콘 또는 기타 이미지
+*   **tel** - 국가 코드를 포함한 전체 전화번호
+*   **tel-country-code** - 전화번호의 국가 코드 구성요소
+*   **tel-national** - 해당되는 경우, 국가 코드 구성요소가 없고 적용되는 국가 내부 접두사(country-internal prefix)를 가진 전화번호
+*   **tel-area-code** - 해당되는 경우, 적용되는 국가 내부 접두사가 적용된 전화번호의 지역 번호 구성요소
+*   **tel-local** - 국가번호와 지역번호가 포함되지 않은 전화번호
+*   **tel-local-prefix** - 해당 구성요소를 두 개로 분할할 경우, 지역번호 다음에 오는 전화번호 구성요소의 첫 번째 부분(국번)
+*   **tel-local-suffix** - 해당 구성요소를 두 개로 분할할 경우, 지역번호 다음에 오는 전화번호 구성요소의 두 번째 부분(전화번호)
+*   **tel-extension** - 전화번호 내부 확장 코드
+*   **email** - 이메일 주소
+*   **impp** - 인스턴트 메시징 프로토콜 끝점(endpoint)을 나타내는 URL (예: "**aim:goim?screenname=example**" 또는 **xmpp:fred@example.net**")
+
+A. 변경 기록
+--------
+
+이 섹션은 WCAG 2.1 이후 WCAG 2.2에 통합된 실질적인 변경사항과 2023년 10월 5일 최초 발행 이후 2.2 버전에 적용된 변경사항을 보여준다. [WCAG 2.1의 정오표 수정 사항](https://www.w3.org/WAI/WCAG21/errata/)도 WCAG 2.2에 통합되었다.
+
+전체 [WCAG 2.2 커밋 기록](https://github.com/w3c/wcag/commits/main/guidelines)을 확인할 수 있다.
+
+*   2019-11-10: Promoted [Focus Visible](#focus-visible) from Level AA to Level A.
+*   2020-01-14: Added Focus Visible (Enhanced), later renamed to Focus Appearance (Enhanced), later removed.
+*   2020-03-10: Renamed Pointer Target Spacing to Target Size (Minimum)
+*   2020-03-30: Added [Accessible Authentication (Minimum)](#accessible-authentication-minimum).
+*   2020-05-27: Added Dragging (later renamed [Dragging Movements](#dragging-movements)).
+*   2020-07-19: Added Findable Help (later renamed to [Consistent Help](#consistent-help)), Fixed Reference Points (Page Break Navigation), Hidden Controls (later renamed Visible Controls), Pointer Target Spacing (later renamed [Target Size (Minimum)](#target-size-minimum)), [Redundant Entry](#redundant-entry).
+*   2020-08-04: Added Focus Appearance (Minimum) (later renamed to [Focus Appearance](#focus-appearance)) and renamed Focus Visible (Enhanced) to Focus Appearance (Enhanced).
+*   2020-11-02: Renamed Dragging to [Dragging Movements](#dragging-movements).
+*   2020-12-08: Renamed Hidden Controls to Visible Controls.
+*   2021-09-21: Added [Accessible Authentication (No Exception)](#accessible-authentication-enhanced).
+*   2022-03-22: Added [Focus Not Obscured (Minimum)](#focus-not-obscured-minimum).
+*   2022-05-13: Removed Visible Controls.
+*   2022-05-30: Added [Focus Not Obscured (Enhanced)](#focus-not-obscured-enhanced).
+*   2022-07-15: Removed Page Break Navigation.
+*   2023-06-05: Added privacy and security sections within conformance.
+*   2024-12-12: Republished WCAG 2.2, incorporating the following errata:
+    *   modified the definitions of [single pointer](#dfn-single-pointer "an input modality that only targets a single point on the page/screen at a time – such as a mouse, single finger on a touch screen, or stylus."), [used in an unusual or restricted way](#dfn-used-in-an-unusual-or-restricted-way "words used in such a way that requires users to know exactly which definition to apply in order to understand the content correctly"), [motion animation](#dfn-motion-animation "addition of steps between conditions to create the illusion of movement or to give a sense of a smooth transition"), and [programmatically determined](#dfn-programmatically-determinable "determined by software from author-supplied data provided in a way that different user agents, including assistive technologies, can extract and present this information to users in different modalities")
+    *   modified the formatting of definitions for [changes of context](#dfn-change-of-context "major changes that, if made without user awareness, can disorient users who are not able to view the entire page simultaneously"), [general flash and red flash thresholds](#dfn-general-flash-and-red-flash-thresholds "a flash or rapidly changing image sequence is below the threshold (i.e., content passes) if any of the following are true:"), [cognitive function test](#dfn-cognitive-function-test "New"), and [structure](#dfn-structure "The way the parts of a web page are organized in relation to each other; and The way a collection of web pages is organized")
+    *   removed the defunct encloses definition
+    *   corrected typo in [input purposes](#input-purposes) list
+    *   modified the formatting of Target Size (Minimum) and Accessible Authentication (Minimum)
+    *   modified the visual presentation for content identified as New
+    *   modified the language covering devices in the [Abstract](#abstract)
+    *   made editorial changes to improve consistent use of definitions in the success criteria
+    *   made editorial changes to improve consistent use of the terms success criteria/criterion, web, website, and web page
+
+B. 기여자
+------
+
+_이 섹션은 비규범적(non-normative)인 내용을 다룬다._
+
+접근성 지침 실무그룹(Accessibility Guidelines Working Group: AG WG) 참여에 대한 추가 정보는 [실무그룹 홈 페이지](https://www.w3.org/WAI/GL/)에서 찾을 수 있다.
+
+### B.1 이 문서 개발에 적극적으로 참여한 AG WG 참가자들:
+
+*   Jake Abma (Invited Expert)
+*   Shadi Abou-Zahra (Amazon)
+*   Chuck Adams (Oracle Corporation)
+*   Amani Ali (Nomensa)
+*   Jim Allan (Invited Expert)
+*   Jon Avila (Level Access)
+*   Bruce Bailey (U.S. Access Board)
+*   Renaldo Bernard (University of Southampton)
+*   Dan Bjorge (Deque Systems, Inc.)
+*   Peter Bossley (Thomson Reuters)
+*   Rachael Bradley Montgomery (Library of Congress)
+*   Judy Brewer (W3C)
+*   Shari Butler (Pearson plc)
+*   Thaddeus Cambron (Invited Expert)
+*   Alastair Campbell (Nomensa)
+*   Laura Carlson (Invited Expert)
+*   Sukriti Chadha (Invited Expert)
+*   Rafal Charlampowicz (AccessibilityOZ)
+*   Michael Cooper (W3C)
+*   Jennifer Delisi (Invited Expert)
+*   Wayne Dick (Knowbility, Inc)
+*   Kim Dirks (Thomson Reuters)
+*   E.A. Draffan (University of Southampton)
+*   Eric Eggert (W3C)
+*   Michael Elledge (Invited Expert)
+*   Steve Faulkner (TPGi)
+*   David Fazio (Invited Expert)
+*   Wilco Fiers (Deque Systems, Inc.)
+*   Detlev Fischer (Invited Expert)
+*   John Foliot (Invited Expert)
+*   Matt Garrish (DAISY Consortium)
+*   Alistair Garrison (Level Access)
+*   Jaunita George (Navy Federal Credit Union)
+*   Michael Gower (IBM Corporation)
+*   Markku Hakkinen (Educational Testing Service)
+*   Charles Hall (Invited Expert)
+*   Katie Haritos-Shea (Knowbility, Inc)
+*   Dan Harper-Wain (HM Government)
+*   Shawn Henry (W3C)
+*   Sarah Horton (Invited Expert)
+*   Abi James (University of Southampton)
+*   Marc Johlic (IBM Corporation)
+*   Oliver Keim (SAP SE)
+*   Andrew Kirkpatrick (Adobe)
+*   John Kirkwood (Invited Expert)
+*   JaEun Jemma Ku (University of Illinois Chicago)
+*   Patrick H. Lauke (TetraLogical)
+*   Shawn Lauriat (Google, Inc.)
+*   Steve Lee (Invited Expert)
+*   Chris Loiselle (Invited Expert)
+*   David MacDonald (Invited Expert)
+*   Jan McSorley (Pearson plc)
+*   Rain Breaw Michaels (Google LLC)
+*   Neil Milliken (Unify Software and Solutions)
+*   Mary Jo Mueller (IBM Corporation)
+*   Jay Mullen (College Board)
+*   Brooks Newton (Thomson Reuters)
+*   Gundula Niemann (SAP SE)
+*   James Nurthen (Oracle Corporation)
+*   Lori Oakley (Oracle Corporation)
+*   Joshue O Connor (Invited Expert)
+*   Scott O'Hara (Microsoft)
+*   Sailesh Panchang (Deque Systems, Inc.)
+*   Kim Patch (Invited Expert)
+*   Melanie Philipp (Deque Systems, Inc.)
+*   Mike Pluke (Invited Expert)
+*   Ian Pouncey (TetraLogical)
+*   Ruoxi Ran (W3C)
+*   Stephen Repsher (Invited Expert)
+*   John Rochford (Invited Expert)
+*   Stefan Schnabel (SAP SE)
+*   Ayelet Seeman (Invited Expert)
+*   Lisa Seeman-Kestenbaum (Invited Expert)
+*   Glenda Sims (Deque Systems, Inc.)
+*   Avneesh Singh (DAISY Consortium)
+*   David Sloan (TPGi)
+*   Andrew Somers (Invited Expert)
+*   Jeanne Spellman (TetraLogical)
+*   Francis Storr (Intel)
+*   Poornima Badhan Subramanian (Invited Expert)
+*   Ben Tillyer (Invited Expert)
+*   Makoto Ueki (Invited Expert)
+*   Gregg Vanderheiden (Raising the Floor)
+*   Kathleen Wahlbin (Invited Expert)
+*   Léonie Watson (TetraLogical)
+*   Jason White (Educational Testing Service)
+*   White, Kevin (W3C Staff)
+*   Mark Wilcock (Unify Software and Solutions)
+
+### B.2 이전에 활동했던 다른 WCAG WG 참가자 및 WCAG 2.0, WCAG 2.1 또는 지원 리소스에 대한 기여자들
+
+Paul Adam, Jenae Andershonis, Wilhelm Joys Andersen, Andrew Arch, Avi Arditti, Aries Arditi, Tom Babinszki, Mark Barratt, Mike Barta, Sandy Bartell, Kynn Bartlett, Chris Beer, Charles Belov, Marco Bertoni, Harvey Bingham, Chris Blouch, Paul Bohman, Frederick Boland, Denis Boudreau, Patrice Bourlon, Andy Brown, Dick Brown, Doyle Burnett, Raven Calais, Ben Caldwell, Tomas Caspers, Roberto Castaldo, Sofia Celic-Li, Sambhavi Chandrashekar, Mike Cherim, Jonathan Chetwynd, Wendy Chisholm, Alan Chuter, David M Clark, Joe Clark, Darcy Clarke, James Coltham, Earl Cousins, James Craig, Tom Croucher, Pierce Crowell, Nir Dagan, Daniel Dardailler, Geoff Deering, Sébastien Delorme, Pete DeVasto, Iyad Abu Doush, Sylvie Duchateau, Cherie Eckholm, Roberto Ellero, Don Evans, Gavin Evans, Neal Ewers, Steve Faulkner, Bengt Farre, Lainey Feingold, Wilco Fiers, Michel Fitos, Alan J. Flavell, Nikolaos Floratos, Kentarou Fukuda, Miguel Garcia, P.J. Gardner, Alistair Garrison, Greg Gay, Becky Gibson, Al Gilman, Kerstin Goldsmith, Michael Grade, Karl Groves, Loretta Guarino Reid, Jon Gunderson, Emmanuelle Gutiérrez y Restrepo, Brian Hardy, Eric Hansen, Benjamin Hawkes-Lewis, Sean Hayes, Shawn Henry, Hans Hillen, Donovan Hipke, Bjoern Hoehrmann, Allen Hoffman, Chris Hofstader, Yvette Hoitink, Martijn Houtepen, Carlos Iglesias, Richard Ishida, Jonas Jacek, Ian Jacobs, Phill Jenkins, Barry Johnson, Duff Johnson, Jyotsna Kaki, Shilpi Kapoor, Leonard R. Kasday, Kazuhito Kidachi, Ken Kipness, Johannes Koch, Marja-Riitta Koivunen, Maureen Kraft, Preety Kumar, Kristjan Kure, Andrew LaHart, Gez Lemon, Chuck Letourneau, Aurélien Levy, Harry Loots, Scott Luebking, Tim Lacy, Jim Ley, Alex Li, William Loughborough, N Maffeo, Mark Magennis, Erich Manser, Kapsi Maria, Luca Mascaro, Matt May, Sheena McCullagh, Liam McGee, Jens Oliver Meiert, Niqui Merret, Jonathan Metz, Alessandro Miele, Steven Miller, Mathew J Mirabella, Matt May, Marti McCuller, Sorcha Moore, Charles F. Munat, Robert Neff, Charles Nevile, Liddy Nevile, Dylan Nicholson, Bruno von Niman, Tim Noonan, Sebastiano Nutarelli, Graham Oliver, Sean B. Palmer, Charu Pandhi, evarshi Pant, Nigel Peck, Anne Pemberton, David Poehlman, Ian Pouncey, Charles Pritchard, Kerstin Probiesch, W Reagan, Adam Victor Reed, Chris Reeve, Chris Ridpath, Lee Roberts, Mark Rogers, Raph de Rooij, Gregory J. Rosmaita, Matthew Ross, Sharron Rush, Joel Sanda, Janina Sajka, Roberto Scano, Gordon Schantz, Tim van Schie, Wolf Schmidt, Stefan Schnabel, Cynthia Shelly, Glenda Sims, John Slatin, Becky Smith, Jared Smith, Andi Snow-Weaver, Neil Soiffer, Mike Squillace, Michael Stenitzer, Diane Stottlemyer, Christophe Strobbe, Sarah J Swierenga, Jim Thatcher, Terry Thompson, Justin Thorp, David Todd, Mary Utt, Jean Vanderdonckt, Carlos A Velasco, Eric Velleman, Gijs Veyfeyken, Dena Wainwright, Paul Walsch, Daman Wandke, Richard Warren, Elle Waters, Takayuki Watanabe, Gian Wild, David Wooley, Wu Wei, Kenny Zhang, Leona Zumbo.
+
+### B.3 자금 후원
+
+이 권고안은 보건복지부, 장애인 독립생활 및 재활 연구 국립연구소(NIDILRR)의 미연방 기금에서 일부 자금 지원을 받았다. 초기에는 계약 번호 ED-OSE-10-C-0067 하에서, 이후 계약 번호 HHSP23301500054C 하에서, 그리고 현재는 HHS75P00120P00168 하에서 지원되고 있다. 본 권고안의 내용은 반드시 미국 보건복지부 또는 미국 교육부의 견해나 정책을 반영하는 것은 아니며, 상표명, 상품, 또는 조직에 대한 언급이 미국 정부의 보증을 의미하는 것도 아니다.
+
+C. 참고문헌
+-------
+
+### C.1 정보성 참고문헌
+
+<dl class="bibliography">
+	<dt id="bib-css3-values">[css3-values]</dt>
+	<dd>
+		<a href="https://www.w3.org/TR/css-values-3/"><cite>CSS Values and Units Module Level 3</cite></a>. Tab Atkins Jr.; Elika Etemad.  W3C. 1 December 2022. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/css-values-3/">https://www.w3.org/TR/css-values-3/</a>
+	</dd>
+	<dt id="bib-html">[HTML]</dt>
+	<dd>
+		<a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+	</dd>
+	<dt id="bib-iso_9241-391">[ISO_9241-391]</dt>
+	<dd>
+		<a href="https://www.iso.org/standard/56350.html"><cite>Ergonomics of human-system interaction—Part 391: Requirements, analysis and compliance test methods for the reduction of photosensitive seizures</cite></a>.  International Standards Organization. URL: <a href="https://www.iso.org/standard/56350.html">https://www.iso.org/standard/56350.html</a>
+	</dd>
+	<dt id="bib-pointerevents">[pointerevents]</dt>
+	<dd>
+		<a href="https://www.w3.org/TR/pointerevents/"><cite>Pointer Events</cite></a>. Jacob Rossi; Matt Brubeck.  W3C. 4 April 2019. W3C Recommendation. URL: <a href="https://www.w3.org/TR/pointerevents/">https://www.w3.org/TR/pointerevents/</a>
+	</dd>
+	<dt id="bib-rfc2119">[RFC2119]</dt>
+	<dd>
+		<a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>요구 사항 수준을 나타내기 위해 RFC에서 사용되는 키워드</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+	</dd>
+	<dt id="bib-srgb">[SRGB]</dt>
+	<dd>
+		<a href="https://webstore.iec.ch/publication/6169"><cite>Multimedia systems and equipment - Colour measurement and management - Part 2-1: Colour management - Default RGB colour space - sRGB</cite></a>.  IEC. URL: <a href="https://webstore.iec.ch/publication/6169">https://webstore.iec.ch/publication/6169</a>
+	</dd>
+	<dt id="bib-uaag10">[UAAG10]</dt>
+	<dd>
+		<a href="https://www.w3.org/TR/UAAG10/"><cite>User Agent Accessibility Guidelines 1.0</cite></a>. Ian Jacobs; Jon Gunderson; Eric Hansen.  W3C. 17 December 2002. W3C Recommendation. URL: <a href="https://www.w3.org/TR/UAAG10/">https://www.w3.org/TR/UAAG10/</a>
+	</dd>
+	<dt id="bib-unesco">[UNESCO]</dt>
+	<dd>
+		<a href="https://unesdoc.unesco.org/ark:/48223/pf0000219109"><cite>International Standard Classification of Education</cite></a>. 2011. URL: <a href="https://unesdoc.unesco.org/ark:/48223/pf0000219109">https://unesdoc.unesco.org/ark:/48223/pf0000219109</a>
+	</dd>
+	<dt id="bib-wai-webcontent">[WAI-WEBCONTENT]</dt>
+	<dd>
+		<a href="https://www.w3.org/TR/WAI-WEBCONTENT/"><cite>Web Content Accessibility Guidelines 1.0</cite></a>. Wendy Chisholm; Gregg Vanderheiden; Ian Jacobs.  W3C. 5 May 1999. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WAI-WEBCONTENT/">https://www.w3.org/TR/WAI-WEBCONTENT/</a>
+	</dd>
+	<dt id="bib-wcag20">[WCAG20]</dt>
+	<dd>
+		<a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al.  W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a>
+	</dd>
+	<dt id="bib-wcag21">[WCAG21]</dt>
+	<dd>
+		<a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Michael Cooper; Andrew Kirkpatrick; Joshue O'Connor; Alastair Campbell.  W3C. 21 September 2023. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>
+	</dd>
+</dl>
