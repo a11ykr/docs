@@ -145,7 +145,7 @@ WCAG 2.2는 [WCAG 2.2 요구 사항](https://w3c.github.io/wcag/requirements/22/
 
 WCAG 2.2는 WCAG 2.1의 작업을 계승하여 진행되었으며, 특히 인지 또는 학습 장애를 가진 사용자, 시력 저하 사용자, 모바일 기기 사용 장애인을 위한 웹 접근성 지침 개선에 중점을 두었다. 상기 세 그룹의 요구 사항을 충족시키기 위한 다양한 방안들이 제시되고 평가되었으며, 이 중 일부는 실무 그룹에 의해 개선되었다. WCAG 2.0에서 이어받은 구조적 요건, 제안의 명확성과 효과, 작업 일정 등을 고려하여 최종적으로 본 버전에 포함된 성공 기준이 도출되었다. 실무 그룹은 WCAG 2.2가 상기 모든 영역에서 웹 콘텐츠 접근성 지침을 점진적으로 발전시켰다고 간주하지만, 이 지침으로 모든 사용자 요구 사항을 충족시킬 수 없음을 강조한다.
 
-WCAG 2.2는 WCAG 2.1을 기반으로 하며 하위 호환성을 제공한다. 이는 WCAG 2.2를 준수하는 웹 페이지가 최소한 WCAG 2.1의 접근성 수준을 만족함을 의미한다. WCAG 2.2에는 2.1 및 2.0 버전을 계승하여 발전된 요구 사항들이 추가되었다. 단, [4.1.1 Parsing](#parsing) 성공 기준은 WCAG 2.2에서 삭제되었다. 기존 정책상 WCAG 2.0 또는 2.1을 준수해야 하는 저자들은 WCAG 2.2로 콘텐츠를 업데이트할 수 있으나, 4.1.1 항목에 대해서는 지속적인 테스트와 보고가 필요할 수 있다. 복수의 가이드라인 버전을 적용해야 하는 저자들은 다음과 같은 차이에 유의해야 한다.
+WCAG 2.2는 WCAG 2.1을 기반으로 하며 하위 호환성을 제공한다. 이는 WCAG 2.2를 준수하는 웹 페이지가 최소한 WCAG 2.1의 접근성 수준을 만족함을 의미한다. WCAG 2.2에는 2.1 및 2.0 버전을 계승하여 발전된 요구 사항들이 추가되었다. 단, [4.1.1 Parsing](#성공-기준-411-파싱-무효화-및-삭제) 성공 기준은 WCAG 2.2에서 삭제되었다. 기존 정책상 WCAG 2.0 또는 2.1을 준수해야 하는 저자들은 WCAG 2.2로 콘텐츠를 업데이트할 수 있으나, 4.1.1 항목에 대해서는 지속적인 테스트와 보고가 필요할 수 있다. 복수의 가이드라인 버전을 적용해야 하는 저자들은 다음과 같은 차이에 유의해야 한다.
 
 #### WCAG 2.2의 새로운 특징
 
@@ -153,19 +153,19 @@ WCAG 2.2는 새로운 성공 기준, 이를 뒷받침하는 정의, 추가 사�
 
 WCAG 2.2에서 새로 추가된 성공 기준은 다음과 같다:
 
-*   2.4.11 [초점 표시(최소)](#focus-not-obscured-minimum) (AA)
-*   2.4.12 [초점 표시 (향상)](#focus-not-obscured-enhanced) (AAA)
-*   2.4.13 [초점 형태](#focus-appearance) (AAA)
-*   2.5.7 [끌기 동작](#dragging-movements) (AA)
-*   2.5.8 [타겟 크기(최소)](#target-size-minimum) (AA)
-*   3.2.6 [일관된 도움말](#consistent-help) (A)
-*   3.3.7 [중복 입력](#redundant-entry) (A)
-*   3.3.8 [접근 가능한 인증(최소)](#accessible-authentication-minimum) (AA)
-*   3.3.9 [접근 가능한 인증 (향상)](#accessible-authentication-enhanced) (AAA)
+*   2.4.11 [초점 표시(최소)](#성공-기준-2411-초점-표시-최소) (AA)
+*   2.4.12 [초점 표시 (향상)](#성공-기준-2412-초점-표시-향상) (AAA)
+*   2.4.13 [초점 형태](#성공-기준-2413-초점-형태) (AAA)
+*   2.5.7 [끌기 동작](#성공-기준-257-끌기-동작) (AA)
+*   2.5.8 [타겟 크기(최소)](#성공-기준-258-타겟-크기-최소) (AA)
+*   3.2.6 [일관된 도움말](#성공-기준-326-일관된-도움말) (A)
+*   3.3.7 [중복 입력](#성공-기준-337-중복-입력) (A)
+*   3.3.8 [접근 가능한 인증(최소)](#성공-기준-338-접근-가능한-인증-최소) (AA)
+*   3.3.9 [접근 가능한 인증 (향상)](#성공-기준-339-접근-가능한-인증-향상) (AAA)
 
 새로운 성공 기준은 용어집에 추가된 새로운 용어를 참조할 수 있으며, 이는 성공 기준의 규범적 요구 사항의 일부를 구성한다.
 
-WCAG 2.2는 또한 [프라이버시](#privacy-summary)와 [보안](#security-summary)에 영향을 줄 수 있는 규격의 측면을 자세히 설명하는 새로운 섹션을 소개한다.
+WCAG 2.2는 또한 [프라이버시](#프라이버시-고려-사항)와 [보안](#보안-고려-사항)에 영향을 줄 수 있는 규격의 측면을 자세히 설명하는 새로운 섹션을 소개한다.
 
 #### WCAG 2.2의 번호 체계
 
@@ -175,7 +175,7 @@ WCAG 2의 호환성이 중요한 구현자(implementer)의 혼란을 피하기 �
 #### WCAG 2.2 준수
 
 
-WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준수하는 사이트는 WCAG 2.0과 WCAG 2.1도 준수하도록 의도하었으며, 이는 해당 사이트가 WCAG 2.0 또는 WCAG 2.1을 참조하는 정책의 요구사항을 충족시킴과 동시에 현재 웹 사용자의 요구사항을 보다 잘 충족시킴을 의미한다.
+WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준수하는 사이트는 WCAG 2.0과 WCAG 2.1도 준수하도록 의도하였으며, 이는 해당 사이트가 WCAG 2.0 또는 WCAG 2.1을 참조하는 정책의 요구사항을 충족시킴과 동시에 현재 웹 사용자의 요구사항을 보다 잘 충족시킴을 의미한다.
 
 ### 접근성 지침의 이후 버전
 
@@ -418,7 +418,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 
 참고
 
-이 성공 기준을 준수하지 않은 콘텐츠는 사용자의 전체 페이지 이용을 방해할 수 있으므로, (다른 성공 기준 충족 여부와 관계없이) 웹 페이지의 모든 콘텐츠는 이 성공 기준을 준수해야 한다. 자세한 내용은 [준수 요구사항 5: 불간섭](#cc5)을 참고하라.
+이 성공 기준을 준수하지 않은 콘텐츠는 사용자의 전체 페이지 이용을 방해할 수 있으므로, (다른 성공 기준 충족 여부와 관계없이) 웹 페이지의 모든 콘텐츠는 이 성공 기준을 준수해야 한다. 자세한 내용은 [준수 요구사항 5: 불간섭](#준수-요구사항-5-불간섭)을 참고하라.
 
 #### 성공 기준 1.4.3 명도 대비(최소)
 
@@ -692,7 +692,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 
 참고
 
-이 성공 기준을 충족하지 못하는 콘텐츠는 모든 페이지를 사용하는 사용자들의 능력을 방해할 수 있다. 웹 페이지의 모든 콘텐츠는 다른 성공 기준의 충족 여부와 관계없이 반드시 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#cc5)을 참고하라.
+이 성공 기준을 충족하지 못하는 콘텐츠는 모든 페이지를 사용하는 사용자들의 능력을 방해할 수 있다. 웹 페이지의 모든 콘텐츠는 다른 성공 기준의 충족 여부와 관계없이 반드시 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#준수-요구사항-5-불간섭)을 참고하라.
 
 #### 성공 기준 2.1.3 키보드 (예외 없음)
 
@@ -791,7 +791,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 
 참고 2
 
-이 성공 기준을 준수하지 못하는 콘텐츠는 사용자가 전체 페이지를 사용하는 것을 방해할 수 있으므로, 웹 페이지의 모든 콘텐츠는 (다른 성공 기준의 준수 여부와 상관없이) 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#cc5)을 참고하라.
+이 성공 기준을 준수하지 못하는 콘텐츠는 사용자가 전체 페이지를 사용하는 것을 방해할 수 있으므로, 웹 페이지의 모든 콘텐츠는 (다른 성공 기준의 준수 여부와 상관없이) 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#준수-요구사항-5-불간섭)을 참고하라.
 
 참고 3
 
@@ -859,7 +859,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 
 참고
 
-이 성공 기준을 준수하지 못하는 콘텐츠는 사용자가 전체 웹 페이지를 사용하는 것을 방해할 수 있으므로, 웹 페이지의 모든 콘텐츠는 (다른 성공 기준의 준수 여부와 상관없이) 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#cc5)을 참고하라.
+이 성공 기준을 준수하지 못하는 콘텐츠는 사용자가 전체 웹 페이지를 사용하는 것을 방해할 수 있으므로, 웹 페이지의 모든 콘텐츠는 (다른 성공 기준의 준수 여부와 상관없이) 이 성공 기준을 준수해야 한다. [준수 요구사항 5: 불간섭](#준수-요구사항-5-불간섭)을 참고하라.
 
 #### 성공 기준 2.3.2 3회 번쩍임
 
@@ -982,7 +982,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 
 참고 2
 
-이 성공 기준은 [사용자 인터페이스 구성요소](../../glossary/user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")가 아닌 글쓰기(writing) 내에서의 섹션을 다룬다. 사용자 인터페이스 구성요소는 [성공 기준 4.1.2](#name-role-value)를 참고하라.
+이 성공 기준은 [사용자 인터페이스 구성요소](../../glossary/user-interface-components "사용자가 고유한 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부")가 아닌 글쓰기(writing) 내에서의 섹션을 다룬다. 사용자 인터페이스 구성요소는 [성공 기준 4.1.2](#성공-기준-412-이름-역할-값)를 참고하라.
 
 #### 성공 기준 2.4.11 초점 표시(최소)
 
@@ -1540,7 +1540,7 @@ WCAG 2.2는 WCAG 2.0과 동일한 준수 모델을 사용한다. WCAG 2.2를 준
 
 참고
 
-이 성공 기준은 주로 사용자 인터페이스 구성요소를 개발하거나 스크립팅하는 웹 개발자를 위한 것이다. 예를 들어, 표준 HTML 컨트롤은 명세서에 따라 사용되었을 때, 이미 이 성공 기준을 준수한 것이다.
+이 성공 기준은 주로 사용자 인터페이스 구성요소를 개발하거나 스크립팅하는 웹 개발자를 위한 것이다. 예를 들어, 표준 HTML 컨트롤은 명세서에 따라 사용되었을 때, 이미 [성공 기준 4.1.2 이름, 역할, 값](#성공-기준-412-이름-역할-값)을 준수한 것이다.
 
 #### 성공 기준 4.1.3 상태 메시지
 
@@ -1666,7 +1666,7 @@ WCAG 2.2의 주요 내용은 [규범](../../glossary/normative "준수에 필요
 
 참고 3
 
-준수 로고가 사용될 경우, 선언을 포함하고, 위에서 열거된 준수 선언의 필수 구성요소를 함께 표시해야 한다.
+준수 로고가 사용될 경우, 선언을 포함하고, 위에서 열거된 [준수 요구사항 5: 불간섭](#준수-요구사항-5-불간섭)을 함께 표시해야 한다.
 
 #### 5.3.2 준수 선언의 선택적 구성요소
 
@@ -1719,8 +1719,8 @@ WCAG 2.2의 주요 내용은 [규범](../../glossary/normative "준수에 필요
 
 개인 정보 보호와 관련될 수 있는 성공 기준은 다음과 같다.
 
-*   [2.2.6 시간 초과(Timeouts) (AAA)](#timeouts)
-*   [3.3.7 중복 입력 (A)](#redundant-entry)
+*   [2.2.6 시간 초과(Timeouts) (AAA)](#성공-기준-226-시간-초과)
+*   [3.3.7 중복 입력 (A)](#성공-기준-337-중복-입력)
 
 ### 5.7 보안 고려 사항
 
@@ -1731,17 +1731,17 @@ WCAG 2.2의 주요 내용은 [규범](../../glossary/normative "준수에 필요
 
 보안과 관련될 수 있는 성공 기준은 다음과 같다.
 
-*   [1.1.1 텍스트가 아닌 콘텐츠 (A)](#non-text-content)
-*   [1.3.5 입력 목적 식별 (AA)](#identify-input-purpose)
-*   [1.4.7 낮은 배경음 또는 배경음 없음 (AAA)](#low-or-no-background-audio)
-*   [2.2.1 시간 제한 조정 (A)](#timing-adjustable)
-*   [2.2.5 재인증 (AAA)](#re-authenticating)
-*   [2.2.6 시간 초과(Timeouts) (AAA)](#timeouts)
-*   [2.5.6 동시 입력 메커니즘 (AAA)](#concurrent-input-mechanisms)
-*   [3.3.3 오류 수정 제안 (AA)](#error-suggestion)
-*   [3.3.7 중복 입력 (A)](#redundant-entry)
-*   [3.3.8 접근 가능한 인증(최소) (AA)](#accessible-authentication-minimum)
-*   [3.3.9 접근 가능한 인증(향상된) (AAA)](#accessible-authentication-enhanced)
+*   [1.1.1 텍스트가 아닌 콘텐츠 (A)](#성공-기준-111-텍스트가-아닌-콘텐츠)
+*   [1.3.5 입력 목적 식별 (AA)](#성공-기준-135-입력-목적-식별)
+*   [1.4.7 낮은 배경음 또는 배경음 없음 (AAA)](#성공-기준-147-낮은-배경음-또는-배경음-없음)
+*   [2.2.1 시간 제한 조정 (A)](#성공-기준-221-시간-제한-조정)
+*   [2.2.5 재인증 (AAA)](#성공-기준-225-재인증)
+*   [2.2.6 시간 초과(Timeouts) (AAA)](#성공-기준-226-시간-초과)
+*   [2.5.6 동시 입력 메커니즘 (AAA)](#성공-기준-256-동시-입력-메커니즘)
+*   [3.3.3 오류 수정 제안 (AA)](#성공-기준-333-오류-수정-제안)
+*   [3.3.7 중복 입력 (A)](#성공-기준-337-중복-입력)
+*   [3.3.8 접근 가능한 인증(최소) (AA)](#성공-기준-338-접근-가능한-인증-최소)
+*   [3.3.9 접근 가능한 인증(향상된) (AAA)](#성공-기준-339-접근-가능한-인증-향상)
 
 6\. 용어 해설
 ---------
@@ -1822,19 +1822,19 @@ A. 변경 기록
 
 전체 [WCAG 2.2 커밋 기록](https://github.com/w3c/wcag/commits/main/guidelines)을 확인할 수 있다.
 
-*   2019-11-10: Promoted [Focus Visible](#focus-visible) from Level AA to Level A.
+*   2019-11-10: Promoted [Focus Visible](#성공-기준-247-초점-시각화) from Level AA to Level A.
 *   2020-01-14: Added Focus Visible (Enhanced), later renamed to Focus Appearance (Enhanced), later removed.
 *   2020-03-10: Renamed Pointer Target Spacing to Target Size (Minimum)
-*   2020-03-30: Added [Accessible Authentication (Minimum)](#accessible-authentication-minimum).
-*   2020-05-27: Added Dragging (later renamed [Dragging Movements](#dragging-movements)).
-*   2020-07-19: Added Findable Help (later renamed to [Consistent Help](#consistent-help)), Fixed Reference Points (Page Break Navigation), Hidden Controls (later renamed Visible Controls), Pointer Target Spacing (later renamed [Target Size (Minimum)](#target-size-minimum)), [Redundant Entry](#redundant-entry).
-*   2020-08-04: Added Focus Appearance (Minimum) (later renamed to [Focus Appearance](#focus-appearance)) and renamed Focus Visible (Enhanced) to Focus Appearance (Enhanced).
-*   2020-11-02: Renamed Dragging to [Dragging Movements](#dragging-movements).
+*   2020-03-30: Added [Accessible Authentication (Minimum)](#성공-기준-338-접근-가능한-인증-최소).
+*   2020-05-27: Added Dragging (later renamed [Dragging Movements](#성공-기준-257-끌기-동작)).
+*   2020-07-19: Added Findable Help (later renamed to [Consistent Help](#성공-기준-326-일관된-도움말)), Fixed Reference Points (Page Break Navigation), Hidden Controls (later renamed Visible Controls), Pointer Target Spacing (later renamed [Target Size (Minimum)](#성공-기준-258-타겟-크기-최소)), [Redundant Entry](#성공-기준-337-중복-입력).
+*   2020-08-04: Added Focus Appearance (Minimum) (later renamed to [Focus Appearance](#성공-기준-2413-초점-형태)) and renamed Focus Visible (Enhanced) to Focus Appearance (Enhanced).
+*   2020-11-02: Renamed Dragging to [Dragging Movements](#성공-기준-257-끌기-동작).
 *   2020-12-08: Renamed Hidden Controls to Visible Controls.
-*   2021-09-21: Added [Accessible Authentication (No Exception)](#accessible-authentication-enhanced).
-*   2022-03-22: Added [Focus Not Obscured (Minimum)](#focus-not-obscured-minimum).
+*   2021-09-21: Added [Accessible Authentication (No Exception)](#성공-기준-339-접근-가능한-인증-향상).
+*   2022-03-22: Added [Focus Not Obscured (Minimum)](#성공-기준-2411-초점-표시-최소).
 *   2022-05-13: Removed Visible Controls.
-*   2022-05-30: Added [Focus Not Obscured (Enhanced)](#focus-not-obscured-enhanced).
+*   2022-05-30: Added [Focus Not Obscured (Enhanced)](#성공-기준-2412-초점-표시-향상).
 *   2022-07-15: Removed Page Break Navigation.
 *   2023-06-05: Added privacy and security sections within conformance.
 
