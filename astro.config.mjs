@@ -7,7 +7,7 @@ const commonKeywords = "접근성, 한국어, A11YKR, accessibility, Korean, A11
 
 export default defineConfig({
 	site: 'https://a11ykr.github.io/',
-	base: '/docs/',
+	base: process.env.NODE_ENV === 'production' ? '/' : '/docs/',
 	integrations: [
 		astroExpressiveCode(),
 		mdx(),
