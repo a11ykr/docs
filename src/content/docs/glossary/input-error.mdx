@@ -6,15 +6,24 @@ head:
 description: "사용자가 제공하였으나 수용되지 않는 정보"
 tableOfContents: false
 ---
-import { Aside, Badge , Card } from '@astrojs/starlight/components';
+import { Aside, Badge , Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Badge text="WCAG2" variant="note" size="large" />
+<Badge text="WCAG2" variant="note" size="large" /> <Badge text="WCAG2ICT" variant="tip" size="large" />
 * * *
 사용자가 제공하였으나 수용되지 않는 정보
-
-<Aside title="참고">
-여기에는 다음과 같은 것이 포함된다.
-
-1.  [웹 페이지](../web-page "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")에 필요하지만 사용자가 빠뜨린 정보
-1.  사용자가 제공하지만 필요한 데이터 형식 또는 허용 값을 벗어나는 정보
-</Aside>
+<Tabs>
+  <TabItem label="WCAG2">
+      <Aside title="참고">
+      여기에는 다음과 같은 것이 포함된다.
+      1.  [웹 페이지](../web-page "HTTP를 사용하여 단일 URI에서 얻어진 내장 안 된 리소스(non-embedded resource)과 렌더링에 사용되거나 사용자 에이전트에서 렌더링되도록 의도된 모든 다른 리소스")에 필요하지만 사용자가 빠뜨린 정보
+      1.  사용자가 제공하지만 필요한 데이터 형식 또는 허용 값을 벗어나는 정보
+      </Aside>
+	</TabItem>
+  <TabItem label="WCAG2ICT">
+    <Aside title="참고">
+    여기에는 다음과 같은 것이 포함된다.
+    1.  \[**[웹이 아닌 문서](#document)나 [소프트웨어](#software)**\]에 필요하지만 사용자가 빠뜨린 정보
+    1.  사용자가 제공하지만 필요한 데이터 형식 또는 허용 값을 벗어나는 정보
+    </Aside>
+	</TabItem>
+</Tabs>
