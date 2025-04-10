@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mdx from '@astrojs/mdx';
 import astroExpressiveCode from 'astro-expressive-code';
+import starlightFullViewMode from 'starlight-fullview-mode'
+
 
 const commonKeywords = "접근성, 한국어, A11YKR, accessibility, Korean, A11Y";
 
@@ -24,7 +26,9 @@ export default defineConfig({
 					lang: 'ko',
 				},
 			},
-			plugins: [],
+			plugins: [
+				starlightFullViewMode({ leftSidebarEnabled: true, rightSidebarEnabled: true })
+			],
 			social: {
 				github: 'https://a11ykr.github.io',
 			},
