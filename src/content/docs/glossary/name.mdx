@@ -6,17 +6,36 @@ head:
 description: "소프트웨어가 사용자에게 웹 콘텐츠 내의 구성요소를 식별할 수 있도록 해 주는 텍스트"
 tableOfContents: false
 ---
-import { Aside, Badge , Card } from '@astrojs/starlight/components';
+import { Aside, Badge , Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Badge text="WCAG2" variant="note" size="large" />
+<Badge text="WCAG2" variant="note" size="large" /> <Badge text="WCAG2ICT" variant="tip" size="large" />
 * * *
-소프트웨어가 사용자에게 웹 콘텐츠 내의 구성요소를 식별할 수 있도록 해 주는 텍스트
+<Tabs>
+  <TabItem label="WCAG2">
+    소프트웨어가 사용자에게 웹 콘텐츠 내의 구성요소를 식별할 수 있도록 해 주는 텍스트
 
+    <Aside title="참고 1">
+    이름(name)은 숨길 수 있고 보조 기술에 의해서만 노출할 수 있는 반면, [레이블](../labels "웹 콘텐츠 내의 구성요소를 식별하기 위해 사용자에게 제공되는 대체 텍스트를 가지고 있는 텍스트나 다른 구성 요소")은 모든 사용자에게 제시된다. 대부분의 경우(전부는 아님), 레이블과 네임은 동일하다.
+    </Aside>
 
-<Aside title="참고 1">
-이름(name)은 숨길 수 있고 보조 기술에 의해서만 노출할 수 있는 반면, [레이블](../labels "웹 콘텐츠 내의 구성요소를 식별하기 위해 사용자에게 제공되는 대체 텍스트를 가지고 있는 텍스트나 다른 구성 요소")은 모든 사용자에게 제시된다. 대부분의 경우(전부는 아님), 레이블과 네임은 동일하다.
-</Aside>
+    <Aside title="참고 2">
+    이것은 HTML의 name 속성과는 관련이 없다.
+    </Aside>
+	</TabItem>
+  <TabItem label="WCAG2ICT">
+    소프트웨어가 사용자에게 \[**[콘텐츠](../content)**\] 내의 구성요소를 식별할 수 있도록 해 주는 텍스트
 
-<Aside title="참고 2">
-이것은 HTML의 name 속성과는 관련이 없다.
-</Aside>
+    <Aside title="참고 1">
+    이름(name)은 숨겨져 있고 보조 기술\[**이나 [소프트웨어](../software)의 접근성 기능**\]을 통해서만 노출되는 반면, [레이블](../labels)은 모든 사용자에게 표시된다. 대부분의 경우 이름과 레이블은 동일하지만, 항상 그런 것은 아니다.
+    </Aside>
+
+    <Aside title="참고 2">
+    여기서 말하는 name은 HTML의 name 속성과는 관련이 없다.
+    </Aside>
+
+    <Card title="예제" icon="open-book">
+      예제: 웹이 아닌 소프트웨어의 경우, 해당 플랫폼의 접근성 API에서 사용하는 “접근 가능한 이름(AccessibleName)”(또는 API마다 상이한 명칭)은 이러한 이름(name)의 예에 해당한다.
+    </Card>
+	</TabItem>
+</Tabs>
+

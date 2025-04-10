@@ -6,16 +6,31 @@ head:
 description: "사용자 에이전트가 콘텐츠를 표시하는 객체"
 tableOfContents: false
 ---
-import { Aside, Badge , Card } from '@astrojs/starlight/components';
+import { Aside, Badge , Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Badge text="WCAG2" variant="note" size="large" />
+<Badge text="WCAG2" variant="note" size="large" /> <Badge text="WCAG2ICT" variant="tip" size="large" />
 * * *
-사용자 에이전트가 콘텐츠를 표시하는 객체
+<Tabs>
+  <TabItem label="WCAG2">
+    사용자 에이전트가 콘텐츠를 표시하는 객체
 
-<Aside title="참고">
-[사용자 에이전트](../user-agent "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")는 하나 이상의 뷰포트를 통해 콘텐츠를 제시한다. 뷰포트는 창(windows), 프레임, 스피커, 가상확대기를 포함한다. 뷰포트는 다른 뷰포트(예: 중첩된 프레임)를 포함할 수 있다. 프롬프트, 메뉴 및 경고와 같은 사용자 에이전트에 의해 생성된 인터페이스 구성요소는 뷰포트가 아니다.
-</Aside>
+    <Aside title="참고">
+    [사용자 에이전트](../user-agent "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")는 하나 이상의 뷰포트를 통해 콘텐츠를 제시한다. 뷰포트는 창(windows), 프레임, 스피커, 가상확대기를 포함한다. 뷰포트는 다른 뷰포트(예: 중첩된 프레임)를 포함할 수 있다. 프롬프트, 메뉴 및 경고와 같은 사용자 에이전트에 의해 생성된 인터페이스 구성요소는 뷰포트가 아니다.
+    </Aside>
 
-<Aside title="참고">
-이 정의는 [사용자 에이전트 접근성 지침 1.0 용어 해설](https://www.w3.org/TR/WAI-USERAGENT/glossary.html)\[[UAAG10](../../reference/wcag2/#bib-uaag10 "User Agent Accessibility Guidelines 1.0")\]에 근거한다.
-</Aside>
+    <Aside title="참고">
+    이 정의는 [사용자 에이전트 접근성 지침 1.0 용어 해설](https://www.w3.org/TR/WAI-USERAGENT/glossary.html)\[[UAAG10](../../wcag2/#bib-uaag10 "User Agent Accessibility Guidelines 1.0")\]에 근거한다.
+    </Aside>
+	</TabItem>
+  <TabItem label="WCAG2ICT">
+    \[**[소프트웨어](../software)**\]가 콘텐츠를 표시하는 객체
+
+    <Aside title="참고">
+    \[**소프트웨어**\]는 하나 이상의 뷰포트를 통해 콘텐츠를 표시한다. 뷰포트에는 창(window), 프레임, 스피커, 가상 확대경 등이 포함된다. 하나의 뷰포트 안에 또 다른 뷰포트가 포함될 수도 있다(예: 중첩된 프레임). 프롬프트, 메뉴, 알림창과 같이 \[소프트웨어\]가 생성한 인터페이스 구성요소는 뷰포트에 해당하지 않는다.
+    </Aside>
+
+    <Aside title="참고">
+    이 정의는 [사용자 에이전트 접근성 지침 1.0 용어 해설](https://www.w3.org/TR/WAI-USERAGENT/glossary.html)\[[UAAG10](../../wcag2/#bib-uaag10 "User Agent Accessibility Guidelines 1.0")\]에 근거한다.
+    </Aside>
+	</TabItem>
+</Tabs>

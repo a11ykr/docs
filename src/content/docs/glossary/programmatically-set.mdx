@@ -6,8 +6,19 @@ head:
 description: "보조 기술을 포함하여, 사용자 에이전트가 지원하는 방법으로 소프트웨어에 의해 설정된"
 tableOfContents: false
 ---
-import { Aside, Badge , Card } from '@astrojs/starlight/components';
+import { Aside, Badge , Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Badge text="WCAG2" variant="note" size="large" />
+<Badge text="WCAG2" variant="note" size="large" /> <Badge text="WCAG2ICT" variant="tip" size="large" />
 * * *
-보조 기술을 포함하여, 사용자 에이전트가 지원하는 방법으로 소프트웨어에 의해 설정된
+<Tabs>
+  <TabItem label="WCAG2">
+    보조 기술을 포함하여, 사용자 에이전트가 지원하는 방법으로 소프트웨어에 의해 설정된
+	</TabItem>
+  <TabItem label="WCAG2ICT">
+    소프트웨어가 \[**[보조 기술](../assistive-technology) 및 [소프트웨어](../software)의 접근성 기능**\]에서 지원하는 방식으로 설정된
+
+    <Aside title="참고(추가됨)">
+    소프트웨어는 일반적으로 [플랫폼 소프트웨어의 접근성 서비스](../accessibility-services-of-platform-software)를 통해 [콘텐츠](../content)가 프로그래밍 방식으로 판별되거나 설정되도록 지원한다. 웹이 아닌 문서도 일반적으로 사용자 에이전트의 접근성 서비스를 통해 프로그래밍 방식으로 판별되거나 설정되도록 한다.
+    </Aside>
+	</TabItem>
+</Tabs>

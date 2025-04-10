@@ -6,12 +6,20 @@ head:
 description: "사용자 인터페이스 구성요소의 대화형 영역과 같이 포인터 동작을 허용하는 디스플레이 영역"
 tableOfContents: false
 ---
-import { Aside, Badge , Card } from '@astrojs/starlight/components';
+import { Aside, Badge , Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Badge text="WCAG2" variant="note" size="large" />
+<Badge text="WCAG2" variant="note" size="large" /> <Badge text="WCAG2ICT" variant="tip" size="large" />
 * * *
 사용자 인터페이스 구성요소의 대화형 영역과 같이 포인터 동작을 허용하는 디스플레이 영역
-
-<Aside title="참고">
-타겟이 두 개 이상 중복되는 경우, 중복되는 대상이 동일한 동작을 수행하거나 동일한 페이지를 여는 경우를 제외하고, 타겟 크기의 측정시 중복 영역을 포함하지 않아야 한다.
-</Aside>
+<Tabs>
+  <TabItem label="WCAG2">
+    <Aside title="참고">
+    타겟이 두 개 이상 중복되는 경우, 중복되는 대상이 동일한 동작을 수행하거나 동일한 페이지를 여는 경우를 제외하고, 타겟 크기의 측정시 중복 영역을 포함하지 않아야 한다.
+    </Aside>
+	</TabItem>
+  <TabItem label="WCAG2ICT">
+    <Aside title="참고">
+    두 개 이상의 대상이 겹치는 경우, 대상 크기를 측정할 때 겹치는 영역은 포함하지 않는다. 단, 겹치는 대상이 동일한 동작을 수행하거나 동일한 \[**[웹이 아닌 문서](../document) 또는 [소프트웨어](../software)가 제공하는 [콘텐츠](../content)**\]를 여는 경우는 예외이다.
+    </Aside>
+	</TabItem>
+</Tabs>

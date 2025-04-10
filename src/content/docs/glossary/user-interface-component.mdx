@@ -6,22 +6,45 @@ head:
 description: "사용자가 고유 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부"
 tableOfContents: false
 ---
-import { Aside, Badge , Card } from '@astrojs/starlight/components';
+import { Aside, Badge , Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Badge text="WCAG2" variant="note" size="large" />
+<Badge text="WCAG2" variant="note" size="large" /> <Badge text="WCAG2ICT" variant="tip" size="large" />
 * * *
-사용자가 고유 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부
+<Tabs>
+  <TabItem label="WCAG2">
+    사용자가 고유 기능에 대한 단일 컨트롤로 인식하는 콘텐츠의 일부
 
-<Aside title="참고 1">
-다중 사용자 인터페이스 구성요소는 단일 프로그래밍 요소로 구현될 수 있다. 여기에서 구성요소는 프로그래밍 기법이 아니라 사용자가 별도의 컨트롤로 인식하는 것을 말한다.
-</Aside>
-<Aside title="참고 2">
-사용자 인터페이스 구성요소에는 스크립트로 생성한 구성요소뿐만 아니라 서식(<span lang="en">form</span>) 요소 및 링크도 포함된다.
-</Aside>
-<Aside title="참고 3">
-여기에서 “구성요소” 또는 “사용자 인터페이스 구성요소”가 의미하는 것은 때때로 “사용자 인터페이스 요소(<span lang="en">user interface element</span>)”라고도 한다.
-</Aside>
+    <Aside title="참고 1">
+    다중 사용자 인터페이스 구성요소는 단일 프로그래밍 요소로 구현될 수 있다. 여기에서 구성요소는 프로그래밍 기법이 아니라 사용자가 별도의 컨트롤로 인식하는 것을 말한다.
+    </Aside>
+    <Aside title="참고 2">
+    사용자 인터페이스 구성요소에는 스크립트로 생성한 구성요소뿐만 아니라 서식(<span lang="en">form</span>) 요소 및 링크도 포함된다.
+    </Aside>
+    <Aside title="참고 3">
+    여기에서 “구성요소” 또는 “사용자 인터페이스 구성요소”가 의미하는 것은 때때로 “사용자 인터페이스 요소(<span lang="en">user interface element</span>)”라고도 한다.
+    </Aside>
 
-<Card title="예제" icon="open-book">
-애플릿(<span lang="en">applet</span>)은 선이나 페이지 또는 무작위로 콘텐츠를 이동하는 데 사용될 수 있는 “컨트롤”를 가지고 있다. 이들 각각은 별도의 이름이 있어야 하고 독립적으로 설정할 필요가 있기 때문에, 각각 “사용자 인터페이스 구성요소”가 될 것이다.
-</Card>
+    <Card title="예제" icon="open-book">
+    애플릿(<span lang="en">applet</span>)은 선이나 페이지 또는 무작위로 콘텐츠를 이동하는 데 사용될 수 있는 “컨트롤”를 가지고 있다. 이들 각각은 별도의 이름이 있어야 하고 독립적으로 설정할 필요가 있기 때문에, 각각 “사용자 인터페이스 구성요소”가 될 것이다.
+    </Card>
+	</TabItem>
+  <TabItem label="WCAG2ICT">
+    특정 기능을 위해 사용자에게 하나의 제어 요소로 인식되는 콘텐츠의 일부
+
+    <Aside title="참고 1">
+    여러 사용자 인터페이스 구성요소가 하나의 프로그래밍 요소로 구현될 수 있다. 여기서 말하는 "구성요소"는 프로그래밍 방식이 아닌, 사용자가 별도의 제어 요소로 인식하는지를 기준으로 한다.
+    </Aside>
+    <Aside title="참고 2">
+    사용자 인터페이스 구성요소에는 입력 양식 요소, 링크, 스크립트로 생성된 구성요소 등이 포함된다.
+    </Aside>
+    <Aside title="참고 3">
+    여기서 말하는 "구성요소(<span lang="en">user interface component</span>)" 또는 "사용자 인터페이스 구성요소"는 때때로 "사용자 인터페이스 요소(<span lang="en">user interface element</span>)"라고도 불린다.
+    </Aside>
+
+    <Card title="예제" icon="open-book">
+      한 [소프트웨어](../software) 프로그램에 파일 이름을 입력하는 텍스트 필드와 폴더를 선택하는 드롭다운 리스트 박스가 있다. 각각은 소프트웨어에서 이름을 설정할 수 있는 사용자 인터페이스 구성요소이다.
+    </Card>
+	</TabItem>
+</Tabs>
+
+

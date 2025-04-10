@@ -6,13 +6,27 @@ head:
 description: "키 누름 입력을 얻기 위해 소프트웨어에서 사용하는 인터페이스"
 tableOfContents: false
 ---
-import { Aside, Badge , Card } from '@astrojs/starlight/components';
+import { Aside, Badge , Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Badge text="WCAG2" variant="note" size="large" />
+<Badge text="WCAG2" variant="note" size="large" /> <Badge text="WCAG2ICT" variant="tip" size="large" />
 * * *
-소프트웨어가 웹 콘텐츠 내에 있는 구성요소의 기능을 식별할 수 있도록 해 주는 텍스트나 숫자
+<Tabs>
+  <TabItem label="WCAG2">
+    소프트웨어가 웹 콘텐츠 내에 있는 구성요소의 기능을 식별할 수 있도록 해 주는 텍스트나 숫자
 
+    <Card title="예제" icon="open-book">
+    이미지가 하이퍼링크, 명령어 버튼 또는 체크박스로 작동하는지 여부를 나타내는 숫자
+    </Card>
+	</TabItem>
+  <TabItem label="WCAG2ICT">
+    소프트웨어가 \[**[콘텐츠](../content)**\] 내에 있는 구성요소의 기능을 식별할 수 있도록 해 주는 텍스트나 숫자
 
-<Card title="예제" icon="open-book">
-이미지가 하이퍼링크, 명령어 버튼 또는 체크박스로 작동하는지 여부를 나타내는 숫자
-</Card>
+    <Card title="예제" icon="open-book">
+    이미지가 하이퍼링크, 명령어 버튼 또는 체크박스로 작동하는지 여부를 나타내는 숫자
+    </Card>
+
+    <Aside title="참고(추가됨)">
+    플랫폼 접근성 API에서 사용되는 “접근 가능한 역할(AccessibleRole)”(또는 각 접근성 API에서 사용하는 해당 용어)은 이러한 역할을 나타내는 예이다.
+    </Aside>
+	</TabItem>
+</Tabs>

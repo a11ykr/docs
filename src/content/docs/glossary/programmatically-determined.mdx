@@ -6,18 +6,39 @@ head:
 description: "보조 기술을 포함하여 다른 사용자 에이전트가 정보를 추출하여 사용자에게 다른 형식으로 제시할 수 있도록 제공된 저작자 제공 데이터로부터 소프트웨어에 의해 결정되거나 확인 가능한"
 tableOfContents: false
 ---
-import { Aside, Badge , Card } from '@astrojs/starlight/components';
+import { Aside, Badge , Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Badge text="WCAG2" variant="note" size="large" />
+<p><span lang="en">Programmatically determined, Programmatically determinable</span></p>
 * * *
-프로그래밍 방식으로 판별되는(<span lang="en">programmatically determined</span>) 또는 프로그래밍 방식으로 결정/판단 가능한(<span lang="en">programmatically determinable</span>)
+<Badge text="WCAG2" variant="note" size="large" /> <Badge text="WCAG2ICT" variant="tip" size="large" />
 
-[보조 기술](../assistive-technology "사용자 에이전트 역할을 하거나 주류 사용자 에이전트와 함께 작동하며, 주류 사용자 에이전트가 제공하는 것 이상의, 장애를 지닌 사용자의 요구사항을 충족하는 기능을 제공하는 하드웨어나 소프트웨어")을 포함하여 다른 [사용자 에이전트](../user-agent "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")가 정보를 추출하여 사용자에게 다른 형식으로 제시할 수 있도록 제공된 저작자 제공 데이터로부터 소프트웨어에 의해 결정되거나 확인 가능한
+* * *
+<Tabs>
+  <TabItem label="WCAG2">
+    프로그래밍 방식으로 판별되는(<span lang="en">programmatically determined</span>) 또는 프로그래밍 방식으로 결정/판단 가능한(<span lang="en">programmatically determinable</span>)
 
-<Card title="예제 1" icon="open-book">
-일반적으로 이용할 수 있는 보조 기술에 의해 직접 접속되는 요소 및 속성에서 마크업 언어로 결정됨
-</Card>
+    [보조 기술](../assistive-technology "사용자 에이전트 역할을 하거나 주류 사용자 에이전트와 함께 작동하며, 주류 사용자 에이전트가 제공하는 것 이상의, 장애를 지닌 사용자의 요구사항을 충족하는 기능을 제공하는 하드웨어나 소프트웨어")을 포함하여 다른 [사용자 에이전트](../user-agent "사용자를 위해 웹 콘텐츠를 검색하고 표시하는 소프트웨어")가 정보를 추출하여 사용자에게 다른 형식으로 제시할 수 있도록 제공된 저작자 제공 데이터로부터 소프트웨어에 의해 결정되거나 확인 가능한
 
-<Card title="예제 2" icon="open-book">
-비마크업(<span lang="en">non-makeup</span>) 언어에서 특정 기술에 제한된(<span lang="en">technology-specific</span>) 데이터 구조로 결정되며, 일반적으로 이용할 수 있는 보조 기술에서 지원하는 접근성 API를 통해 보조 기술에 노출됨
-</Card>
+    <Card title="예제 1" icon="open-book">
+    일반적으로 이용할 수 있는 보조 기술에 의해 직접 접속되는 요소 및 속성에서 마크업 언어로 결정됨
+    </Card>
+
+    <Card title="예제 2" icon="open-book">
+    비마크업(<span lang="en">non-makeup</span>) 언어에서 특정 기술에 제한된(<span lang="en">technology-specific</span>) 데이터 구조로 결정되며, 일반적으로 이용할 수 있는 보조 기술에서 지원하는 접근성 API를 통해 보조 기술에 노출됨
+    </Card>
+	</TabItem>
+  <TabItem label="WCAG2ICT">
+    작성자가 제공한 데이터를 소프트웨어가 판별할 수 있도록 구성하여, 다양한 \[**[보조 기술](../assistive-technology) 및 [소프트웨어](../software)의 접근성 기능**\]이 해당 정보를 추출하고 여러 방식으로 사용자에게 제공할 수 있는
+
+    <Card title="예제 1" icon="open-book">
+      마크업 언어에서 요소와 속성으로 판별되며, 일반적으로 사용되는 보조 기술 \[**및 소프트웨어의 접근성 기능이 직접 접근할 수 있는 경우**\].
+    </Card>
+    <Card title="예제 2" icon="open-book">
+      마크업 언어가 아닌 기술에서 제공하는 데이터 구조를 기반으로 판별되며, 접근성 API를 통해 보조 기술 및 \[**소프트웨어의 접근성 기능**\]에 노출되는 경우. 이 API는 일반적으로 사용되는 보조 기술 \[**및 소프트웨어의 접근성 기능**\]에서 지원된다.
+    </Card>
+
+    <Aside title="참고(추가됨)">
+      소프트웨어는 일반적으로 [플랫폼 소프트웨어의 접근성 서비스](../accessibility-services-of-platform-software)를 통해 콘텐츠가 프로그래밍 방식으로 판별되도록 지원한다. 웹이 아닌 문서도 일반적으로 사용자 에이전트의 접근성 서비스를 통해 [콘텐츠](../content)를 프로그래밍 방식으로 판별할 수 있도록 한다.
+    </Aside>
+	</TabItem>
+</Tabs>
