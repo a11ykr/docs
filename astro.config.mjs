@@ -37,6 +37,7 @@ export default defineConfig({
 			],
 			social: {
 				github: 'https://a11ykr.github.io',
+				discord: 'https://discord.gg/9ZXYJWDjWR',
 			},
 			components: {
 				Head: './src/components/CustomHead.astro',
@@ -195,7 +196,11 @@ export default defineConfig({
 								},
 							]
 						},
-						{ label: 'WCAG2ICT', link: '/wcag2ict/' },
+						{
+							label: 'WCAG2ICT',
+							link: '/wcag2ict/',
+							badge: { text: '작업중', variant: 'danger' }
+						},
 						{
 							label: '용어집',
 							collapsed: true,
@@ -206,13 +211,14 @@ export default defineConfig({
 							}
 						},
 						{
-							label: '구버전',
+							label: '구버전 모음',
 							collapsed: true,
 							autogenerate: {
 								directory: '/wcag2/old/',
 								order: 'asc',
 								pathPrefix: '/wcag2/old'
-							}
+							},
+							badge: { text: '참고용', variant: 'caution' }
 						},
 					]
 				},
