@@ -6,7 +6,6 @@ import starlightLinksValidator from 'starlight-links-validator';
 import starlightFullViewMode from 'starlight-fullview-mode';
 import starlightUtils from "@lorenzo_lewis/starlight-utils";
 
-
 const commonKeywords = "접근성, 한국어, A11YKR, accessibility, Korean, A11Y";
 
 export default defineConfig({
@@ -18,7 +17,8 @@ export default defineConfig({
 		starlight({
 			title: 'Docs',
 			logo: {
-				src: '/src/assets/a11ykr.png',
+				light: '/src/assets/a11ykr.png',
+				dark: '/src/assets/a11ykr.png',
 				replacesTitle: false,
 			},
 			defaultLocale: 'root',
@@ -36,7 +36,8 @@ export default defineConfig({
 				starlightFullViewMode({ leftSidebarEnabled: true, rightSidebarEnabled: true })
 			],
 			social: {
-				github: 'https://a11ykr.github.io',
+				rss: 'https://a11ykr.github.io',
+				github: 'https://github.com/a11ykr',
 				discord: 'https://discord.gg/9ZXYJWDjWR',
 			},
 			components: {
