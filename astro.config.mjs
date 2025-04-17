@@ -15,7 +15,7 @@ export default defineConfig({
 		astroExpressiveCode(),
 		mdx(),
 		starlight({
-			title: 'Docs',
+			title: 'A11YKR Docs',
 			logo: {
 				light: '/src/assets/a11ykr.png',
 				dark: '/src/assets/a11ykr.png',
