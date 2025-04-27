@@ -14,6 +14,9 @@
 }
 
 /* Right sidebar - toc */
+.right-sidebar-panel li:first-child:has(a[href="#_top"]) {
+  display: none;
+}
 .right-sidebar-panel nav > ul {
   padding-left: 0;
 }
