@@ -13,6 +13,18 @@
 .sidebar-content {
 }
 
+/* Right sidebar - toc */
+.right-sidebar-panel nav > ul {
+  padding-left: 0;
+}
+.right-sidebar-panel li ul {
+  padding-left: .75rem;
+}
+.right-sidebar-panel li a {
+  border-radius: 0;
+  padding: .25rem 0;
+}
+
 /* Card 컴포넌트 조정 - 서브페이지에만 적용 */
 :not(div.card-grid) .card {
   padding: 1rem;
