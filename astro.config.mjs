@@ -6,6 +6,8 @@ import starlightLinksValidator from 'starlight-links-validator';
 import starlightFullViewMode from 'starlight-fullview-mode';
 import starlightUtils from "@lorenzo_lewis/starlight-utils";
 import sitemap from '@astrojs/sitemap';
+import { rehypeHeadingIds } from '@astrojs/markdown-remark'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 const commonKeywords = "접근성, 한국어, A11YKR, accessibility, Korean, A11Y";
 
