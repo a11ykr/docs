@@ -1,8 +1,10 @@
 ---
 title: 1.1.1. 적절한 대체 텍스트 제공
-description: KWCAG 2.2 기준의 웹 접근성을 고려한 콘텐츠 제작 기법
+description: KWCAG 2.2 기준의 웹 접근성을 고려한 콘텐츠 제작 기법 개정판 - 1.1.1. 적절한 대체 텍스트 제공
 outline: { label: false }
 lastUpdated: 2025-04-22
+tableOfContents:
+  maxHeadingLevel: 4
 draft: true
 ---
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
@@ -59,3 +61,47 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 다음은 이미지 내부에 짧은 텍스트가 포함된 사례이다. 이 경우, 시각적으로 전달되는 정보와 동등한 수준의 정보를 대체 텍스트로 제공해야 한다.
 
 `img` 요소의 `alt` 속성을 활용하여 이미지에 포함된 텍스트와 동일한 내용을 제공하면, 화면을 볼 수 없는 사용자도 보조 기술을 통해 이미지가 전달하는 내용을 동등하게 전달받을 수 있다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image01.png" alt="" width="50%" />
+	<figcaption>이미지. 짧은 텍스트를 포함한 이미지 배너 사례 (출처: 정부24)</figcaption>
+</figure>
+
+```html
+<a href="...">
+	<img src="..." alt="정부24를 사칭하여 개인정보를 요구하는 스미싱문자 및 피싱사이트에 각별히 주의하세요.">
+</a>
+```
+
+
+#### b)	긴 내용의 텍스트가 포함된 이미지
+
+이미지 내부에 긴 텍스트가 포함된 경우, 주요 정보를 동등하게 전달해야 한다. 이때 사용자가 내용을 쉽게 이해할 수 있도록 표, 목록, 문장 형태로 구조화하여 제공할 수 있다. 이때, 콘텐츠의 맥락과 목적을 고려하여 정보 전달 방식을 결정해야 한다.
+
+다음은 이미지 내부에 긴 텍스트가 포함된 경우의 사례이다. 화면낭독프로그램은 img 요소의 alt 속성을 한 번에 읽기 때문에, 사용자는 내용을 단계적으로 탐색하거나 필요한 부분만 선택적으로 읽는 것이 어렵다. 따라서 img 요소의 alt 속성만으로 긴 내용을 전달하는 것은 한계가 있다.
+
+이러한 한계를 해결하기 위해, 숨김 텍스트를 활용하거나 별도의 상세 설명 페이지 링크를 제공하는 등 대체 방법을 고려할 수 있다. 
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image02.png" alt="" width="50%" />
+	<figcaption>이미지. 긴 텍스트를 포함한 이미지 배너 사례 (출처: 국민신문고)</figcaption>
+</figure>
+
+```css
+.visually-hidden {
+	clip-path: inset(100%);
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+```
+```html
+<img src="..." alt="국민신문고를 사칭하는 이메일에 주의하세요">
+<p class="visually-hidden">
+  신청한 적 없는 민원신청번호가 기재된 이메일은 열람하지 말고 삭제해주세요. <br>
+  이메일을 열람한 경우 인터넷보호나라 등에 신고해주세요.(http://www.boho.or.kr)
+</p>
+```

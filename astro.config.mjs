@@ -204,7 +204,7 @@ export default defineConfig({
                             {
                                 label: 'WCAG2ICT',
                                 link: '/wcag2ict/',
-                                badge: { text: '검토중', variant: 'caution' }
+                                badge: { text: '검토중', variant: 'note' }
                             },
                             {
                                 label: '용어집',
@@ -228,43 +228,27 @@ export default defineConfig({
                         ]
                     },
                     {
-                        label: 'KWCAG 2.2',
+                        label: 'KWCAG',
                         collapsed: false,
                         items: [
                             { label: '한국형 웹 콘텐츠 접근성 지침 2.2', link: 'kwcag2/index'},
                             {
                                 label: '웹 접근성을 고려한 콘텐츠 제작 기법 2.2 개정판',
                                 collapsed: true,
+                                badge: { text: '작업중', variant: 'danger' },
                                 items: [
                                     { label: '목차', link: 'kwcag2/techniquses/' },
+                                    { label: '원칙 1 인식의 용이성', link: 'kwcag2/techniquses/p1-perceivable' },
                                     {
-                                        label: '원칙 1 인식의 용이성',
+                                        label: '1.1. 대체 텍스트',
                                         collapsed: true,
                                         items: [
-                                            'kwcag2/techniquses/p1-perceivable',
-                                        ]
+                                            'kwcag2/techniquses/sc111-text-alternatives',
+                                        ],
                                     },
-                                    {
-                                        label: '원칙 2 운용의 용이성',
-                                        collapsed: true,
-                                        items: [
-                                            'kwcag2/techniquses/p3-understandable',
-                                        ]
-                                    },
-                                    {
-                                        label: '원칙 3 이해의 용이성',
-                                        collapsed: true,
-                                        items: [
-                                            'kwcag2/techniquses/p3-understandable',
-                                        ]
-                                    },
-                                    {
-                                        label: '원칙 4 견고성',
-                                        collapsed: true,
-                                        items: [
-                                            'kwcag2/techniquses/p4-robust',
-                                        ]
-                                    },
+                                    { label: '원칙 2 운용의 용이성', link: 'kwcag2/techniquses/p2-operable' },
+                                    { label: '원칙 3 이해의 용이성', link: 'kwcag2/techniquses/p3-understandable' },
+                                    { label: '원칙 4 견고성', link: 'kwcag2/techniquses/p4-robust' },
                                 ]
                             },
                         ]
