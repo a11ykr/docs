@@ -54,7 +54,7 @@ export default defineConfig({
                     { label: '문서 목록', link: '/guides/' },
                     {
                         label: 'WCAG 2 한국어 번역본',
-                        collapsed: false,
+                        collapsed: true,
                         items: [
                             { label: '웹 콘텐츠 접근성 지침(WCAG) 2.2', link: '/wcag2/' },
                             {
@@ -229,7 +229,7 @@ export default defineConfig({
                     },
                     {
                         label: 'KWCAG',
-                        collapsed: false,
+                        collapsed: true,
                         items: [
                             { label: '한국형 웹 콘텐츠 접근성 지침 2.2', link: 'kwcag2/index'},
                             {
