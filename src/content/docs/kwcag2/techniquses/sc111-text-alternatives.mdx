@@ -5,9 +5,14 @@ outline: { label: false }
 lastUpdated: 2025-04-22
 tableOfContents:
   maxHeadingLevel: 4
-draft: true
+draft: false
 ---
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+<Aside type="caution">
+게시 허가를 받지 않은 작성 예제입니다.
+</Aside>
+
 
 <Aside title="검사 항목">
 (적절한 대체 텍스트 제공) 텍스트 아닌 콘텐츠는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.
@@ -17,11 +22,8 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 대체 텍스트는 이미지, 차트, 다이어그램, 오디오 등 텍스트가 아닌 콘텐츠가 전달하는 의미나 용도를 인식할 수 있도록 제공하는 간결한 텍스트이다. 이를 통해 시각이나 청각 등의 감각에 제한이 있는 사용자도 동등한 정보를 얻을 수 있다.
 
 ## 배경 및 필요성
-이미지를 볼 수 없는 사용자는 화면낭독프로그램이 읽어주는 대체 텍스트를 통해 내용을 이해할 수
-있으며, 소리를 들을 수 없는 사용자는 화면에 표시된 대체 텍스트를 통해 내용을 확인할 수 있다.
-대체 텍스트가 제공되면, 사용자 에이전트(브라우저 등)나 보조 기술이 다양한 방식으로 콘텐츠 정보를
-사용자에게 제공할 수 있다. 이를 통해 시각, 청각 등 감각적 제약에 관계없이 모든 사용자가 동등한
-정보를 얻을 수 있도록 돕는다.
+이미지를 볼 수 없는 사용자는 화면낭독프로그램이 읽어주는 대체 텍스트를 통해 내용을 이해할 수 있으며, 소리를 들을 수 없는 사용자는 화면에 표시된 대체 텍스트를 통해 내용을 확인할 수 있다.
+대체 텍스트가 제공되면, 사용자 에이전트(브라우저 등)나 보조 기술이 다양한 방식으로 콘텐츠 정보를 사용자에게 제공할 수 있다. 이를 통해 시각, 청각 등 감각적 제약에 관계없이 모든 사용자가 동등한 정보를 얻을 수 있도록 돕는다.
 
 ## 기본 규칙
 ### 대체 텍스트 작성 시
@@ -53,7 +55,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ## 적용 사례
 
-### 텍스트를 포함한 텍스트가 아닌 콘텐츠
+### 1) 텍스트를 포함한 텍스트가 아닌 콘텐츠
 이미지, 아이콘, 그래프, 오디오와 같은 텍스트가 아닌 콘텐츠에 텍스트를 포함하여 제공할 때, 해당 콘텐츠가 전달하는 의미나 용도를 모든 사용자가 동등하게 이해할 수 있도록 대체 텍스트를 제공해야 한다.
 
 #### a) 짧은 텍스트가 포함된 이미지
@@ -63,7 +65,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 `img` 요소의 `alt` 속성을 활용하여 이미지에 포함된 텍스트와 동일한 내용을 제공하면, 화면을 볼 수 없는 사용자도 보조 기술을 통해 이미지가 전달하는 내용을 동등하게 전달받을 수 있다.
 
 <figure>
-	<img src="/docs/img/kwcag22tech/111-image01.png" alt="" width="50%" />
+	<img src="/docs/img/kwcag22tech/111-image01.png" alt="스미싱 및 피싱 주의 안내 배너 예제" width="50%" />
 	<figcaption>이미지. 짧은 텍스트를 포함한 이미지 배너 사례 (출처: 정부24)</figcaption>
 </figure>
 
@@ -78,12 +80,12 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 이미지 내부에 긴 텍스트가 포함된 경우, 주요 정보를 동등하게 전달해야 한다. 이때 사용자가 내용을 쉽게 이해할 수 있도록 표, 목록, 문장 형태로 구조화하여 제공할 수 있다. 이때, 콘텐츠의 맥락과 목적을 고려하여 정보 전달 방식을 결정해야 한다.
 
-다음은 이미지 내부에 긴 텍스트가 포함된 경우의 사례이다. 화면낭독프로그램은 img 요소의 alt 속성을 한 번에 읽기 때문에, 사용자는 내용을 단계적으로 탐색하거나 필요한 부분만 선택적으로 읽는 것이 어렵다. 따라서 img 요소의 alt 속성만으로 긴 내용을 전달하는 것은 한계가 있다.
+다음은 이미지 내부에 긴 텍스트가 포함된 경우의 사례이다. 화면낭독프로그램은 `img` 요소의 `alt` 속성을 한 번에 읽기 때문에, 사용자는 내용을 단계적으로 탐색하거나 필요한 부분만 선택적으로 읽는 것이 어렵다. 따라서 `img` 요소의 `alt` 속성만으로 긴 내용을 전달하는 것은 한계가 있다.
 
-이러한 한계를 해결하기 위해, 숨김 텍스트를 활용하거나 별도의 상세 설명 페이지 링크를 제공하는 등 대체 방법을 고려할 수 있다. 
+이러한 한계를 해결하기 위해, 숨김 텍스트를 활용하거나 별도의 상세 설명 페이지 링크를 제공하는 등 대체 방법을 고려할 수 있다.
 
 <figure>
-	<img src="/docs/img/kwcag22tech/111-image02.png" alt="" width="50%" />
+	<img src="/docs/img/kwcag22tech/111-image02.png" alt="국민신문고 사칭 이메일 주의 배너 예제" width="50%" />
 	<figcaption>이미지. 긴 텍스트를 포함한 이미지 배너 사례 (출처: 국민신문고)</figcaption>
 </figure>
 
@@ -104,4 +106,522 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
   신청한 적 없는 민원신청번호가 기재된 이메일은 열람하지 말고 삭제해주세요. <br>
   이메일을 열람한 경우 인터넷보호나라 등에 신고해주세요.(http://www.boho.or.kr)
 </p>
+```
+
+### 2)	텍스트가 포함되지 않은 텍스트가 아닌 콘텐츠
+
+텍스트가 포함되지 않은 텍스트가 아닌 콘텐츠의 경우, 콘텐츠가 전달하는 의미나 기능을 인식할 수 있도록 적절한 대체 텍스트나 설명을 제공해야 한다.
+
+#### a)	SVG 아이콘으로 구현된 버튼
+
+아이콘은 정보를 간결하고 직관적으로 전달하는 시각적 기호이다. 따라서, 사용자가 아이콘의 의미를 쉽게 이해할 수 있도록 간결하면서도 명확한 대체 텍스트를 제공해야 한다.
+
+다음은 검색 기능을 나타내는 돋보기 아이콘을 SVG로 적용한 사례이다. 이 경우, 아이콘이 전달하는 ‘검색’이라는 의미를 대체 텍스트로 제공해야 한다. 숨김 텍스트, aria-label, SVG의 `title` 요소를 활용하여 대체 텍스트를 제공한 예시이다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image03.png" alt="검색어 입력 창 예제" width="100%" />
+	<figcaption>이미지. 검색을 표현한 돋보기 SVG 아이콘 사례 (출처: 다음)</figcaption>
+</figure>
+
+```html
+<!-- 1.숨김 텍스트로 제공 -->
+<button class="btn_search">
+  <span class="visually-hidden">검색</span>
+	<span class="ico_sch">
+    <!-- IE에서 svg가 포커스 받는 것 방지가 필요한 경우focusable 속성 사용 -->
+    <svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 28 28" …>...</svg>
+  </span>
+</button>
+```
+```html
+<!-- 2.aria-label로 제공 -->
+<button class="btn_search" aria-label="검색">
+  <span class="icon_search">
+		<svg focusable="false" width="28" height="28" viewBox="0 0 28 28"…>...</svg>
+	</span>
+</button>
+```
+```html
+<!-- 3.SVG 내 title 요소와 aria-labelledby로 제공 -->
+<button class="btn_search">
+	<span class="icon_search">
+		<svg focusable="false" role="img" aria-labelledby="srch" width="28" height="28" viewBox="0 0 28 28"…>
+			<title id=”srch”>검색</title>
+      ...
+    </svg>
+  </span>
+</button>
+```
+
+이와 같이 SVG 아이콘에 대체 텍스트를 제공하는 방법은 여러 가지가 있다. 그러나 SVG 내 `title` 요소만으로 제공하는 방식은 iOS VoiceOver(iOS 18.1 기준)에서 이를 지원되지 않는다. 이를 보조 기술이 인식할 수 있도록 `title` 요소과 `svg` 요소를 `aria-labelledby` 속성으로 연결하여 보완할 수 있다.
+
+이처럼 중요한 콘텐츠가 사용자에게 올바르게 전달되도록 하기 위해서는 보조 기술 지원 여부를 반드시 확인하고 테스트해야 한다.
+
+#### b)	정보 전달을 위한 기호 이미지
+
+다음은 진료 시간표에서 진료할 수 있는 일정을 나타내기 위해 동그라미 이미지를 제공한 사례이다. 이미지 자체로는 의미를 전달하지 않지만, 맥락을 통해 진료가 배정되어 있음을 나타내므로 대체 텍스트로 ‘진료 가능’을 제공한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image04.png" alt="" width="100%" />
+	<figcaption>이미지. 정보 전달 보조로 사용된 이미지 예시</figcaption>
+</figure>
+
+```html
+<tr>
+	<td>09:00 ~ 12:00</td>
+	<td><img src="..." alt="진료 가능"></td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td><img src="..." alt="진료 가능"></td>
+	<td>&nbsp;</td>
+</tr>
+```
+
+### 3)	정보를 보완하는 이미지
+
+이미지가 주변 텍스트와 콘텐츠의 맥락을 보완하는 역할을 하는 경우, 사용자는 이미지가 전달하는 의미를 충분히 파악할 수 있어야 한다. 따라서 이미지를 간결하면서도 정확히 묘사하는 대체 텍스트를 제공해야 한다.
+
+다음은 래브라도 리트리버의 성격과 특성을 설명하는 텍스트를 보완하는 이미지 사례다.
+
+이미지는 리트리버의 활발하고 놀이를 좋아하는 성격을 시각적으로 전달하며, 적절한 대체 텍스트는 화면낭독프로그램 사용자가 이미지의 의미와 콘텐츠 맥락을 이해하는 데 도움을 준다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image05.png" alt="" width="100%" />
+	<figcaption>이미지. 텍스트 정보를 보완하는 이미지 사례 (출처: 로얄캐닌)</figcaption>
+</figure>
+
+```html
+<img src="labrador.jpg" alt="잔디밭에서 달리며 오렌지색 장난감 하나를 함께 물고 있는 블랙과 골든 래브라도" ... />
+```
+
+### 4)	그래프, 차트 등 복잡한 의미를 전달하는 콘텐츠
+
+데이터를 시각화한 그래프나 차트, 복잡한 관계를 표현하는 다이어그램 등은 대체 텍스트를 간단한 설명과 상세 설명으로 구분하여 제공할 수 있다. 간단한 설명은 시각적 요소의 유형과 목적을 요약하여 제공하고, 상세 설명은 별도의 텍스트를 활용하여 시각적 요소가 전달하는 모든 중요한 정보를 포함한다.
+
+구체적으로, 데이터가 시각화된 그래프나 차트 등은 주요 추세, 최댓값과 최솟값, 특이점, 데이터 간의 관계를 설명해야 한다. 구조도 등의 다이어그램의 경우 구성 요소 간의 관계, 흐름, 계층 구조 등의 정보가 전달되어야 한다.
+
+다음은 막대그래프 정보를 표와 함께 제공하여 그래프를 인식하기 어려운 사용자도 표를 통하여 이해할 수 있도록 한 사례이다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image06.png" alt="" width="100%" />
+	<figcaption>이미지. 연도별 최저임금 결정 현황 그래프를 표와 함께 제공한 사례 (출처: 최저임금위원회)</figcaption>
+</figure>
+
+### 5)	꾸밈을 위해 사용된 이미지
+꾸밈 용도로만 사용되는 텍스트가 아닌 콘텐츠는 화면낭독프로그램 등 보조 기술 사용자에게 불필요한 정보를 전달하여 콘텐츠 이해를 방해할 수 있다. 따라서 이러한 요소들은 배경 이미지로 처리하거나 `alt=""` 와 같이 `alt` 속성을 빈 값으로 제공하는 등 보조 기술이 무시하도록 제공해야 한다.
+
+#### a)	꾸밈 일러스트
+투자 정보 링크의 꾸밈 요소로 그래프 일러스트를 사용한 사례이다. 이 이미지는 단순 장식 목적이므로, `alt` 속성을 빈 값으로 설정하고 링크의 목적인 ‘투자 정보 바로가기’만 명확히 전달되도록 한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image07.png" alt="" width="100%" />
+	<figcaption>이미지. 꾸밈 일러스트를 제공한 사례 (출처: 카카오)</figcaption>
+</figure>
+
+```html
+<a href="..." target="_blank">
+  <strong>투자정보</strong>
+	<span>
+		바로가기 <span class="visually-hidden">새창열림</span>
+		<svg>...</svg>
+	</span>
+  <img src="..." class="icon_help" alt="">
+</a>
+```
+
+#### b)	꾸밈 사진
+꾸밈을 목적으로 사진을 배경으로 사용한 사례이다. 이미지 자체는 시각적 장식 요소일 뿐, 콘텐츠 정보를 담고 있지 않으므로 제거해도 정보 전달에는 문제가 없다. 따라서 `alt` 속성에 빈 값을 제공하여 보조 기술이 이를 무시하도록 제공한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image08.png" alt="" width="100%" />
+	<figcaption>이미지. 꾸밈 사진을 제공한 사례 (출처: 서울특별시보라매병원)</figcaption>
+</figure>
+
+```html
+<div class="course_top">
+    <img src="../images_brmh_new/sub/img_course01.jpg" alt="">
+    <div class="bg_blue">
+        <p class="course_top_tit">건강 · 문화 강좌</p>
+        ...
+    </div>
+</div>
+```
+
+### 6)	실시간 멀티미디어 콘텐츠
+다음은 방송사에서 특정 지역의 CCTV를 실시간으로 제공하는 멀티미디어 콘텐츠 사례이다. CCTV를 통해 전달되는 영상 콘텐츠는 정보를 미리 알 수 없고 예측이 전혀 불가능하므로, 어떤 콘텐츠인지 간략히 설명하는 정도의 대체 텍스트를 제공한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image09.png" alt="" width="70%" />
+	<figcaption>이미지. 실시간 CCTV 사례 (출처: KBS)</figcaption>
+</figure>
+
+```html
+<figure>
+  <video src="..." controls>...</video>
+  <figcaption>서울 중구 시청광장을 비추는 실시간 CCTV 영상</figcaption>
+</figure>
+```
+
+### 7)	예술 작품 콘텐츠
+
+교향곡 연주나 예술 작품과 같이 말로 설명할 수 없는 감각적 경험을 제공하는 콘텐츠의 경우, 콘텐츠의 이름과 가능하다면 간략한 설명을 함께 제공한다.
+
+다음은 위키에서 교향악에 대한 설명으로 제시된 악보와 오디오 파일의 대체 텍스트 제공 사례이다.
+
+악보 이미지와 오디오 파일의 대체 텍스트를 *‘첫 번째 주제(G장조)와 반대 진술에서 D장조로의 전환, mm 1-12’*로 설정하고, 이를 화면에 보이는 텍스트로 함께 제공하였다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image10.png" alt="" width="70%" />
+	<figcaption>이미지. 악보와 오디오에 대한 설명 텍스트를 함께 제공한 사례 (출처: 위키피디아)</figcaption>
+</figure>
+
+### 8)	단일 정보를 전달하는 여러 이미지
+여러 이미지를 조합하여 단일 정보를 전달하는 경우, 한 이미지에 전체 정보를 설명하는 대체 텍스트를 제공하고 나머지 이미지는 alt 속성을 빈 값으로 설정하여 중복 정보를 피한다.
+
+다음은 별점을 표현하기 위해 여러 개의 별 이미지를 사용한 사례이다. 다섯 개의 이미지 그룹은 제품에 대한 평가를 나타낸다. 따라서 첫 번째 이미지에 대체 텍스트 ‘5점 만점 중 3점’을 제공하고, 다른 모든 이미지는 alt 속성을 빈 값으로 설정한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image11.png" alt="" width="100%" />
+	<figcaption>이미지. 5개의 이미지가 단일 정보를 제공하는 별점 예시</figcaption>
+</figure>
+
+```html
+<div class="score_star">
+  <img src="..." alt="5점 만점의 5점" class="score_star_icon">
+  <img src="..." alt="" class="score_star_icon">
+  <img src="..." alt="" class="score_star_icon">
+  <img src="..." alt="" class="score_star_icon">
+  <img src="..." alt="" class="score_star_icon">
+</div>
+<div class="score_text">아주 좋아요</div>
+...
+```
+
+### 9)	텍스트 조합의 그림(아스키 아트, ASCII Art)
+특수 문자 등을 조합하여 그림을 형상화하는 ASCII 아트는 시각적인 요소로 정보를 제공하지만, 보조 기술은 이를 적절하게 해석하지 못한다. 따라서 ASCII 아트 문자가 그대로 보조 기술을 통해 사용자에게 전달되면, 의미를 알 수 없는 정보가 제공될 수 있다. 이에 따라, ASCII 아트가 전달하는 의미를 대체 텍스트로 제공하고, 불필요한 문자 영역은 보조 기술이 무시하도록 설정해야 한다.
+
+다음은 크리스마스 축하 메시지를 ASCII 아트로 제공한 사례이다. 텍스트 그림 전체를 감싸는 `div` 요소에 전달하려는 정보인 ‘Merry Christmas and a Happy New Year’를 `aria-label` 속성을 사용하여 대체 텍스트로 제공하고, 텍스트 그림 문자 영역은 보조 기술이 무시하도록 `aria-hidden="true"`로 설정한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image12.png" alt="" width="50%" />
+	<figcaption>이미지. 텍스트 조합으로 단일 그림 콘텐츠를 제공한 예시</figcaption>
+</figure>
+
+```html
+<div role="img" aria-label="Merry Chrtstmas and a Happy New Year">
+  <pre aria-hidden="true">
+     ◦  ⁰ . ₒ   ◦  ⁰ ⁰ . ⁰ₒ 
+    ₒ◦ ₒ  ⁰ₒ ⁰ₒ◦ ₒ  ⁰ₒ ⁰ ₒ  ⁰
+    ★MERRY★ ₒ◦ ₒ  ⁰ₒ ⁰ ◦⚬ 
+    ₒ CHRISTMAS ₒ◦ ₒ  ⁰ₒ ⁰ₒ◦  
+     n __ ₒ  ₒ  ⁰ₒ ⁰ ₒ  ⁰
+    /__/ ∖ ₒ  ₒ  ⁰ . ₒ  ₒ◦ ₒ
+    | 田田|門| ⁰ . ₒ .  ◦⚬
+    Merry Chrtstmas and a Happy New Year
+  </pre>
+</div>
+```
+
+### 10)	CAPTCHA
+CAPTCHA 이미지는 보안상의 목적으로 사용되므로 대체 텍스트에 해당 내용을 직접 명시할 수 없다. 아래 사례와 같이, CAPTCHA 이미지의 대체 텍스트로 ‘보안 문자’와 같이 용도를 설명하고, 화면낭독프로그램 등 보조 기술 사용자를 위해 음성 CAPTCHA나 다른 인증 방식 등의 대체 수단을 제공해야 한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image13.png" alt="" width="50%" />
+	<figcaption>이미지. CAPTCHA에 대한 대체 텍스트 제공 사례 (출처: PASS 인증)</figcaption>
+</figure>
+
+```html
+<div id="captcha_div">
+  <img src="/KmcCaptcha.png" alt="보안문자">
+</div>
+```
+
+### 11)	이모지(<span lang="en">Emoji</span>>)
+이모지(<span lang="en">Emoji</span>>)는 직관적인 감정 표현과 시각적 강조를 위해 웹 콘텐츠에서 자주 사용된다. 웹 콘텐츠에서 이모지를 사용할 경우, 의미 전달이 필요한지 또는 단순한 장식 목적으로 사용되었는지를 구분해야 한다.
+
+이모지를 단순한 장식 용도로 사용할 경우, 화면낭독프로그램과 같은 보조 기술이 불필요한 정보를 읽지 않도록 `aria-hidden="true"` 속성을 부여한다.  반면, 의미 전달이 필요한 핵심 요소로 사용할 경우, `role="img"` 속성과 함께 aria-label을 제공하여 적절한 대체 텍스트를 작성해야 한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image14.png" alt="" width="30%" />
+	<figcaption>이미지.   (알통) 이모지를 사용한 예시</figcaption>
+</figure>
+
+```html
+<!-- 이모지를 장식 목적으로 사용한 경우 -->
+호스팅 with <span aria-hidden="true">&#x1F4AA;</span>Github
+```
+
+```html
+<!-- 이모지 의미 전달이 필요한 경우 -->
+호스팅 with <span role="img" aria-label="파워">&#x1F4AA;</span>Github
+```
+
+## 개선 필요 사례
+### 1)	`img, <input type="image">`등 이미지 요소에 `alt` 속성 미제공
+다음은 배송 서비스를 홍보하기 위해 `img` 요소로 제공한 배너에 `alt` 속성이 제공되지 않은 사례이다. `alt` 속성이 누락된 경우, 화면낭독프로그램은 이미지 정보를 제대로 인식하지 못해 이미지의 URL 또는 파일명을 읽어 주거나, 단순히 ‘이미지’ 또는 ‘그래픽’이라고 낭독할 수 있다.
+
+따라서 화면낭독프로그램 사용자는 이미지 정보를 인식할 수 없다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image15.png" alt="" width="100%" />
+	<figcaption>이미지. 정보가 있는 이미지 alt 속성이 누락된 사례</figcaption>
+</figure>
+
+```html
+<div class="">
+	<a href="..."><img src="bn1.jpg"></a>
+</div>
+<div class="">
+	<a href="..."><img src=" bn2.jpg"></a>
+</div>
+```
+
+#### 개선 방법
+이미지 요소에는 `alt` 속성을 사용하여 이미지가 전달하는 정보와 동등한 수준의 대체 텍스트를 제공해야 한다.
+
+```html
+<div class="">
+	<a href="..."><img src="bn1.jpg" alt="이커머스 배송의 필수 파트너 000 당일배송"></a>
+</div>
+<div class="">
+	<a href="..."><img src="bn2.jpg" alt="원하는 시간, 원하는 만큼 자유로운 배송 알바 000 라이더스"></a>
+</div>
+```
+### 2)	의미 있는 배너 이미지에 대체 텍스트를 빈 값으로 제공
+다음은 쇼핑 사이트에서 상품 주문 시 빠른 주문 방법을 안내하는 이미지를 제공하면서, 해당 이미지의 대체 텍스트를 빈 값으로 설정한 사례이다.
+
+대체 텍스트가 빈 값(`alt=""`)으로 제공된 이미지는 보조 기술에서 정보를 전달하지 않는 이미지로 인식되어, 사용자에게 이미지의 존재 여부조차 알리지 않는다. 이로 인해 화면을 볼 수 있는 사용자와 보조 기술 사용자 간에 인식하는 정보 차이가 발생한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image16.png" alt="" width="80%" />
+	<figcaption>이미지. 빠른 주문 안내 텍스트 이미지에 대체 텍스트가 빈 값으로 제공된 사례</figcaption>
+</figure>
+
+```html
+<img src="..." alt="">
+```
+
+#### 개선 방법
+`alt="상품 주문 코드 2948-234를 이야기 해주시면 빠르게 주문이 가능합니다!"` 와 같이 이미지가 전달하는 정보를 alt 속성에 제공한다.
+
+```html
+<img src="..." alt="상품 주문 코드 2948-234를 이야기 해주시면 빠르게 주문이 가능합니다!">
+```
+
+### 3)	이미지 정보와 다른 alt 속성의 대체 텍스트 내용
+이미지가 전달하는 정보와 대체 텍스트의 내용이 서로 상이하게 제공된 사례이다.
+
+이미지의 실제 내용은 ‘투명성을 위한 환경정보공개시스템’이지만 alt 속성이 ‘esg-green’으로 설정되어 보조 기술 사용자는 다른 정보를 제공받게 된다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image17.png" alt="" width="30%" />
+	<figcaption>이미지. 빠른 주문 안내 텍스트 이미지에 대체 텍스트가 빈 값으로 제공된 사례</figcaption>
+</figure>
+
+```html
+<img src="..." alt="esg-green">
+```
+
+#### 개선 방법
+`alt="투명성을 위한 환경정보공개시스템"` 과 같이 이미지가 전달하는 정보와 동등한 대체 텍스트를 제공한다.
+
+```html
+<img src="..." alt="투명성을 위한 환경정보공개시스템">
+```
+
+### 4)	꾸밈 이미지에 대체 텍스트 제공 
+채용 공고 페이지에서 섹션 제목을 꾸미기 위해 사용된 아이콘 이미지의 사례이다.
+
+이 아이콘은 단순한 꾸밈 요소임에도 불구하고 ‘icon’이라는 대체 텍스트가 제공되어, 보조 기술 사용자에게 불필요한 정보를 전달하고 있다.
+
+예를 들어, 화면낭독프로그램은 이를 ‘icon, 이미지, 공통자격요건’과 같이 읽어 주므로, 사용자가 해당 이미지의 대체 텍스트가 잘못 작성되어 중요한 정보가 누락된 것인지, 제대로 제공된 것인지 판단하기 어렵게 된다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image18.png" alt="" width="30%" />
+	<figcaption>이미지. 꾸밈 용도로 사용된 이미지에 대체 텍스트가 제공된 사례</figcaption>
+</figure>
+
+```html
+<td><img src="..." alt="icon">공통자격요건</td>
+```
+
+#### 개선 방법
+이미지가 정보를 전달하지 않고 단순한 꾸밈 용도로 사용된 경우, `alt=""`와 같이 빈 값을 제공하여 보조 기술이 이미지를 무시하도록 설정해야 한다.
+
+```html
+<td><img src="..." alt="">공통자격요건</td>
+```
+### 5)	관계 정보를 알 수 없는 대체 텍스트
+다음은 기업의 조직도를 이미지로 제공한 사례이다. 조직도는 부서 간의 소속과 계층 관계 정보를 시각적으로 제공하지만, 다음 예시처럼 대체 텍스트가 이를 충분히 전달하지 않으면 보조 기술 사용자는 정보를 제대로 파악할 수 없다
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image19.png" alt="" width="100%" />
+	<figcaption>이미지. 계층 구조로 이루어진 조직도 이미지 사례</figcaption>
+</figure>
+
+```html
+<img src="..." alt="안전보건 경영을 추진하는 조직도입니다. 대표이사 산하의 경영지원부문 총무팀과 산업안전보건위원회를 운영 및 관리하고 있습니다.">
+```
+
+#### 개선 방법
+조직도의 소속이나 상하 관계를 명확히 표현하여 계층 구조를 이해할 수 있도록 설명하는 텍스트 정보를 제공해야 한다.
+
+설명이 길다면 간략한 대표 설명을 alt 속성에 제공하고, 상세 설명은 별도의 숨김 텍스트로 제공할 수 있다. 또는, figure와 figcaption 요소를 활용하거나 별도의 텍스트 영역을 통해 설명을 제공할 수 있다.
+
+```html
+<img src="..." alt="조직도">
+<div class="visually-hidden">
+대표이사 아래에는 경영지원부문과 산업안전보건위원회가 있습니다. 경영지원부문에서는 산업 안전 대응 총괄, 주관 운영 업무를 담당하고, 산업안전보건위원회에서는 안전보건사항 논의, 심의의결, 협력 업무를 담당합니다. 경영지원부문 아래에는 총무팀이 있고, 안전/보건관리 업무 및 시설 관리를 담당합니다.
+</div>
+```
+
+### 6)	img의 대체 텍스트를 title 속성만으로 제공
+다음은 ‘지원하기’ 버튼을 이미지로 제공하면서, 대체 텍스트를 `title` 속성으로만 제공한 사례이다.
+
+화면낭독프로그램 지원 또는 화면낭독프로그램의 설정에 따라 `title` 속성이 읽히지 않을 수도 있으며, 이로 인해 이미지 정보가 사용자에게 제대로 전달되지 않을 가능성이 높다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image20.png" alt="" width="40%" />
+	<figcaption>이미지. 이미지 요소의 대체 텍스트가 title 속성으로만 제공된 예시</figcaption>
+</figure>
+
+```html
+<img src="apply_btn.jpg" title="지원하기">
+```
+
+#### 개선 방법
+이미지의 대체 텍스트는 `alt` 속성을 사용하여 제공해야 하며, `title` 속성은 추가적인 정보 제공 용도로만 활용해야 한다.
+
+```html
+<img src="apply_btn.jpg" alt="지원하기">
+```
+
+### 7)	정보가 포함된 이미지에 대체 텍스트 미제공
+여러 장의 사진으로 구성된 뉴스 콘텐츠에서 모든 사진에 동일한 대체 텍스트를 제공한 사례이다. 이로 인해 화면낭독프로그램 사용자는 각 사진이 전달하는 개별적인 정보를 인식하지 못한다.
+
+또한, title 속성에도 alt 속성과 동일한 내용이 제공되어 불필요한 중복이 발생하고 있다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image21.png" alt="" width="80%" />
+	<figcaption>이미지. 여러 개의 사진 이미지에 모두 동일한 대체 텍스트 제공 사례</figcaption>
+</figure>
+
+```html
+<img src="MDE=_5.jpg" title="국립단체 청년 교육단원 통합 발대식" alt="국립단체 청년 교육단원 통합 발대식">
+<img src="MDI=_6.jpg" title="국립단체 청년 교육단원 통합 발대식" alt="국립단체 청년 교육단원 통합 발대식">
+<img src="MDQ=_6.jpg" title="국립단체 청년 교육단원 통합 발대식" alt="국립단체 청년 교육단원 통합 발대식">
+```
+
+#### 개선 방법
+각 사진의 내용을 설명하는 개별적이고 의미 있는 대체 텍스트를 제공해야 한다. 또한, `alt` 속성과 동일한 `title` 속성은 불필요하므로 제거하여 중복된 정보가 전달되지 않도록 한다.
+
+```html
+<img src="MDE=_5.jpg" alt="국립예술단체 청년 교육단원 통합 발대식 단체 사진">
+<img src="MDI=_6.jpg" alt="문화체육관광부 장관의 개회사 발표 전경">
+<img src="MDQ=_6.jpg" alt="장관, 기관 단장이 참여한 토론회 진행 모습">
+```
+
+8)	QR 코드 이미지에 용도 및 이용할 수 있는 정보 미제공
+다음은 페이지에 QR 코드 이미지가 제공된 사례이다.
+
+시각적으로 QR 코드를 인식할 수 있는 사용자는 주변 맥락을 통해 QR 코드의 용도를 추측할 수 있지만, 화면낭독프로그램 사용자는 그러한 정보를 얻기 어렵다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image22.png" alt="" width="25%" />
+	<figcaption>이미지. QR 코드 이미지 사례</figcaption>
+</figure>
+
+```html
+<img src="..." alt="QR Code">
+```
+
+#### 개선 방법
+QR 코드의 용도 및 저장된 주소 정보를 대체 텍스트로 제공하거나, QR 코드를 링크와 함께 제공하여 사용자가 직접 해당 페이지로 이동할 수 있도록 한다.
+
+```html
+<a href="...">
+  <img src="..." alt="QR 코드, 웹 접근성을 고려한 콘텐츠 제작 기법 바로가기">
+</a>
+```
+
+### 9)	사용자가 등록하는 콘텐츠에 대체 텍스트 입력 기능 미제공
+다음은 사용자가 선물 후기를 등록할 때 사진을 첨부하더라도, 해당 사진에 대한 대체 텍스트를 입력할 수 없는 사례이다.
+
+사진 내용 없이 사진만 첨부될 경우, 화면낭독프로그램 사용자는 해당 사진의 내용을 알 수 없다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image23.png" alt="" width="100%" />
+	<figcaption>이미지. 사용자가 사진을 첨부할 때 사진에 대한 설명을 입력할 수 없는 사례</figcaption>
+</figure>
+
+#### 개선 방법
+사진이나 동영상을 첨부할 때, 사용자가 직접 설명을 입력할 수 있는 기능을 제공해야 한다. 참고로, 네이버 쇼핑 후기에서는 사진을 올릴 때 설명도 함께 작성할 수 있도록 제공하고 있다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image24.png" alt="" width="50%" />
+	<figcaption>이미지. 상품 후기 작성 시 올린 이미지에 설명을 추가할 수 있는 사례 (출처: 네이버쇼핑) </figcaption>
+</figure>
+
+### 10)	이미지 맵에 대체 텍스트 미제공
+다음은 이미지 맵을 사용하여 이미지의 특정 영역을 링크로 제공한 사례이다.
+
+지도 이미지를 제공하고 각 시도별 영역을 나누어 링크를 제공하였으나 `img` 및 area 요소에 `alt` 속성이 빈 값으로 제공되었다. 이 경우, 이미지 맵 내 각 영역이 어떤 기능을 하는지 또는 어떤 콘텐츠로 연결되는지에 대한 정보가 제공되지 않으므로, 화면낭독프로그램 사용자는 해당 기능을 인식하고 사용할 수 없다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image25.png" alt="" width="60%" />
+	<figcaption>이미지. 대한민국 지도에 이미지 맵으로 지역별 링크를 제공한 사례</figcaption>
+</figure>
+
+```html
+<img src="..." alt="" usemap="#guide_01_Map">
+<map name="guide_01_Map">
+  <area shape="rect" alt="" coords="..." href="...">
+  <area shape="rect" alt="" coords="..." href="...">
+  ...
+</map>
+```
+
+#### 개선 방법
+먼저 `img` 요소의 `alt` 속성에 전체적인 목적과 컨텍스트를 설명하는 대체 텍스트를 제공해야 한다. `alt=”대한민국 지도, 각 지역 선택 시 상세 정보로 이동”` 제공하고, 각 `area` 요소에 `alt=”경기도”`와 같이 구체적인 정보를 제공한다.
+
+```html
+<img src="..." alt="대한민국 지도, 각 지역 선택 시 상세 정보로 이동" usemap="#guide_01_Map">
+<map name="guide_01_Map">
+  <area shape="rect" alt="서울특별시" coords="..." href="...">
+  <area shape="rect" alt="경기도" coords="..." href="...">
+  ...
+</map>
+```
+
+### 11)	이모지로 잘못 된 대체 텍스트 제공
+이모지를 아이콘처럼 사용하면서, 대체 텍스트 역시 이모지로 제공한 사례다. `alt` 속성값이 이모지로만 구성된 경우, 보조 기술 환경에 따라 이모지를 정상적으로 해석하지 못해 대체 텍스트가 없는 것으로 처리될 가능성이 있다.
+
+따라서, 단순한 장식 목적이라면 빈 값(`alt=""`)를 사용하여 화면낭독프로그램이 불필요한 정보를 읽지 않도록 한다. 반면, 의미 전달이 필요한 경우에는 사용자가 쉽게 이해할 수 있는 문구로 직접 대체 텍스트를 제공해야 한다.
+
+<figure>
+	<img src="/docs/img/kwcag22tech/111-image26.png" alt="" width="60%" />
+	<figcaption>이미지. 이모지를 아이콘으로 사용한 사례</figcaption>
+</figure>
+
+```html
+<div>
+  <span class="c-jUooxn">
+    <img alt="💪" class="c-hakyQ" src="1f4aa.webp">
+	</span>
+	<p>건강검진 양도 신청<span>복리 후생</span></p>
+</div>
+```
+
+#### 개선 방법
+위 사례에서는 이모지가 단순한 장식 용도로 사용되고 있으므로, `alt` 속성값을 빈 값(`alt=""`)으로 설정하여 보조 기술에서 읽히지 않도록 한다.
+
+참고로, 이모지는 환경에 따라 다르게 읽힐 수 있다. 예를 들어, 💪(알통) 이모지는 Windows에서는  "알통", iOS는 "근육질의 구부린 팔뚝", Android는 "이두박근"과 같이 플랫폼별로 다른 방식으로 전달된다. 따라서, 이모지를 의미 전달의 핵심 요소로 사용할 경우 플랫폼별 차이를 고려하여 적절한 대체 텍스트를 제공해야 한다.
+
+```html
+<div>
+  <span class="c-jUooxn">
+    <img alt="" class="c-hakyQ" src="1f4aa.webp">
+	</span>
+	<p>건강검진 양도 신청<span>복리 후생</span></p>
+</div>
 ```
