@@ -246,6 +246,13 @@ export default defineConfig({
                                             'kwcag2/techniquses/sc111-text-alternatives',
                                         ],
                                     },
+                                    {
+                                        label: '1.2	멀티미디어 대체수단',
+                                        collapsed: true,
+                                        items: [
+                                            'kwcag2/techniquses/sc121-captions',
+                                        ],
+                                    },
                                     { label: '원칙 2 운용의 용이성', link: 'kwcag2/techniquses/p2-operable' },
                                     { label: '원칙 3 이해의 용이성', link: 'kwcag2/techniquses/p3-understandable' },
                                     { label: '원칙 4 견고성', link: 'kwcag2/techniquses/p4-robust' },
