@@ -216,14 +216,35 @@ export default defineConfig({
                                 }
                             },
                             {
-                                label: '지난 버전',
+                                label: '구버전 번역본',
                                 collapsed: true,
                                 badge: { text: '참고용', variant: 'caution' },
                                 items: [
                                     { label: 'WCAG 2.2 - v231005', link: 'wcag2/old/231005/' },
-                                    { label: 'WCAG 2.1 한국어 번역본', link: 'http://www.kwacc.or.kr/WAI/wcag21/' },
-                                    { label: 'WCAG 2.0 한국어 번역본', link: 'https://web.archive.org/web/20121107021930/http://archi.ssu.ac.kr/WCAG20/' },
-                                    { label: 'WCAG 1.0 한국어 번역본', link: 'https://web.archive.org/web/20110907032914/https://www.gregshin.pe.kr/wcag/wai-pageauth.html' },
+                                    {
+                                        label: 'WCAG 2.1',
+                                        link: 'http://www.kwacc.or.kr/WAI/wcag21/',
+                                        attrs: {
+                                            target: '_blank',
+                                            class: 'external-link'
+                                        }
+                                    },
+                                    {
+                                        label: 'WCAG 2.0',
+                                        link: 'https://web.archive.org/web/20121107021930/http://archi.ssu.ac.kr/WCAG20/',
+                                        attrs: {
+                                            target: '_blank',
+                                            class: 'external-link'
+                                        }
+                                    },
+                                    {
+                                        label: 'WCAG 1.0',
+                                        link: 'https://web.archive.org/web/20110907032914/https://www.gregshin.pe.kr/wcag/wai-pageauth.html',
+                                        attrs: {
+                                            target: '_blank',
+                                            class: 'external-link'
+                                        }
+                                    },
                                 ],
                             },
                         ]

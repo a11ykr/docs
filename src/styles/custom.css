@@ -75,3 +75,24 @@ li ul, li ol {
 .pagination-links a .link-title {
   font-size: 1.2rem;
 }
+
+/* src/styles/custom.css */
+.external-link::after {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  /* SVG 색상을 currentColor로 설정하여 텍스트 색상을 상속받도록 함 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 0.25em;
+  vertical-align: text-bottom;
+  /* 아이콘이 현재 텍스트 색상을 따르도록 설정 */
+  filter: invert(var(--sl-icon-invert, 0));
+}
+
+/* 다크모드에서 아이콘 색상 반전 (Starlight의 CSS 변수 활용) */
+:root[data-theme='dark'] {
+  --sl-icon-invert: 1;
+}
