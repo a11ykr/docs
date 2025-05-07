@@ -253,7 +253,7 @@ export default defineConfig({
                         label: 'KWCAG',
                         collapsed: true,
                         items: [
-                            { label: '한국형 웹 콘텐츠 접근성 지침 2.2', link: 'kwcag2/index'},
+                            { label: '한국형 웹 콘텐츠 접근성 지침 2.2', link: 'kwcag2/'},
                         ]
                     },
                     { label: '접근성 점검 도구', link: '/acts/' },
