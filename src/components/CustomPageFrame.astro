@@ -1,0 +1,156 @@
+---
+// src/components/CustomPageFrame.astro
+import Default from '@astrojs/starlight/components/PageFrame.astro';
+import type { Props } from '@astrojs/starlight/props';
+
+const props = Astro.props;
+const { pathname } = Astro.url;
+const isHomePage = pathname === '/' || pathname === '/index.html' || pathname.endsWith('/index');
+
+// GitHub 저장소 정보
+const GITHUB_USER = "a11ykr";
+const GITHUB_REPO = "docs";
+
+// 카테고리 ID 또는 이름 선택 (ID가 있으면 그것을 사용, 없으면 이름 사용)
+const categoryParam = "general";
+
+// 페이지 제목 가져오기 (서버 사이드)
+let pageTitle = "문서 페이지"; // 기본값
+
+// 제목 추출 (서버 사이드)
+if (props.entry?.data?.title) {
+  pageTitle = props.entry.data.title;
+}
+else if (props.frontmatter?.title) {
+  pageTitle = props.frontmatter.title;
+}
+else if (props.entry?.data?.headings && props.entry.data.headings.length > 0) {
+  pageTitle = props.entry.data.headings[0].text;
+}
+
+// GitHub Discussions URL 기본 URL 생성
+// 카테고리 파라미터를 포함하여 카테고리 선택 화면을 건너뜁니다
+const baseDiscussionUrl = `https://github.com/${GITHUB_USER}/${GITHUB_REPO}/discussions/new?category=${categoryParam}`;
+---
+
+<Default {...props}>
+  <slot name="header" slot="header" />
+  <slot name="sidebar" slot="sidebar" />
+  <slot />
+  <slot name="footer" slot="footer" />
+</Default>
+
+<!-- 홈페이지가 아닌 경우에만 플로팅 피드백 버튼 표시 -->
+{!isHomePage && (
+  <a
+    href={baseDiscussionUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-feedback"
+    aria-label="의견 남기기"
+    title="의견 남기기"
+    id="feedback-button"
+    data-pathname={pathname}
+    data-initial-title={pageTitle}
+  >
+    <svg
+      aria-hidden="true"
+      class="feedback-icon"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <span class="feedback-text">의견 남기기</span>
+  </a>
+
+  <!-- 클라이언트 사이드에서 URL 생성 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const feedbackButton = document.getElementById('feedback-button');
+      if (!feedbackButton) return;
+
+      // 데이터 속성에서 초기값 가져오기
+      const pathname = feedbackButton.getAttribute('data-pathname') || '';
+      let initialTitle = feedbackButton.getAttribute('data-initial-title') || '문서 페이지';
+
+      // 페이지 로드 후 실제 제목 가져오기 (h1이 있는 경우)
+      const h1Element = document.querySelector('h1');
+      const documentTitle = h1Element?.textContent?.trim() || document.title || initialTitle;
+
+      // URL 객체 생성
+      const url = new URL(feedbackButton.href);
+
+      // URL 파라미터 추가 (JavaScript의 URLSearchParams가 자동으로 인코딩함)
+      url.searchParams.set('title', `${documentTitle}에 대한 의견`);
+      url.searchParams.set('body', `이 페이지(${pathname})에 대한 의견입니다.\n\n문서 제목: ${documentTitle}`);
+
+      // 버튼 href 업데이트
+      feedbackButton.href = url.toString();
+
+      // 접근성 속성도 업데이트
+      feedbackButton.setAttribute('aria-label', `${documentTitle}에 대한 의견 남기기`);
+      feedbackButton.setAttribute('title', `${documentTitle}에 대한 의견 남기기`);
+
+      console.log('페이지 제목:', documentTitle);
+      console.log('최종 URL:', feedbackButton.href);
+    });
+  </script>
+)}
+
+<style>
+  .floating-feedback {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--sl-color-text-invert);
+    background-color: var(--sl-color-text-accent);
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  .floating-feedback:hover {
+    background-color: var(--sl-color-accent-high);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .feedback-icon {
+    flex-shrink: 0;
+  }
+
+  /* 작은 화면에서는 텍스트 숨김, 아이콘만 표시 */
+  @media (max-width: 32rem) {
+    .floating-feedback {
+      padding: 0.7rem;
+    }
+
+    .feedback-text {
+      display: none;
+    }
+  }
+
+  /* 다크 모드 지원 */
+  :global(.dark) .floating-feedback {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  :global(.dark) .floating-feedback:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
+</style>

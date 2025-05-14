@@ -39,13 +39,14 @@ export default defineConfig({
                     // }),
                     starlightFullViewMode({ leftSidebarEnabled: true, rightSidebarEnabled: true })
                 ],
-                // social: [
-                //     { rss: 'https://a11ykr.github.io' },
-                //     { github: 'https://github.com/a11ykr'},
-                //     { discord: 'https://discord.gg/9ZXYJWDjWR'},
-                // ],
+                social: [
+                    { icon: 'information', label: 'Home', href: 'https://a11ykr.github.io/' },
+                    { icon: 'discord', label: 'Discord', href: 'https://discord.gg/9ZXYJWDjWR' },
+                    { icon: 'github', label: 'GitHub', href: 'https://github.com/a11ykr' },
+                ],
                 components: {
                     Head: './src/components/CustomHead.astro',
+                    PageFrame: './src/components/CustomPageFrame.astro',
                 },
                 customCss: [
                     './src/styles/custom.css'
