@@ -14,6 +14,9 @@
 }
 
 /* Right sidebar - toc */
+.right-sidebar-panel {
+  margin-bottom: 6rem !important; /* 플로팅 버튼을 위한 여백 */
+}
 .right-sidebar-panel li:first-child:has(a[href="#_top"]) {
   display: none;
 }
