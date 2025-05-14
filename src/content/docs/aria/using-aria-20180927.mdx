@@ -1,0 +1,792 @@
+---
+title: ARIA 사용
+description: ARIA 사용 방법에 관한 작업 초안
+head:
+    - tag: title
+      content: ARIA 사용(Using ARIA)
+tableOfContents:
+    maxHeadingLevel: 4
+lastUpdated: 2018-09-17
+---
+
+import { Aside, Badge, Card } from '@astrojs/starlight/components';
+
+<Aside title="안내" type="caution">
+*   이 한국어 번역본은 현재 작업 중에 있습니다.
+*   W3C의 인증을 받지 않은 비공식 문서이며, 오류가 있을 수 있습니다.
+*   [별도의 번역본 페이지](https://a11ykr.github.io/using-aria/WD-20180927/)를 참고할 수 있습니다.
+*   용어 등 해석이 불명확한 부분은 [원문](https://www.w3.org/TR/2018/WD-using-aria-20180927/)을 확인하시기 바랍니다.
+</Aside>
+
+[![W3C](https://www.w3.org/StyleSheets/TR/2021/logos/W3C)](https://www.w3.org/)
+
+ARIA 사용
+=======
+
+W3C 작업 초안 2018년 9월 27일
+
+<dl>
+    <dt>이 버전:</dt>
+    <dd>
+        <a class="u-url" href="https://www.w3.org/TR/2018/WD-using-aria-20180927/">https://www.w3.org/TR/2018/WD-using-aria-20180927/</a>
+    </dd>
+    <dt>최근 게시된 버전:</dt>
+    <dd>
+        <a href="https://www.w3.org/TR/using-aria/">https://www.w3.org/TR/using-aria/</a>
+    </dd>
+    <dt>최신 편집자 초안:</dt>
+    <dd>
+        <a href="https://w3c.github.io/using-aria/">https://w3c.github.io/using-aria/</a>
+    </dd>
+    <dt>이전 버전:</dt>
+    <dd>
+        <a href="https://www.w3.org/TR/2018/WD-using-aria-20180924/">https://www.w3.org/TR/2018/WD-using-aria-20180924/</a>
+    </dd>
+    <dt>편집자:</dt>
+    <dd class="p-author h-card vcard" data-editor-id="35007"><a class="ed_mailto u-email email p-name" href="mailto:sfaulkner@paciellogroup.com">Steve Faulkner</a> (The Paciello Group)</dd>
+    <dd class="p-author h-card vcard" data-editor-id="35466"><a class="ed_mailto u-email email p-name" href="mailto:david100@sympatico.ca">David MacDonald</a> (CanAdapt Solutions Inc.)</dd>
+    <dt>참여:</dt>
+    <dd>
+        <a href="https://github.com/w3c/using-aria/">GitHub w3c/using-aria</a>
+    </dd>
+    <dd>
+        <a href="https://github.com/w3c/using-aria/issues/">File a bug</a>
+    </dd>
+    <dd>
+        <a href="https://github.com/w3c/using-aria/commits/gh-pages">Commit history</a>
+    </dd>
+    <dd>
+        <a href="https://github.com/w3c/using-aria/pulls/">Pull requests</a>
+    </dd>
+</dl>
+
+[Copyright](https://www.w3.org/Consortium/Legal/ipr-notice#Copyright) © 2018 [W3C](https://www.w3.org/) ® ( [MIT](https://www.csail.mit.edu/) , [ERCIM](https://www.ercim.eu/) , [Keio](https://www.keio.ac.jp/), [Beihang](http://ev.buaa.edu.cn/)). W3C [liability](https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer), [trademark](https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks) and [permissive document license](https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document) rules apply.
+
+* * *
+
+## 초록
+
+이 문서는 장애가 있는 사람들이 웹 콘텐츠와 웹 애플리케이션에 더 쉽게 접근할 수 있도록 하는 방법을 정의하는 Accessible Rich Internet Application 명세 \[[WAI-ARIA-1.1](#bib-wai-aria-1.1)\]을 사용하여 HTML 요소에 접근성 정보를 추가하는 방법에 대한 개발자를 위한 실용적인 가이드입니다. 이 문서는 \[[HTML51](#bib-html51)\] 에서 WAI-ARIA를 사용하는 방법을 보여줍니다. 이는 특히 Ajax, HTML, JavaScript 및 관련 기술로 개발된 동적 콘텐츠 및 고급 사용자 인터페이스 제어에 도움이 됩니다.
+
+## 이 문서의 상태
+
+_이 섹션에서는 발행 당시 이 문서의 상태를 설명합니다. 다른 문서가 이 문서를 대체할 수 있습니다. 현재 W3C 간행물 목록과 이 기술 보고서의 최신 개정판은 [W3C 기술 보고서 ​​색인](https://www.w3.org/TR/)(https://www.w3.org/TR/)에서 확인할 수 있습니다._
+
+<Aside title="참고">
+이 문서는 정보 제공용일 뿐입니다. 리소스는 정보 제공 목적으로만 제공되며 보증을 암시하지 않습니다.
+</Aside>
+
+이것은 [Web Platform Working Group](https://www.w3.org/WebPlatform/WG/)에 의해 게시되었습니다.
+
+이는 초안 문서이며 해당 내용은 예고 없이 변경될 수 있습니다.
+
+<Aside title="참고">
+문제를 발견하거나 제안 사항이 있으면 [버그를 신고](https://github.com/w3c/using-aria/issues)해 주세요.
+</Aside>
+
+이 문서는 [Web Platform Working Group](https://www.w3.org/WebPlatform/WG/)에서 작업 초안(Working Draft)으로 게시되었습니다.
+
+이 명세에 대한 논의에는 [GitHub Issues](https://github.com/w3c/using-aria//issues)가 선호됩니다. 또는 메일링 리스트에 의견을 보낼 수도 있습니다. [public-html@w3.org](mailto:public-html@w3.org) ([archives](https://lists.w3.org/Archives/Public/public-html/))로 보내주세요 .
+
+작업 초안으로 출판한다고 해서 W3C 회원의 승인을 의미하는 것은 아닙니다. 이 문서는 초안 문서이므로 언제든지 다른 문서로 업데이트, 대체 또는 폐기될 수 있습니다. 이 문서를 진행 중인 작업 이외의 것으로 인용하는 것은 부적절합니다.
+
+이 문서는 [W3C 특허 정책](https://www.w3.org/Consortium/Patent-Policy/)에 따라 운영되는 그룹에 의해 작성되었습니다. 그룹에서는 이 문서가 W3C 권고안이 될 것으로 기대하지 않습니다. W3C는 그룹의 결과물과 관련하여 [공개된 모든 특허 공개 목록](https://www.w3.org/2004/01/pp-impl/83482/status)을 유지 관리합니다. 해당 페이지에는 특허 공개에 대한 지침도 포함되어 있습니다. [필수 주장](https://www.w3.org/Consortium/Patent-Policy/#def-essential)이 포함되어 있다고 생각하는 특허에 대한 실제 지식을 갖고 있는 개인은 [W3C 특허 정책의 섹션 6](https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure) 에 따라 정보를 공개해야 합니다.
+
+이 문서는 [2018년 2월 1일 W3C 프로세스 문서](https://www.w3.org/2018/Process-20180201/)의 적용을 받습니다.
+
+## 1\. 소개
+
+이 문서는 장애가 있는 사람들이 웹 콘텐츠와 웹 애플리케이션에 더 쉽게 접근할 수 있도록 하는 방법을 정의하는 Accessible Rich Internet Application 명세 \[[WAI-ARIA-1.1](#bib-wai-aria-1.1)\]을 사용하여 HTML 요소에 접근성 정보를 추가하는 방법에 대한 개발자를 위한 실용적인 가이드입니다. 이 문서는 HTML5에서 WAI-ARIA를 사용하는 방법을 보여 주며 , 특히 Ajax, HTML, JavaScript 및 관련 기술로 개발된 동적 콘텐츠와 고급 사용자 인터페이스 제어에 도움이 됩니다.
+
+이 문서는 \[[HTML51](#bib-html51)\]에서 ARIA 속성 사용에 대한 조언을 제공합니다.
+
+ARIA 사용에 대한 일반적인 모범 사례 정보는 \[[wai-aria-practices-1.1](#bib-wai-aria-practices-1.1)\] 문서를 참조하세요.
+
+다음은 관련 정보를 제공하는 더 긴 리소스 목록입니다.
+
+*   [ARIA in HTML](https://www.w3.org/TR/html-aria/)
+*   [WAI-ARIA 1.1 Authoring Practices](http://rawgit.com/w3c/aria/master/practices/aria-practices.html)
+*   [Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/)
+*   [HTML 5.1](https://www.w3.org/TR/html51/)
+*   [HTML5 Accessibility](http://www.html5accessibility.com)
+
+## 2\. HTML에서 ARIA 사용에 대한 참고 사항
+
+### 2.1 ARIA 사용의 첫 번째 규칙
+
+요소의 용도를 변경하고 ARIA 역할, 상태 또는 속성을 추가하여 접근 가능하게 만드는 대신 **이미 내장되어 있는** 의미와 동작을 갖춘 기본 HTML 요소 \[[HTML51](#bib-html51)\] 또는 속성을 사용할 수 있다면 **그렇게 하세요**.
+
+**어떤 상황에서 이것이 불가능합니까?**
+
+*   기능이 HTML \[[HTML51](#bib-html51)\]에서 사용 가능하지만 구현되지 않았거나 구현되었지만 [접근성 지원](http://www.html5accessibility.com)이 없는 경우입니다.
+*   시각적 디자인 제약으로 인해 특정 기본 요소의 사용이 배제되는 경우, 요소의 스타일을 필요에 따라 지정할 수 없기 때문입니다.
+*   [현재 HTML에서 사용할 수 없는](https://www.paciellogroup.com/blog/2014/10/aria-in-html-there-goes-the-neighborhood/#html5na) 기능인 경우.
+
+### 2.2 ARIA 사용의 두 번째 규칙
+
+꼭 필요한 경우가 아니면 기본 의미를 변경하지 마세요.
+
+예: 개발자가 탭인 제목을 작성하려고 합니다.
+
+다음과 같이 사용하지 **마십시오**.
+```html
+<h2 role="tab">heading tab</h2>
+```
+이렇게 사용 **하십시오**.
+```html
+<div role="tab"><h2>heading tab</h2></div>
+```
+<Aside title="참고">
+비대화형 요소가 대화형 요소의 기반으로 사용되는 경우 개발자는 ARIA를 사용하여 의미를 추가 하고 스크립팅을 사용하여 적절한 상호 작용 동작을 추가해야 합니다. 예를 들어 버튼의 경우 [(기본 HTML) 버튼을 사용하는 것](https://blog.paciellogroup.com/2011/04/html5-accessibility-chops-just-use-a-button/)이 훨씬 더 좋고 쉽습니다.
+</Aside>
+<Aside title="참고">
+예비(fallback)로 사용된 ARIA 역할 과 유사한 의미를 갖는 기본 HTML 요소를 사용하는 것이 좋습니다. 예를 들어 ARIA를 지원하는 [트리 위젯](http://hanshillen.github.io/jqtest/#goto_tree) 스크립트의 구조에는 HTML [목록 요소](https://www.w3.org/TR/html51/grouping-content.html#elementdef-ul)를 사용합니다.
+</Aside>
+
+### 2.3 ARIA 사용의 세 번째 규칙
+
+모든 대화형 ARIA 컨트롤은 키보드로 사용할 수 있어야 합니다.
+
+사용자가 클릭, 탭, 드래그, 드롭, 슬라이드 또는 스크롤할 수 있는 위젯을 생성하는 경우 사용자는 위젯으로 이동하고 키보드를 사용하여 동등한 작업을 수행할 수도 있어야 합니다.
+
+모든 대화형 위젯은 해당되는 경우 표준 키 입력 또는 키 입력 조합에 응답하도록 스크립트를 작성해야 합니다.
+
+예를 들어, `role=button` 요소를 사용하려면 초점을 받을 수 있어야 하고 사용자는 `enter`(WIN OS에서) 또는 `return`(MAC OS)와 `space`키를 **모두** 사용하여 요소와 관련된 작업을 활성화할 수 있어야 합니다.
+
+\[[wai-aria-practices-1.1](#bib-wai-aria-practices-1.1)\]의 [디자인 패턴 및 위젯](https://www.w3.org/TR/wai-aria-practices/#aria_ex)과 [키보드 인터페이스 개발](https://www.w3.org/TR/wai-aria-practices/#keyboard) 섹션을 참조하세요.
+
+### 2.4 ARIA 사용의 네 번째 규칙
+
+**초점을 받는** 요소에는 `role="presentation"` 또는 `aria-hidden="true"`를 사용하지 마세요.
+
+**초점을 받는** 요소에 이들 중 하나를 사용하면 일부 사용자는 '없는 것(nothing)'에 집중하게 됩니다.
+
+다음과 같이 사용하지 **마십시오**.
+```html
+<button role="presentation">press me</button>
+```
+다음과 같이 사용하지 **마십시오**.
+```html
+<button aria-hidden="true">press me</button>
+```
+<Aside title="참고">
+표시되는 대화형 요소의 부모/조상 요소에 `aria-hidden`를 적용하면 대화형 요소도 숨겨지므로 **다음과 같이 사용하지 마십시오**.
+</Aside>
+
+```html
+<div aria-hidden="true">
+    <button>press me</button>
+</div>
+```
+<Aside title="참고">
+대화형 요소를 **볼 수 없거나 상호작용할 수 없는** 경우, 다음 예제처럼 초점을 받을 수 없다면  `aria-hidden`를 적용할 수 있습니다.
+</Aside>
+
+```css
+button {opacity:0}
+```
+```html
+<button tabindex="-1" aria-hidden="true">press me</button>
+```
+
+<Aside title="참고">
+대화형 요소(요소 자체 또는 요소의 상위 요소 중 하나)가 `display:none` 또는 `visibility:hidden`를 사용하여 숨겨진 경우 포커스를 받을 수 없으며 [접근성 트리](https://www.w3.org/TR/accname-aam-1.1/#dfn-accessibility-tree)에서도 제거됩니다. 이렇게 하면 `aria-hidden="true"`의 추가나 명시적으로 `tabindex="-1"`를 설정할 필요가 없습니다.
+</Aside>
+
+### 2.5 ARIA 사용의 다섯 번째 규칙
+
+모든 대화형 요소에는 [접근 가능한 이름](https://www.w3.org/TR/accname-aam-1.1/#dfn-accessible-name)이 있어야 합니다.
+
+대화형 요소에는 접근성 API _접근 가능한 이름_ (또는 이에 상응하는 이름) 속성에 값이 있는 경우에만 접근 가능한 이름이 있습니다.
+
+예를 들어 아래 코드 예제의 `input type=text`에는 'user name' 라벨이 표시되지만 접근 가능한 이름은 없습니다.
+
+```html
+user name <input type="text">
+또는
+<span>user name</span> <input type="text">
+```
+컨트롤의 [MSAA](https://en.wikipedia.org/wiki/Microsoft_Active_Accessibility) `accName` 속성이 비어 있습니다.
+
+![MSAA 이름과 역할 정보가 표시된 컨트롤의 예입니다. accName 속성에는 값이 없으며 accRole 속성은 'editable text'입니다.](/img/aria/using-aria-2018/noname.png)
+
+이에 비해 아래 코드 예제 `input type=text`에서는 'user name'이라는 레이블이 표시되고 접근 가능한 이름이 있습니다. 이 예제에는 `input` 요소가 [레이블 지정 가능한(labelable) 요소](https://www.w3.org/TR/html51/sec-forms.html#labelable-element)이고 [`label`](https://www.w3.org/TR/html51/sec-forms.html#the-label-element)이 레이블 텍스트를 입력과 연결하는 데 올바르게 사용되었기 때문에 접근 가능한 이름이 있습니다.
+```html
+<!-- Note: use of for/id or wrapping label around text
+and control methods will result in an accessible name -->
+<input type="text" aria-label="User Name">
+또는
+<span id="p1">user name</span> <input type="text" aria-labelledby="p1">
+```
+컨트롤의 [MSAA](https://en.wikipedia.org/wiki/Microsoft_Active_Accessibility) `accName` 속성에는 "user name" 값이 있습니다.
+
+![MSAA 이름과 역할 정보가 표시된 컨트롤의 예입니다. accName 속성의 값은 'user name'이고, accRole 속성은 'editable text'입니다.](/img/aria/using-aria-2018/name.png)
+
+<Aside title="참고">
+위의 예는 ARIA 위젯에 대한 것입니다. 일반 HTML 입력의 경우 ARIA의 첫 번째 규칙을 따르고 `for` 속성이 있는 [`label`](https://www.w3.org/TR/html52/sec-forms.html#the-label-element) 요소를 사용하여 레이블을 `input` 요소와 연결합니다.
+</Aside>
+
+#### HTML `label` 요소 및 레이블 지정 가능 요소
+
+다음은 HTML에서 `label` 사용에 관한 것입니다. ARIA 위젯을 구축하는 경우 [ARIA Authoring Practices Document](https://www.w3.org/TR/wai-aria-practices-1.1/)를 참조하세요.
+
+[`label`](https://www.w3.org/TR/html51/sec-forms.html#the-label-element) 요소는 `label`이 기본 HTML [레이블 지정 가능 요소](https://www.w3.org/TR/html51/sec-forms.html#labelable-element)를 참조하지 않는 한 사용자 정의 컨트롤에 접근 가능한 이름을 제공하는 데 사용할 수 없습니다.
+```html
+<!-- HTML input element with combox role -->
+<label>
+user name <input type="text" role="combobox">
+</label>
+```
+컨트롤의 [MSAA](https://en.wikipedia.org/wiki/Microsoft_Active_Accessibility) `accName` 속성에는 "user name" 값이 있습니다.
+
+![MSAA 이름과 역할 정보가 표시된 입력 요소의 예입니다. accName 속성의 값은 'user name'이고, accRole 속성의 값은 'combo box'입니다.](/img/aria/using-aria-2018/combo1.png)
+
+할당된 역할에 관계없이 `[div](https://www.w3.org/TR/html51/grouping-content.html#the-div-element)` 요소는 HTML [레이블 지정 가능 요소](https://www.w3.org/TR/html51/sec-forms.html#labelable-element)가 아닙니다.
+```html
+<!-- HTML div element with combox role -->
+<label>
+user name <div role="combobox"></div>
+</label>
+```
+컨트롤의 [MSAA](https://en.wikipedia.org/wiki/Microsoft_Active_Accessibility) `accName` 속성이 비어 있습니다.
+
+![MSAA 이름과 역할 정보가 표시된 div 요소의 예입니다. accName 속성은 비어 있고 accRole 속성은 'combo box'입니다.](/img/aria/using-aria-2018/combo2.png)
+
+<Aside title="참고">
+다섯 번째 규칙은 작업 중입니다.
+</Aside>
+
+
+### 2.6 역할을 추가하면 기본 의미에 어떤 영향을 미치나요?
+
+ARIA 역할을 추가하면 [접근성 API](https://www.w3.org/TR/accname-aam-1.1/#dfn_accessibility_api)를 통해 보고되는 [접근성 트리](https://www.w3.org/TR/accname-aam-1.1/#dfn-accessibility-tree)의 기본 역할 의미가 재정의되므로 ARIA는 화면 낭독기나 기타 보조 기술에 보고되는 내용에 간접적으로 영향을 미칩니다.
+
+예를 들어 HTML 트리의 다음 코드는 다음과 같습니다.
+```html
+<h1 role="button">text</h1>
+```
+접근성 트리에서는 다음과 같이 됩니다.
+
+!['heading text' 레이블이 있는 버튼](/img/aria/using-aria-2018/heading-button.png)
+
+#### 역할을 추가하면 안되는 것
+
+ARIA 역할을 추가해도 보조 기술을 사용하지 **않는** 사람들에게는 요소가 다르게 보이거나 작동하지 않습니다. 호스트 요소의 동작, 상태 및 속성은 변경**되지 않고** 기본 역할의 의미만 변경 됩니다.
+
+예를 들어 HTML 트리에서 이 코드는 다음과 같습니다.
+```html
+<button role="heading" aria-level="1">text</button>
+```
+접근성 트리에서는 다음과 같이 됩니다.
+
+![heading](/img/aria/using-aria-2018/heading.png)
+
+**그러나** 여전히 누를 수 있고, 여전히 기본 탭 순서에 있으며, 여전히 버튼처럼 보이고, 누르면 관련 작업이 계속 실행됩니다. 이것이 바로 버튼을 제목으로 변경하는 것이 [HTML5 준수 오류](http://validator.w3.org/nu/?doc=https%3A%2F%2Fspecs.webplatform.org%2Fhtml-aria%2Fwebspecs%2Fmaster%2Fexamples%2Fnonconforming1.html)인 이유입니다.
+
+**참고:** `role` 요소의 변경은 사용된 요소에 동작, 속성 또는 상태를 추가**하지 않습니다**. ARIA는 브라우저에서 표시되거나 작동하는 방식을 변경하지 않습니다. 예를 들어 링크가 버튼처럼 작동하는 데 사용되는 경우 `role=button` 추가로는 충분하지 않습니다. 또한 기본 버튼이 enter 키나 spacebar를 통해 활성화될 수 있는 것처럼 space 키 입력을 수신하는 [키 이벤트 핸들러](https://www.paciellogroup.com/blog/2011/04/html5-accessibility-chops-just-use-a-button/)를 포함하여 기본 버튼처럼 동작하도록 해야 합니다.
+
+### 2.7 ARIA 추가는 인라인으로? 스크립트로?
+
+ARIA 역할 또는 aria-\* 속성이 상호 작용 동작을 제공하기 위해 스크립팅에 의존하지 않는 경우 ARIA 마크업을 인라인으로 포함하는 것이 **안전합니다**. 예를 들어 [ARIA 랜드마크 역할](https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/)을 추가 하거나 ARIA 라벨 지정 및 속성 설명을 인라인으로 추가하는 것은 괜찮습니다.
+
+콘텐츠와 상호 작용이 **스크립팅이 가능한 브라우징 컨텍스트에서만 지원되는** 경우, 즉 [Google 문서](https://docs.google.com/)(애플리케이션이 작동하려면 JavaScript가 활성화되어 있어야 함) 애플리케이션은 Javascript가 활성화되지 않은 상태에서 간단히 작동하지 않으므로(누구에게나) ARIA 마크업을 인라인으로 포함하는 것도 **안전합니다**.
+
+**그렇지 않으면** 스크립팅을 통해 ARIA를 삽입, 변경 및 제거합니다. 예를 들어 트리 위젯의 접힌 섹션은 다음과 같습니다.
+```html
+<li role=treeitem aria-expanded=false ...
+```
+사용자가 섹션을 펼치면 Javascript를 사용하여 섹션이 다음과 같이 변경됩니다.
+```html
+<li role=treeitem aria-expanded=true ...
+```
+### 2.8 ARIA 유효성 검사
+
+가장 쉬운 방법은 ARIA 마크업과 함께 [HTML5 DOCTYPE](https://www.w3.org/TR/html51/syntax.html#the-doctype)을 사용하고 [W3C Nu Markup Checker](http://validator.w3.org/nu/)를 사용하여 유효성을 검사하는 것입니다. ARIA는 다른 `DOCTYPE`에도 동일하게 작동 하지만, 관련 DTD가 ARIA 마크업을 인식하도록 업데이트되지 않았고 그럴 가능성도 거의 없기 때문에 ARIA 마크업을 발견하면 검증 도구에서 오류가 발생합니다.
+
+HTML5 이전 HTML 버전의 이러한 유효성 검사 오류는 ARIA가 실제 접근성 문제를 일으킨다 는 것을 의미하지 않으며 부정적인 사용자 경험이 있을 것임을 의미하지도 않습니다. 이는 ARIA 접근성 주석을 수용하지 않는 오래된 자동 유효성 검사 테스트의 결과일 뿐입니다.
+
+**참고:** ARIA 검사를 위한 [W3C Nu Markup Checker](http://validator.w3.org/nu/) 지원은 작업 중이므로 올바른 결과를 제공하는 데 전적으로 의존할 수는 없습니다(아주 훌륭하긴 하지만!). ARIA 명세나 HTML 명세의 ARIA 준수 요구 사항과 충돌하는 결과가 발생하는 경우 [문제를 제기](https://github.com/validator/validator/issues)하는 것이 좋습니다.
+
+### 2.9 Role=presentation 혹은 Role=none 사용
+
+[`role=presentation`](https://www.w3.org/TR/wai-aria-1.1/#presentation), 또는 그 동의어 `[role=none](https://www.w3.org/TR/wai-aria-1.1/#none)`은 해당 요소에서 의미를 제거합니다.
+
+예를 들어 HTML 트리에서 이 코드는 다음과 같습니다.
+```html
+<h1 role="presentation">text</h1>
+```
+접근성 트리에서는 다음과 같이 됩니다.
+
+![text, no heading](/img/aria/using-aria-2018/text.png)
+
+즉, **의미론적 의미가 없는** 텍스트 문자열로 접근성 트리에 보고될 뿐입니다.
+
+필수 하위 항목이 없는 요소의 경우 `role=presentation/none`이 있는 요소 내부에 중첩된 모든 요소는 원래 의미를 유지합니다.
+
+예를 들어 HTML 트리에서 이 코드는 다음과 같습니다.
+```html
+<h1 role="presentation"><abbr>API</abbr></h1>
+```
+접근성 트리에서는 다음과 같이 됩니다.
+
+![API 텍스트의 abbr](/img/aria/using-aria-2018/h1.png)
+
+필수 하위 요소(예: `ul` 또는 `table`)가 있는 요소의 경우 `role=presentation/none`이 있는 요소 내부에 중첩된 필수 하위 요소의 의미도 제거됩니다.
+
+예를 들어 HTML 트리에서 이 코드는 다음과 같습니다.
+```html
+<table role="presentation">
+    <tr>
+        <td>
+            <abbr>API</abbr>
+        </td>
+    </tr>
+</table>
+```
+접근성 트리에서는 다음과 같이 됩니다.
+
+![API 텍스트의 abbr](/img/aria/using-aria-2018/abbr.png)
+
+**참고:** `role=presentation/none`가 있는 요소의 필수 하위 요소_가 아닌_ 모든 요소는 의미 체계를 유지합니다 . 여기에는 중첩 목록이나 중첩 테이블과 같은 필수 하위 항목이 있는 다른 요소가 포함됩니다.
+
+예를 들어 HTML 트리에서 내부에 중첩된 다른 테이블이 있는 테이블로 구성된 다음 코드는 다음과 같습니다.
+```html
+<table>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <abbr>API</abbr>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+```
+접근성 트리에서는 다음과 같이 됩니다.
+
+![1열 1행의 테이블이 abbr 요소를 포함하는 1열 1행의 다른 테이블을 포함하고 있다.](/img/aria/using-aria-2018/table2.png)
+
+`role=presentation/none`을 외부 `table` 요소에 추가하면 HTML 트리에 다음 코드가 표시됩니다.
+```html
+<table role="presentation">
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <abbr>API</abbr>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+```
+`role=presentation/none`을 추가하여 필수 하위 항목(`tr` 및 `td` 요소)을 포함한 외부 `table`은 접근성 트리에서 의미가 제거됩니다
+
+![abbr 요소를 포함한 1열 1행의 테이블](/img/aria/using-aria-2018/table.png)
+
+#### `role=presentation/none` 사용 예
+
+잘못된 테이블 구조를 수정하는데 사용
+```html
+<div aria-readonly="true" role="grid">
+    <table role="presentation">
+        <tbody>
+            <tr role="row">
+                <th role="columnheader">Dog Names</th>
+                <th role="columnheader">Cat Names</th>
+                <th role="columnheader">Cow names</th>
+            </tr>
+        </tbody>
+    </table>
+    <table role="none">
+        <tbody>
+            <tr role="row">
+                <td role="gridcell">Fido</td>
+                <td role="gridcell">Whiskers</td>
+                <td role="gridcell">Clarabella</td>
+            </tr>
+            <tr role="row">
+                <td role="gridcell">Woofie</td>
+                <td role="gridcell">Claws</td>
+                <td role="gridcell">Glenn</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+```
+### 2.10 실용적 지원: aria-label, aria-labelledby, aria-describedby
+
+이 글을 요약하면 다음과 같습니다.
+
+*   `aria-labelledby`와 `aria-describedby`는 다양한 [`input`](https://www.w3.org/html/wg/drafts/html/master/single-page.html#the-input-element) 유형을 포함한 [links](https://www.w3.org/html/wg/drafts/html/master/single-page.html#the-a-element) 및 양식 컨트롤 과 같은 대화형 콘텐츠 요소 에 대해 강력하게 지원됩니다.
+*   대부분의 보조 기술의 경우 `aria-label` 또는 `aria-labelledby`를 `<nav>`, `<main>` 요소에 사용할 수 있지만 `<footer>`, `<section>`, `<article>`, `<header>`에서는 사용할 수 없습니다.
+*   `<aside>`에는 `aria-label` 또는 `aria-labelledby`에 대한 지원이 혼합되어 있습니다.
+*   Android의 Talkback은 `aria-label` 또는 `aria-labelledby.`가 있는 모든 랜드마크의 콘텐츠를 재정의합니다.
+*   `div` 요소에 `role=navigation`, `role=search`, `role=main`을 사용할 때 `aria-label` 또는 `aria-labelledby`를 사용하는 것은 괜찮습니다. 하지만 JAWS는 `role=banner`, `role=complementary`, `role=contentinfo`를 지원하지 않습니다. NVDA, VoiceOver 및 Talkback에서는 괜찮습니다.
+*   `aria-label`, `aria-labelledby`, `aria-describedby`는 `table`, `th`, `td` 요소에서 잘 작동하지만, 다음 섹션에서 설명하는 NVDA, iOS의 VoiceOver 및 Talkback에 대한 예외가 있습니다.
+*   헤딩 요소에는 `aria-label`, `aria-labelledby`를 사용하지 마세요. NVDA, VoiceOver 및 Talkback에서는 헤딩을 대체하기 때문입니다. JAWS는 이들을 무시합니다.
+*   대화형이 아닌 `p`, `legend`, `li`, `ul`과 같은 기타 콘텐츠에는 `aria-label`, `aria-labelledby`를 사용하지 마세요. 무시됩니다.
+*   `span`, `div`에는 `role`이 지정된 경우가 _**아니라면**_ `aria-label`, `aria-labelledby`를 사용하지 마세요. 대화형 역할(예: `link`, `button`) 또는 `img` 역할에 `aria-label`나 `aria-labelledby`가 있으면 `div`나 `span`의 내용이 대체됩니다. 랜드마크 역할(위에서 설명한)을 제외한 다른 역할은 무시됩니다.
+*   `span` 또는 `div`에 `aria-describedby`를 사용하면 대화형 `role`, 이미지 또는 랜드마크 `role`이 지정되지 않은 경우 NVDA와 VoiceOver에서 무시됩니다. JAWS와 Talkback에서는 괜찮습니다.
+*   `aria-describedby`는 NVDA와 VoiceOver에서 다른 정적 콘텐츠에 대해 무시됩니다. JAWS와 Talkback에서는 괜찮습니다.
+
+위의 모든 내용은 [iframe](https://www.w3.org/TR/html52/semantics-embedded-content.html#the-iframe-element) 요소 에서도 동일하게 작동합니다. `aria-label`와 `aria-labelledby` 둘 다 화면 낭독기 및 Accessibility API와 동일한 동작을 갖지만 페이지 에 참조할 텍스트가 표시되지 않거나 `id` 값을 추적하는 것이 너무 어려운 경우를 위해 `aria-label`이 예약되어야 합니다.
+
+#### aria-labelledby, aria-label, aria-describedby에 대한 Internet Explorer 참고 사항
+
+Internet Explorer에서 여러 `id`를 참조하는 `aria-labelledby`이나 단일 또는 여러 `id`를 참조하는 `aria-describedby`를 사용하는 경우 참조된 요소는 Microsoft에서 말하는 [접근 가능한 HTML 요소](http://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Accessible_HTML_Elements)여야 합니다.
+
+다음 예에서는 여러 참조가 있는 `aria-labelledby`를 사용한 `span`에 `tabindex=-1`를 추가합니다. [접근 불가능한 요소를 접근 가능하게 만들기](http://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Making_Nonaccessible_Elements_Accessible)를 참조하십시오.
+```html
+<label id="l1" for="f3">label text</label>
+<input type="text" id="f3" aria-labelledby="l1 l2" >
+<p>other content</p>
+<span tabindex="-1" id="l2" >more label text</span>
+```
+또한 요소에 ARIA 역할이 있는 경우 Internet Explorer에서 해당 요소는 [접근 가능한 HTML 요소](http://msdn.microsoft.com/en-us/library/ie/gg701963%28v=vs.85%29.aspx#Accessible_HTML_Elements)가 됩니다 . 예를 들어:
+```html
+<div aria-describedby="test">text</div>
+<div id="test" role="tooltip" >tooltip text</div>
+```
+
+#### 콘텐츠를 숨겨도 접근 가능한 이름이나 설명 계산에는 영향을 미치지 않습니다
+
+의도적으로 [aria-labelledby](https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby) 및 [aria-describedby](https://www.w3.org/TR/wai-aria-1.1/#aria-describedby)가 참조하는 요소의 콘텐츠를 숨기더라도(CSS `display:none` 또는 `visibility:hidden` 또는 HTML [hidden 속성](https://www.w3.org/TR/html51/editing.html#the-hidden-attribute) 사용) 이름/설명을 제공하는데 콘텐츠가 사용되는 것을 막지는 않습니다.
+
+> 기본적으로 [보조 기술](https://www.w3.org/TR/accname-aam-1.1/#dfn-assistive-technologies)은 숨겨진 정보를 전달하지 않지만 저작자는 `aria-labelledby` 또는 `aria-describedby`를 사용하여 이를 명시적으로 무시하고 [접근 가능한 이름](https://www.w3.org/TR/accname-aam-1.1/#dfn-accessible-name)이나 [접근 가능한 설명](https://www.w3.org/TR/accname-aam-1.1/#dfn-accessible-description)의 일부로 숨겨진 텍스트를 포함할 수 있습니다.
+>
+> \- [Accessible Name and Description: Computation and API Mappings 1.1](https://www.w3.org/TR/accname-aam-1.1/#mapping_additional_nd)
+
+다음 예에서는 두 상태 모두 보조 기술 사용자에게 설명이 제공됩니다.
+
+**오류 없는(Non-Error) 상태:** 메시지가 시각적으로 숨겨짐
+```html
+<label>Name <input type="text" aria-describedby="error-message"></label>
+<span id="error-message" style="display:none">You have provided an incorrect name</span>
+```
+**참고:** 참조된 요소에 `aria-hidden=true`를 추가해도 아무런 차이가 없습니다.
+```html
+<span id="error-message" style="display:none" aria-hidden="true">You have provided an incorrect name</span>
+```
+**오류 상태:** 메시지 표시
+```html
+<span id="error-message" style="display:inline">You have provided an incorrect name</span>
+```
+#### 맥락에 맞는 이름/설명 텍스트를 제공하는 방법
+
+오류 메시지와 같이, 상황에 맞는 텍스트를 연결하려면 다음을 수행할 수 있습니다.
+
+*   오류 상태가 발생하면 참조된 요소를 DOM에 추가합니다.
+*   오류 상태가 발생할 때 DOM에서 참조된 요소의 하위 요소로 오류 텍스트를 추가합니다.
+*   오류 상태가 발생하면 DOM의 ID 참조를 `aria-labelledby/aria-describedby` 속성에 추가하세요.
+
+#### 2.10.1 배경 이미지에 대한 접근 가능한 이름의 영향
+
+CSS 배경에 정보성 이미지를 표시하지 마세요. 이미지에 최종 사용자를 위한 중요한 정보가 포함되어 있는 경우 적절한 `alt` 텍스트와 함께 HTML `<img>` 태그로 제공되어야 합니다. CSS 명세는 다음과 같이 말합니다.
+
+> 접근성상의 이유로 저작자는 중요한 정보를 전달하는 유일한 방법으로 배경 이미지를 사용해서는 안 됩니다. [WCAG 실패 #F3](https://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/F3) [\[WCAG20\]](https://www.w3.org/TR/css3-background/#ref-WCAG20)을 참조하세요. 그래픽이 아닌 프레젠테이션에서는 이미지에 접근할 수 없으며 특히 고대비 디스플레이 모드에서는 배경 이미지가 꺼질 수 있습니다. [_출처_](https://www.w3.org/TR/css3-background/#the-background-image).
+
+##### CSS 이미지 사용을 피할 수 없거나 "중요하지 않은" 주변 사진 등에 대한 대체 텍스트를 원한다면 어떻게 합니까?
+
+CSS 명세에서는 CSS 정보 배경 이미지를 "_MUST_"가 아닌 "_SHOULD_"로 권고합니다. 왜냐하면 시각적 디자인 이나 기존 코드로 인해 프론트엔드를 다시 디자인하지 않고는 HTML 이미지로 변경하기 어려운 경우가 있기 때문입니다. 다른 경우에는 저작자가 콘텐츠를 이해하는 데 "중요"하지 _**않지만**_ 이미지 내용을 알고 싶어하는 화면 낭독기 사용자를 위한 배려로 주변 이미지에 대한 대체 텍스트를 제공하기를 원할 수도 있습니다. 다음은 [주변 이미지, 순수 장식, 정보 제공 이미지](http://davidmacd.com/blog/what-is-pure-decoration-alt-text-in-wcag.html)에 대해 자세히 다룬 글입니다.
+
+###### CSS 이미지에 대체 텍스트를 제공할 때는 몇 가지 고려사항이 있습니다
+
+`<div>` 태그 내부에 콘텐츠가 있는 경우 [접근 가능한 이름 계산](https://www.w3.org/TR/html-aam-1.0/#img-element)으로 인해 `role="img"` 및 `aria-label`는 내부 콘텐츠를 가리거나 보조 기술이 `aria-label`을 무시할 수 있습니다. If the `<div>` tag has any content inside it, then a `role="img"` and `aria-label` could obscure the inside content because of the [accessible name calculation](https://www.w3.org/TR/html-aam-1.0/#img-element), or the assistive technology might just ignore the `aria-label`.
+
+그래서 컨텐츠가 있는 `<div>` 안에 CSS 배경 이미지를 넣지 마세요. 비어있는 `<span>`과 `role="img"`와 함께 `aria-label`을 사용하는 것이 가장 좋습니다.
+
+**이렇게 사용 하십시오**
+```html
+<div>
+    <span class="background-image" role="img" aria-label="[place alt text here]"> </span>
+    [all the rest of my content]
+</div>
+```
+**다음과 같이 사용하지 마십시오**
+```html
+<div class="background-image" role="img" aria-label="blah blah blah">
+    [all the rest of my content]
+</div>
+```
+
+##### 저작자가 콘텐츠가 포함된 `<div>`에 CSS 이미지를 가지고 있어야 한다면 어떻게 될까요?
+
+때로는 CSS 스택에 종속성이 있어 이를 조작하면 사이트의 디자인과 레이아웃이 뒤틀리거나 코드 변경 요청이 다양한 관계자의 승인을 받지 못하고 중단될 수 있습니다. 저작자가 다른 콘텐츠를 감싸는 `<div>`에 배경 이미지를 가지고 있어야 하는 경우 대체 방법이 있습니다.
+
+```html
+<div class="background-image" >
+    <span role="img" aria-label="[place alt text here]"> </span>
+    [all the rest of my content]
+</div>
+```
+
+의미상 대체 텍스트가 실제로 이미지가 있는 요소에 없기 때문에 이는 핵(hack)입니다. 그러나 화면 낭독기의 관점에서 볼 때 배경 이미지가 있는 `<div>` 은 무시되므로 바로 뒤에 `<span>` 을 배치하면 대체 텍스트가 배경 이미지와 같은 위치에 있는 것처럼 보이는 방식으로 해당 정보를 제공하게 됩니다.
+
+### 2.11 ARIA role=application 사용
+
+#### role="application"이 화면 낭독기에 어떤 영향을 미치나요?
+
+오늘날 널리 사용되는 많은 화면 낭독기에서는 사용자가 탐색 모드에 있을 때 웹 페이지가 아닌 화면 낭독기에 의해 대부분의 키 입력이 감지됩니다. 이는 페이지를 효율적으로 탐색하는 데 필요합니다. 이 글을 쓰는 시점에서 애플리케이션 모드가 설정되면 많은 화면 낭독기가 키 입력 가로채기를 중지하고 모든 키 입력을 브라우저에 직접 전달합니다. 그러면 사용자는 페이지를 쉽게 탐색할 수 없습니다. 예를 들어 페이지 제목을 건너뛰거나 정적 텍스트 단락을 한 줄씩 읽을 수 없습니다. 그러나 여러 화면 낭독기는 애플리케이션 역할이 설정된 경우 다르게 작동하지 않습니다.
+
+#### 그렇다면 언제 사용해야 하고, 언제 사용하지 말아야 할까요?
+
+`role=application`을 사용할 시기를 판단할 때 무엇보다도 화면 낭독기 키보드 단축키의 장점과 해당 기능의 손실을 비교하여 고려해야 합니다. 일반적으로 사용해서는 안 되며, 사용하는 경우 화면 낭독기 사용자를 대상으로 사용성 테스트를 수행해야 합니다.
+
+컨트롤 세트에 표준 HTML의 일부인 이러한 위젯만 포함되어 있는 경우에는 `role="application"`을 사용**하지 마세요**. 이는 표준 HTML 위젯 대신 WAI-ARIA 역할을 사용하여 마크업하고 상호 작용 모델을 생성하는 경우에도 적용됩니다.
+
+**참고:** 저작자가 사용자 정의 텍스트 입력 위젯을 개발하는 것은 권장되지 않습니다. 이에 대해서는 거의 항상 기본 입력을 사용하는 것이 가장 좋습니다.
+
+*   `text box`. 이는 password, search, tel 및 기타 새로운 input _type_ 파생에도 적용됩니다.
+*   `textarea`
+*   `check box`
+*   `button`
+*   `radio button` (보통 fieldset/legend 요소 wrapper 내부)
+*   `select + option`(s)
+*   `links`, `paragraphs`, `headings` 및 기타 웹 문서의 고전/기본 요소입니다.
+
+위젯이 다음과 같이 보다 동적이고 기본이 아닌(non-native) 위젯 중 하나인 경우에도 `application` 역할을 사용하지 **않습니다**. WAI-ARIA를 지원하는 화면 낭독기 및 기타 보조 기술은 기본적으로 탐색 모드와 초점 모드 간 전환도 지원합니다.
+
+*   `tree view`
+*   `slider`
+*   arrow 키로 탐색, 초점을 받을 수 있는 항목이 있는 `table`(예: 특정 정보를 제공하는 이메일 메시지 목록). 다른 예로는 대화형 그리드, 트리 그리드 등이 있습니다.
+*   사용자가 왼쪽 및 오른쪽 arrow 키를 통해 탭을 선택하는 탭 목록(`tab, tablist`)입니다. 이를 위해서는 키보드 탐색 모델을 구현**해야 한다**는 점을 기억하세요!
+*   `dialog` 그리고 `alertdialog`. 이로 인해 일부 화면 낭독기가 초점이 그 안의 컨트롤로 이동하면 일종의 응용 프로그램 모드(암묵적으로)로 전환됩니다. 이들이 가장 잘 작동하려면 역할이 `dialog`인 요소의 `aria-describedby` 속성을 대화 상자의 목적을 설명하는 텍스트의 `id`로 설정하고, 열릴 때 첫 번째 대화형 컨트롤에 포커스를 맞추어야 합니다.  
+    ```html
+    <div role="dialog" aria-label="login" aria-describedby="log1">
+        <div id="log1" tabindex="-1">Provide user name and password to login.</div>
+        ...
+        ...
+    </div>
+    ```
+*   `toolbar`와 `toolbar buttons`, `menus`와 `menu items`, 그리고 유사한 것들.
+
+제공하는 콘텐츠가 집중 가능한 대화형 컨트롤과 대부분 실제 데스크톱 애플리케이션을 에뮬레이트하는 고급 위젯 으로 구성된 경우에**만** `role=application`을 사용하고 싶을 것입니다. 현재 웹 애플리케이션이라고 불리는 많은 것들이 있음에도 불구하고 이러한 웹 애플리케이션과 함께 작동하는 콘텐츠의 대부분은 Facebook 게시물 및 댓글, 블로그, Twitter 피드, 특정 유형의 정보를 동적으로 표시하고 숨기는 아코디언 등 여전히 문서 기반 정보입니다. 비록 표면적으로는 데스크탑과 같은 느낌을 주지만 우리는 주로 여전히 웹상의 문서를 다루고 있습니다.
+
+사용자가 화면 낭독기에서 양식 (초점) 모드에 있는 동안에는 컨트롤별 키보드 단축키를 사용하기 위해 `role=application`을 사용할 필요가 없습니다. 예를 들어, ARIA `role=listbox`를 사용한 사용자 정의 컨트롤은 사용자가 상호 작용하는 동안 arrow 키를 포함하여 누른 모든 키를 쉽게 감지할 수 있습니다.
+
+**간단히 말해서**, 실제로 `role=application`를 사용하게 될 경우는 아마도 **매우 드물 것입니다**!
+
+#### 그렇다면 `role=application`를 넣어서 유용한 경우는?
+
+위젯의 가장 가까운 포함 요소(예: 가장 바깥쪽 위젯 요소인 요소의 부모 `div`)에 배치합니다. 해당 외부 `div`이 애플리케이션 상호 작용 모델이 필요한 위젯만 감싸는 경우 사용자가 이 위젯에서 탭 아웃하면 초점 모드가 꺼집니다.
+
+페이지가 초점 모드를 켜야 하는 위젯 또는 위젯 세트로만 구성된 경우에**만** 본문 요소에 배치하세요. 이러한 위젯이 대부분 있지만 사용자가 찾아보기를 원하는 항목도 있는 경우 페이지의 문서 같은 부분의 가장 바깥쪽 요소에 `role=document`를 사용하세요. 이는 `role=application`과 반대 개념이며 화면 낭독기에게 이 부분에 대해 찾아보기 모드를 사용하도록 지시하는 것입니다. 또한 tabindex=0 사용자가 접근할 수 있도록 이 요소에 `tabindex=0`를 설정하여 탭할 수 있게 만드세요.
+
+**일반적인 규칙:** 페이지가 90% 이상, 심지어 95%가 위젯로 구성된 경우에만 `role=application`을 고려할 **수 있습니다**. 그래도 `role=application`을 설정한 버전과 설정하지 않은 버전을 실제로 테스트하여 어떤 모델이 가장 잘 작동하는지 알아볼 수 있는 전문가를 찾으세요.
+
+**절대로** 페이지가 주로 사용자가 초점 모드에서 상호 작용할 필요가 없는 전통적인 위젯이나 링크와 같은 페이지 요소로 구성된 경우 `body`와 같은 광범위한 요소에 `role=application`을 적용**하지 마세요**. 이렇게 하면 사이트/애플리케이션을 사용하려는 모든 보조 기술 사용자에게 큰 어려움이 발생합니다.
+
+`role=application` 사용에 대한 자세한 내용은[WAI-ARIA 역할 "application"을 현명하게 사용하세요!](http://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/)"를 참조하세요.
+
+### 2.12 사용자 정의 컨트롤에 대한 접근성 개발 체크리스트
+
+다음 설계 고려 사항을 기준으로 사용자 정의 컨트롤을 확인하세요. 이에 대한 대답이 '아니요'인 경우 배포 전에 수정하거나 최소한 문제를 문서화하여 다른 개발자에게 제한된 접근성 지원으로 인해 일부 사람들이 사용자 정의 컨트롤을 사용할 수 없음을 알리는 것을 고려하십시오.
+
+<table>
+    <caption>사용자 정의 컨트롤 설계 고려 사항</caption>
+    <tbody>
+        <tr>
+            <th scope="col">설계 고려 사항</th>
+            <th scope="col">설명</th>
+            <th scope="col">예/아니오</th>
+        </tr>
+        <tr>
+            <th scope="row">초점 받을 수 있는</th>
+            <td>
+                키보드로 제어할 수 있나요? <a href="https://www.w3.org/TR/wai-aria-practices/#kbd_shortcuts_assigning">키보드 초점 제공</a>을 참조하세요.
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">키보드 조작 가능	</th>
+            <td>
+                키보드로 컨트롤을 사용할 수 있나요? <a href="https://www.w3.org/TR/wai-aria-practices/#keyboard">키보드 탐색</a>을 참조하세요.
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">터치 조작 가능</th>
+            <td>
+                터치 제스처로 컨트롤을 사용할 수 있나요? 보조 기술이 활성화되어 있습니까?
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">예상되는 조작</th>
+            <td>
+                컨트롤 유형에 맞는 표준 키(<a href="https://www.w3.org/TR/wai-aria-practices/#aria_ex"> <abbr title="Accessible Rich Internet Applications">ARIA</abbr> 위젯 설계 패턴</a> 참조) 및/또는 터치 제스처를 사용하여 컨트롤을 작동할 수 있나요 ?
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">명확한 초점 표시</th>
+            <td>
+                컨트롤에 포커스가 있으면 쉽게 볼 수 있나요? <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">초점 시각화</a>(WCAG2)을 참조하세요.
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">레이블</th>
+            <td>
+                컨트롤에 <a href="https://www.w3.org/TR/accname-aam-1.1/#dfn_accessibility_api">접근성 API</a>에서 <a href="https://www.w3.org/TR/accname-aam-1.1/#dfn-accessible-name">접근 가능한 이름</a>으로 표시되는 텍스트 레이블이 있습니다.
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">역할</th>
+            <td>
+                컨트롤에 <a href="http://rawgit.com/w3c/aria/master/html-aam/html-aam.html#introduction-accessibility-apis">접근성 API</a>에 노출된 적절한 역할이 있습니다.
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">상태와 속성</th>
+            <td>
+                컨트롤에는 <a href="http://rawgit.com/w3c/aria/master/html-aam/html-aam.html#introduction-accessibility-apis">접근성 API</a>에 노출된 UI 상태 및 속성이 있습니다.
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">색상 대비</th>
+            <td>
+                저시력 사용자가 컨트롤 레이블/설명/아이콘을 인식/사용할 수 있습니다(<a href="https://www.paciellogroup.com/resources/contrastanalyser/">색상 대비 검사기</a>를 사용하세요.)
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">고대비 모드	</th>
+            <td>
+                고대비 모드가 활성화되면(예: <a href="https://www.paciellogroup.com/blog/2010/01/high-contrast-proof-css-sprites/">Windows HC 모드</a>) 컨트롤을 인식/사용할 수 있습니다.	
+            </td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+### 2.13 ARIA는 대부분의 HTML 요소의 기본 의미에 아무것도 추가하지 않습니다.
+
+<Aside title="참고">
+어떤 경우에는 HTML 요소의 의미가 ARIA 역할, 상태 또는 속성으로 표현될 수 있습니다. 이는 요소의 ' [기본 암묵적 ARIA 의미 체계](https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics)'로 알려져 있습니다.
+</Aside>
+
+HTML4에 정의된 요소 중 기본 의미를 노출하기 위해 ARIA 역할을 추가할 필요가 있는 요소는 없습니다. ARIA 역할을 추가하는 것은 아무런 이득이 없는 추가 작업이며 본인이나 다른 사람에게 고통을 안겨줄 수 있습니다. 구현된 HTML5에 정의된 새로운 기능은 이제 대부분의 브라우저에서 기본 의미 체계를 노출합니다. [HTML 명세](https://www.w3.org/TR/html51/dom.html#aria-usage-note)에는 다음 참고 사항이 포함되어 있습니다.
+
+> 대부분의 경우 [기본 암시적 ARIA 의미 체계](https://www.w3.org/TR/html51/infrastructure.html#default-implicit-aria-semantics)와 일치하는 ARIA `[role](https://www.w3.org/TR/html5/infrastructure.html#attr-aria-role)` 및/또는 `aria-*` 속성을 설정하는 것은 불필요하며 권장되지 않습니다. 이러한 속성은 브라우저에서 이미 설정되어 있기 때문입니다.
+
+#### 2.13.1 중복 ARIA 의 몇 가지 예
+
+HTML5 권장 사항에 나열된 [대화형 요소](https://www.w3.org/TR/html51/dom.html#interactive-content)에 기본 암시적 역할을 추가하는 것은 시간 낭비입니다.
+```html
+<button role="button">press me</button>
+```
+기본 HTML 대응 항목에 ARIA 상태 또는 속성을 **추가하는** 것은 시간 낭비입니다.
+```html
+<input type="text" required aria-required="true">
+<div hidden aria-hidden="true">
+```
+오랫동안 구현된 구조 요소에 ARIA 역할과 상태 또는 속성을 추가하는 것은 시간 낭비입니다.
+```html
+<h1 role="heading" aria-level="1">heading text</h1>
+```
+### 2.14 HTML의 기능으로 사용할 수 없는 ARIA 역할 및 속성
+
+아래에는 HTML에서 기본적으로 사용할 수 없는 것으로 간주되는 ARIA 역할 및 속성이 나열되어 있습니다. 사용자에게 정보를 전달하는 데 사용하는 ARIA의 많은 역할과 속성을 HTML에서는 사용할 수 없다는 것은 분명합니다.
+
+#### 2.14.1 ARIA 역할
+
+1.  [`alert`](https://www.w3.org/TR/wai-aria-1.1/#alert)
+2.  [`alertdialog`](https://www.w3.org/TR/wai-aria-1.1/#alertdialog)
+3.  [`application`](https://www.w3.org/TR/wai-aria-1.1/#application)
+4.  [`directory`](https://www.w3.org/TR/wai-aria-1.1/#directory)
+5.  [`document`](https://www.w3.org/TR/wai-aria-1.1/#document)
+6.  [`feed`](https://www.w3.org/TR/wai-aria-1.1/#feed)
+7.  [`grid`](https://www.w3.org/TR/wai-aria-1.1/#grid)
+8.  [`gridcell`](https://www.w3.org/TR/wai-aria-1.1/#gridcell)
+9.  [`group`](https://www.w3.org/TR/wai-aria-1.1/#group)
+10.  [`log`](https://www.w3.org/TR/wai-aria-1.1/#log)
+11.  [`marquee`](https://www.w3.org/TR/wai-aria-1.1/#marquee)
+12.  [`menu`](https://www.w3.org/TR/wai-aria-1.1/#menu)
+13.  [`menubar`](https://www.w3.org/TR/wai-aria-1.1/#menubar)
+14.  [`menuitemcheckbox`](https://www.w3.org/TR/wai-aria-1.1/#menuitemcheckbox)
+15.  [`menuitemradio`](https://www.w3.org/TR/wai-aria-1.1/#menuitemradio)
+16.  [`none`](https://www.w3.org/TR/wai-aria-1.1/#none)
+17.  [`note`](https://www.w3.org/TR/wai-aria-1.1/#note)
+18.  [`presentation`](https://www.w3.org/TR/wai-aria-1.1/#presentation)
+19.  [`scrollbar`](https://www.w3.org/TR/wai-aria-1.1/#scrollbar)
+20.  [`search`](https://www.w3.org/TR/wai-aria-1.1/#search)
+21.  [`status`](https://www.w3.org/TR/wai-aria-1.1/#status)
+22.  [`switch`](https://www.w3.org/TR/wai-aria-1.1/#switch)
+23.  [`tab`](https://www.w3.org/TR/wai-aria-1.1/#tab)
+24.  [`tablist`](https://www.w3.org/TR/wai-aria-1.1/#tablist)
+25.  [`tabpanel`](https://www.w3.org/TR/wai-aria-1.1/#tabpanel)
+26.  [`timer`](https://www.w3.org/TR/wai-aria-1.1/#timer)
+27.  [`toolbar`](https://www.w3.org/TR/wai-aria-1.1/#toolbar)
+28.  [`tooltip`](https://www.w3.org/TR/wai-aria-1.1/#tooltip)
+29.  [`tree`](https://www.w3.org/TR/wai-aria-1.1/#tree)
+30.  [`treegrid`](https://www.w3.org/TR/wai-aria-1.1/#treegrid)
+31.  [`treeitem`](https://www.w3.org/TR/wai-aria-1.1/#treeitem)
+
+#### 2.14.2 ARIA 상태 및 속성(aria-\* 속성)
+
+1.  [`aria-activedescendant`](https://www.w3.org/TR/wai-aria-1.1/#aria-activedescendant)
+2.  [`aria-atomic`](https://www.w3.org/TR/wai-aria-1.1/#aria-atomic)
+3.  [`aria-busy` (상태)](https://www.w3.org/TR/wai-aria-1.1/#aria-busy)
+4.  [`aria-controls`](https://www.w3.org/TR/wai-aria-1.1/#aria-controls)
+5.  [`aria-describedby`](https://www.w3.org/TR/wai-aria-1.1/#aria-describedby)
+6.  [`aria-dropeffect`](https://www.w3.org/TR/wai-aria-1.1/#aria-dropeffect)
+7.  [`aria-expanded` (상태)](https://www.w3.org/TR/wai-aria-1.1/#aria-expanded)
+8.  [`aria-flowto`](https://www.w3.org/TR/wai-aria-1.1/#aria-flowto)
+9.  [`aria-grabbed` (상태)](https://www.w3.org/TR/wai-aria-1.1/#aria-grabbed)
+10.  [`aria-haspopup`](https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup)
+11.  [`aria-hidden` (상태)](https://www.w3.org/TR/wai-aria-1.1/#aria-hidden)
+12.  [`aria-label`](https://www.w3.org/TR/wai-aria-1.1/#aria-label)
+13.  [`aria-labelledby`](https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby)
+14.  [`aria-level`](https://www.w3.org/TR/wai-aria-1.1/#aria-level)
+15.  [`aria-live`](https://www.w3.org/TR/wai-aria-1.1/#aria-live)
+16.  [`aria-orientation`](https://www.w3.org/TR/wai-aria-1.1/#aria-orientation)
+17.  [`aria-owns`](https://www.w3.org/TR/wai-aria-1.1/#aria-owns)
+18.  [`aria-posinset`](https://www.w3.org/TR/wai-aria-1.1/#aria-posinset)
+19.  [`aria-pressed` (상태)](https://www.w3.org/TR/wai-aria-1.1/#aria-pressed)
+20.  [`aria-relevant`](https://www.w3.org/TR/wai-aria-1.1/#aria-relevant)
+21.  [`aria-setsize`](https://www.w3.org/TR/wai-aria-1.1/#aria-setsize)
+22.  [`aria-sort`](https://www.w3.org/TR/wai-aria-1.1/#aria-sort)
+
+### 2.15 ARIA 설계 패턴 및 터치 장치 지원
+
+<Aside title="경고" type="danger">
+[WAI-ARIA Authoring Practices 1.1의](https://w3c.github.io/aria-practices/) [ARIA 설계 패턴](https://w3c.github.io/aria-practices/#aria_ex)은 키보드 전용 사용자가 사용할 수 있고 보조 기술 사용자가 이해할 수 있도록 사용자 정의 UI 요소를 구현하는 방법을 설명합니다. 일부 ARIA 설계 패턴은 현재 키보드별 이벤트 처리를 지정하고 이에 의존합니다. 이는 터치 스크린만 제공하는 장치에서는 지원되지 않으며, 추가 물리적 키보드가 있는 휴대폰/태블릿에서는 지원이 제한되거나 지원되지 않습니다(특정 운영 체제에 따라 다름). _진행 중인_ [ARIA 설계 패턴 - 터치 UA/AT 격차 분석(구글 시트)](https://docs.google.com/spreadsheets/d/1gN9oRZPdrJxLDNtT6nVO4fn7E7sn1061L9Xl3__slZ4/edit?usp=sharing)이 가능합니다. ([.ods 포맷의 정적 파일](aria-touch-gap-analysis-150615.ods)로도 이용 가능) 관련 [WAI-ARIA WAI-ARIA Authoring Practices 1.1 이슈](https://github.com/w3c/aria/issues/60)
+</Aside>
+
+### 2.16 권고안 표:
+
+[HTML의 ARIA](https://www.w3.org/TR/html-aria/) 명세의 [HTML 테이블 의 ARIA 속성 사용에 대한 문서 준수 요구 사항](https://www.w3.org/TR/html-aria/#docconformance)을 참조하세요.
+
+### 2.17 ARIA 역할, 상태 및 속성 빠른 참조
+
+[HTML의 ARIA](https://www.w3.org/TR/html-aria/) 명세에서 [허용되는 ARIA 역할, 상태, 속성](https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties) 표를 참조하세요.
+
+A. 참고자료
+----------------------
+
+### A.1 정보성 참고자료
+
+<dl>
+    <dt id="bib-html51">[HTML51]</dt>
+    <dd>
+        <a href="https://www.w3.org/TR/html51/"><cite>HTML 5.1 2nd Edition</cite></a>. Steve Faulkner; Arron Eicholz; Travis Leithead; Alex Danilo. W3C. 3 October 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html51/">https://www.w3.org/TR/html51/</a>
+    </dd>
+    <dt id="bib-wai-aria-1.1">[WAI-ARIA-1.1]</dt>
+    <dd>
+        <a href="https://www.w3.org/TR/wai-aria-1.1/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a>. Joanmarie Diggs; Shane McCarron; Michael Cooper; Richard Schwerdtfeger; James Craig. W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.1/">https://www.w3.org/TR/wai-aria-1.1/</a>
+    </dd>
+    <dt id="bib-wai-aria-practices-1.1">[wai-aria-practices-1.1]</dt>
+    <dd>
+        <a href="https://www.w3.org/TR/wai-aria-practices-1.1/"><cite>WAI-ARIA Authoring Practices 1.1</cite></a>. Matthew King; James Nurthen; Zoë Bijl; Michael Cooper; Joseph Scheuhammer; Lisa Pappas; Richard Schwerdtfeger. W3C. 26 July 2018. W3C Note. URL: <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">https://www.w3.org/TR/wai-aria-practices-1.1/</a>
+    </dd>
+</dl>

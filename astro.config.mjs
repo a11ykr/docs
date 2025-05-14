@@ -54,7 +54,7 @@ export default defineConfig({
                 sidebar: [
                     { label: '문서 목록', link: '/guides/' },
                     {
-                        label: 'WCAG 2 한국어 번역본',
+                        label: 'WCAG 2 한국어 번역',
                         collapsed: true,
                         items: [
                             { label: '웹 콘텐츠 접근성 지침(WCAG) 2.2', link: '/wcag2/' },
@@ -216,39 +216,74 @@ export default defineConfig({
                                     pathPrefix: '/glossary'
                                 }
                             },
+                        ]
+                    },
+                    {
+                        label: 'WAI-ARIA 한국어 번역',
+                        collapsed: true,
+                        items: [
                             {
-                                label: '구버전 번역본',
-                                collapsed: true,
-                                badge: { text: '참고용', variant: 'caution' },
-                                items: [
-                                    { label: 'WCAG 2.2 - v231005', link: 'wcag2/old/231005/' },
-                                    {
-                                        label: 'WCAG 2.1',
-                                        link: 'http://www.kwacc.or.kr/WAI/wcag21/',
-                                        attrs: {
-                                            target: '_blank',
-                                            class: 'external-link'
-                                        }
-                                    },
-                                    {
-                                        label: 'WCAG 2.0',
-                                        link: 'https://web.archive.org/web/20121107021930/http://archi.ssu.ac.kr/WCAG20/',
-                                        attrs: {
-                                            target: '_blank',
-                                            class: 'external-link'
-                                        }
-                                    },
-                                    {
-                                        label: 'WCAG 1.0',
-                                        link: 'https://web.archive.org/web/20110907032914/https://www.gregshin.pe.kr/wcag/wai-pageauth.html',
-                                        attrs: {
-                                            target: '_blank',
-                                            class: 'external-link'
-                                        }
-                                    },
-                                ],
+                                label: 'WAI-ARIA 1.2',
+                                link: 'https://mulder21c.github.io/aria/',
+                                attrs: {
+                                    target: '_blank',
+                                    class: 'external-link'
+                                }
+                            },
+                            {
+                                label: 'WAI-ARIA 작성 방법 1.2 ',
+                                link: 'https://mulder21c.github.io/aria-practices/',
+                                attrs: {
+                                    target: '_blank',
+                                    class: 'external-link'
+                                }
+                            },
+                            {
+                                label: 'ARIA 사용',
+                                link: '/aria/using-aria-20180927/',
+                                badge: { text: '검토중', variant: 'note' }
+                            },
+                            {
+                                label: 'HTML의 ARIA',
+                                link: 'https://a11ykr.github.io/html-aria/',
+                                attrs: {
+                                    target: '_blank',
+                                    class: 'external-link'
+                                }
                             },
                         ]
+                    },
+                    {
+                        label: '구버전 번역본',
+                        collapsed: true,
+                        badge: { text: '참고용', variant: 'caution' },
+                        items: [
+                            { label: 'WCAG 2.2 - v231005', link: 'wcag2/old/231005/' },
+                            {
+                                label: 'WCAG 2.1',
+                                link: 'http://www.kwacc.or.kr/WAI/wcag21/',
+                                attrs: {
+                                    target: '_blank',
+                                    class: 'external-link'
+                                }
+                            },
+                            {
+                                label: 'WCAG 2.0',
+                                link: 'https://web.archive.org/web/20121107021930/http://archi.ssu.ac.kr/WCAG20/',
+                                attrs: {
+                                    target: '_blank',
+                                    class: 'external-link'
+                                }
+                            },
+                            {
+                                label: 'WCAG 1.0',
+                                link: 'https://web.archive.org/web/20110907032914/https://www.gregshin.pe.kr/wcag/wai-pageauth.html',
+                                attrs: {
+                                    target: '_blank',
+                                    class: 'external-link'
+                                }
+                            },
+                        ],
                     },
                     {
                         label: 'KWCAG',
