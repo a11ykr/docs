@@ -223,7 +223,7 @@ export default defineConfig({
                         collapsed: true,
                         items: [
                             {
-                                label: 'WAI-ARIA 1.2',
+                                label: 'WAI-ARIA 1.2(2020)',
                                 link: 'https://mulder21c.github.io/aria/',
                                 attrs: {
                                     target: '_blank',
@@ -231,7 +231,7 @@ export default defineConfig({
                                 }
                             },
                             {
-                                label: 'WAI-ARIA 작성 방법 1.2 ',
+                                label: 'WAI-ARIA 작성 방법 1.2(2024) ',
                                 link: 'https://mulder21c.github.io/aria-practices/',
                                 attrs: {
                                     target: '_blank',
@@ -239,17 +239,9 @@ export default defineConfig({
                                 }
                             },
                             {
-                                label: 'ARIA 사용',
+                                label: 'ARIA 사용(2018)',
                                 link: '/aria/using-aria-20180927/',
                                 badge: { text: '검토중', variant: 'note' }
-                            },
-                            {
-                                label: 'HTML의 ARIA',
-                                link: 'https://a11ykr.github.io/html-aria/',
-                                attrs: {
-                                    target: '_blank',
-                                    class: 'external-link'
-                                }
                             },
                         ]
                     },
@@ -278,6 +270,14 @@ export default defineConfig({
                             {
                                 label: 'WCAG 1.0',
                                 link: 'https://web.archive.org/web/20110907032914/https://www.gregshin.pe.kr/wcag/wai-pageauth.html',
+                                attrs: {
+                                    target: '_blank',
+                                    class: 'external-link'
+                                }
+                            },
+                            {
+                                label: 'HTML의 ARIA - 20240507',
+                                link: 'https://a11ykr.github.io/html-aria/',
                                 attrs: {
                                     target: '_blank',
                                     class: 'external-link'
