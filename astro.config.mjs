@@ -295,7 +295,7 @@ export default defineConfig({
                     { label: '접근성 점검 도구', link: '/acts/' },
                     {
                         label: '참고 자료',
-                        collapsed: false,
+                        collapsed: true,
                         autogenerate: {
                             directory: '/reference/',
                             order: 'asc',
