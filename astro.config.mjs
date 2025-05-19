@@ -243,6 +243,11 @@ export default defineConfig({
                                 link: '/aria/using-aria-20180927/',
                                 badge: { text: '검토중', variant: 'note' }
                             },
+                            // {
+                            //     label: 'ARIA 사용(2025)',
+                            //     link: '/aria/aria-in-html-20250409/',
+                            //     badge: { text: '작업중', variant: 'danger' }
+                            // },
                         ]
                     },
                     {
