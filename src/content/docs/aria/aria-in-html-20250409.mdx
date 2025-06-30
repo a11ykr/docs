@@ -381,34 +381,34 @@ HTML 파서는 위의 마크업을 다음과 같이 수정하여 출력한다.
 
 | HTML 요소 | 암묵적 ARIA 의미 (명시적으로 마크업에 지정하는 것은 _권장하지 않음_) | ARIA로 허용되는 역할, 상태, 속성 |
 | --- | --- | --- |
-| [`a`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element)([`href`](https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href)가 있는) | <code>role=[link](#index-aria-link)</code> | 역할:  [`button`](#index-aria-button), [`checkbox`](#index-aria-checkbox), [`menuitem`](#index-aria-menuitem), [`menuitemcheckbox`](#index-aria-menuitemcheckbox), [`menuitemradio`](#index-aria-menuitemradio), [`option`](#index-aria-option), [`radio`](#index-aria-radio), [`switch`](#index-aria-switch), [`tab`](#index-aria-tab), [`treeitem`](#index-aria-treeitem). ([`link`](#index-aria-link) 또한 허용되지만 _권장하지 않는다_.)<br/><br/>DPub 역할:  [`doc-backlink`](https://www.w3.org/TR/dpub-aria-1.0/#doc-backlink), [`doc-biblioref`](https://www.w3.org/TR/dpub-aria-1.0/#doc-biblioref), [`doc-glossref`](https://www.w3.org/TR/dpub-aria-1.0/#doc-glossref), [`doc-noteref`](https://www.w3.org/TR/dpub-aria-1.0/#doc-noteref)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성.<br/><br/>`href` 속성이 있는 `a` 요소에 `aria-disabled="true"`를 사용하는 것은 _권장하지 않는다_. <br/><br/><Aside title="참고">링크를 프로그래밍 방식으로 "비활성화"로 표시해야 할 경우, [`href` 속성을 제거하라](#example-communicate-a-disabled-link-with-aria).</Aside> |
-| [`a`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element)([`href`](https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href)가 없는) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role)이 허용되지만, [`generic`](#index-aria-generic)은 사용*하지 않아야 한다*.<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`a`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element)([`href`](https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href)가 있는 경우) | <code>role=[link](#index-aria-link)</code> | 허용 역할: [`button`](#index-aria-button), [`checkbox`](#index-aria-checkbox), [`menuitem`](#index-aria-menuitem), [`menuitemcheckbox`](#index-aria-menuitemcheckbox), [`menuitemradio`](#index-aria-menuitemradio), [`option`](#index-aria-option), [`radio`](#index-aria-radio), [`switch`](#index-aria-switch), [`tab`](#index-aria-tab), [`treeitem`](#index-aria-treeitem). ([`link`](#index-aria-link)도 허용되나 _권장하지 않음_)<br/><br/>DPub 역할: [`doc-backlink`](https://www.w3.org/TR/dpub-aria-1.0/#doc-backlink), [`doc-biblioref`](https://www.w3.org/TR/dpub-aria-1.0/#doc-biblioref), [`doc-glossref`](https://www.w3.org/TR/dpub-aria-1.0/#doc-glossref), [`doc-noteref`](https://www.w3.org/TR/dpub-aria-1.0/#doc-noteref)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성.<br/><br/>`href` 속성이 있는 `a` 요소에 `aria-disabled="true"`를 사용하는 것은 _권장하지 않음_. <br/><br/><Aside title="참고">링크를 프로그래밍 방식으로 "비활성화"로 표시해야 할 경우, [`href` 속성을 제거하세요`](#example-communicate-a-disabled-link-with-aria).</Aside> |
+| [`a`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element)([`href`](https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href)가 없는 경우) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role)이 허용되지만, [`generic`](#index-aria-generic)은 사용*하지 않아야 함*.<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
 | [`abbr`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | [**모든 `role`**](#dfn-any-role)<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`address`](https://html.spec.whatwg.org/multipage/sections.html#the-address-element) | <code>role=[group](#index-aria-group)</code> | [**모든 `role`**](#dfn-any-role)이 허용되지만, [`group`](#index-aria-group)은 _권장하지 않는다_.<br/><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`area`](https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element)([`href`](https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href)가 있는) | <code>role=[link](#index-aria-link)</code> | [`link`](#index-aria-link)를 _권장하지 않지만_, 이를 제외한 다른 [**`role`**](#dfn-no-role)은 허용하지 **않는댜**.<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 모든 `aria-*` 속성은 applicable to the [`link`](#index-aria-link) role. |
-| [`area`](https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element)([`href`](https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href)가 없는) | <code>role=[generic](#index-aria-generic)</code> | 역할:  [`button`](#index-aria-button) 또는[`link`](#index-aria-link). ([`generic`](#index-aria-generic) 은 허용되지만,  사용해서는 _안된다_ .)<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`article`](https://html.spec.whatwg.org/multipage/sections.html#the-article-element) | <code>role=[article](#index-aria-article)</code> | 역할:  [`application`](#index-aria-application), [`document`](#index-aria-document), [`feed`](#index-aria-feed), [`main`](#index-aria-main), [`none`](#index-aria-none), [`presentation`](#index-aria-presentation) 또는[`region`](#index-aria-region). (`[article](#index-aria-article)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`aside`](https://html.spec.whatwg.org/multipage/sections.html#the-aside-element) | <code>role=[complementary](#index-aria-complementary)</code> | 역할:  [`feed`](#index-aria-feed), [`none`](#index-aria-none), [`note`](#index-aria-note), [`presentation`](#index-aria-presentation), [`region`](#index-aria-region) 또는[`search`](#index-aria-search). (`[complementary](#index-aria-complementary)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>DPub 역할:  [`doc-dedication`](https://www.w3.org/TR/dpub-aria-1.0/#doc-dedication), [`doc-example`](https://www.w3.org/TR/dpub-aria-1.0/#doc-example), [`doc-footnote`](https://www.w3.org/TR/dpub-aria-1.0/#doc-footnote), [`doc-glossary`](https://www.w3.org/TR/dpub-aria-1.0/#doc-glossary), [`doc-pullquote`](https://www.w3.org/TR/dpub-aria-1.0/#doc-pullquote) 또는[`doc-tip`](https://www.w3.org/TR/dpub-aria-1.0/#doc-tip)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`audio`](https://html.spec.whatwg.org/multipage/media.html#audio) | [대응하는 역할 없음](#dfn-no-corresponding-role) | Role: [`application`](#index-aria-application)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 [`application`](#index-aria-application) 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`b`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), though [`generic`](#index-aria-generic) 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`base`](https://html.spec.whatwg.org/multipage/semantics.html#the-base-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | **[No `role`](#dfn-no-role) 또는`aria-*` 속성은** |
+| [`address`](https://html.spec.whatwg.org/multipage/sections.html#the-address-element) | <code>role=[group](#index-aria-group)</code> | [**모든 `role`**](#dfn-any-role)이 허용되지만, [`group`](#index-aria-group)은 _권장하지 않음_.<br/><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`area`](https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element)([`href`](https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href)가 있는 경우) | <code>role=[link](#index-aria-link)</code> | [`link`](#index-aria-link)를 _권장하지 않지만_, 이를 제외한 다른 [**`role`**](#dfn-no-role)은 허용하지 **않음**.<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 모든 `aria-*` 속성은 [`link`](#index-aria-link) 역할에 적용 가능. |
+| [`area`](https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element)([`href`](https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href)가 없는 경우) | <code>role=[generic](#index-aria-generic)</code> | 역할: [`button`](#index-aria-button) 또는 [`link`](#index-aria-link). ([`generic`](#index-aria-generic)은 허용되지만, 사용해서는 _안 됨_.)<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`article`](https://html.spec.whatwg.org/multipage/sections.html#the-article-element) | <code>role=[article](#index-aria-article)</code> | 역할: [`application`](#index-aria-application), [`document`](#index-aria-document), [`feed`](#index-aria-feed), [`main`](#index-aria-main), [`none`](#index-aria-none), [`presentation`](#index-aria-presentation) 또는 [`region`](#index-aria-region). ([`article`](#index-aria-article)도 허용되나 _권장하지 않음_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`aside`](https://html.spec.whatwg.org/multipage/sections.html#the-aside-element) | <code>role=[complementary](#index-aria-complementary)</code> | 역할: [`feed`](#index-aria-feed), [`none`](#index-aria-none), [`note`](#index-aria-note), [`presentation`](#index-aria-presentation), [`region`](#index-aria-region) 또는 [`search`](#index-aria-search). ([`complementary`](#index-aria-complementary)도 허용되나 _권장하지 않음_.)<br/><br/>DPub 역할: [`doc-dedication`](https://www.w3.org/TR/dpub-aria-1.0/#doc-dedication), [`doc-example`](https://www.w3.org/TR/dpub-aria-1.0/#doc-example), [`doc-footnote`](https://www.w3.org/TR/dpub-aria-1.0/#doc-footnote), [`doc-glossary`](https://www.w3.org/TR/dpub-aria-1.0/#doc-glossary), [`doc-pullquote`](https://www.w3.org/TR/dpub-aria-1.0/#doc-pullquote), [`doc-tip`](https://www.w3.org/TR/dpub-aria-1.0/#doc-tip)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`audio`](https://html.spec.whatwg.org/multipage/media.html#audio) | [대응하는 역할 없음](#dfn-no-corresponding-role) | 역할: [`application`](#index-aria-application)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 [`application`](#index-aria-application) 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`b`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), 단 [`generic`](#index-aria-generic)은 사용하지 _않아야 함_.<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`base`](https://html.spec.whatwg.org/multipage/document-metadata.html#the-base-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | [**`role` 없음**](#dfn-no-role)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) |
 | [`bdi`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), though [`generic`](#index-aria-generic) 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
 | [`bdo`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), though [`generic`](#index-aria-generic) 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`blockquote`](https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element) | <code>role=[`blockquote`](#index-aria-blockquote)</code> |[**모든 `role`**](#dfn-any-role), though ``[`blockquote`](#index-aria-blockquote)`` is _권장하지 않는다_.<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`body`](https://html.spec.whatwg.org/multipage/sections.html#the-body-element) | <code>role=[generic](#index-aria-generic)</code> | [**No `role`**](#dfn-no-role) other than [`generic`](#index-aria-generic), which 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) allowed for the `generic` role, with the exception that authors _MUST NOT_ specify `aria-hidden=true` on the `body` element. |
-| [`br`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | 역할:  [`none`](#index-aria-none) 또는[`presentation`](#index-aria-presentation)<br/><br/>Authors _MAY_ specify the [`aria-hidden`](https://www.w3.org/TR/wai-aria-1.2/#aria-hidden) attribute on the `br` element. Otherwise, no other allowed `aria-*` 속성은. |
-| [`button`](https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element) | <code>role=[button](#index-aria-button)</code> | 역할:  [`checkbox`](#index-aria-checkbox), [`combobox`](#index-aria-combobox), [`gridcell`](#index-aria-gridcell), [`link`](#index-aria-link), [`menuitem`](#index-aria-menuitem), [`menuitemcheckbox`](#index-aria-menuitemcheckbox), [`menuitemradio`](#index-aria-menuitemradio), [`option`](#index-aria-option), [`radio`](#index-aria-radio), [`separator`](#index-aria-separator), [`slider`](#index-aria-slider), [`switch`](#index-aria-switch), [`tab`](#index-aria-tab), 또는[`treeitem`](#index-aria-treeitem). (`[button](#index-aria-button)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`canvas`](https://html.spec.whatwg.org/multipage/canvas.html#canvas) | [대응하는 역할 없음](#dfn-no-corresponding-role) | [**모든 `role`**](#dfn-any-role)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`caption`](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element) | <code>role=[`caption`](#index-aria-caption)</code> |[**No `role`**](#dfn-no-role) other than [`caption`](#index-aria-caption), which is _권장하지 않는다_.<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states). |
-| [`cite`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | [**모든 `role`**](#dfn-any-role)<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`code`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element) | <code>role=[`code`](#index-aria-code)</code> |[**모든 `role`**](#dfn-any-role), though [`code`](#index-aria-code) is _권장하지 않는다_.<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`col`](https://html.spec.whatwg.org/multipage/tables.html#the-col-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | **[No `role`](#dfn-no-role) 또는`aria-*` 속성은** |
-| [`colgroup`](https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | **[No `role`](#dfn-no-role) 또는`aria-*` 속성은** |
-| [`data`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), though [`generic](#index-aria-generic)` 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`datalist`](https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element) | <code>role=[listbox](#index-aria-listbox)</code> | [**No `role`**](#dfn-no-role) other than [`listbox](#index-aria-listbox)`, which is _권장하지 않는다_.<br/><br/>**No `aria-*` 속성은**. |
-| [`dd`](https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | [**No `role`**](#dfn-no-role)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 모든 `aria-*` 속성은 applicable to the `definition` role. |
-| [`del`](https://html.spec.whatwg.org/multipage/edits.html#the-del-element) | <code>role=[`deletion`](#index-aria-deletion)</code> |[**모든 `role`**](#dfn-any-role), though [`deletion`](#index-aria-deletion)`` is _권장하지 않는다_.<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
-| [`details`](https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element) | <code>role=[group](#index-aria-group)</code> | [**No `role`**](#dfn-no-role) other than [`group`](#index-aria-group)`, which is _권장하지 않는다_.<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 모든 `aria-*` 속성은 applicable to the `group` role. |
+| [`blockquote`](https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element) | <code>role=[blockquote](#index-aria-blockquote)</code> | 역할:  [`none`](#index-aria-none) 또는[`presentation`](#index-aria-presentation). (`[blockquote](#index-aria-blockquote)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`body`](https://html.spec.whatwg.org/multipage/sections.html#the-body-element) | <code>role=[document](#index-aria-document)</code> | 역할:  [`application`](#index-aria-application), [`document`](#index-aria-document) 또는[`none`](#index-aria-none).<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`br`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | [**`role` 없음**](#dfn-no-role)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) |
+| [`button`](https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element) | <code>role=[button](#index-aria-button)</code> | 역할:  [`checkbox`](#index-aria-checkbox), [`link`](#index-aria-link), [`menuitem`](#index-aria-menuitem), [`menuitemcheckbox`](#index-aria-menuitemcheckbox), [`menuitemradio`](#index-aria-menuitemradio), [`option`](#index-aria-option), [`radio`](#index-aria-radio), [`switch`](#index-aria-switch), [`tab`](#index-aria-tab) 또는[`treeitem`](#index-aria-treeitem). ([`button`](#index-aria-button) is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`canvas`](https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), though [`generic`](#index-aria-generic) 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`caption`](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element) | <code>role=[caption](#index-aria-caption)</code> | 역할:  [`none`](#index-aria-none) 또는[`presentation`](#index-aria-presentation). (`[caption](#index-aria-caption)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. | 
+| [`cite`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), though [`generic`](#index-aria-generic) 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`code`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), though [`generic`](#index-aria-generic) 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`col`](https://html.spec.whatwg.org/multipage/tables.html#the-col-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | [**`role` 없음**](#dfn-no-role)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) |
+| [`colgroup`](https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | [**`role` 없음**](#dfn-no-role)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) |
+| [`data`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element) | <code>role=[generic](#index-aria-generic)</code> | [**모든 `role`**](#dfn-any-role), though [`generic`](#index-aria-generic) 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`datalist`](https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element) | <code>role=[listbox](#index-aria-listbox)</code> | 역할:  [`combobox`](#index-aria-combobox), [`listbox`](#index-aria-listbox), [`none`](#index-aria-none) 또는[`presentation`](#index-aria-presentation).<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`dd`](https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element) | <code>role=[definition](#index-aria-definition)</code> | 역할:  [`none`](#index-aria-none) 또는[`presentation`](#index-aria-presentation). (`[definition](#index-aria-definition)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`del`](https://html.spec.whatwg.org/multipage/edits.html#the-del-element) | <code>role=[deletion](#index-aria-deletion)</code> | 역할:  [`none`](#index-aria-none) 또는[`presentation`](#index-aria-presentation). (`[deletion](#index-aria-deletion)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
+| [`details`](https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element) | <code>role=[group](#index-aria-group)</code> | 역할:  [`none`](#index-aria-none) 또는[`presentation`](#index-aria-presentation). (`[group](#index-aria-group)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. | 
 | [`dfn`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element) | <code>role=[term](#index-aria-term)</code> | [**모든 `role`**](#dfn-any-role), though [`term`](#index-aria-term)` is _권장하지 않는다_.<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
 | [`dialog`](https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element) | <code>role=[dialog](#index-aria-dialog)</code> | Role: [`alertdialog`](#index-aria-alertdialog). ([`dialog](#index-aria-dialog)` is 역시 허용하지만,  _권장하지 않는다_.)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 모든 `aria-*` 속성은 applicable to the `dialog` role. |
 | [`div`](https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element) | <code>role=[generic](#index-aria-generic)</code> | If a direct child of a [`dl`](https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element) element, only [`presentation`](#index-aria-presentation) 또는[`none`](#index-aria-none). Otherwise, [**모든 `role`**](#dfn-any-role), though [generic](#index-aria-generic) 사용하지 _않아야 한다_..<br/><p class="addition">[명명 금지](#dfn-naming-prohibited)</p><br/>그 외에, [전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 허용된 역할에 적용 가능한 모든 `aria-*` 속성. |
@@ -519,14 +519,15 @@ HTML 파서는 위의 마크업을 다음과 같이 수정하여 출력한다.
 | `[video](https://html.spec.whatwg.org/multipage/media.html#video) | [대응하는 역할 없음](#dfn-no-corresponding-role) | Role: [`application`](#index-aria-application)<br/><br/>[전역 `aria-*` 속성](https://www.w3.org/TR/wai-aria-1.2/#global_states) 및 모든 `aria-*` 속성은 applicable to the `application` role. |
 | `[wbr](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element) | [대응하는 역할 없음](#dfn-no-corresponding-role) | 역할:  [`none`](#index-aria-none) 또는[`presentation`](#index-aria-presentation)<br/><br/>Authors _MAY_ specify the [`aria-hidden`](https://www.w3.org/TR/wai-aria-1.2/#aria-hidden) attribute on the `wbr` element. Otherwise, no other allowed `aria-*` 속성은. |
 
-The elements marked with No corresponding role, in the second column of the table do not have any [implicit ARIA semantics](https://www.w3.org/TR/wai-aria-1.2/#implicit_semantics), but they do have meaning and this meaning may be represented in roles, states and properties not provided by ARIA, and exposed to users of assistive technology via accessibility APIs. It is therefore recommended that authors add a `role`attribute to a semantically neutral element such as a `[div](https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element)`or `[span](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element)`, rather than overriding the semantics of the listed elements.
 
-Note
+표의 두 번째 열에서 "대응하는 역할 없음"으로 표시된 요소들은 [암묵적 ARIA 의미 체계](https://www.w3.org/TR/wai-aria-1.2/#implicit_semantics)를 가지고 있지 않지만, 의미는 있으며 이 의미는 ARIA가 제공하지 않는 역할, 상태 및 속성으로 표현될 수 있으며, 접근성 API를 통해 보조 기술 사용자에게 노출될 수 있습니다. 따라서 작성자는 나열된 요소의 의미를 재정의하는 것보다는 `[div](https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element)`나 `[span](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element)`과 같은 의미적으로 중립적인 요소에 `role` 속성을 추가하는 것이 좋습니다.
 
+<Aside title="참고">
 Authors are encouraged to make use of the following documents for guidance on using ARIA in HTML beyond that which is provided here:
 
 *   [Using ARIA](https://www.w3.org/TR/using-aria/)\- A practical guide for authors on how to add accessibility information to HTML elements using the Accessible Rich Internet Applications specification.
 *   [WAI-ARIA Authoring Practices 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)\- An author's guide to understanding and implementing Accessible Rich Internet Applications.
+</Aside>
 
 <Card>
 [예제 13](#example-13)
@@ -564,7 +565,7 @@ The following markup example demonstrates a selection of HTML elements with impl
 [예제 14](#example-elements-with-implicit-aria-roles-which-prohibit-naming-from-authors): Elements with implicit ARIA roles which prohibit naming from authors
 
 ```html
-<!-- DO NOT do the following ! -->
+<!-- 이렇게 하면 안된다 -->
 <p aria-label="..." >...</p>
 <span aria-label="..." >...<span>
 <code aria-label="..." >...<code>
@@ -578,7 +579,7 @@ The following markup example demonstrates elements which have explicit WAI-ARIA 
 [예제 15](#example-elements-with-explicit-aria-roles-which-allow-naming-from-authors): Elements with explicit ARIA roles which allow naming from authors
 
 ```html
-<!-- DO NOT do the following ! -->
+<!-- 이렇게 하면 안된다 -->
 <p role="link" tabindex="0" aria-label="..." >...</p>
 <span role="button" tabindex="0" aria-label="..." >...<span>
 <div role="article" aria-labelledby="..." >...</div>
@@ -597,139 +598,22 @@ The following table represents HTML elements and their attributes which have `ar
 
 Each language feature (element and attribute) in a cell in the first column implies the ARIA semantics (states, and properties) given in the cell in the second column of the same row. The third cell in each row defines how authors can use the native HTML feature, along with requirements for using the `aria-*`attributes that supply the same [implicit ARIA semantics](https://www.w3.org/TR/wai-aria-1.2/#implicit_semantics).
 
-Rules of ARIA attribute usage by HTML feature
 
-HTML feature
-
-Implicit ARIA semantics
-
-HTML feature and `aria-*`attribute author guidance
-
-Any element where the `[checked](https://html.spec.whatwg.org/multipage/input.html#attr-input-checked)`attribute is allowed
-
-`aria-checked="true"`
-
-Use the `checked`attribute on any element that is allowed the `checked`attribute in HTML. Use the [`indeterminate`](https://html.spec.whatwg.org/multipage/input.html#dom-input-indeterminate)IDL attribute to indicate the "mixed" state for [`input type=checkbox`](https://html.spec.whatwg.org/multipage/input.html#checkbox-state-(type=checkbox))elements.
-
-Authors _MUST NOT_use the [`aria-checked`](https://www.w3.org/TR/wai-aria-1.2/#aria-checked)attribute on any element where the [checkedness](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-checked), 또는the indeterminate checked value of the element can be in opposition to the current value of the `aria-checked`attribute.
-
-Authors _MAY_use the `aria-checked`attribute on any other element with a WAI-ARIA role which allows the attribute.
-
-Any element where the `[disabled](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled)`attribute is allowed, including `option``[disabled](https://html.spec.whatwg.org/multipage/form-elements.html#attr-option-disabled)`and `optgroup``[disabled](https://html.spec.whatwg.org/multipage/form-elements.html#attr-optgroup-disabled)`
-
-`aria-disabled="true"`
-
-Use the `disabled`attribute on any element that is allowed the `disabled`attribute in HTML.
-
-Authors _MAY_use the [`aria-disabled`](https://www.w3.org/TR/wai-aria-1.2/#aria-disabled)attribute on any element that is allowed the `disabled`attribute in HTML, 또는any element with a WAI-ARIA role which allows the `aria-disabled`attribute.
-
-Authors _SHOULD NOT_use `aria-disabled="true"` on any element which also has a `disabled`attribute.
-
-Authors _MUST NOT_use `aria-disabled="false"` on any element which also has a `disabled`attribute.
-
-Any element with a `[hidden](https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden)`attribute
-
-`aria-hidden="true"`
-
-Authors _MAY_use the [`aria-hidden`](https://www.w3.org/TR/wai-aria-1.2/#aria-hidden)attribute on any HTML element that allows [global `aria-*`attributes](https://www.w3.org/TR/wai-aria-1.2/#global_states)to be specified, with the exception of focusable elements and the [`body`](#el-body)element.
-
-It is generally _권장하지 않음_for authors to use `aria-hidden="true"` on any element which also has the `hidden`attribute specified. However, authors _MUST NOT_use `aria-hidden="true"` on any element which also has the `hidden`attribute specified in the `until-found`state.
-
-Note
-
-A focusable element is any element which can be focused by use of keyboard 또는pointer device. Focusable elements are not always elements which can be tabbed to via a keyboard. For instance, an element with `tabindex="-1"` is focusable but is not a tabbable element.
-
-Note
-
-Using `aria-hidden="true"` on an element that has the `hidden`attribute is at best an unnecessary redundancy. At worst its usage can prevent access to the content if the `hidden`attribute's default UA style of `display: none` has been purposeuflly overwritten by an author 또는user style sheet. Finally, if the `hidden`attribute has the value of `until-found`, the use of `aria-hidden=true`will prevent this content from being discoverable to users of assistive technology when it is found via a browser's in-page find feature and visually rendered to users.
-
-Any element where the `[placeholder](https://html.spec.whatwg.org/multipage/input.html#attr-input-placeholder)`attribute is allowed
-
-`aria-placeholder="..."`
-
-Use the `placeholder`attribute on any element that is allowed the `placeholder`attribute in HTML.
-
-Authors _MAY_use the [`aria-placeholder`](https://www.w3.org/TR/wai-aria-1.2/#aria-placeholder)attribute on any element that is allowed the `placeholder`attribute in HTML, 또는any element with a WAI-ARIA role which allows the `aria-placeholder`attribute.
-
-Authors _MUST NOT_use the `aria-placeholder`attribute on any element which also has a `placeholder`attribute.
-
-Any element where the `max`attribute is allowed: `meter``[max](https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-max)`, `progress``[max](https://html.spec.whatwg.org/multipage/form-elements.html#attr-progress-max)`, and `input``[max](https://html.spec.whatwg.org/multipage/input.html#attr-input-max)`
-
-`aria-valuemax="..."`
-
-Use the `max`attribute on any element that is allowed the `max`attribute in HTML.
-
-Authors _MAY_use the [`aria-valuemax`](https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax)attribute on any other element with a WAI-ARIA role which allows the `aria-valuemax`attribute.
-
-Authors _SHOULD NOT_use `aria-valuemax`on any element which allows the `max`attribute. Use the `max`attribute instead.
-
-Authors _MUST NOT_use `aria-valuemax`on any element which also has a `max`attribute.
-
-Any element where the `min`attribute is allowed: `meter``[min](https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-min)`and `input``[min](https://html.spec.whatwg.org/multipage/input.html#attr-input-min)`
-
-`aria-valuemin="..."`
-
-Use the `min`attribute on any element that is allowed the `min`attribute in HTML.
-
-Authors _MAY_use the [`aria-valuemin`](https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax)attribute on any other element with a WAI-ARIA role which allows the `aria-valuemin`attribute.
-
-Authors _SHOULD NOT_use `aria-valuemin`on any element which allows the `min`attribute. Use the `min`attribute instead.
-
-Authors _MUST NOT_use `aria-valuemin`on any element which also has a `min`attribute.
-
-Any element which allows the `readonly`attribute: `input``[readonly](https://html.spec.whatwg.org/multipage/input.html#attr-input-readonly)`, `textarea``[readonly](https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-readonly)`and [form-associated custom element](https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-element)which allows `[readonly](https://html.spec.whatwg.org/multipage/custom-elements.html#attr-face-readonly)`
-
-`aria-readonly="true"`
-
-Use the `readonly`attribute on any element that is allowed the `readonly`attribute in HTML.
-
-Authors _MAY_use the [`aria-readonly`](https://www.w3.org/TR/wai-aria-1.2/#aria-readonly)attribute on any element with a WAI-ARIA role which allows the attribute.
-
-Authors _SHOULD NOT_use the `aria-readonly="true"` on any element which also has a `readonly`attribute.
-
-Authors _MUST NOT_use `aria-readonly="false"` on any element which also has a `readonly`attribute.
-
-Element with `[contenteditable](https://html.spec.whatwg.org/multipage/interaction.html#attr-contenteditable)``=true`or element without `contenteditable`attribute whose closest ancestor with a `contenteditable`attribute has `contenteditable="true"` .
-
-Note
-
-This is equivalent to the [`isContentEditable`](https://html.spec.whatwg.org/multipage/interaction.html#dom-iscontenteditable)IDL attribute.
-
-`aria-readonly="false"`
-
-Authors _MUST NOT_set `aria-readonly="true"` on an element that has `isContentEditable="true"` .
-
-Any element where the `required`attribute is allowed: `input``[required](https://html.spec.whatwg.org/multipage/input.html#attr-input-required)`, `textarea``[required](https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-required)`, and `select``[required](https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-required)`
-
-`aria-required="true"`
-
-Use the `required`attribute on any element that is allowed the `required`attribute in HTML.
-
-Authors _MAY_use the [`aria-required`](https://www.w3.org/TR/wai-aria-1.2/#aria-required)attribute on any element that is allowed the `required`attribute in HTML, 또는any element with a WAI-ARIA role which allows the `aria-required`attribute.
-
-Authors _SHOULD NOT_use the `aria-required="true"` on any element which also has a `required`attribute.
-
-Authors _MUST NOT_use `aria-required="false"` on any element which also has a `required`attribute.
-
-Any element where the `[colspan](https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-colspan)`attribute is allowed: `td`and `th`
-
-`aria-colspan="..."`
-
-Use the `colspan`attribute on any element that is allowed the `colspan`attribute in HTML.
-
-Authors _SHOULD NOT_use the `aria-colspan`attribute on any element which also has a `colspan`attribute.
-
-Authors _MUST NOT_use `aria-colspan`on any element which also has a `colspan`attribute, and the values of each attribute do not match.
-
-Any element where the `[rowspan](https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan)`attribute is allowed: `td`and `th`
-
-`aria-rowspan="..."`
-
-Use the `rowspan`attribute on any element that is allowed the `rowspan`attribute in HTML.
-
-Authors _SHOULD NOT_use the `aria-rowspan`attribute on any element which also has a `rowspan`attribute.
-
-Authors _MUST NOT_use `aria-rowspan`on any element which also has a `rowspan`attribute, and the values of each attribute do not match.
+### Rules of ARIA attribute usage by HTML feature
+
+| HTML feature | Implicit ARIA semantics | HTML feature and `aria-*` attribute author guidance |
+| --- | --- | --- |
+| Any element where the `[checked](https://html.spec.whatwg.org/multipage/input.html#attr-input-checked)` attribute is allowed | `aria-checked="true"` | Use the `checked` attribute on any element that is allowed the `checked` attribute in HTML. Use the [`indeterminate`](https://html.spec.whatwg.org/multipage/input.html#dom-input-indeterminate) IDL attribute to indicate the "mixed" state for [`input type=checkbox`](https://html.spec.whatwg.org/multipage/input.html#checkbox-state-(type=checkbox)) elements.<br/><br/>Authors _MUST NOT_ use the [`aria-checked`](https://www.w3.org/TR/wai-aria-1.2/#aria-checked) attribute on any element where the [checkedness](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-checked), or the indeterminate checked value of the element can be in opposition to the current value of the `aria-checked` attribute.<br/><br/>Authors _MAY_ use the `aria-checked` attribute on any other element with a WAI-ARIA role which allows the attribute. |
+| Any element where the `[disabled](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled)` attribute is allowed, including `option` `[disabled](https://html.spec.whatwg.org/multipage/form-elements.html#attr-option-disabled)` and `optgroup` `[disabled](https://html.spec.whatwg.org/multipage/form-elements.html#attr-optgroup-disabled)` | `aria-disabled="true"` | Use the `disabled` attribute on any element that is allowed the `disabled` attribute in HTML.<br/><br/>Authors _MAY_ use the [`aria-disabled`](https://www.w3.org/TR/wai-aria-1.2/#aria-disabled) attribute on any element that is allowed the `disabled` attribute in HTML, or any element with a WAI-ARIA role which allows the `aria-disabled` attribute.<br/><br/>Authors _SHOULD NOT_ use `aria-disabled="true"` on any element which also has a `disabled` attribute.<br/><br/>Authors _MUST NOT_ use `aria-disabled="false"` on any element which also has a `disabled` attribute. |
+| Any element with a `[hidden](https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden)` attribute | `aria-hidden="true"` | Authors _MAY_ use the [`aria-hidden`](https://www.w3.org/TR/wai-aria-1.2/#aria-hidden) attribute on any HTML element that allows [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.2/#global_states) to be specified, with the exception of focusable elements and the [`body`](#el-body) element.<br/><br/>It is generally _NOT RECOMMENDED_ for authors to use `aria-hidden="true"` on any element which also has the `hidden` attribute specified. However, authors _MUST NOT_ use `aria-hidden="true"` on any element which also has the `hidden` attribute specified in the `until-found` state.<br/><br/>Note<br/><br/>A focusable element is any element which can be focused by use of keyboard or pointer device. Focusable elements are not always elements which can be tabbed to via a keyboard. For instance, an element with `tabindex="-1"` is focusable but is not a tabbable element.<br/><br/>Note<br/><br/>Using `aria-hidden="true"` on an element that has the `hidden` attribute is at best an unnecessary redundancy. At worst its usage can prevent access to the content if the `hidden` attribute's default UA style of `display: none` has been purposeuflly overwritten by an author or user style sheet. Finally, if the `hidden` attribute has the value of `until-found`, the use of `aria-hidden=true` will prevent this content from being discoverable to users of assistive technology when it is found via a browser's in-page find feature and visually rendered to users. |
+| Any element where the `[placeholder](https://html.spec.whatwg.org/multipage/input.html#attr-input-placeholder)` attribute is allowed | `aria-placeholder="..."` | Use the `placeholder` attribute on any element that is allowed the `placeholder` attribute in HTML.<br/><br/>Authors _MAY_ use the [`aria-placeholder`](https://www.w3.org/TR/wai-aria-1.2/#aria-placeholder) attribute on any element that is allowed the `placeholder` attribute in HTML, or any element with a WAI-ARIA role which allows the `aria-placeholder` attribute.<br/><br/>Authors _MUST NOT_ use the `aria-placeholder` attribute on any element which also has a `placeholder` attribute. |
+| Any element where the `max` attribute is allowed: `meter` `[max](https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-max)`, `progress` `[max](https://html.spec.whatwg.org/multipage/form-elements.html#attr-progress-max)`, and `input` `[max](https://html.spec.whatwg.org/multipage/input.html#attr-input-max)` | `aria-valuemax="..."` | Use the `max` attribute on any element that is allowed the `max` attribute in HTML.<br/><br/>Authors _MAY_ use the [`aria-valuemax`](https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax) attribute on any other element with a WAI-ARIA role which allows the `aria-valuemax` attribute.<br/><br/>Authors _SHOULD NOT_ use `aria-valuemax` on any element which allows the `max` attribute. Use the `max` attribute instead.<br/><br/>Authors _MUST NOT_ use `aria-valuemax` on any element which also has a `max` attribute. |
+| Any element where the `min` attribute is allowed: `meter` `[min](https://html.spec.whatwg.org/multipage/form-elements.html#attr-meter-min)` and `input` `[min](https://html.spec.whatwg.org/multipage/input.html#attr-input-min)` | `aria-valuemin="..."` | Use the `min` attribute on any element that is allowed the `min` attribute in HTML.<br/><br/>Authors _MAY_ use the [`aria-valuemin`](https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax) attribute on any other element with a WAI-ARIA role which allows the `aria-valuemin` attribute.<br/><br/>Authors _SHOULD NOT_ use `aria-valuemin` on any element which allows the `min` attribute. Use the `min` attribute instead.<br/><br/>Authors _MUST NOT_ use `aria-valuemin` on any element which also has a `min` attribute. |
+| Any element which allows the `readonly` attribute: `input` `[readonly](https://html.spec.whatwg.org/multipage/input.html#attr-input-readonly)`, `textarea` `[readonly](https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-readonly)` and [form-associated custom element](https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-element) which allows `[readonly](https://html.spec.whatwg.org/multipage/custom-elements.html#attr-face-readonly)` | `aria-readonly="true"` | Use the `readonly` attribute on any element that is allowed the `readonly` attribute in HTML.<br/><br/>Authors _MAY_ use the [`aria-readonly`](https://www.w3.org/TR/wai-aria-1.2/#aria-readonly) attribute on any element with a WAI-ARIA role which allows the attribute.<br/><br/>Authors _SHOULD NOT_ use the `aria-readonly="true"` on any element which also has a `readonly` attribute.<br/><br/>Authors _MUST NOT_ use `aria-readonly="false"` on any element which also has a `readonly` attribute. |
+| Element with `[contenteditable](https://html.spec.whatwg.org/multipage/interaction.html#attr-contenteditable)``=true` or element without `contenteditable` attribute whose closest ancestor with a `contenteditable` attribute has `contenteditable="true"`.<br/><br/>Note<br/><br/>This is equivalent to the [`isContentEditable`](https://html.spec.whatwg.org/multipage/interaction.html#dom-iscontenteditable) IDL attribute. | `aria-readonly="false"` | Authors _MUST NOT_ set `aria-readonly="true"` on an element that has `isContentEditable="true"`. |
+| Any element where the `required` attribute is allowed: `input` `[required](https://html.spec.whatwg.org/multipage/input.html#attr-input-required)`, `textarea` `[required](https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-required)`, and `select` `[required](https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-required)` | `aria-required="true"` | Use the `required` attribute on any element that is allowed the `required` attribute in HTML.<br/><br/>Authors _MAY_ use the [`aria-required`](https://www.w3.org/TR/wai-aria-1.2/#aria-required) attribute on any element that is allowed the `required` attribute in HTML, or any element with a WAI-ARIA role which allows the `aria-required` attribute.<br/><br/>Authors _SHOULD NOT_ use the `aria-required="true"` on any element which also has a `required` attribute.<br/><br/>Authors _MUST NOT_ use `aria-required="false"` on any element which also has a `required` attribute. |
+| Any element where the `[colspan](https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-colspan)` attribute is allowed: `td` and `th` | `aria-colspan="..."` | Use the `colspan` attribute on any element that is allowed the `colspan` attribute in HTML.<br/><br/>Authors _SHOULD NOT_ use the `aria-colspan` attribute on any element which also has a `colspan` attribute.<br/><br/>Authors _MUST NOT_ use `aria-colspan` on any element which also has a `colspan` attribute, and the values of each attribute do not match. |
+| Any element where the `[rowspan](https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan)` attribute is allowed: `td` and `th` | `aria-rowspan="..."` | Use the `rowspan` attribute on any element that is allowed the `rowspan` attribute in HTML.<br/><br/>Authors _SHOULD NOT_ use the `aria-rowspan` attribute on any element which also has a `rowspan` attribute.<br/><br/>Authors _MUST NOT_ use `aria-rowspan` on any element which also has a `rowspan` attribute, and the values of each attribute do not match. |
 
 ### 4.3 Requirements for deprecated ARIA role, state and property and attributes
 
@@ -1727,5 +1611,4 @@ A. References
 [(49)](#ref-for-dfn-no-corresponding-role-49 "Reference 49")
 [(50)](#ref-for-dfn-no-corresponding-role-50 "Reference 50")
 [(51)](#ref-for-dfn-no-corresponding-role-51 "Reference 51")
-
 </AriaInHtmlLayout>

@@ -1,0 +1,158 @@
+---
+title: "00. HTML의 ARIA (소개)"
+description: 이 명세는 [HTML] 요소에 Accessible Rich Internet Applications (WAI-ARIA) 1.2 및 Digital Publishing WAI-ARIA Module 1.0 속성을 사용할 때의 작성 규칙(작성자 준수 요구사항)을 정의합니다.
+order: 0
+head:
+  - tag: title
+    content: HTML의 ARIA(ARIA in HTML) - 소개
+tableOfContents:
+  maxHeadingLevel: 4 # 이 페이지 내의 제목 레벨에 맞게 조정 가능
+lastUpdated: 2025-04-09
+draft: true
+---
+
+import AriaInHtmlLayout from '../../../../../layouts/AriaInHtmlLayout.astro';
+import { Aside, Badge, Card } from '@astrojs/starlight/components'
+
+<AriaInHtmlLayout>
+<Aside title="안내" type="caution">
+  * 이 한국어 번역본은 현재 작업 중에 있습니다.
+  * W3C의 인증을 받지 않은 비공식 문서이며, 오류가 있을 수 있습니다.
+  * 용어 등 해석이 불명확한 부분은 [원문](https://www.w3.org/TR/2025/REC-html-aria-20250409/)을 확인하시기 바랍니다.
+  * [이전 번역본 페이지](https://a11ykr.github.io/html-aria/)가 있습니다.
+</Aside>
+
+<p class="logos">
+		<a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72" /></a>
+</p>
+<h1 id="title" class="title">HTML의 ARIA</h1>
+<p id="w3c-state">
+	<a href="https://www.w3.org/standards/types#REC">W3C 권고안</a>
+	<time class="dt-published" datetime="2025-04-09">2025년 4월 9일</time>
+</p>
+<details open="">
+	<summary>이 문서에 대한 추가 정보</summary>
+	<dl>
+		<dt>This version:</dt>
+		<dd>
+			<a class="u-url" href="https://www.w3.org/TR/2025/REC-html-aria-20250409/">https://www.w3.org/TR/2025/REC-html-aria-20250409/</a>
+		</dd>
+		<dt>Latest published version:</dt>
+		<dd>
+				<a href="https://www.w3.org/TR/html-aria/">https://www.w3.org/TR/html-aria/</a>
+		</dd>
+		<dt>Latest editor's draft:</dt>
+		<dd>
+				<a href="https://w3c.github.io/html-aria/">https://w3c.github.io/html-aria/</a>
+		</dd>
+		<dt>History:</dt>
+		<dd>
+				<a href="https://www.w3.org/standards/history/html-aria/">https://www.w3.org/standards/history/html-aria/</a>
+		</dd>
+		<dd>
+				<a href="https://github.com/w3c/html-aria/commits/">Commit history</a>
+		</dd>
+		<dt>Implementation report:</dt>
+		<dd>
+				<a href="https://w3c.github.io/html-aria/results/implementation-results.html">https://w3c.github.io/html-aria/results/implementation-results.html</a>
+		</dd>
+		<dt>Editors:</dt>
+		<dd class="editor p-author h-card vcard" data-editor-id="103856">
+				<span class="p-name fn">Scott O'Hara</span>
+				(<a class="p-org org h-org" href="https://www.microsoft.com/">Microsoft</a>)
+		</dd>
+		<dd class="editor p-author h-card vcard" data-editor-id="35129">
+				<span class="p-name fn">Patrick H. Lauke</span>
+				(<a class="p-org org h-org" href="https://tetralogical.com/">TetraLogical</a>)
+		</dd>
+		<dt>
+				Former editor:
+		</dt>
+		<dd class="editor p-author h-card vcard" data-editor-id="35007">
+			<span class="p-name fn">Steve Faulkner</span>
+			(<a class="p-org org h-org" href="https://www.tpgi.com/">TPGi</a>) - Until
+			<time datetime="2023-04-28">28 April 2023</time>
+		</dd>
+		<dt>Feedback:</dt>
+		<dd>
+			<a href="https://github.com/w3c/html-aria/">GitHub w3c/html-aria</a>
+			(<a href="https://github.com/w3c/html-aria/pulls/">pull requests</a>,
+			<a href="https://github.com/w3c/html-aria/issues/new/choose">new issue</a>,
+			<a href="https://github.com/w3c/html-aria/issues/">open issues</a>)
+		</dd>
+		<dd>
+			<a href="mailto:public-webapps@w3.org?subject=%5Bhtml-aria%5D%20YOUR%20TOPIC%20HERE">public-webapps@w3.org</a>
+			with subject line <kbd>[html-aria] <em>… message topic …</em></kbd>
+			(<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-webapps">archives</a>)
+		</dd>
+		<dt>Errata:</dt>
+		<dd>
+			<a href="https://github.com/w3c/html-aria/issues/new/">Errata exists</a>.
+		</dd>
+	</dl>
+</details>
+
+[**번역본**](https://www.w3.org/Translations/?technology=html-aria) 또한 참조하라.
+
+[Copyright](https://www.w3.org/policies/#copyright)© 2025 [World Wide Web Consortium](https://www.w3.org/). W3C®[liability](https://www.w3.org/policies/#Legal_Disclaimer), [trademark](https://www.w3.org/policies/#W3C_Trademarks)and [permissive document license](https://www.w3.org/copyright/software-license-2023/ "W3C Software and Document Notice and License") rules apply.
+
+* * *
+
+## 개요
+
+이 문서는 [접근 가능한 리치 인터넷 애플리케이션(WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/) 및 [디지털 퍼블리싱 WAI-ARIA 모듈 1.0](https://www.w3.org/TR/dpub-aria-1.0/) 특성을 \[[HTML](#bib-html "HTML Standard")\] 요소에 사용하는 저작 규칙(저작자 준수 요건)을 정의한다. 이 문서의 주요 목표는 저작자가 웹 콘텐츠를 개발하는 데 사용하는 준수 확인 도구에 필요한 요구 사항을 정의하는 것이다. 이러한 요구 사항은 저작자가 ARIA를 사용하여 호스트 언어 \[[HTML](#bib-html "HTML Standard")\]의 기능을 보완하거나 확장하는 사용자 지정 인터페이스 및 위젯을 개발하는 데 도움이 된다.
+
+## 이 문서의 상태
+
+_이 문서 발행 당시의 상태를 설명한다. W3C의 최신 표준 및 초안 목록은 [W3C 표준 및 초안 색인](https://www.w3.org/TR/)에서 확인할 수 있다._
+
+이 문서는 \[[HTML](#bib-html "HTML Standard")\] 명세 모듈이다. 이 문서 모듈이 참조하지만 명확하게 정의하지 않는 HTML 기능, 준수 요구 사항 또는 용어는 [HTML Standard](#bib-html "HTML Standard")에 의해 정의된다.
+
+이 명세가 2021년 12월 9일에 W3C 권고안이 된 이후 제안된 실질적인 추가 및/또는 수정 사항이다.
+
+*   [2024년 12월 23일 - 추가:](https://github.com/w3c/html-aria/pull/525) `img` 요소에 `math` 역할 허용
+*   2024년 12월 13일 - 추가: `image` 역할을 `img` 역할의 선호되는 동의어로 포함
+*   2024년 12월 13일 - 추가: `hidden` 속성과 함께 사용되는 `aria-hidden` 허용에 대해 명확히 설명
+*   2023년 10월 4일 - 추가: 버튼 요소와 `type=button`, `image`, `reset`, `submit` 입력 요소에 `separator` 역할 허용
+*   2023년 10월 3일 - 수정: `img` 요소의 허용사항을 접근성 이름이 있는지 없는지에 따라 업데이트
+*   2023년 8월 21일 - 추가: `address`와 `hgroup` 요소의 허용사항을 `group` 역할에 대한 매핑 업데이트에 맞게 수정
+*   2023년 7월 9일 - 추가: `aside` 요소에 `doc-glossary` 역할 허용
+*   2023년 7월 5일 - 추가: `button`, `type=button` 입력, `type=image` 입력, `type=reset` 입력, `type=submit` 입력 요소의 허용 역할을 일치시킴
+*   2023년 6월 29일 - 추가: `s` 요소의 허용 역할을 업데이트하여 `role=deletion`이 중복으로 간주됨을 명시
+*   2023년 5월 31일 - 수정: `summary` 요소의 허용되는 `aria-*` 속성과 역할을 조건부로 수정
+*   2023년 5월 31일 - 수정: `li` 요소의 역할 허용사항을 리스트 요소 부모와의 계층적 관계에 따라 업데이트
+*   2023년 3월 24일 - 추가: `search` 요소 추가
+*   2023년 3월 6일 - 추가: `body` 요소에서 `aria-hidden=true` 금지
+*   2023년 2월 13일 - 추가: `figure` 요소의 역할 허용사항을 `doc-example` 포함
+*   2022년 11월 7일 - 수정: 'any role' 용어 설명 수정
+*   2022년 7월 14일 - 수정: `datalist` 요소에서 역할과 `aria-*` 속성 금지
+*   2022년 4월 16일 - 수정: `checked` 속성을 지원하는 요소에서 `aria-checked` 사용 금지
+*   2022년 4월 3일 - 추가: 명명 금지 요소 식별
+*   2022년 3월 6일 - 추가: `nav` 요소에 `none`과 `presentation` 역할 허용
+*   2022년 3월 3일 - 추가: `dl` 요소의 자식으로서의 `div` 요소의 역할 허용사항 제한
+*   2022년 2월 12일 - 추가 & 수정: `button` 요소에 `combobox` 역할 허용. `type=button` 입력 요소에 `combobox`와 `checkbox` 역할 허용
+*   2022년 1월 18일 - 추가: Deprecation된 ARIA 역할, 상태 및 속성의 요구사항 추가
+*   2022년 1월 6일 - 추가: `li` 요소의 `doc-biblioentry`와 `doc-endnote` 역할 허용사항 변경. Digital Publishing WAI-ARIA Module 1.1에서 이 역할들은 Deprecation됨
+*   2021년 12월 13일 - 수정: `alt="some text"`가 있는 `img` 요소에 `radio` 역할 허용
+*   2021년 12월 7일 - 수정: `wbr` 요소에 `none`과 `presentation` 역할만 허용. `br`과 `wbr` 요소에 `aria-hidden` 전역 속성만 허용
+*   2021년 12월 2일 - 추가: `section` 요소에 `group` 역할 허용
+*   2021년 11월 16일 - 추가: `href`가 없는 `area` 요소에 `link`와 `button` 역할 허용
+*   2021년 10월 26일 - 추가: `picture` 요소에 `aria-hidden` 속성 허용.
+
+리뷰어가 이 문서의 추가 및/또는 수정 사항을 문서의 특정 스타일링으로 식별할 수 있다.
+
+<p class="correction">후보 수정 사항은 문서에 표시한다.</p>
+
+<p class="addition">후보 추가 사항은 문서에 표시한다.</p>
+
+이 문서는 Web Applications Working Group이 Recommendation track을 사용하여 권고안으로 발행되었다. 이전 권고안 이후에 실질적인 변경사항과 새로운 기능을 소개하는 후보 수정사항을 포함한다.
+
+W3C는 이 명세를 웹 표준으로 널리 배포하는 것을 권장한다.
+
+W3C 권고안은 W3C와 회원들이 장시간에 걸친 합의 과정을 거친 후 승인받은 명세이다. 실무 그룹 회원들은 구현을 위한 로열티 프리 라이센스에 대한 약속을 하고 있다. 이 권고안의 향후 업데이트는 새로운 기능을 포함할 수 있다.
+
+이 문서는 W3C 특허 정책하에 운영되는 그룹에 의해 작성되었다. W3C는 그룹의 결과물과 관련하여 특허 공개 목록을 공개하고 있다. 이 페이지에는 특허를 공개하는 방법에 대한 지침도 포함되어 있다. 특허를 소유하고 있다고 생각하는 개인은 특허 정책 제6조에 따라 해당 정보를 공개해야 한다.
+
+이 문서는 2023년 11월 3일 W3C 프로세스 문서에 의해 관리된다.
+
+</AriaInHtmlLayout>

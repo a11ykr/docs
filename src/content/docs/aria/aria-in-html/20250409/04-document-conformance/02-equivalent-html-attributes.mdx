@@ -1,0 +1,66 @@
+---
+title: "04.02. 동등한 HTML 속성 대신 ARIA 속성 사용"
+description: "HTML에 동등한 의미를 가진 네이티브 속성이 있을 때 ARIA 속성을 사용하는 것에 대한 요구사항입니다."
+head:
+  - tag: title
+    content: "HTML의 ARIA - 4.2 동등한 HTML 속성 대신 ARIA 속성 사용"
+tableOfContents:
+  maxHeadingLevel: 4
+lastUpdated: 2025-04-09 # 원본 문서 기준, 필요시 수정
+draft: true # 원본 문서 기준, 필요시 수정
+---
+
+import AriaInHtmlLayout from '../../../../../../layouts/AriaInHtmlLayout.astro';
+import { Aside, Badge, Card, Tabs, TabItem } from '@astrojs/starlight/components'
+
+<AriaInHtmlLayout>
+
+### 4.2 동등한 HTML 속성 대신 ARIA 속성을 사용하는 요구사항
+
+HTML 요소에 동등한 의미 체계를 제공하는 네이티브 HTML 속성이 있는 경우, 저작자는 해당 ARIA 속성을 사용해서는 안 된다. 이는 중복을 피하고 HTML의 네이티브 기능을 우선적으로 사용하기 위함이다.
+
+그러나 몇 가지 예외적인 상황이나 특별히 고려해야 할 ARIA 속성들이 있다.
+
+다음 표는 몇 가지 주요 ARIA 속성과 그에 상응하는 HTML 속성, 그리고 사용 규칙을 요약한 것이다.
+
+<Aside type="note">
+이 표는 모든 경우를 다루지는 않으며, 더 자세한 내용은 각 속성별 명세나 [HTML 요소의 ARIA 속성 사용 규칙](#TODO-link-to-element-aria-rules) 섹션을 참조해야 한다.
+</Aside>
+
+| ARIA 속성             | 해당 HTML 속성(들)                               | 사용 규칙 및 참고                                                                                                                                                                                             |
+| :-------------------- | :----------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `aria-checked`        | `checked` (on `input type=checkbox/radio`)       | `input type=checkbox` 또는 `input type=radio` 요소에 `checked` 속성이 있는 경우 `aria-checked`를 사용해서는 안 된다. `menuitemcheckbox`, `menuitemradio`, `switch` 역할 등 다른 역할에는 사용할 수 있다. |
+| `aria-disabled`       | `disabled`                                       | `button`, `input`, `select`, `textarea`, `optgroup`, `option`, `fieldset` 요소에 `disabled` 속성이 있는 경우 `aria-disabled`를 사용해서는 안 된다.                                                              |
+| `aria-expanded`       | `open` (on `details` element)                    | `details` 요소에 `open` 속성이 있는 경우 `aria-expanded`를 사용해서는 안 된다. `combobox`, `treeitem` 등 다른 요소에는 사용할 수 있다.                                                                        |
+| `aria-hidden`         | `hidden`                                         | 요소가 시각적으로 숨겨져 있고 보조 기술에서도 숨겨야 할 때 사용한다. `hidden` 속성과 함께 사용할 수 있으며, 이 경우 `aria-hidden="true"`는 `hidden` 속성의 효과를 강화하거나 명확히 한다. `aria-hidden="false"`는 `hidden` 속성이 있는 요소에 사용해서는 안 된다. |
+| `aria-invalid`        | (form validation attributes like `required`, `pattern`, `min`, `max`, `step`, `type=email/url` etc.) | HTML5 폼 유효성 검사 속성에 의해 자동으로 설정될 수 있다. 수동으로 설정할 경우, 폼 필드의 유효성 상태를 명시적으로 나타낸다.                                                                                             |
+| `aria-label`          | `alt` (on `img`, `area`), `label` (on `optgroup`, `option`, `track`), `title` (conditionally) | 4.1 ARIA 속성을 사용하여 요소 명명 규칙을 따른다. 네이티브 레이블링 메커니즘이 우선된다.                                                                                             |
+| `aria-labelledby`     | `for` (on `label` pointing to form control)      | 4.1 ARIA 속성을 사용하여 요소 명명 규칙을 따른다. `label` 요소의 `for` 속성과 유사한 관계를 설정하지만, 더 유연하게 여러 요소를 참조할 수 있다.                                           |
+| `aria-placeholder`    | `placeholder` (on `input`, `textarea`)           | `input` 또는 `textarea` 요소에 `placeholder` 속성이 있는 경우 `aria-placeholder`를 사용해서는 안 된다.                                                                                                        |
+| `aria-pressed`        | (none for general elements, but see `button type=checkbox/radio` for similar concept) | 토글 버튼(예: `role="button"`을 가진 요소)의 눌림 상태를 나타낸다.                                                                                                                                         |
+| `aria-readonly`       | `readonly` (on `input`, `textarea`)              | `input` 또는 `textarea` 요소에 `readonly` 속성이 있는 경우 `aria-readonly`를 사용해서는 안 된다.                                                                                                               |
+| `aria-required`       | `required` (on `input`, `select`, `textarea`)    | `input`, `select`, `textarea` 요소에 `required` 속성이 있는 경우 `aria-required`를 사용해서는 안 된다.                                                                                                         |
+| `aria-selected`       | `selected` (on `option` in `select`)             | `select` 내의 `option` 요소에 `selected` 속성이 있는 경우 `aria-selected`를 사용해서는 안 된다. `gridcell`, `tab`, `listitem` 등 다른 역할에는 사용할 수 있다.                                                       |
+| `aria-valuemax`       | `max` (on `input type=number/range/date/...`, `meter`, `progress`) | 해당 HTML 요소에 `max` 속성이 있는 경우 `aria-valuemax`를 사용해서는 안 된다. `slider`, `spinbutton` 등 다른 역할에는 사용할 수 있다.                                                                    |
+| `aria-valuemin`       | `min` (on `input type=number/range/date/...`, `meter`, `progress`) | 해당 HTML 요소에 `min` 속성이 있는 경우 `aria-valuemin`를 사용해서는 안 된다. `slider`, `spinbutton` 등 다른 역할에는 사용할 수 있다.                                                                    |
+| `aria-valuenow`       | `value` (on `input type=number/range/date/...`, `meter`, `progress`) | 해당 HTML 요소에 `value` 속성이 있는 경우 `aria-valuenow`를 사용해서는 안 된다. `slider`, `spinbutton`, `scrollbar` 등 다른 역할에는 사용할 수 있다.                                                         |
+| `aria-valuetext`      | (none directly, but related to `value` on range-type elements) | `aria-valuenow`가 숫자가 아닐 때 사용자에게 친숙한 텍스트로 값을 제공한다. 예를 들어, 슬라이더가 "작음", "중간", "큼"과 같은 값을 가질 때 사용한다.                                                              |
+
+<Aside type="caution" title="중요">
+이 표는 일반적인 지침이며, 각 HTML 요소의 구체적인 허용 ARIA 속성 및 사용 조건은 HTML 요소의 ARIA 속성 사용 규칙 섹션에서 자세히 다룬다. 항상 해당 섹션을 참조하여 특정 요소에 대한 정확한 요구사항을 확인해야 한다.
+</Aside>
+
+#### 예외 및 추가 고려 사항
+
+*   **`aria-describedby`**: 이 속성은 HTML에 직접적인 단일 대응 속성이 없다. 요소에 대한 추가적인 설명을 제공하기 위해 사용되며, `title` 속성과 유사한 목적을 가질 수 있지만 더 구조화된 설명을 참조할 수 있게 한다.
+*   **역할(Role)에 따른 ARIA 속성**: 특정 ARIA 역할은 해당 역할의 의미를 완성하기 위해 특정 ARIA 상태 및 속성을 요구한다. 예를 들어, `role="slider"`는 `aria-valuenow`, `aria-valuemin`, `aria-valuemax`를 필요로 한다. 이러한 경우, HTML에 유사한 속성이 있더라도 역할의 요구사항을 충족하기 위해 ARIA 속성을 사용해야 할 수 있다.
+
+<Card title="예제 11: `aria-describedby` 사용">
+```html
+<label for="password">비밀번호:</label>
+<input type="password" id="password" aria-describedby="passwordConstraint">
+<p id="passwordConstraint">비밀번호는 8자 이상이어야 하며, 대문자, 소문자, 숫자를 포함해야 합니다.</p>
+```
+</Card>
+
+</AriaInHtmlLayout>

@@ -1,0 +1,113 @@
+---
+title: "03. ARIA의 잘못된 사용을 피하기 위한 저작자 가이드라인"
+description: "ARIA를 잘못 사용하는 일반적인 사례와 이를 피하기 위한 지침입니다."
+order: 3
+head:
+  - tag: title
+    content: "HTML의 ARIA - 3. ARIA의 잘못된 사용을 피하기 위한 저작자 가이드라인"
+tableOfContents:
+  maxHeadingLevel: 4
+lastUpdated: 2025-04-09 # 원본 문서 기준, 필요시 수정
+draft: true # 원본 문서 기준, 필요시 수정
+---
+
+import AriaInHtmlLayout from '../../../../../layouts/AriaInHtmlLayout.astro';
+import { Aside, Badge, Card } from '@astrojs/starlight/components'
+
+<AriaInHtmlLayout>
+
+## 3. ARIA의 잘못된 사용을 피하기 위한 저작자 가이드라인
+
+ARIA는 웹 콘텐츠의 접근성을 향상시키는 강력한 도구이지만, 잘못 사용하면 오히려 접근성을 해칠 수 있다. 다음은 ARIA의 잘못된 사용을 피하기 위한 몇 가지 가이드라인이다.
+
+### 3.1 불필요한 ARIA 사용
+
+HTML 요소가 이미 필요한 의미 체계와 동작을 제공하는 경우, ARIA를 추가로 사용할 필요가 없다. 예를 들어, 네이티브 `<button>` 요소는 이미 버튼 역할을 가지고 있으므로 `role="button"`을 추가할 필요가 없다.
+
+<Card title="잘못된 예제 2: 불필요한 ARIA 역할">
+```html
+<!-- 불필요함 -->
+<button role="button">Save</button>
+```
+</Card>
+
+<Card title="올바른 예제 3: 네이티브 HTML 사용">
+```html
+<button>Save</button>
+```
+</Card>
+
+### 3.2 네이티브 의미 체계 덮어쓰기
+
+ARIA를 사용하여 요소의 네이티브 의미 체계를 변경하는 것은 일반적으로 권장되지 않는다. 이는 사용자에게 혼란을 줄 수 있으며, 보조 기술이 콘텐츠를 잘못 해석하게 만들 수 있다.
+
+<Card title="잘못된 예제 4: 네이티브 의미 체계 덮어쓰기">
+```html
+<!-- h1 요소의 의미를 버튼으로 변경하려고 시도 -->
+<h1 role="button">Clickable Heading</h1>
+```
+</Card>
+
+대신, 적절한 HTML 요소를 사용하거나, 의미 체계가 없는 요소(예: `<div>`, `<span>`)에 ARIA 역할을 적용해야 한다.
+
+### 3.3 키보드 접근성 누락
+
+ARIA를 사용하여 대화형 컨트롤을 만드는 경우, 해당 컨트롤이 키보드로 완전히 작동 가능하도록 보장해야 한다. 네이티브로 포커스 가능하지 않은 요소(예: `<div>`)에 역할을 부여하여 대화형 컨트롤로 만들었다면, `tabindex="0"`을 추가하여 포커스 순서에 포함시켜야 한다. 또한, 해당 컨트롤과 상호작용하는 데 필요한 모든 키보드 이벤트 핸들러(예: Enter, Space 키 누름)를 구현해야 한다.
+
+<Card title="예제 5: 키보드 접근성을 고려한 커스텀 버튼">
+```html
+<div role="button" tabindex="0" onclick="doSomething()" onkeydown="handleKeyDown(event)">
+  Custom Button
+</div>
+
+<script>
+  function handleKeyDown(event) {
+    // Enter 또는 Space 키를 눌렀을 때 doSomething() 실행
+    if (event.key === 'Enter' || event.key === ' ') {
+      doSomething();
+    }
+  }
+
+  function doSomething() {
+    // 버튼 클릭 시 수행할 동작
+    console.log('Custom button clicked or activated with keyboard');
+  }
+</script>
+```
+</Card>
+
+### 3.4 포커스 가능한 요소에 `role="presentation"` 또는 `aria-hidden="true"` 사용
+
+포커스 가능한 요소에 `role="presentation"`을 사용하면 해당 요소의 의미 체계가 제거되어 스크린 리더 사용자 등이 요소의 목적을 이해하기 어렵게 만든다.
+
+마찬가지로, 포커스 가능한 요소에 `aria-hidden="true"`를 사용하면 해당 요소가 보조 기술에서 숨겨지지만, 키보드 사용자는 여전히 해당 요소로 포커스를 이동할 수 있다. 이 경우 사용자는 자신이 어디에 포커스하고 있는지 알 수 없어 혼란을 겪을 수 있다.
+
+<Card title="잘못된 예제 6: 포커스 가능한 요소에 aria-hidden 사용">
+```html
+<!-- 사용자는 이 버튼으로 포커스할 수 있지만, 스크린 리더는 이를 알려주지 않음 -->
+<button aria-hidden="true">Hidden but focusable button</button>
+```
+</Card>
+
+요소를 숨기려면 `hidden` HTML 속성이나 CSS `display: none;`을 사용하는 것이 좋다. 이렇게 하면 요소가 시각적으로 숨겨지고 보조 기술에서도 제외되며 포커스도 받지 않게 된다.
+
+### 3.5 접근 가능한 이름 누락
+
+모든 대화형 요소(예: 버튼, 링크, 입력 필드)와 주요 랜드마크 영역은 접근 가능한 이름을 가져야 한다. 접근 가능한 이름은 사용자가 요소의 목적을 이해하는 데 도움을 준다.
+
+이름은 다음 방법으로 제공될 수 있다:
+*   요소의 콘텐츠 (예: `<button>저장</button>`)
+*   `aria-label` 속성 (예: `<button aria-label="닫기">X</button>`)
+*   `aria-labelledby` 속성 (예: `<div role="dialog" aria-labelledby="dialogTitle">...<h2 id="dialogTitle">알림</h2>...</div>`)
+
+<Card title="예제 7: 접근 가능한 이름 제공">
+```html
+<!-- 콘텐츠로 이름 제공 -->
+<button>Search</button>
+
+<!-- aria-label로 이름 제공 -->
+<button aria-label="Settings"><img src="gear-icon.png" alt=""></button>
+```
+</Card>
+
+</AriaInHtmlLayout>

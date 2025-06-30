@@ -244,10 +244,19 @@ export default defineConfig({
                                 badge: { text: '검토중', variant: 'note' }
                             },
                             // {
-                            //     label: 'ARIA 사용(2025)',
+                            //     label: 'HTML의 ARIA(2025)',
                             //     link: '/aria/aria-in-html-20250409/',
                             //     badge: { text: '작업중', variant: 'danger' }
                             // },
+                            {
+                                label: 'HTML의 ARIA(2025)',
+                                collapsed: true,
+                                autogenerate: {
+                                    directory: '/aria/aria-in-html/20250409',
+                                    order: 'asc',
+                                    pathPrefix: '/aria/aria-in-html/20250409'
+                                },
+                            },
                         ]
                     },
                     {

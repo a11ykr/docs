@@ -1,0 +1,82 @@
+---
+title: "04.01. ARIA 속성을 사용하여 요소 명명"
+description: "ARIA 속성(aria-label, aria-labelledby)을 사용하여 HTML 요소에 접근 가능한 이름을 제공하는 요구사항입니다."
+head:
+  - tag: title
+    content: "HTML의 ARIA - 4.1 ARIA 속성을 사용하여 요소 명명"
+tableOfContents:
+  maxHeadingLevel: 4
+lastUpdated: 2025-04-09 # 원본 문서 기준, 필요시 수정
+draft: true # 원본 문서 기준, 필요시 수정
+---
+
+import AriaInHtmlLayout from '../../../../../../layouts/AriaInHtmlLayout.astro';
+import { Aside, Badge, Card } from '@astrojs/starlight/components'
+
+<AriaInHtmlLayout>
+
+### 4.1 ARIA 속성을 사용하여 요소를 명명하는 요구사항
+
+HTML 요소에 접근 가능한 이름을 제공하기 위해 ARIA 속성을 사용하는 경우, 저작자는 다음 규칙을 준수해야 한다:
+
+1.  **`aria-label` 또는 `aria-labelledby`를 사용하여 요소에 접근 가능한 이름을 제공하지 마라**, 만약 해당 요소가 다음 중 하나에 해당한다면:
+    *   텍스트 콘텐츠를 포함하는 `caption`, `code`, `deletion`, `emphasis`, `figcaption`, `insertion`, `label`, `legend`, `option`, `paragraph`, `ruby`, `strong`, `subscript`, `superscript`, `table`, `term`, `text`, `title` (HTML `head` 요소의 자식인 경우) 요소.
+    *   `img` 요소에 `alt` 속성이 있거나, `alt` 속성이 없지만 `aria-hidden=true`가 아닌 경우.
+    *   `input type=button`, `input type=submit`, `input type=reset` 요소에 `value` 속성이 있는 경우.
+    *   `optgroup` 요소에 `label` 속성이 있는 경우.
+    *   `table` 요소에 `caption` 요소 자식이 있는 경우.
+    *   `area` 요소에 `alt` 속성이 있는 경우.
+    *   `fieldset` 요소에 `legend` 요소 자식이 있는 경우.
+    *   `figure` 요소에 `figcaption` 요소 자식이 있는 경우.
+
+    <Aside type="note">
+    참고: 이 규칙은 요소의 접근 가능한 이름이 요소의 콘텐츠나 다른 HTML 속성에서 이미 제공되는 경우, `aria-label` 또는 `aria-labelledby`를 사용하여 중복되거나 충돌하는 이름을 제공하는 것을 방지하기 위함이다.
+    </Aside>
+
+2.  **`aria-label`을 사용하지 마라**, 만약 요소의 텍스트 콘텐츠가 접근 가능한 이름으로 적합하다면. 대신, 요소의 텍스트 콘텐츠를 사용하라.
+
+    <Card title="잘못된 예제 8: 불필요한 aria-label">
+    ```html
+    <!-- 버튼의 텍스트 콘텐츠가 이미 "저장"으로 충분함 -->
+    <button aria-label="저장 버튼">저장</button>
+    ```
+    </Card>
+
+    <Card title="올바른 예제 9: 텍스트 콘텐츠 사용">
+    ```html
+    <button>저장</button>
+    ```
+    </Card>
+
+    <Aside type="caution" title="주의">
+    `aria-label`은 요소의 텍스트 콘텐츠를 덮어쓴다. 따라서 시각적으로 보이는 텍스트와 스크린 리더가 읽어주는 이름이 달라 사용자에게 혼란을 줄 수 있다.
+    </Aside>
+
+3.  **`aria-labelledby`를 사용하는 경우, 참조된 요소가 현재 문서에 존재하고 숨겨져 있지 않아야 한다.**
+    `aria-labelledby`는 하나 이상의 ID 참조 목록을 값으로 가지며, 이 ID들은 문서 내 다른 요소들을 가리킨다. 이 참조된 요소들의 텍스트 콘텐츠가 합쳐져 현재 요소의 접근 가능한 이름이 된다.
+
+    <Card title="예제 10: aria-labelledby 사용">
+    ```html
+    <label id="nameLabel">이름:</label>
+    <input type="text" aria-labelledby="nameLabel">
+
+    <span id="billing">청구서</span> <span id="address">주소</span>
+    <input type="text" aria-labelledby="billing address">
+    ```
+    </Card>
+
+4.  **`aria-label`과 `aria-labelledby`를 동시에 같은 요소에 사용하지 마라.**
+    만약 두 속성이 모두 사용되면, `aria-labelledby`가 `aria-label`보다 우선한다. 이는 의도치 않은 접근 가능한 이름을 초래할 수 있다.
+
+    <Aside type="note">
+    일반적으로, 시각적으로 보이는 레이블이 있다면 `aria-labelledby`를 사용하여 해당 레이블을 참조하는 것이 가장 좋다. 시각적인 레이블이 없거나 적절하지 않은 경우에만 `aria-label`을 사용한다.
+    </Aside>
+
+5.  **명명(naming)이 금지된 요소에는 `aria-label` 또는 `aria-labelledby`를 사용하지 마라.**
+    일부 HTML 요소는 구조적이거나 의미론적인 목적만을 가지며, 사용자에게 직접적인 상호작용이나 레이블을 제공하도록 의도되지 않았다. 이러한 요소에 접근 가능한 이름을 제공하는 것은 일반적으로 의미가 없거나 혼란을 야기할 수 있다.
+    (명명 금지 요소 목록은 원본 문서의 "명명 금지 요소" 섹션 또는 관련 HTML 명세를 참조하라.)
+    <Aside type="note">
+    참고: 이 부분은 원본 문서에서 "명명 금지 요소"에 대한 구체적인 목록이나 링크가 있다면 해당 정보를 추가하는 것이 좋습니다. 현재는 일반적인 설명으로 대체했습니다.
+    </Aside>
+
+</AriaInHtmlLayout>

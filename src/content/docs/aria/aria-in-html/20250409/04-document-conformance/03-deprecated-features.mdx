@@ -1,0 +1,48 @@
+---
+title: "04.03. 사용 중단된 기능에 대한 요구사항"
+description: "사용 중단된 ARIA 역할, 상태, 속성 및 HTML 속성에 대한 요구사항입니다."
+order: 4 # 04-document-conformance 디렉토리 내에서의 순서 (02 다음)
+head:
+  - tag: title
+    content: "HTML의 ARIA - 4.3 사용 중단된 기능에 대한 요구사항"
+tableOfContents:
+  maxHeadingLevel: 4
+lastUpdated: 2025-04-09 # 원본 문서 기준, 필요시 수정
+draft: true # 원본 문서 기준, 필요시 수정
+---
+
+import AriaInHtmlLayout from '../../../../../../layouts/AriaInHtmlLayout.astro';
+import { Aside, Badge, Card } from '@astrojs/starlight/components'
+
+<AriaInHtmlLayout>
+
+### 4.3 사용 중단된 ARIA 역할, 상태 및 속성, 그리고 속성에 대한 요구사항
+
+저작자는 사용 중단된(deprecated) ARIA 역할, 상태 및 속성을 사용해서는 안 된다. 이러한 기능은 향후 ARIA 명세에서 제거될 수 있으며, 보조 기술 지원이 일관되지 않을 수 있다.
+
+#### 4.3.1 사용 중단된 ARIA 역할
+
+저작자는 다음 사용 중단된 ARIA 역할을 사용해서는 안 된다:
+
+*   `directory`
+
+#### 4.3.2 사용 중단된 ARIA 상태 및 속성
+
+저작자는 다음 사용 중단된 ARIA 상태 및 속성을 사용해서는 안 된다:
+
+*   `aria-dropeffect`
+*   `aria-grabbed`
+
+#### 4.3.3 사용 중단된 HTML 속성
+
+HTML 명세에서 사용 중단된 것으로 표시된 HTML 속성은 더 이상 사용해서는 안 된다. 이러한 속성은 접근성 API에 올바르게 노출되지 않거나, 대체할 수 있는 더 나은 방법이 존재할 수 있다.
+
+<Aside type="caution" title="주의">
+HTML 속성의 사용 중단 여부는 HTML 명세의 최신 버전을 확인해야 한다. 이 문서에서는 ARIA와의 관련성을 중심으로 다루며, HTML 속성 자체의 사용 중단 목록을 모두 제공하지는 않는다.
+</Aside>
+
+<Aside type="note">
+사용 중단된 기능 대신 권장되는 대안을 사용하는 것이 중요하다. 예를 들어, `aria-dropeffect` 및 `aria-grabbed`는 HTML Drag and Drop API와 상호작용하는 데 사용되었으나, 현재는 다른 ARIA 속성이나 패턴이 권장될 수 있다.
+</Aside>
+
+</AriaInHtmlLayout>

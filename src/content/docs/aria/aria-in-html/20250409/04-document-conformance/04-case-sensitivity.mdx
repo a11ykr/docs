@@ -1,0 +1,37 @@
+---
+title: "04.04. ARIA 값의 대소문자 요구사항"
+description: "ARIA 역할, 상태 및 속성 값의 대소문자 사용에 대한 요구사항입니다."
+order: 5 # 04-document-conformance 디렉토리 내에서의 순서 (03 다음)
+head:
+  - tag: title
+    content: "HTML의 ARIA - 4.4 ARIA 값의 대소문자 요구사항"
+tableOfContents:
+  maxHeadingLevel: 4
+lastUpdated: 2025-04-09 # 원본 문서 기준, 필요시 수정
+draft: true # 원본 문서 기준, 필요시 수정
+---
+
+import AriaInHtmlLayout from '../../../../../../layouts/AriaInHtmlLayout.astro';
+import { Aside, Badge, Card } from '@astrojs/starlight/components'
+
+<AriaInHtmlLayout>
+
+### 4.4 ARIA 역할, 상태 및 속성 값의 대소문자 요구사항
+
+ARIA 역할, 상태 및 속성의 이름은 대소문자를 구분하지 않는다. 그러나 일관성을 위해 WAI-ARIA 명세에 정의된 대로 소문자로 작성하는 것이 권장된다.
+
+예를 들어, `role="button"`과 `role="Button"`은 동일하게 해석되지만, `role="button"` 사용이 권장된다.
+
+ARIA 속성의 값은 해당 속성의 정의에 따라 대소문자를 구분할 수도 있고 구분하지 않을 수도 있다.
+
+*   **토큰 값 (Token values):** 일반적으로 소문자여야 하며, 대소문자를 구분한다. (예: `aria-checked="true"`, `aria-hidden="false"`, `aria-expanded="true"`)
+    WAI-ARIA 명세에서 허용하는 특정 키워드 값(예: `true`, `false`, `mixed`, `undefined` 및 기타 열거형 값)은 명세에 정의된 대로 정확한 대소문자를 사용해야 한다.
+*   **ID 참조 값 (ID reference values):** (예: `aria-labelledby`, `aria-describedby`, `aria-controls` 등) HTML의 ID 속성 값과 마찬가지로 대소문자를 구분한다. 참조하는 요소의 `id` 속성 값과 정확히 일치해야 한다.
+*   **문자열 값 (String values):** (예: `aria-label`) 일반적으로 대소문자를 구분하며, 제공된 문자열 그대로 사용된다.
+*   **숫자 값 (Numeric values):** (예: `aria-valuenow`, `aria-posinset`) 숫자이므로 대소문자 구분이 적용되지 않는다.
+
+<Aside type="note">
+항상 WAI-ARIA 명세 및 관련 지침을 참조하여 각 속성 값의 정확한 대소문자 요구사항을 확인하는 것이 중요하다. 일관성 있고 정확한 대소문자 사용은 보조 기술과의 호환성을 보장하는 데 도움이 된다.
+</Aside>
+
+</AriaInHtmlLayout>
