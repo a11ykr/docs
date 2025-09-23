@@ -18,6 +18,19 @@ if (keywords) {
 <!-- 원래 Head 컴포넌트 렌더링 -->
 <StarlightHead {...Astro.props} />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-82Z9VFZWST"
+></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
+
+	gtag("config", "G-82Z9VFZWST");
+</script>
+
 <link rel="sitemap" href="/docs/sitemap-index.xml" />
 <!-- 키워드 메타 태그 추가 -->
 <meta name="keywords" content={allKeywords} />
