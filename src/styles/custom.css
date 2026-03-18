@@ -69,6 +69,10 @@ h1#_top {
   font-size: 1.1rem;
 }
 
+.content-panel .card h3 {
+  font-size: 1.3rem;
+}
+
 .content-panel ul, .content-panel ol {
   padding-left: 1.2rem;
 }
