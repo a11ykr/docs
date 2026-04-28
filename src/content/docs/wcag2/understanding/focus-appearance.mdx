@@ -17,7 +17,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 키보드 [초점 표시기(<span lang="en">focus indicator</span>)](../../../glossary/focus-indicator)가 보이는 경우, 이 영역은 다음 모든 조건을 충족해야 한다:
 
 *   초점을 받지 않은 구성 요소 또는 하위 구성요소의 [외곽](../../../glossary/perimeter) 두께를 2 [CSS 픽셀](../../../glossary/css-pixel) 이상으로 설정헤애 한다.
-*   초점을 받은 상태와 받지 않은 상태의 동일한 픽셀 간 명도대비율이 최소 3:1 이상이어야 한다.
+*   초점을 받은 상태와 받지 않은 상태의 동일한 픽셀 간 대비율이 최소 3:1 이상이어야 한다.
 
 예외:
 
@@ -48,7 +48,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 ### 의도
 
-이 성공 기준의 목적은 키보드 초점 표시기가 명확하게 보이고 식별 가능하도록 하는 것이다. 초점 모양은 [2.4.7 초점 시각화](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html) 및 [1.4.11 텍스트가 아닌 콘텐츠의 명도대비](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)와 밀접한 관련이 있다. 초점 시각화에서는 구성 요소에 키보드 초점이 있는 동안 시각적 초점 표시기가 있어야 한다. 초점 형태는 최소 수준의 가시성을 정의한다. 텍스트가 아닌 콘텐츠의 명도대비에서는 구성 요소가 각 상태의 배경과 적절한 대비를 요구하는 반면 초점 형태는 초점 표시기 자체의 충분한 대비를 요구한다.
+이 성공 기준의 목적은 키보드 초점 표시기가 명확하게 보이고 식별 가능하도록 하는 것이다. 초점 모양은 [2.4.7 초점 시각화](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html) 및 [1.4.11 텍스트가 아닌 콘텐츠의 대비](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)와 밀접한 관련이 있다. 초점 시각화에서는 구성 요소에 키보드 초점이 있는 동안 시각적 초점 표시기가 있어야 한다. 초점 형태는 최소 수준의 가시성을 정의한다. 텍스트가 아닌 콘텐츠의 대비에서는 구성 요소가 각 상태의 배경과 적절한 대비를 요구하는 반면 초점 형태는 초점 표시기 자체의 충분한 대비를 요구한다.
 
 키보드나 [키보드 인터페이스](https://www.w3.org/TR/WCAG22/#dfn-keyboard-interface)를 활용하는 장치(예: 스위치 또는 음성 입력)를 사용하는 이동 장애가 있는 시각 장애인의 경우 현재 초점 위치를 아는 것이 매우 중요하다. 가시적 초점은 키보드에 의존하는 저시력 사용자의 요구 사항도 충족해야 한다.
 
@@ -108,7 +108,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
     </figcaption>
 </figure>
 
-초점 표시기가 구성 요소의 가장 자리로부터 떨어졌는지, 삽입되었는지 또는 반대인지에 따라 다른 텍스트가 아닌 콘텐츠의 명도대비 요구 사항이 적용될 수 있다. 아래의 [텍스트가 아닌 콘텐츠의 명도대비 섹션과의 관계](https://www.w3.org/TR/WCAG22/#relationship-with-non-text-contrast)를 참조하라.
+초점 표시기가 구성 요소의 가장 자리로부터 떨어졌는지, 삽입되었는지 또는 반대인지에 따라 다른 텍스트가 아닌 콘텐츠의 대비 요구 사항이 적용될 수 있다. 아래의 [텍스트가 아닌 콘텐츠의 대비 섹션과의 관계](https://www.w3.org/TR/WCAG22/#relationship-with-non-text-contrast)를 참조하라.
 
 ##### 기타 표시기 모양
 
@@ -119,7 +119,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 *   92px x 32px 직사각형(모든 측면에서 1px 더 큼) 및
 *   88px x 28px 직사각형(모든 면에서 1px 더 작음)
 
-결과적으로 최소 영역은 (92px \* 32px) - (88px \* 28px) = 480px2이다.
+결과적으로 최소 영역은(92px \* 32px) -(88px \* 28px) = 480px2이다.
 
 일반적인 모양의 2 CSS 픽셀 두께 둘레에 대한 몇 가지 일반 공식은 다음과 같다.
 
@@ -129,7 +129,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
     <dt>반지름이 <em>r</em>인 원</dt>
     <dd>4𝜋<em>r</em></dd>
     <dt>너비가 <em>w</em>, 높이가 <em>h</em>, 테두리 반경이 <em>r</em>인 둥근 직사각형</dt>
-    <dd>4<em>h</em> + 4<em>w</em> - (16 - 4𝜋)<em>r</em></dd>
+    <dd>4<em>h</em> + 4<em>w</em> -(16 - 4𝜋)<em>r</em></dd>
 </dl>
 
 <Card title="참고">
@@ -185,9 +185,9 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 적합 기준 지표 요구 사항의 두 번째 부분에는 지표 영역이 다음과 같이 명시되어 있다.
 
-> *   초점을 받은 상태와 받지 않은 상태의 동일한 픽셀 간 명도대비율이 최소 3:1 이상이어야 한다.
+> *   초점을 받은 상태와 받지 않은 상태의 동일한 픽셀 간 대비율이 최소 3:1 이상이어야 한다.
 
-이 요구 사항은 서로 다른 상태의 동일한 픽셀 간의 대비 변화를 측정한다. 이는 한 번에 단일 상태에서 서로 다른 인접한 픽셀 간의 대비를 측정하는 텍스트 대비 및 텍스트가 아닌 콘텐츠의 명도대비 성공 기준과 다르다.
+이 요구 사항은 서로 다른 상태의 동일한 픽셀 간의 대비 변화를 측정한다. 이는 한 번에 단일 상태에서 서로 다른 인접한 픽셀 간의 대비를 측정하는 텍스트 대비 및 텍스트가 아닌 콘텐츠의 대비 성공 기준과 다르다.
 
 3:1은 허용되는 **최소** 대비 변경 비율이지만 상태 간의 대비 변경이 클수록 사용자가 초점 표시를 더 쉽게 볼 수 있다. 저작자는 대비 변화 비율을 최대한 크게 만드는 것이 좋다.
 
@@ -277,34 +277,34 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 초점 표시기 변화를 숨기기 위해 대체되는 스트라이프와 같은 시각적 패턴을 사용할 수 있다. 그러나 이는 가시적인 표시기로 간주하지 않는다.
 
-#### 텍스트가 아닌 콘텐츠의 명도대비와의 관계
+#### 텍스트가 아닌 콘텐츠의 대비와의 관계
 
-초점 표시기는 사용자 인터페이스 구성 요소의 상태를 식별하는 데 필요한 시각적 정보이다. 즉, 2.4.13 초점 형태 외에도 [1.4.11 텍스트가 아닌 콘텐츠의 명도대비](non-text-contrast)가 적용된다.
+초점 표시기는 사용자 인터페이스 구성 요소의 상태를 식별하는 데 필요한 시각적 정보이다. 즉, 2.4.13 초점 형태 외에도 [1.4.11 텍스트가 아닌 콘텐츠의 대비](non-text-contrast)가 적용된다.
 
-[2.4.7 초점 시각화](focus-visible)와 [1.4.11 텍스트가 아닌 콘텐츠의 명도대비](non-text-contrast)의 조합에서 구성 요소의 시각적 초점 표시가 구성 요소에 초점을 맞출 때 인접한 색상에 대해 충분한 대비를 가져야 한다. 단, 구성 요소의 모양이 저작자가 수정하지 않고 사용자 에이전트 구성 요소에 의해 결정되는 경우는 제외된다.
+[2.4.7 초점 시각화](focus-visible)와 [1.4.11 텍스트가 아닌 콘텐츠의 대비](non-text-contrast)의 조합에서 구성 요소의 시각적 초점 표시가 구성 요소에 초점을 맞출 때 인접한 색상에 대해 충분한 대비를 가져야 한다. 단, 구성 요소의 모양이 저작자가 수정하지 않고 사용자 에이전트 구성 요소에 의해 결정되는 경우는 제외된다.
 
-초점 형태와 텍스트가 아닌 콘텐츠의 명도대비 요구 사항 간의 차이점은 다음과 같다.
+초점 형태와 텍스트가 아닌 콘텐츠의 대비 요구 사항 간의 차이점은 다음과 같다.
 
 *   초점 모양을 사용하려면 초점 표시기에 초점이 맞춰진 상태와 초점이 맞춰지지 않은 상태 사이의 *대비가 변경*되어야 한다.
-*   텍스트가 아닌 콘텐츠의 명도대비를 사용하려면 초점 표시기가 표시기(초점 상태)와 인접한 비표시기 색상 사이에 *인접 대비*를 가져야 한다.
+*   텍스트가 아닌 콘텐츠의 대비를 사용하려면 초점 표시기가 표시기(초점 상태)와 인접한 비표시기 색상 사이에 *인접 대비*를 가져야 한다.
 
 <figure id="non-text-contrast-fail-focus-appearance-pass">
     <img src="/docs/img/wcag22understanding/focus-indicator-good-change-bad-adjacent.png" alt="3px 두께의 테두리가 있는 연한 파란색 버튼. 초점이 맞지 않은 상태에서는 테두리가 검은색이고 초점이 맞춰진 상태에서는 밝은 회색이다." />
     <figcaption>
-        그림 18 이 예는 초점 형태를 통과했지만 텍스트가 아닌 콘텐츠의 명도대비에는 실패했다. 초점 표시기와 인접 색상 사이의 <em>adjacent contrast</em>가 부족하다.
+        그림 18 이 예는 초점 형태를 통과했지만 텍스트가 아닌 콘텐츠의 대비에는 실패했다. 초점 표시기와 인접 색상 사이의 <em>adjacent contrast</em>가 부족하다.
     </figcaption>
 </figure>
 
 <figure id="non-text-contrast-pass-focus-appearance-fail">
     <img src="/docs/img/wcag22understanding/focus-indicator-good-adjacent-bad-change.png" alt="3px 두께의 테두리가 있는 연한 파란색 버튼. 초점이 맞지 않은 상태에서는 테두리가 검은색이고 초점이 맞춰진 상태에서는 어두운 회색이다." />
     <figcaption>
-        그림 19 이 예는 텍스트가 아닌 콘텐츠의 명도대비를 통과했지만 초점 형태에서 실패했다. 초점이 맞춰진 상태와 초점이 맞춰지지 않은 상태 사이의 <em>대비 변화</em>가 충분하지 않다.
+        그림 19 이 예는 텍스트가 아닌 콘텐츠의 대비를 통과했지만 초점 형태에서 실패했다. 초점이 맞춰진 상태와 초점이 맞춰지지 않은 상태 사이의 <em>대비 변화</em>가 충분하지 않다.
     </figcaption>
 </figure>
 
-또한 텍스트가 아닌 콘텐츠의 명도대비는 크기 요구 사항을 설정하지 않으며 예외가 허용되는 경우에 대한 규칙이 약간 다르다.
+또한 텍스트가 아닌 콘텐츠의 대비는 크기 요구 사항을 설정하지 않으며 예외가 허용되는 경우에 대한 규칙이 약간 다르다.
 
-자세한 내용과 예는 [1.4.11 텍스트가 아닌 콘텐츠의 명도대비 이해](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)의 초점 표시와의 관계 섹션을 참조하라.
+자세한 내용과 예는 [1.4.11 텍스트가 아닌 콘텐츠의 대비 이해](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)의 초점 표시와의 관계 섹션을 참조하라.
 
 #### 구성 요소 키보드 초점
 
@@ -327,7 +327,7 @@ WCAG는 *사용자 인터페이스 구성 요소*를 "사용자가 고유한 기
     <figcaption>그림 20 전체에만 초점 표시기가 있는 탭 목록.</figcaption>
 </figure>
 
-초점 표시기가 전체 탭 목록에만 표시되면 사용자는 탭 목록을 단일 사용자 구성 요소로 간주하도록 안내받는다. 그 안의 탭 항목은 선택된 상태와 선택되지 않은 상태를 시각적으로 구분한다(그리고 선택 상태의 시각적 표시는 [1.4.11 텍스트가 아닌 콘텐츠의 명도대비](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)에 제공된 기준을 충족해야 한다).
+초점 표시기가 전체 탭 목록에만 표시되면 사용자는 탭 목록을 단일 사용자 구성 요소로 간주하도록 안내받는다. 그 안의 탭 항목은 선택된 상태와 선택되지 않은 상태를 시각적으로 구분한다(그리고 선택 상태의 시각적 표시는 [1.4.11 텍스트가 아닌 콘텐츠의 대비](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)에 제공된 기준을 충족해야 한다).
 
 다른 하위 구성 요소에 초점이 있는 동안 하위 구성 요소를 선택할 필요가 없는 경우 전체 주위에*만* 초점 표시기를 갖는 것이 가능하다. 탭 패널 내용을 활성화된 탭과 동기화하는 탭 목록의 경우 한 번에 하나의 탭 항목만 선택할 수 있으며 선택된 탭은 활성 상태로 간주되므로 별도의 초점 표시기가 중복된다.
 
@@ -443,7 +443,7 @@ WCAG는 *사용자 인터페이스 구성 요소*를 "사용자가 고유한 기
 
 *   [A guide to designing accessible focus indicators](https://www.sarasoueidan.com/blog/focus-indicators/) by Sara Soueidan
 *   [Focus appearance - testing version 3](https://alastairc.uk/tests/wcag22-examples/focus-more-visible-3.html)
-*   [Focus visible testing (Feb 2022)](https://alastairc.uk/tests/wcag22-examples/focus-more-visible-6.html)
+*   [Focus visible testing(Feb 2022)](https://alastairc.uk/tests/wcag22-examples/focus-more-visible-6.html)
 *   [Avoid Default Browser Focus Styles](https://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html) by Adrian Roselli
 
 ### 기법
