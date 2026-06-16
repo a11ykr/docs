@@ -42,7 +42,7 @@ export default defineConfig({
                 social: [
                     { icon: 'information', label: 'Home', href: 'https://a11ykr.github.io/' },
                     { icon: 'discord', label: 'Discord', href: 'https://discord.gg/9ZXYJWDjWR' },
-                    { icon: 'github', label: 'GitHub', href: 'https://github.com/a11ykr' },
+                    { icon: 'github', label: 'GitHub', href: 'https://github.com/a11ykr/docs' },
                 ],
                 components: {
                     Head: './src/components/CustomHead.astro',
@@ -243,11 +243,6 @@ export default defineConfig({
                                 link: '/aria/using-aria-20180927/',
                                 badge: { text: '검토중', variant: 'note' }
                             },
-                            // {
-                            //     label: 'HTML의 ARIA(2025)',
-                            //     link: '/aria/aria-in-html-20250409/',
-                            //     badge: { text: '작업중', variant: 'danger' }
-                            // },
                             {
                                 label: 'HTML의 ARIA(2025)',
                                 collapsed: true,
