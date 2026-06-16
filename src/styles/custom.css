@@ -103,3 +103,34 @@ li ul, li ol {
 :root[data-theme='dark'] {
   --sl-icon-invert: 1;
 }
+
+/* understanding */
+svg:not(:root) {
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+}
+figure.understanding-figure {
+  margin: 2em 0;
+  padding-left: 1em;
+  border-left: 2px solid #bccbd3;
+}
+figure.understanding-figure img, figure.understanding-figure video, figure.understanding-figure svg {
+    border: 1px solid #ddd;
+}
+
+/* 1.4.11 only */
+table.understanding-table caption {
+  margin-bottom: 1rem;
+  text-align: left;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+table.understanding-table tr th, table.understanding-table tr td {
+  vertical-align: middle;
+}
+table.understanding-table tbody th {
+  width: 15%;
+}
+table.understanding-table tr td:nth-child(3) {
+  width: 25%;
+}
