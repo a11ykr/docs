@@ -1,52 +1,59 @@
 ---
-title: 2.4.7 초점 시각화
-description: WCAG 2.2 이해 성공 기준 2.4.7 초점 시각화
+title: 2.4.7 초점 가시성
+description: WCAG 2.2 이해 성공 기준 2.4.7 초점 가시성
 head:
     - tag: title
-      content: 성공 기준 이해 2.4.7 초점 시각화
+      content: 성공 기준 이해 2.4.7 초점 가시성
 tableOfContents:
     maxHeadingLevel: 4
-lastUpdated: 2024-05-02
+lastUpdated: 2025-09-17
 ---
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 (Level AA)
 
-<Card title="성공 기준(SC)">
-키보드로 조작할 수 있는 사용자 인터페이스는 키보드 초점이 표시되는 작동 모드를 제공해야 한다.
-</Card>
-
 ## 요약
 
 <dl>
 <dt>목표</dt>
-<dd>사용자가 어떤 요소에 키보드 초점이 있는지 안다.</dd>
+<dd>사용자는 어떤 요소에 키보드 초점이 있는지 안다.</dd>
 <dt>할 일</dt>
-<dd>초점을 받는 각 항목에 지시자(indicator)가 표시되는지 확인하라.</dd>
+<dd>초점을 받는 각 항목이 가시적인 표시기를 가지도록 보장한다.</dd>
 <dt>중요성</dt>
-<dd>초점 표시기(focus indicator)가 없으면 시력이 있는 키보드 사용자는 페이지를 조작할 수 없다.</dd>
+<dd>초점 표시기가 없으면, 시력이 있는 키보드 사용자는 페이지를 조작할 수 없다.</dd>
 </dl>
+
+<Card title="성공 기준(SC)">
+키보드로 조작하는 사용자 인터페이스는 키보드 초점 표시기가 보이는 조작 모드를 제공해야 한다.
+</Card>
 
 ### 의도
 
-이 성공 기준의 목적은 키보드 초점이 있는 요소를 사용자가 알 수 있도록 돕는 것이다.
+이 성공 기준의 목적은 어떤 요소에 키보드 초점이 있는지 사용자가 알 수 있게 돕는 것이다.
 
-"운용 방식"은 항상 초점 표시기를 표시하지 않거나 키보드를 사용할 때만 초점 표시기를 표시할 수 있는 사용자 에이전트를 고려한다. 사용자 에이전트는 키보드를 사용할 때만 표시하는 등 초점 표시기 표시를 최적화할 수 있다. 저작자는 초점이 보이는 운용 방식을 하나 이상 제공할 책임이 있다. 대부분의 경우 운용 방식이 하나만 있으므로 이 성공 기준이 적용된다. 초점 표시기는 시간 제한을 두어서는 안 되며, 키보드 초점이 표시되면 그대로 유지되어야 한다.
+"조작 모드"라는 표현은 항상 초점 표시기를 보여주지 않거나, 키보드를 사용할 때만 초점 표시기를 보여주는 사용자 에이전트를 고려한 것이다.
+사용자 에이전트는 초점 표시기를 보여주는 시점을 최적화할 수 있는데, 예를 들어 키보드가 사용될 때만 표시기를 보여줄 수 있다.
+저작자는 초점이 보이는 조작 모드를 최소 하나 이상 제공할 책임이 있다. 대부분의 경우 조작 모드가 하나뿐이므로 이 성공 기준이 적용된다.
+초점 표시기는 시간 제한이 있어서는 안 되며, 키보드 초점이 표시된 이상 그 표시는 유지되어야 한다.
 
-키보드 초점 표시기는 다양한 형태를 취할 수 있다. WCAG 2.2의 새로운 기능: 초점 시각화는 해당 형식이 무엇인지 지정하지 않지만 [2.4.13 초점 형태 
+<Card title="참고">
+마우스나 포인터 사용자가 키보드로 초점을 설정하지 않았더라도, 눈에 보이는 초점 표시기로부터 이점을 얻을 수 있는 상황이 있을 수 있다.
+모범 사례로서, 이러한 경우에도 명시적인 초점 표시기를 제공하는 것을 고려해야 한다.
+</Card>
 
-(Level AAA)](focus-appearance)는 일관되고 가시적인 지시자를 만드는 데 대한 지침을 제공한다.
+키보드 초점 표시기는 여러 형태를 취할 수 있다는 점에 유의해야 한다.
+WCAG 2.2에서 새로 추가된 사항으로, 초점 표시기 기준은 그 형태를 구체적으로 명시하지 않지만, [2.4.13 초점 형태(Level AAA)](focus-appearance)에서 일관되고 눈에 보이는 표시기를 만드는 방법에 대한 지침을 제공한다.
 
 ### 이점
 
-*   이 성공 기준은 키보드 작업이 상호 작용할 구성 요소를 항상 시각적으로 판별함으로써 키보드를 사용하여 페이지를 작업하는 모든 사람에게 도움이 된다.
-*   주의력 제한, 단기 기억 제한 또는 실행 프로세스 제한이 있는 사람들은 초점이 어디에 있는지 발견할 수 있으므로 이점을 얻을 수 있다.
+*   이 성공 기준은 키보드로 페이지를 조작해야 하는 모든 사람에게 도움이 된다. 어느 시점에서든 키보드 조작이 상호작용할 컴포넌트를 시각적으로 판단할 수 있게 해주기 때문이다.
+*   주의력 제한, 단기 기억 제한, 또는 실행 기능에 제한이 있는 사람은 초점이 어디에 있는지 파악할 수 있다는 점에서 도움을 받는다.
 
 ### 예제
 
-*   텍스트 필드에 초점이 맞춰지면 필드에 세로 막대가 표시되어 사용자가 텍스트를 삽입할 수 있음을 나타내거나 모든 텍스트가 강조 표시되어 사용자가 텍스트 위에 입력할 수 있음을 나타낸다.
-*   사용자 인터페이스 컨트롤이 초점을 받으면 그 주위에 보이는 테두리가 표시된다.
+*   텍스트 필드가 초점을 받으면, 해당 필드 안에 세로 막대가 표시되어 사용자가 텍스트를 입력할 수 있음을 나타내거나, 텍스트 전체가 강조 표시되어 사용자가 기존 텍스트를 덮어쓸 수 있음을 나타낸다.
+*   사용자 인터페이스 컨트롤이 초점을 받으면, 그 주위에 눈에 보이는 테두리가 표시된다.
 
 ### 관련 자료
 
@@ -65,6 +72,7 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 *   [G165: Using the default focus indicator for the platform so that high visibility default focus indicators will carry over](https://www.w3.org/WAI/WCAG22/Techniques/general/G165)
 *   [G195: Using an author-supplied, visible focus indicator](https://www.w3.org/WAI/WCAG22/Techniques/general/G195)
 *   [C40: Creating a two-color focus indicator to ensure sufficient contrast with all components](https://www.w3.org/WAI/WCAG22/Techniques/css/C40)
+*   [C45: Using CSS :focus-visible to provide keyboard focus indication](https://www.w3.org/WAI/WCAG22/Techniques/css/C45)
 *   [SCR31: Using script to change the background color or border of the element with focus](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR31)
 
 #### 오류
