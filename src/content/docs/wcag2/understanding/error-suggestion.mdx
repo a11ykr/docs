@@ -6,16 +6,12 @@ head:
       content: 성공 기준 이해 3.3.3 오류 수정 제안
 tableOfContents:
     maxHeadingLevel: 4
-lastUpdated: 2024-05-02
+lastUpdated: 2026-03-09
 ---
 
 import { Aside, Badge, Card } from '@astrojs/starlight/components';
 
 (Level AA)
-
-<Card title="성공 기준(SC)">
-[입력 오류](../../../glossary/input-error)가 자동으로 감지되고 수정 제안 사항이 알려져 있다면, 콘텐츠의 보안 또는 목적에 저촉되지 않는 한, 해당 제안사항을 사용자에게 제공해야 한다.
-</Card>
 
 ## 요약
 
@@ -25,45 +21,50 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 <dt>할 일</dt>
 <dd>오류가 감지되면 이를 수정할 수 있는 알려진 방법을 제안한다.</dd>
 <dt>중요성</dt>
-<dd>사람들은 노력을 덜 들이고 더 빠르게 오류를 해결할 수 있다.</dd>
+<dd>사람들은 더 적은 노력으로 오류를 빠르게 해결할 수 있다.</dd>
 </dl>
+
+<Card title="성공 기준(SC)">
+[입력 오류](../../../glossary/input-error)가 자동으로 감지되고 수정 방법을 알고 있는 경우, 콘텐츠의 보안이나 목적을 위태롭게 하지 않는 한 사용자에게 수정 방법을 제안한다.
+</Card>
 
 ### 의도
 
-이 성공 기준의 목적은 가능한 경우 사용자가 입력 오류 수정에 대한 적절한 제안을 받도록 하는 것이다. "입력 오류"의 정의는 "사용자가 제공한 정보가 시스템에서 허용되지 않는 것"이라고 말한다. 허용되지 않는 정보의 예로는 필수이지만 사용자가 빠뜨린 정보, 사용자가 제공했지만 필수 데이터 형식이나 허용된 값을 벗어나는 정보가 있다.
+이 성공 기준의 의도는 가능한 경우 사용자가 입력 오류에 대한 적절한 수정 방법을 제안받도록 보장하는 것에 있다.
+"입력 오류"는 시스템에서 "사용자가 제공했으나 허용되지 않는 정보"로 정의한다.
+허용되지 않는 정보의 예로는 필수 정보지만 사용자가 입력하지 않은 경우와 사용자가 입력한 정보가 요구되는 데이터 형식이나 허용된 값을 벗어난 경우가 있다.
 
-성공 기준 3.3.1은 오류 알림을 제공한다. 그러나 인지 장애가 있는 사람은 오류를 수정하는 방법을 이해하기 어려울 수 있다. 시각 장애가 있는 사람은 오류를 수정하는 방법을 정확히 파악하지 못할 수도 있다. 양식 제출이 실패하는 경우 사용자는 오류가 발생했음을 알고 있음에도 불구하고 오류를 수정하는 방법을 확신할 수 없기 때문에 양식 제출을 중단할 수 있다.
+성공 기준 3.3.1 오류 식별에서는 오류를 알리도록 규정한다.
+그러나 인지 능력에 제약이 있는 사용자는 오류를 수정하는 방법을 이해하기 어려울 수 있다.
+시각 장애가 있는 사용자는 오류를 정확히 어떻게 수정해야 하는지 파악하기 어려울 수 있다.
+양식 제출에 실패한 경우, 사용자는 오류가 발생했다는 사실을 알고 있더라도 수정 방법을 알지 못해 양식 작성을 포기할 수 있다.
 
-콘텐츠 저작자가 오류에 대한 설명을 제공할 수도 있고, 사용자 에이전트는 기술에 따라 프로그래밍 방식으로 판별된 정보를 기반으로 오류에 대한 설명을 제공할 수도 있다.
+콘텐츠 저작자가 오류에 대한 설명을 제공하거나, 사용자 에이전트가 기술에 따라 프로그래밍 방식으로 판별된 정보를 기반으로 오류에 대한 설명을 제공할 수도 있다.
 
 ### 이점
 
-*   입력 오류를 수정하는 방법에 대한 정보를 제공하면 학습 장애가 있는 사용자가 양식을 성공적으로 작성할 수 있다.
-*   전맹이나 시각 장애가 있는 사용자는 입력 오류의 성격과 수정 방법을 더 쉽게 이해할 수 있다.
-*   운동 장애가 있는 사용자는 입력 값을 변경해야 하는 횟수를 줄일 수 있다.
+- 입력 오류를 수정하는 방법에 대한 정보를 제공하면 학습 장애가 있는 사용자가 양식을 성공적으로 작성할 수 있다.
+- 전맹이거나 시각 장애가 있는 사용자는 입력 오류의 특성과 수정 방법을 더 쉽게 이해할 수 있다.
+- 운동 장애가 있는 사용자는 입력값을 변경해야 하는 횟수를 줄일 수 있다.
 
 ### 예제
 
 <dl>
     <dt>입력 오류 수정을 위한 추가 도움말</dt>
     <dd>
-        성공적으로 제출되지 않은 양식의 결과는 올바른 입력과 함께 페이지의 입력 오류를 설명하고 입력 오류를 일으킨 양식 필드에 대한 추가 도움말을 제공한다.
+        양식이 성공적으로 제출되지 않은 경우, 페이지에서 입력 오류가 발생한 위치에 올바른 입력값과 함께 오류에 대한 설명을 제공하고, 입력 오류가 발생한 양식 필드에 대한 추가 도움말을 제공한다.
     </dd>
-    <dt>제한된 값 세트 제시</dt>
+    <dt>제한된 값에서 제안</dt>
     <dd>
-        입력 필드에는 월 이름을 입력해야 한다. 사용자가 "12"를 입력하는 경우 수정 제안에는 다음이 포함될 수 있다.
-        *   허용되는 값 목록(예: "Choose one of: January, February, March, April, May, June, July, August, September, October, November, December.")
-        *   다른 월 형식으로 해석된 입력 데이터의 변환(예: "Do you mean 'December'?")
+        입력 필드에 월 이름을 입력해야 한다. 사용자가 "12"를 입력한 경우, 수정 방법으로 아래 허용되는 값의 목록을 제안할 수 있다.
+        - 허용되는 값의 목록. 예: "다음 중 하나를 선택하세요: 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월."
+        - 입력 데이터를 다른 월 형식으로 해석하여 변환한 값. 예: "'12월'을 의미하나요?"
     </dd>
 </dl>
 
 ### 기법
 
 이 섹션의 각 번호가 매겨진 항목은 접근성 지침 실무 그룹이 이 성공 기준을 충족하기에 충분하다고 판단하는 기법 또는 기법의 조합을 나타낸다. 기법은 기준의 최소 요구 사항을 넘어설 수 있다. 이러한 기법에서 포괄하지 않은 기준 충족의 다른 방법이 있을 수 있다. 다른 기법 사용에 대한 정보는 [WCAG 성공 기준에 대한 기법 이해](../understanding-techniques), 특히 "기타 기법" 섹션을 참조하라.
-
-<Card title="참고">
-경우에 따라 하나 이상의 상황을 적용할 수 있다. 필수 필드에 데이터가 특정 형식이어야하는 경우를 예로 들 수 있다.
-</Card>
 
 #### 충분 기법
 
@@ -83,15 +84,16 @@ import { Aside, Badge, Card } from '@astrojs/starlight/components';
 *   [G177: Providing suggested correction text](https://www.w3.org/WAI/WCAG22/Techniques/general/G177)
 *   [PDF22: Indicating when user input falls outside the required format or values in PDF forms](https://www.w3.org/WAI/WCAG22/Techniques/pdf/PDF22)
 
+<Card title="참고">
+경우에 따라 두 가지 이상의 상황이 적용될 수 있다. 예를 들어, 필수 필드의 데이터를 특정 형식으로 입력해야 하는 경우가 이에 해당한다.
+</Card>
+
 #### 조언 기법
 
 준수를 위해 필수는 아니지만 콘텐츠에 더 쉽게 접근할 수 있도록 다음과 같은 추가 기법을 고려해야 한다. 모든 기법을 사용할 수 없거나 모든 상황에서 효과적인 것은 아니다.
 
 *   [G139: Creating a mechanism that allows users to jump to errors](https://www.w3.org/WAI/WCAG22/Techniques/general/G139)
 *   [G199: Providing success feedback when data is submitted successfully](https://www.w3.org/WAI/WCAG22/Techniques/general/G199)
-
-##### Client-Side Scripting Techniques (Advisory)
-
 *   [SCR18: Providing client-side validation and alert](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR18)
 *   [SCR32: Providing client-side validation and adding error text via the DOM](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR32)
 
